@@ -14,6 +14,8 @@
 .Page_direction_horizontal .Page-Container {
     display: grid;
     grid-template-columns: minmax(240px, 1fr) minmax(400px, 720px) 1fr;
+
+    position: relative;
 }
 
 .Page_direction_vertical .Page-Content {

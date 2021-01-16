@@ -103,7 +103,10 @@
         grid-template-columns: auto;
     }
 
-    .Post,
+    .Post {
+        margin-top: 20px;
+    }
+
     .Post-Content {
         margin-top: 60px;
     }
