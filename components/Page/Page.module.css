@@ -1,0 +1,37 @@
+.Page {
+    padding: var(--page-padding-y) var(--page-padding-x);
+
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    font-size: var(--text-font-size);
+    line-height: var(--text-line-height);
+
+    background: var(--backround-color);
+    color: var(--foreground-color);
+}
+
+.Page_direction_horizontal .Page-Container {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(400px, 720px) 1fr;
+}
+
+.Page_direction_vertical .Page-Content {
+    margin-top: 60px;
+}
+
+@media (max-width: 1200px) {
+    .Page_direction_horizontal .Page-Container {
+        grid-template-columns: minmax(200px, 1fr) minmax(400px, 640px) 1fr;
+    }
+}
+
+@media (max-width: 960px) {
+    .Page_direction_horizontal .Page-Container {
+        grid-template-columns: auto;
+    }
+
+    .Page .Page-Content {
+        margin-top: var(--page-padding-y);
+    }
+}

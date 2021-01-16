@@ -1,0 +1,46 @@
+:root {
+    --page-padding-x: 100px;
+    --page-padding-y: 100px;
+
+    --text-font-family: 'PT Root UI VF', 'Helvetica', sans-serif;
+    --text-font-weight: 450;
+    --text-font-size: 20px;
+    --text-line-height: 26px;
+
+    --h1-font-size: 40px;
+    --h1-line-height: 120%;
+
+    --h2-font-size: 30px;
+    --h2-line-height: 120%;
+
+    --h3-font-size: 25px;
+    --h3-line-height: 120%;
+
+    --background-color-rgb: 255, 255, 255;
+    --background-color: rgb(var(--background-color-rgb));
+
+    --foreground-color-rgb: 0, 0, 0;
+    --foreground-color: rgb(var(--foreground-color-rgb));
+
+    --inactive-color: rgba(var(--foreground-color-rgb), 0.3);
+
+    --blue-accent-color-rgb: 62, 136, 223;
+    --blue-accent-color: rgb(var(--blue-accent-color-rgb));
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --page-padding-x: 60px;
+        --page-padding-y: 60px;
+
+        --h1-font-size: 28px;
+        --h2-font-size: 28px;
+    }
+}
+
+@media (max-width: 540px) {
+    :root {
+        --page-padding-x: 20px;
+        --page-padding-y: 40px;
+    }
+}
