@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import {DefaultSeo} from 'next-seo';
 
 function getEmoji(route: string): string {
-    if (route.includes('/blog')) {
+    if (route.includes('/posts')) {
         return '📖';
     }
 

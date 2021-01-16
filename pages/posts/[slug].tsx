@@ -1,6 +1,6 @@
-import {GetStaticPaths, GetStaticProps} from 'next';
+import type {GetStaticPaths, GetStaticProps} from 'next';
 
-import {Post} from 'types';
+import type {Post} from 'types';
 
 import {getAllPostIds} from 'lib/api';
 import {getPost} from 'lib/content';
