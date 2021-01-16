@@ -1,4 +1,4 @@
-import {cn} from 'utils/classname';
+import {cn} from 'lib/classname';
 
 import Link from 'components/Link';
 

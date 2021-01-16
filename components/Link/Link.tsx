@@ -1,4 +1,4 @@
-import {cn} from 'utils/classname';
+import {cn} from 'lib/classname';
 import NextLink from 'next/link';
 
 import {LinkProps} from './types';
@@ -7,9 +7,12 @@ import styles from './Link.module.css';
 
 const link = cn('Link', styles);
 
-export default function Link(props: LinkProps) {
-    const {className = '', href, color, children} = props;
-
+export default function Link({
+    className = '',
+    href,
+    color,
+    children
+}: LinkProps) {
     const mixedClassName = `${link({color})} ${className}`;
 
     const isLinkRelative = href.startsWith('/');

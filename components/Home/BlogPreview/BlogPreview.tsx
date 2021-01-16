@@ -1,8 +1,8 @@
-import {cn} from 'utils/classname';
+import {cn} from 'lib/classname';
 
 import Link from 'components/Link';
 
-import {formatDate} from 'utils/format';
+import {formatDate} from 'lib/format';
 
 import i18n from './i18n/ru';
 
@@ -13,12 +13,10 @@ import styles from '../Home.module.css';
 const blogPreview = cn('BlogPreview', styles);
 
 function getPostLink(id: string): string {
-    return `/blog/${id}`;
+    return `/posts/${id}`;
 }
 
-function ArticlePreview(props: ArticlePreviewProps) {
-    const {id, header, content, createdAt} = props;
-
+function ArticlePreview({id, header, content, createdAt}: ArticlePreviewProps) {
     return (
         <div className={blogPreview('Article')}>
             <h3 className={blogPreview('ArticleHeader')}>

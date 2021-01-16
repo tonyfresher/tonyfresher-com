@@ -1,8 +1,8 @@
 import type {AppProps} from 'next/app';
 
-import RootProviders from '../components/RootProviders';
+import RootProviders from 'components/RootProviders';
 
-import '../styles/global.css';
+import 'styles/global.css';
 
 export default function App({Component, pageProps}: AppProps) {
     return (
