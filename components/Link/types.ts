@@ -4,4 +4,5 @@ export type LinkProps = PropsWithChildren<{
     className?: string;
     href: string;
     color?: 'blue';
+    display?: 'inline' | 'inline-block';
 }>;

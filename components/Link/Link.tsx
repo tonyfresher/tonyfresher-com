@@ -8,12 +8,13 @@ import styles from './Link.module.css';
 const link = cn('Link', styles);
 
 export default function Link({
+    children,
     className = '',
-    href,
     color,
-    children
+    display = 'inline',
+    href
 }: LinkProps) {
-    const mixedClassName = `${link({color})} ${className}`;
+    const mixedClassName = `${link({color, display})} ${className}`;
 
     const isLinkRelative = href.startsWith('/');
 
