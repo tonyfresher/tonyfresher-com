@@ -2,7 +2,7 @@
 
 .Home {
     display: grid;
-    grid-template-columns: 400px 332px;
+    grid-template-columns: 400px 360px;
     column-gap: 232px;
 
     font-size: var(--text-font-size);
@@ -59,7 +59,7 @@
 
 @media (max-width: 1200px) {
     .Home {
-        grid-template-columns: 360px 332px;
+        grid-template-columns: 360px 360px;
         column-gap: 140px;
     }
 }

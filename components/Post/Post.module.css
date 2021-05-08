@@ -59,23 +59,6 @@
     margin: 2rem 0 1rem;
 }
 
-.Post-Content a {
-    color: var(--blue-accent-color);
-    text-decoration: none;
-}
-
-.Post-Content a:hover {
-    --unit: calc(var(--text-font-size) * 0.5);
-
-    border-radius: calc(var(--unit) * 0.5);
-    padding-left: calc(var(--unit) * 0.5);
-    padding-right: calc(var(--unit) * 0.5);
-    margin-left: calc(var(--unit) * -0.5);
-    margin-right: calc(var(--unit) * -0.5);
-
-    background: rgba(var(--blue-accent-color-rgb), 0.07);
-}
-
 .Post-Content a img {
     display: block;
 }

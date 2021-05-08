@@ -4,6 +4,8 @@ import {cn} from 'lib/classname';
 import {computeReadTime} from 'lib/content';
 import {formatDate} from 'lib/format';
 
+import Link from 'components/Link';
+
 import i18n from './i18n/ru';
 import {PostProps} from './types';
 
@@ -22,7 +24,9 @@ export default function Post({title, date, content}: PostProps) {
                 <span>{i18n.readTime.replace('%s', readTime.toString())}</span>
             </div>
             <h1 className={post('Title')}>{title}</h1>
-            <Markdown className={post('Content')}>{content}</Markdown>
+            <Markdown className={post('Content')} renderers={{link: Link}}>
+                {content}
+            </Markdown>
         </article>
     );
 }
