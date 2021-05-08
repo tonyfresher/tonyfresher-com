@@ -5,7 +5,6 @@ import type {Post} from 'types';
 import {getAllPostIds} from 'lib/api';
 import {getPost} from 'lib/content';
 
-import Page from 'components/Page';
 import PostComponent from 'components/Post';
 
 type PostPageProps = Post;
@@ -18,7 +17,7 @@ export default function PostPage({
     content
 }: PostPageProps) {
     return (
-        <Page direction="horizontal">
+        <>
             <PostComponent
                 title={title}
                 description={description}
@@ -26,7 +25,7 @@ export default function PostPage({
                 date={date}
                 content={content}
             />
-        </Page>
+        </>
     );
 }
 

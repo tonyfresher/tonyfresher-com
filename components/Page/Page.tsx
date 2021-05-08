@@ -1,6 +1,6 @@
 import {useRouter} from 'next/router';
 
-import Logo from 'components/Logo';
+import Link from 'components/Link';
 
 import {cn} from 'lib/classname';
 
@@ -10,15 +10,32 @@ import styles from './Page.module.css';
 
 const page = cn('Page', styles);
 
-export default function Page({children, direction = 'vertical'}: PageProps) {
-    const router = useRouter();
+const DEFAULT_MENU = [{label: 'Антон Фрешер', link: '/'}];
 
-    const logoView = router.pathname === '/' ? 'bold' : 'default';
+export default function Page({
+    children,
+    direction = 'vertical',
+    menu = DEFAULT_MENU
+}: PageProps) {
+    const router = useRouter();
 
     return (
         <div className={page({direction})}>
             <div className={page('Container')}>
-                <Logo view={logoView} />
+                <div className={page('Menu')}>
+                    {menu.map(({label, link}, index) => (
+                        <div
+                            className={page('MenuLink', {
+                                bold: index === 0 && router.pathname === '/'
+                            })}
+                            key={link}
+                        >
+                            <Link color="inherit" href={link}>
+                                {label}
+                            </Link>
+                        </div>
+                    ))}
+                </div>
                 <main className={page('Content')}>{children}</main>
             </div>
         </div>

@@ -20,7 +20,9 @@ function ArticlePreview({id, header, content, createdAt}: ArticlePreviewProps) {
     return (
         <div className={blogPreview('Article')}>
             <h3 className={blogPreview('ArticleHeader')}>
-                <Link href={getPostLink(id)}>{header}</Link>
+                <Link color="black" href={getPostLink(id)}>
+                    {header}
+                </Link>
             </h3>
             {content && (
                 <p className={blogPreview('ArticleContent')}>

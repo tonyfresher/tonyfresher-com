@@ -11,6 +11,30 @@
     color: var(--foreground-color);
 }
 
+.Page-Menu {
+    display: flex;
+
+    color: var(--inactive-color);
+}
+
+.Page_direction_horizontal .Page-Menu {
+    flex-direction: column;
+}
+
+.Page_direction_vertical .Page-MenuLink + .Page-MenuLink {
+    margin-left: 20px;
+}
+
+.Page_direction_horizontal .Page-MenuLink + .Page-MenuLink {
+    margin-top: 8px;
+}
+
+.Page-MenuLink_bold {
+    font-weight: 700;
+
+    color: var(--foreground-color);
+}
+
 .Page_direction_horizontal .Page-Container {
     display: grid;
     grid-template-columns: minmax(240px, 1fr) minmax(400px, 720px) 1fr;

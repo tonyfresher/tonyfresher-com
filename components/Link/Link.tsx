@@ -10,7 +10,7 @@ const link = cn('Link', styles);
 export default function Link({
     children,
     className = '',
-    color,
+    color = 'blue',
     display = 'inline',
     href
 }: LinkProps) {
