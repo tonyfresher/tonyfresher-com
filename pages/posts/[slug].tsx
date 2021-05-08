@@ -1,4 +1,6 @@
 import type {GetStaticPaths, GetStaticProps} from 'next';
+import {useRouter} from 'next/router';
+import {NextSeo} from 'next-seo';
 
 import type {Post} from 'types';
 
@@ -16,8 +18,29 @@ export default function PostPage({
     date,
     content
 }: PostPageProps) {
+    const router = useRouter();
+
+    const slug = router.query.slug as string;
+
     return (
         <>
+            <NextSeo
+                title={title}
+                description={description}
+                openGraph={{
+                    title,
+                    description,
+                    site_name: 'Антон Фрешер',
+                    type: 'article',
+                    locale: 'ru_RU',
+                    images: [
+                        {
+                            url: `/${slug}/images/${image}`,
+                            alt: title
+                        }
+                    ]
+                }}
+            />
             <PostComponent
                 title={title}
                 description={description}
