@@ -8,27 +8,30 @@ import Link from 'components/Link';
 import Page from 'components/Page';
 
 import i18n from './i18n/ru';
-import {PostProps} from './types';
+import {WritingProps} from './types';
 
-import styles from './Post.module.css';
+import styles from './Writing.module.css';
 
-const post = cn('Post', styles);
+const writing = cn('Writing', styles);
 
-export default function Post({title, date, content}: PostProps) {
+export default function Post({title, date, content}: WritingProps) {
     const readTime = computeReadTime(content);
 
     return (
         <Page direction="horizontal">
-            <article className={post()}>
-                <div className={post('Info')}>
+            <article className={writing()}>
+                <div className={writing('Info')}>
                     <time dateTime={date}>{formatDate(date)}</time>
                     {', '}
                     <span>
                         {i18n.readTime.replace('%s', readTime.toString())}
                     </span>
                 </div>
-                <h1 className={post('Title')}>{title}</h1>
-                <Markdown className={post('Content')} renderers={{link: Link}}>
+                <h1 className={writing('Title')}>{title}</h1>
+                <Markdown
+                    className={writing('Content')}
+                    renderers={{link: Link}}
+                >
                     {content}
                 </Markdown>
             </article>

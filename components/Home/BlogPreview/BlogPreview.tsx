@@ -12,15 +12,15 @@ import styles from '../Home.module.css';
 
 const blogPreview = cn('BlogPreview', styles);
 
-function getPostLink(id: string): string {
-    return `/posts/${id}`;
+function getWritingLink(id: string): string {
+    return `/writing/${id}`;
 }
 
 function ArticlePreview({id, header, content, createdAt}: ArticlePreviewProps) {
     return (
         <div className={blogPreview('Article')}>
             <h3 className={blogPreview('ArticleHeader')}>
-                <Link color="black" href={getPostLink(id)}>
+                <Link color="black" href={getWritingLink(id)}>
                     {header}
                 </Link>
             </h3>

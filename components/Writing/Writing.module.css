@@ -1,46 +1,46 @@
-.PostContainer {
+.WritingContainer {
     position: relative;
 
     display: grid;
     grid-template-columns: minmax(240px, 1fr) minmax(400px, 720px) 1fr;
 }
 
-.Post {
+.Writing {
     display: flex;
     flex-direction: column;
 }
 
-.Post-Info {
+.Writing-Info {
     color: var(--inactive-color);
 }
 
-.Post-Title {
+.Writing-Title {
     margin: 0;
 
     font-size: var(--h1-font-size);
     line-height: var(--h1-line-height);
 }
 
-.Post-Description {
+.Writing-Description {
     margin-top: 8px;
 
     color: var(--inactive-color);
 }
 
-.Post-Content > :first-child {
+.Writing-Content > :first-child {
     margin-top: 0;
 }
 
-.Post-Title,
-.Post-Content {
+.Writing-Title,
+.Writing-Content {
     margin-top: 80px;
 }
 
-.Post-Content {
+.Writing-Content {
     hyphens: auto;
 }
 
-.Post-Content hr {
+.Writing-Content hr {
     margin: 2rem auto;
 
     height: 2px;
@@ -51,50 +51,50 @@
     opacity: 0.2;
 }
 
-.Post-Content h2 {
+.Writing-Content h2 {
     margin: 3rem 0 1.2rem;
 }
 
-.Post-Content h3 {
+.Writing-Content h3 {
     margin: 2rem 0 1rem;
 }
 
-.Post-Content a img {
+.Writing-Content a img {
     display: block;
 }
 
-.Post-Content img {
+.Writing-Content img {
     width: 100%;
 }
 
-.Post-Content ul {
+.Writing-Content ul {
     padding-left: 20px;
 }
 
-.Post-Content p + ul {
+.Writing-Content p + ul {
     margin-top: -0.5em;
 }
 
 @media (max-width: 1200px) {
-    .PostContainer {
+    .WritingContainer {
         grid-template-columns: minmax(200px, 1fr) minmax(400px, 640px) 1fr;
     }
 }
 
 @media (max-width: 960px) {
-    .PostContainer {
+    .WritingContainer {
         grid-template-columns: auto;
     }
 
-    .Post {
+    .Writing {
         margin-top: 20px;
     }
 
-    .Post-Content {
+    .Writing-Content {
         margin-top: 60px;
     }
 
-    .Post-Info {
+    .Writing-Info {
         position: absolute;
         top: 0;
         right: 0;
@@ -103,7 +103,7 @@
         text-align: end;
     }
 
-    .Post-Title {
+    .Writing-Title {
         margin-top: 0;
     }
 }

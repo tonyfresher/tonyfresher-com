@@ -1,5 +1,5 @@
 import fs from 'fs';
 
-export function getAllPostIds(): string[] {
-    return fs.readdirSync('content/posts');
+export function getAllWritingIds(): string[] {
+    return fs.readdirSync('content/writing');
 }

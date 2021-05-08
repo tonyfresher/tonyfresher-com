@@ -2,22 +2,22 @@ import type {GetStaticPaths, GetStaticProps} from 'next';
 import {useRouter} from 'next/router';
 import {NextSeo} from 'next-seo';
 
-import type {Post} from 'types';
+import type {Writing} from 'types';
 
-import {getAllPostIds} from 'lib/api';
-import {getPost} from 'lib/content';
+import {getAllWritingIds} from 'lib/api';
+import {getWriting} from 'lib/content';
 
-import PostComponent from 'components/Post';
+import WritingComponent from 'components/Writing';
 
-type PostPageProps = Post;
+type WritingPageProps = Writing;
 
-export default function PostPage({
+export default function WritingPage({
     title,
     description,
     image,
     date,
     content
-}: PostPageProps) {
+}: WritingPageProps) {
     const router = useRouter();
 
     const slug = router.query.slug as string;
@@ -41,7 +41,7 @@ export default function PostPage({
                     ]
                 }}
             />
-            <PostComponent
+            <WritingComponent
                 title={title}
                 description={description}
                 image={image}
@@ -53,19 +53,19 @@ export default function PostPage({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const postIds = getAllPostIds();
+    const writingIds = getAllWritingIds();
 
     return {
-        paths: postIds.map(slug => ({params: {slug}})),
+        paths: writingIds.map(slug => ({params: {slug}})),
         fallback: false
     };
 };
 
 export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
-    const post = await getPost(slug as string);
+    const writing = await getWriting(slug as string);
 
     return {
         revalidate: 60 * 60,
-        props: post
+        props: writing
     };
 };

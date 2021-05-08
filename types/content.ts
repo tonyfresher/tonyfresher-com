@@ -5,7 +5,7 @@ export interface Article {
     createdAt?: string;
 }
 
-export interface Post {
+export interface Writing {
     title: string;
     description?: string;
     image?: string;
@@ -13,7 +13,7 @@ export interface Post {
     content: string;
 }
 
-export interface Book extends Post {
+export interface Book extends Writing {
     nameRu: string;
     nameEn: string;
     author: string;

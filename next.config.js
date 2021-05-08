@@ -3,17 +3,17 @@ module.exports = {
         return [
             {
                 source: '/blog/the-storage',
-                destination: '/posts/the-storage',
+                destination: '/writing/the-storage',
                 permanent: true
             },
             {
                 source: '/blog/mountain-tracking',
-                destination: '/posts/mountain-tracking',
+                destination: '/writing/mountain-tracking',
                 permanent: true
             },
             {
                 source: '/blog/sputnik-v',
-                destination: '/posts/sputnik-v',
+                destination: '/writing/sputnik-v',
                 permanent: true
             },
             {
