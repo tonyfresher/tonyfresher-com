@@ -1,18 +1,19 @@
+import sortBy from 'lodash/sortBy';
 import type {GetStaticProps} from 'next';
 import {NextSeo} from 'next-seo';
 
-import type {Writing} from 'types';
+import type {Book} from 'types';
 
-import {getWritingIds} from 'lib/api';
-import {getWriting} from 'lib/content';
+import {getBookIds} from 'lib/api';
+import {getBook} from 'lib/content';
 
-import WritingList from 'components/WritingList';
+import BookShelf from 'components/BookShelf';
 
-interface WritingListPageProps {
-    items: Writing[];
+interface BookShelfPageProps {
+    items: Book[];
 }
 
-export default function WritingListPage({items}: WritingListPageProps) {
+export default function BookShelfPage({items}: BookShelfPageProps) {
     return (
         <>
             <NextSeo
@@ -24,17 +25,17 @@ export default function WritingListPage({items}: WritingListPageProps) {
                     locale: 'ru_RU'
                 }}
             />
-            <WritingList items={items} />
+            <BookShelf items={items} />
         </>
     );
 }
 
-export const getStaticProps: GetStaticProps<WritingListPageProps> = async () => {
-    const slugs = getWritingIds();
-    const items = await Promise.all(slugs.map(id => getWriting(id)));
+export const getStaticProps: GetStaticProps<BookShelfPageProps> = async () => {
+    const slugs = getBookIds();
+    const items = await Promise.all(slugs.map(id => getBook(id)));
 
     return {
         revalidate: 60 * 60,
-        props: {items}
+        props: {items: sortBy(items, 'date')}
     };
 };

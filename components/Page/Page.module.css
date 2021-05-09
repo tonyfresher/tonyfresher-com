@@ -1,3 +1,13 @@
+.Page_theme_dark {
+    --backround-color-rgb: 10, 10, 10;
+    --backround-color: rgb(var(--backround-color-rgb));
+
+    --foreground-color-rgb: 255, 255, 255;
+    --foreground-color: rgb(var(--foreground-color-rgb));
+
+    --inactive-color: rgba(var(--foreground-color-rgb), 0.3);
+}
+
 .Page {
     padding: var(--page-padding-y) var(--page-padding-x);
 

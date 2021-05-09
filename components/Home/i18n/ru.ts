@@ -7,6 +7,7 @@ export default {
     lastNameNote: 'Да, это настоящая фамилия.',
     menu: [
         {label: 'Антон Фрешер', link: '/'},
-        {label: 'Блог', link: '/writing'}
+        {label: 'Пишу', link: '/writing'},
+        {label: 'Книжная полка', link: '/books'}
     ]
 };

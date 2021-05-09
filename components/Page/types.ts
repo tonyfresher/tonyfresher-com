@@ -5,7 +5,8 @@ interface PageMenuItem {
     link: string;
 }
 export interface PageProps {
-    menu?: PageMenuItem[];
     children: ReactNode;
     direction?: 'vertical' | 'horizontal';
+    menu?: PageMenuItem[];
+    theme?: 'light' | 'dark';
 }

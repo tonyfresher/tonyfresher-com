@@ -1,3 +1,4 @@
+import sortBy from 'lodash/sortBy';
 import type {GetStaticProps} from 'next';
 import {NextSeo} from 'next-seo';
 
@@ -35,6 +36,6 @@ export const getStaticProps: GetStaticProps<WritingListPageProps> = async () => 
 
     return {
         revalidate: 60 * 60,
-        props: {items}
+        props: {items: sortBy(items, 'date')}
     };
 };
