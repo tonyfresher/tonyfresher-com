@@ -32,10 +32,11 @@ export default function WritingListPage({items}: WritingListPageProps) {
 
 export const getStaticProps: GetStaticProps<WritingListPageProps> = async () => {
     const writingIds = getWritingIds();
-    const items = await Promise.all(writingIds.map(id => getWriting(id)));
+    const writing = await Promise.all(writingIds.map(id => getWriting(id)));
+    const items = sortBy(writing, 'date').reverse();
 
     return {
         revalidate: 60 * 60,
-        props: {items: sortBy(items, 'date')}
+        props: {items}
     };
 };

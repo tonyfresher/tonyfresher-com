@@ -17,8 +17,7 @@ function getBookLink(id: string): string {
 }
 
 export default function BookShelf({items}: BookShelfProps) {
-    const reversedItems = items.slice().reverse();
-    const groupedItems = groupBy(reversedItems, item =>
+    const groupedItems = groupBy(items, item =>
         new Date(item.date).getFullYear()
     );
 

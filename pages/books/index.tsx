@@ -32,10 +32,11 @@ export default function BookShelfPage({items}: BookShelfPageProps) {
 
 export const getStaticProps: GetStaticProps<BookShelfPageProps> = async () => {
     const bookIds = getBookIds();
-    const items = await Promise.all(bookIds.map(id => getBook(id)));
+    const books = await Promise.all(bookIds.map(id => getBook(id)));
+    const items = sortBy(books, 'date').reverse();
 
     return {
         revalidate: 60 * 60,
-        props: {items: sortBy(items, 'date')}
+        props: {items}
     };
 };
