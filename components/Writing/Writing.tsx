@@ -49,7 +49,7 @@ export default function WritingComponent<T extends Writing>({
                                 {writing.nameEn ?? writing.nameRu}
                             </span>
                             <span>{writing.author}</span>
-                            <span>{writing.year}</span>
+                            {writing.year && <span>{writing.year}</span>}
                         </div>
                     </div>
                 )}
