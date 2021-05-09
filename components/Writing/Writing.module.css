@@ -53,10 +53,20 @@
 
 .Writing-Content h2 {
     margin: 3rem 0 1.2rem;
+
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+
+    hyphens: none;
 }
 
 .Writing-Content h3 {
     margin: 2rem 0 1rem;
+
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+
+    hyphens: none;
 }
 
 .Writing-Content a img {
