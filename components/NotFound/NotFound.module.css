@@ -1,0 +1,8 @@
+.NotFound {
+    margin: 0;
+
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+
+    color: var(--inactive-color);
+}
