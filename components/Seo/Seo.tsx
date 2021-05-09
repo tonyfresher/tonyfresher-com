@@ -4,7 +4,11 @@ import {DefaultSeo} from 'next-seo';
 
 function getEmoji(route: string): string {
     if (route.includes('/writing')) {
-        return '📖';
+        return '✏️';
+    }
+
+    if (route.includes('/books')) {
+        return '📚';
     }
 
     return '✋';

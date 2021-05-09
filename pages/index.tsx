@@ -7,9 +7,9 @@ export default function HomePage() {
         <>
             <NextSeo
                 title="Антон Фрешер"
-                description="Дизайнер и разработчик."
+                description="Дизайнер и разработчик."
                 openGraph={{
-                    description: 'Дизайнер и разработчик.',
+                    description: 'Дизайнер и разработчик.',
                     images: [
                         {
                             url: '/anton-fresher.jpg',

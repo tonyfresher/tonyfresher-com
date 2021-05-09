@@ -41,8 +41,8 @@
     transition: transform 0.1s ease-out;
 }
 
-.BookShelf-BookSpine[href]:hover {
-    transform: scale(1.05) translateY(-8px);
+.BookShelf-BookSpine_disabled_yes {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .BookShelf-BookHeader {
@@ -72,6 +72,12 @@
     content: ' ';
 }
 
+@media (hover: hover) {
+    .BookShelf-BookSpine_disabled_no:hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+}
+
 @media (max-width: 540px) {
     .BookShelf {
         margin-top: 40px;
@@ -94,15 +100,15 @@
         align-items: flex-start;
 
         margin: 0 calc(var(--page-padding-x) * -1);
-        padding: 12px 20px;
+        padding: 20px;
 
         height: auto;
 
         writing-mode: unset;
     }
 
-    .BookShelf-BookSpine:hover {
-        transform: none;
+    .BookShelf-BookSpine + .BookShelf-BookSpine {
+        margin-top: 4px;
     }
 
     .BookShelf-BookAuthor {

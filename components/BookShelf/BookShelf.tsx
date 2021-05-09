@@ -32,17 +32,24 @@ export default function BookShelf({items}: BookShelfProps) {
                         <div className={bookShelf('SectionBooks')}>
                             {books.map(book => (
                                 <a
-                                    className={bookShelf('BookSpine')}
+                                    className={bookShelf('BookSpine', {
+                                        disabled: book.content ? 'no' : 'yes'
+                                    })}
                                     href={
                                         book.content
                                             ? getBookLink(book.id)
                                             : undefined
                                     }
                                     key={book.id}
-                                    style={{
-                                        background: book.backgroundColor,
-                                        color: book.foregroundColor
-                                    }}
+                                    style={
+                                        book.content
+                                            ? {
+                                                  background:
+                                                      book.backgroundColor,
+                                                  color: book.foregroundColor
+                                              }
+                                            : undefined
+                                    }
                                 >
                                     <h3 className={bookShelf('BookHeader')}>
                                         {book.nameEn && (
