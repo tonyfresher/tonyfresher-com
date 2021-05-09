@@ -10,7 +10,7 @@
 
     margin-top: 40px;
 
-    max-width: 800px;
+    max-width: 840px;
 
     white-space: pre-line;
 }
@@ -25,13 +25,14 @@
 
 .Home-Photo {
     display: flex;
-    width: 100%;
 }
 
 .Home-Photo_shape_rect {
     display: none;
 
     margin-top: 20px;
+
+    width: 80px;
 }
 
 .Home-Photo_shape_circle {
@@ -80,6 +81,10 @@
 
         width: 32px;
         height: 32px;
+    }
+
+    .Home-About {
+        max-width: 600px;
     }
 }
 
