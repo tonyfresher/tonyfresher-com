@@ -18,8 +18,8 @@ export default function Home() {
         <Page direction="vertical" menu={i18n.menu}>
             <div className={home()}>
                 <img
-                    className={home('Photo', {shape: 'bubble'})}
-                    src="/anton-fresher-cropped.jpg"
+                    className={home('Photo', {shape: 'rect'})}
+                    src="/anton-fresher.jpg"
                     alt="Anton Fresher"
                 />
                 <div className={home('About')}>

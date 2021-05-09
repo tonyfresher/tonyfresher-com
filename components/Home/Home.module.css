@@ -20,7 +20,7 @@
 }
 
 .Home-About p + p {
-    margin: 40px 0 0;
+    margin: 1em 0 0;
 }
 
 .Home-Photo {
@@ -28,7 +28,7 @@
     width: 100%;
 }
 
-.Home-Photo_shape_bubble {
+.Home-Photo_shape_rect {
     display: none;
 
     margin-top: 20px;
@@ -107,7 +107,7 @@
         display: none;
     }
 
-    .Home-Photo_shape_bubble {
+    .Home-Photo_shape_rect {
         display: flex;
     }
 
