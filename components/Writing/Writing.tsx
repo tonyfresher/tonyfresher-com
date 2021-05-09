@@ -14,7 +14,7 @@ import styles from './Writing.module.css';
 
 const writing = cn('Writing', styles);
 
-export default function Post({title, date, content}: WritingProps) {
+export default function Writing({title, date, content}: WritingProps) {
     const readTime = computeReadTime(content);
 
     return (

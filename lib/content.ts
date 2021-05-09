@@ -20,6 +20,7 @@ async function getContent<T extends Writing>(
 
     return {
         ...data,
+        id: slug,
         content
     } as T;
 }

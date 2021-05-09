@@ -33,7 +33,7 @@
 
 .Writing-Title,
 .Writing-Content {
-    margin-top: 80px;
+    margin-top: var(--page-padding-y);
 }
 
 .Writing-Content {
@@ -84,14 +84,6 @@
 @media (max-width: 960px) {
     .WritingContainer {
         grid-template-columns: auto;
-    }
-
-    .Writing {
-        margin-top: 20px;
-    }
-
-    .Writing-Content {
-        margin-top: 60px;
     }
 
     .Writing-Info {

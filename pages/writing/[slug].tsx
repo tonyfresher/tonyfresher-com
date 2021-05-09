@@ -42,6 +42,7 @@ export default function WritingPage({
                 }}
             />
             <WritingComponent
+                id={slug}
                 title={title}
                 description={description}
                 image={image}
@@ -61,7 +62,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
 };
 
-export const getStaticProps: GetStaticProps = async ({params: {slug}}) => {
+export const getStaticProps: GetStaticProps<WritingPageProps> = async ({
+    params: {slug}
+}) => {
     const writing = await getWriting(slug as string);
 
     return {

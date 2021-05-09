@@ -23,10 +23,10 @@ export default function Page({
         <div className={page({direction})}>
             <div className={page('Container')}>
                 <div className={page('Menu')}>
-                    {menu.map(({label, link}, index) => (
+                    {menu.map(({label, link}) => (
                         <div
                             className={page('MenuLink', {
-                                bold: index === 0 && router.pathname === '/'
+                                bold: link === router.pathname
                             })}
                             key={link}
                         >

@@ -1,11 +1,5 @@
-export interface Article {
-    id: string;
-    header: string;
-    content?: string;
-    createdAt?: string;
-}
-
 export interface Writing {
+    id: string;
     title: string;
     description?: string;
     image?: string;

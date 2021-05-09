@@ -1,0 +1,55 @@
+.WritingList {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 60px;
+
+    max-width: 400px;
+}
+
+.WritingList-WritingPreview {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 400px 360px;
+    column-gap: 60px;
+
+    white-space: pre-line;
+
+    hyphens: auto;
+}
+
+.WritingList-WritingTitle {
+    margin: 0;
+
+    font-size: var(--text-font-size);
+    line-height: var(--text-line-height);
+}
+
+.WritingList-WritingDescription {
+    margin: 16px 0 0;
+}
+
+.WritingList-WritingDate {
+    color: var(--inactive-color);
+}
+
+.WritingList-WritingDate::before {
+    content: ' ';
+}
+
+.WritingList-WritingImage {
+    width: 100%;
+}
+
+@media (max-width: 960px) {
+    .WritingList-WritingPreview {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .WritingList-WritingImage {
+        order: -1;
+
+        margin-bottom: 20px;
+    }
+}
