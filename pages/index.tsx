@@ -9,11 +9,17 @@ export default function HomePage() {
                 title="Антон Фрешер"
                 description="Дизайнер и разработчик."
                 openGraph={{
-                    title: 'Антон Фрешер',
                     description: 'Дизайнер и разработчик.',
+                    images: [
+                        {
+                            url: '/anton-fresher.jpg',
+                            alt: 'Антон Фрешер'
+                        }
+                    ],
+                    locale: 'ru_RU',
                     site_name: 'Антон Фрешер',
-                    type: 'website',
-                    locale: 'ru_RU'
+                    title: 'Антон Фрешер',
+                    type: 'website'
                 }}
             />
             <Home />
