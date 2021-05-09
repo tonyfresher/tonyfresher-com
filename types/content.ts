@@ -9,9 +9,13 @@ export interface Writing {
 
 export interface Book extends Writing {
     nameRu: string;
-    nameEn: string;
+    nameEn?: string;
     author: string;
     year: string;
     backgroundColor: string;
     foregroundColor: string;
+}
+
+export function isBook(writing: Writing): writing is Book {
+    return Boolean((writing as Book).author);
 }

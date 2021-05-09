@@ -33,7 +33,7 @@
 
 .Writing-Title,
 .Writing-Content {
-    margin-top: var(--page-padding-y);
+    margin-top: 80px;
 }
 
 .Writing-Content {
@@ -75,6 +75,33 @@
     margin-top: -0.5em;
 }
 
+/* BookPreview */
+
+.Writing-BookPreview {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--inactive-color);
+}
+
+.Writing-BookCover {
+    margin-right: 12px;
+
+    height: 80px;
+}
+
+.Writing-BookMeta {
+    display: grid;
+
+    row-gap: 4px;
+}
+
+.Writing-BookName {
+    color: var(--foreground-color);
+}
+
 @media (max-width: 1200px) {
     .WritingContainer {
         grid-template-columns: minmax(200px, 1fr) minmax(400px, 640px) 1fr;
@@ -91,11 +118,15 @@
         top: 0;
         right: 0;
 
-        max-width: 50%;
         text-align: end;
+        white-space: nowrap;
     }
 
     .Writing-Title {
         margin-top: 0;
+    }
+
+    .Writing-Content {
+        margin-top: var(--page-padding-y);
     }
 }

@@ -2,29 +2,30 @@ import matter from 'gray-matter';
 
 import {Book, Writing} from 'types';
 
-async function getContent(
-    collection: 'writing',
-    slug: string
-): Promise<Writing>;
-async function getContent(collection: 'books', slug: string): Promise<Book>;
+async function getContent(collection: 'writing', id: string): Promise<Writing>;
+async function getContent(collection: 'books', id: string): Promise<Book>;
 async function getContent<T extends Writing>(
     collection: string,
-    slug: string
+    id: string
 ): Promise<T> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const {default: file} = await import(`content/${collection}/${slug}.md`);
+    const {default: file} = await import(`content/${collection}/${id}.md`);
 
     const {data, content} = matter(file);
 
     return {
         ...data,
-        id: slug,
+        id,
         content
     } as T;
 }
 
-export async function getWriting(slug: string): Promise<Writing> {
-    return getContent('writing', slug);
+export async function getWriting(id: string): Promise<Writing> {
+    return getContent('writing', id);
+}
+
+export async function getBook(id: string): Promise<Book> {
+    return getContent('books', id);
 }
 
 const WORD_REGEXP = /[a-zа-яё]+/gi;

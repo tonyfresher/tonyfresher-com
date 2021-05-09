@@ -1,3 +1,5 @@
-import {Writing} from 'types';
+import type {Writing} from 'types';
 
-export type WritingProps = Writing;
+export interface WritingProps<T extends Writing> {
+    writing: T;
+}

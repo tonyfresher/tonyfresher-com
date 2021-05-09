@@ -1,7 +1,7 @@
 import type {GetStaticProps} from 'next';
 import {NextSeo} from 'next-seo';
 
-import {Writing} from 'types';
+import type {Writing} from 'types';
 
 import {getWritingIds} from 'lib/api';
 import {getWriting} from 'lib/content';
@@ -16,9 +16,9 @@ export default function WritingListPage({items}: WritingListPageProps) {
     return (
         <>
             <NextSeo
-                title="Пишу — Антон Фрешер"
+                title="Книжная полка — Антон Фрешер"
                 openGraph={{
-                    title: 'Пишу',
+                    title: 'Книжная полка',
                     site_name: 'Антон Фрешер',
                     type: 'website',
                     locale: 'ru_RU'
