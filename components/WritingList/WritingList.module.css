@@ -3,12 +3,12 @@
     grid-auto-flow: row;
     gap: 60px;
 
-    max-width: 400px;
+    max-width: 440px;
 }
 
 .WritingList-WritingPreview {
     display: grid;
-    grid-template-columns: 400px 360px;
+    grid-template-columns: 440px 360px;
     column-gap: 60px;
 
     white-space: pre-line;

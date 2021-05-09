@@ -19,9 +19,9 @@ export default function Seo() {
         <>
             <DefaultSeo
                 title="Антон Фрешер"
-                description="Дизайнер, разработчик и редактор."
+                description="Дизайнер и разработчик."
                 openGraph={{
-                    description: 'Дизайнер, разработчик и редактор.',
+                    description: 'Дизайнер и разработчик.',
                     locale: 'ru_RU',
                     site_name: 'Антон Фрешер',
                     title: 'Антон Фрешер',

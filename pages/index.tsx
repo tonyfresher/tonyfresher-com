@@ -7,10 +7,10 @@ export default function HomePage() {
         <>
             <NextSeo
                 title="Антон Фрешер"
-                description="Дизайнер, разработчик и редактор."
+                description="Дизайнер и разработчик."
                 openGraph={{
                     title: 'Антон Фрешер',
-                    description: 'Дизайнер, разработчик и редактор.',
+                    description: 'Дизайнер и разработчик.',
                     site_name: 'Антон Фрешер',
                     type: 'website',
                     locale: 'ru_RU'

@@ -4,8 +4,8 @@
 
     --text-font-family: 'PT Root UI VF', 'Helvetica', sans-serif;
     --text-font-weight: 450;
-    --text-font-size: 20px;
-    --text-line-height: 26px;
+    --text-font-size: 22px;
+    --text-line-height: 28px;
 
     --h1-font-size: 40px;
     --h1-line-height: 120%;
@@ -32,6 +32,9 @@
     :root {
         --page-padding-x: 60px;
         --page-padding-y: 60px;
+
+        --text-font-size: 20px;
+        --text-line-height: 26px;
 
         --h1-font-size: 28px;
         --h2-font-size: 28px;

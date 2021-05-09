@@ -18,24 +18,19 @@ export default function Home() {
         <Page direction="vertical" menu={i18n.menu}>
             <div className={home()}>
                 <img
-                    className={home('Photo', {size: 'cropped'})}
-                    src="/me-cropped.jpg"
-                    alt="Me"
+                    className={home('Photo', {shape: 'bubble'})}
+                    src="/anton-fresher-cropped.jpg"
+                    alt="Anton Fresher"
                 />
                 <div className={home('About')}>
-                    <div className={home('AboutText')}>
-                        <Markdown renderers={{link: Link}}>
-                            {i18n.about}
-                        </Markdown>
-                    </div>
                     <img
-                        className={home('Photo', {size: 'full'})}
-                        src="/me-full.jpg"
-                        alt="Me"
+                        className={home('Photo', {shape: 'circle'})}
+                        src="/anton-fresher.jpg"
+                        alt="Anton Fresher"
                     />
+                    <Markdown renderers={{link: Link}}>{i18n.about}</Markdown>
                 </div>
                 <Links />
-                <p className={home('FooterNote')}>{i18n.lastNameNote}</p>
             </div>
         </Page>
     );
