@@ -19,7 +19,7 @@
     "dependencies": {
         "@bem-react/classname": "^1.5.8",
         "gray-matter": "^4.0.2",
-        "lodash": "^4.17.20",
+        "lodash": "^4.17.21",
         "next": "10.0.5",
         "next-seo": "^4.17.0",
         "raw-loader": "^4.0.2",
