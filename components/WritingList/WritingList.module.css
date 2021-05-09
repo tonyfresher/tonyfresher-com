@@ -7,8 +7,6 @@
 }
 
 .WritingList-WritingPreview {
-    margin-top: 20px;
-
     display: grid;
     grid-template-columns: 400px 360px;
     column-gap: 60px;
