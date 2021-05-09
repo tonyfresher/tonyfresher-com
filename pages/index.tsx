@@ -2,14 +2,17 @@ import {NextSeo} from 'next-seo';
 
 import Home from 'components/Home';
 
+const DESCRIPTION =
+    'Дизайнер и разработчик. Делаю интерфейсы в Яндекс.Практикуме. Закончил матмех в Екатеринбурге, живу в Москве.';
+
 export default function HomePage() {
     return (
         <>
             <NextSeo
                 title="Антон Фрешер"
-                description="Дизайнер и разработчик."
+                description={DESCRIPTION}
                 openGraph={{
-                    description: 'Дизайнер и разработчик.',
+                    description: DESCRIPTION,
                     images: [
                         {
                             url: '/anton-fresher.jpg',
