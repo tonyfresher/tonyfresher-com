@@ -105,10 +105,6 @@
         transform: none;
     }
 
-    .BookShelf-BookSpine + .BookShelf-BookSpine {
-        margin-top: 8px;
-    }
-
     .BookShelf-BookAuthor {
         margin-top: 4px;
 

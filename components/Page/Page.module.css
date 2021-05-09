@@ -25,6 +25,8 @@
     display: flex;
 
     color: var(--inactive-color);
+
+    white-space: nowrap;
 }
 
 .Page_direction_horizontal .Page-Menu {
