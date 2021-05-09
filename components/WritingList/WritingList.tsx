@@ -28,7 +28,11 @@ function WritingPreview({
         <div className={writingList('WritingPreview')}>
             <div className={writingList('WritingMeta')}>
                 <h3 className={writingList('WritingTitle')}>
-                    <Link color="inherit" href={getWritingLink(id)}>
+                    <Link
+                        color="inherit"
+                        display="inline-block"
+                        href={getWritingLink(id)}
+                    >
                         {title}
                     </Link>
                 </h3>
@@ -39,11 +43,13 @@ function WritingPreview({
                     </span>
                 </p>
             </div>
-            <img
-                className={writingList('WritingImage')}
-                src={`/${id}/images/${image}`}
-                alt={image}
-            />
+            {image && (
+                <img
+                    className={writingList('WritingImage')}
+                    src={`/${id}/images/${image}`}
+                    alt={image}
+                />
+            )}
         </div>
     );
 }

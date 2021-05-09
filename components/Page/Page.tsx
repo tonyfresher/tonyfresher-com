@@ -30,7 +30,11 @@ export default function Page({
                             })}
                             key={link}
                         >
-                            <Link color="inherit" href={link}>
+                            <Link
+                                color="inherit"
+                                display="inline-block"
+                                href={link}
+                            >
                                 {label}
                             </Link>
                         </div>

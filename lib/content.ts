@@ -12,9 +12,7 @@ async function getContent<T extends Writing>(
     slug: string
 ): Promise<T> {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const {default: file} = await import(
-        `content/${collection}/${slug}/${slug}.md`
-    );
+    const {default: file} = await import(`content/${collection}/${slug}.md`);
 
     const {data, content} = matter(file);
 

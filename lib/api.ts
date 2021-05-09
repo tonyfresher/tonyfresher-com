@@ -1,5 +1,7 @@
 import fs from 'fs';
 
 export function getAllWritingIds(): string[] {
-    return fs.readdirSync('content/writing');
+    return fs
+        .readdirSync('content/writing')
+        .map(filename => filename.replace(/\.[^/.]+$/, ''));
 }
