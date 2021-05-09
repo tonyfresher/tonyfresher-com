@@ -39,9 +39,13 @@ export default function BookPage({book}: BookPageProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const bookIds = getBookIds();
+    const books = await Promise.all(bookIds.map(id => getBook(id)));
 
     return {
-        paths: bookIds.map(id => ({params: {id}})),
+        paths: books
+            // Some books have no content
+            .filter(book => book.content)
+            .map(({id}) => ({params: {id}})),
         fallback: false
     };
 };

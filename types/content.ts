@@ -4,7 +4,7 @@ export interface Writing {
     description?: string;
     image?: string;
     date: string;
-    content: string;
+    content?: string;
 }
 
 export interface Book extends Writing {

@@ -31,8 +31,8 @@ export default function WritingListPage({items}: WritingListPageProps) {
 }
 
 export const getStaticProps: GetStaticProps<WritingListPageProps> = async () => {
-    const slugs = getWritingIds();
-    const items = await Promise.all(slugs.map(id => getWriting(id)));
+    const writingIds = getWritingIds();
+    const items = await Promise.all(writingIds.map(id => getWriting(id)));
 
     return {
         revalidate: 60 * 60,

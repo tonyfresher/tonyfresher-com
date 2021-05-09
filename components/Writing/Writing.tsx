@@ -20,6 +20,10 @@ const writingCn = cn('Writing', styles);
 export default function WritingComponent<T extends Writing>({
     writing
 }: WritingProps<T>) {
+    if (!writing.content) {
+        return null;
+    }
+
     const readTime = computeReadTime(writing.content);
 
     return (

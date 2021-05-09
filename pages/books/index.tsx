@@ -31,8 +31,8 @@ export default function BookShelfPage({items}: BookShelfPageProps) {
 }
 
 export const getStaticProps: GetStaticProps<BookShelfPageProps> = async () => {
-    const slugs = getBookIds();
-    const items = await Promise.all(slugs.map(id => getBook(id)));
+    const bookIds = getBookIds();
+    const items = await Promise.all(bookIds.map(id => getBook(id)));
 
     return {
         revalidate: 60 * 60,
