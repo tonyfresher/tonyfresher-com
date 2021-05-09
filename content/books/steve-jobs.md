@@ -6,5 +6,5 @@ author: Walter Isaacson
 foregroundColor: '#000'
 backgroundColor: '#FFF'
 
-date: 2020-09-19 11:46:00 +0300
+date: 2020-09-19T11:46:00+0300
 ---

@@ -6,5 +6,5 @@ author: Tom DeMarco
 foregroundColor: '#F05739'
 backgroundColor: '#FFF'
 
-date: 2020-07-15 11:05:00 +0300
+date: 2020-07-15T11:05:00+0300
 ---
