@@ -1,13 +1,11 @@
-
-name: Super-Linter
+name: Linter
 
 on:
   push:
-  pull_request:
 
 jobs:
   build:
-    name: Lint Code Base
+    name: Lint Code
     runs-on: ubuntu-latest
 
     steps:

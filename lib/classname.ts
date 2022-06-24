@@ -6,6 +6,8 @@ export function cn(
 ): ClassNameFormatter {
     const blockClassName = bemClassName(blockName);
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     return (...params: Parameters<ClassNameFormatter>) => {
         return blockClassName(...params)
             .split(' ')
