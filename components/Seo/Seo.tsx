@@ -22,10 +22,10 @@ export default function Seo() {
     return (
         <>
             <DefaultSeo
-                title="Антон Фрешер"
+                title="Anton Fresher"
                 openGraph={{
-                    locale: 'ru_RU',
-                    site_name: 'Антон Фрешер',
+                    locale: 'en_US',
+                    site_name: 'Anton Fresher',
                     type: 'website'
                 }}
             />

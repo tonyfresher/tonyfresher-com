@@ -7,7 +7,7 @@ import Page from 'components/Page';
 
 import Links from './Links';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 
 import styles from './Home.module.css';
 
@@ -28,7 +28,17 @@ export default function Home() {
                         src="/anton-fresher.jpeg"
                         alt="Anton Fresher"
                     />
-                    <Markdown renderers={{link: Link}}>{i18n.about}</Markdown>
+                    <Markdown
+                        components={{
+                            a: ({children, className, href}) => (
+                                <Link className={className} href={href}>
+                                    {children}
+                                </Link>
+                            )
+                        }}
+                    >
+                        {i18n.about}
+                    </Markdown>
                 </div>
                 <Links />
             </div>

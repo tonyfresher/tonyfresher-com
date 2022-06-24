@@ -17,12 +17,12 @@ export default function BookShelfPage({items}: BookShelfPageProps) {
     return (
         <>
             <NextSeo
-                title="Книжная полка — Антон Фрешер"
+                title="Polka — Anton Fresher"
                 openGraph={{
-                    title: 'Книжная полка',
-                    site_name: 'Антон Фрешер',
+                    title: 'Polka',
+                    site_name: 'Anton Fresher',
                     type: 'website',
-                    locale: 'ru_RU'
+                    locale: 'en_US'
                 }}
             />
             <BookShelf items={items} />

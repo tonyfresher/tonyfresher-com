@@ -21,9 +21,9 @@ export default function BookPage({book}: BookPageProps) {
                 openGraph={{
                     title: book.title,
                     description: book.description,
-                    site_name: 'Антон Фрешер',
+                    site_name: 'Anton Fresher',
                     type: 'article',
-                    locale: 'ru_RU',
+                    locale: 'en_US',
                     images: [
                         {
                             url: `/book-covers/${book.image}`,

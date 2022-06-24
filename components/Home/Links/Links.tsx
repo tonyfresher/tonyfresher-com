@@ -2,7 +2,7 @@ import {cn} from 'lib/classname';
 
 import Link from 'components/Link';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 
 import styles from '../Home.module.css';
 

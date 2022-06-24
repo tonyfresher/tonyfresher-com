@@ -10,7 +10,7 @@ import {formatDate} from 'lib/format';
 import Link from 'components/Link';
 import Page from 'components/Page';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 import {WritingProps} from './types';
 
 import styles from './Writing.module.css';
@@ -59,7 +59,13 @@ export default function WritingComponent<T extends Writing>({
                 )}
                 <Markdown
                     className={writingCn('Content')}
-                    renderers={{link: Link}}
+                    components={{
+                        a: ({children, className, href}) => (
+                            <Link className={className} href={href}>
+                                {children}
+                            </Link>
+                        )
+                    }}
                 >
                     {writing.content}
                 </Markdown>

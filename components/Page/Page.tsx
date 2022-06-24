@@ -10,7 +10,7 @@ import styles from './Page.module.css';
 
 const page = cn('Page', styles);
 
-const DEFAULT_MENU = [{label: 'Антон Фрешер', link: '/'}];
+const DEFAULT_MENU = [{label: 'Anton Fresher', link: '/'}];
 
 export default function Page({
     children,

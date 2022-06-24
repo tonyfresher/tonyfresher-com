@@ -21,9 +21,9 @@ export default function WritingPage({writing}: WritingPageProps) {
                 openGraph={{
                     title: writing.title,
                     description: writing.description,
-                    site_name: 'Антон Фрешер',
+                    site_name: 'Anton Fresher',
                     type: 'article',
-                    locale: 'ru_RU',
+                    locale: 'en_US',
                     images: [
                         {
                             url: `/${writing.id}/images/${writing.image}`,

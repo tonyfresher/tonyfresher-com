@@ -4,7 +4,7 @@ import {cn} from 'lib/classname';
 
 import Page from 'components/Page';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 
 import type {BookShelfProps} from './types';
 

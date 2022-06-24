@@ -2,7 +2,7 @@ import React from 'react';
 
 import {cn} from 'lib/classname';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 
 import styles from './NotFound.module.css';
 
