@@ -38,6 +38,7 @@
         "@typescript-eslint/require-await": "warn",
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "react/display-name": "off"
     }
 }

@@ -1,6 +1,6 @@
 import capitalize from 'lodash/capitalize';
 
-const LOCALE = 'ru-RU';
+const LOCALE = 'en-US';
 
 export function formatDate(dateString: string, short = false): string {
     const date = new Date(dateString);

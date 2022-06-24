@@ -15,7 +15,7 @@ export default class Document extends NextDocument<DocumentProps> {
 
     render() {
         return (
-            <Html lang="ru">
+            <Html lang="en">
                 <Head />
                 <body>
                     <Main />

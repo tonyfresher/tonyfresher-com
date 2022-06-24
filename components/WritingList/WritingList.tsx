@@ -5,7 +5,7 @@ import Page from 'components/Page';
 
 import {formatDate} from 'lib/format';
 
-import i18n from './i18n/ru';
+import i18n from './i18n/en';
 
 import {WritingPreviewProps, WritingListProps} from './types';
 

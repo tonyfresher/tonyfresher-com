@@ -17,12 +17,12 @@ export default function WritingListPage({items}: WritingListPageProps) {
     return (
         <>
             <NextSeo
-                title="Пишу — Антон Фрешер"
+                title="Writing — Anton Fresher"
                 openGraph={{
-                    title: 'Пишу',
-                    site_name: 'Антон Фрешер',
+                    title: 'Writing',
+                    site_name: 'Anton Fresher',
                     type: 'website',
-                    locale: 'ru_RU'
+                    locale: 'en_US'
                 }}
             />
             <WritingList items={items} />
