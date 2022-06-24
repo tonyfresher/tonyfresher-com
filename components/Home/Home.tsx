@@ -19,13 +19,13 @@ export default function Home() {
             <div className={home()}>
                 <img
                     className={home('Photo', {shape: 'rect'})}
-                    src="/anton-fresher.jpg"
+                    src="/anton-fresher.jpeg"
                     alt="Anton Fresher"
                 />
                 <div className={home('About')}>
                     <img
                         className={home('Photo', {shape: 'circle'})}
-                        src="/anton-fresher.jpg"
+                        src="/anton-fresher.jpeg"
                         alt="Anton Fresher"
                     />
                     <Markdown renderers={{link: Link}}>{i18n.about}</Markdown>

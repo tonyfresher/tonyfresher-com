@@ -15,7 +15,7 @@ export default function HomePage() {
                     description: DESCRIPTION,
                     images: [
                         {
-                            url: '/anton-fresher.jpg',
+                            url: '/anton-fresher.jpeg',
                             alt: 'Антон Фрешер'
                         }
                     ],
