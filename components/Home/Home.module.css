@@ -64,12 +64,18 @@
 }
 
 .Links-LinkUsername {
+    display: none;
+
     color: var(--inactive-color);
 }
 
 .Links-LinkUsername::before {
     content: '  ';
     white-space: pre-wrap;
+}
+
+.Links-Link:hover .Links-LinkUsername {
+    display: inline;
 }
 
 @media (max-width: 1200px) {
@@ -98,6 +104,10 @@
     .Home .Links {
         margin-top: 40px;
     }
+
+    .Links-LinkUsername {
+        display: inline;
+    }
 }
 
 @media (max-width: 540px) {
@@ -112,9 +122,5 @@
 
     .Home-Photo_shape_rect {
         display: flex;
-    }
-
-    .Links-LinkUsername {
-        display: none;
     }
 }
