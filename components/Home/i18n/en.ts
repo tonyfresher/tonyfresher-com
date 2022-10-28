@@ -4,7 +4,7 @@ Hey, I'm Anton. I'm a product designer and developer. I'm currently building a c
 
 Before Practicum, I was a web developer at [Yandex](https://yandex.com). Earlier—Math+CS at UrFU.
 
-I also irregularly write and play on my [Telegram channel](https://t.me/+TT5uDGL6_txhZTRi) (on russian).
+Sometimes I write on my [Telegram channel](https://t.me/+TT5uDGL6_txhZTRi) (it's on russian).
     `,
     menu: [
         {label: 'Anton Fresher', link: '/'},
