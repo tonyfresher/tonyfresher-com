@@ -1,8 +1,8 @@
 export default {
     links: [
         {
-            service: 'Linkedin',
-            link: 'https://www.linkedin.com/in/tonyfresher/',
+            service: 'Twitter',
+            link: 'https://www.twitter.com/tonyfresher/',
             username: '@tonyfresher'
         },
         {
@@ -13,6 +13,11 @@ export default {
         {
             service: 'Telegram',
             link: 'https://t.me/tonyfresher',
+            username: '@tonyfresher'
+        },
+        {
+            service: 'Linkedin',
+            link: 'https://www.linkedin.com/in/tonyfresher/',
             username: '@tonyfresher'
         },
         {
