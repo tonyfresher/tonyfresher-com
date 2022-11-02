@@ -11,13 +11,13 @@ export default {
             username: '@tonyfresher'
         },
         {
-            service: 'Telegram',
-            link: 'https://t.me/tonyfresher',
+            service: 'Linkedin',
+            link: 'https://www.linkedin.com/in/tonyfresher/',
             username: '@tonyfresher'
         },
         {
-            service: 'Linkedin',
-            link: 'https://www.linkedin.com/in/tonyfresher/',
+            service: 'Telegram',
+            link: 'https://t.me/tonyfresher',
             username: '@tonyfresher'
         },
         {
