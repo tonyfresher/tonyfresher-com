@@ -1,10 +1,10 @@
 export default {
     about: `
-Hey, I'm Anton. I'm a product designer and developer. I'm currently building a core learning platform at [Practicum](https://practicum.com), online part-time coding bootcamps.
+Hey! I’m Anton. Generally, you would see me jumping in between design, software engineering, product management, leadership, and writing, still figuring out what to do with all this.
 
-Before Practicum, I was a software engineer at [Yandex](https://yandex.com). Earlier—Math+CS at UrFU.
+I'm currently building a core platform at [Practicum](https://practicum.com), a beginner-friendly online coding bootcamp.
 
-Sometimes I write on my [Telegram channel](https://t.me/+TT5uDGL6_txhZTRi) (it's on russian).
+Before Practicum, I was a software engineer at [Yandex](https://yandex.com). Earlier—got a BSc in math and computer science at the Ural Federal University.
     `,
     menu: [
         {label: 'Anton Fresher', link: '/'},
