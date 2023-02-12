@@ -7,7 +7,7 @@ export function getAllIds(collection: 'writing' | 'books'): string[] {
 }
 
 export function getWritingIds(): string[] {
-    return getAllIds('writing');
+    return getAllIds('writings');
 }
 
 export function getBookIds(): string[] {

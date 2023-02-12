@@ -14,7 +14,7 @@ import styles from './WritingList.module.css';
 const writingList = cn('WritingList', styles);
 
 function getWritingLink(id: string): string {
-    return `/writing/${id}`;
+    return `/writings/${id}`;
 }
 
 function WritingPreview({

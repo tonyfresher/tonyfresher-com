@@ -22,7 +22,6 @@ async function getContent<T extends Writing>(
 }
 
 export async function getWriting(id: string): Promise<Writing> {
-    return getContent('writing', id);
     return getContent('writings', id);
 }
 

@@ -17,9 +17,9 @@ export default function WritingListPage({items}: WritingListPageProps) {
     return (
         <>
             <NextSeo
-                title="Writing — Anton Fresher"
+                title="Writings — Anton Fresher"
                 openGraph={{
-                    title: 'Writing',
+                    title: 'Writings',
                     site_name: 'Anton Fresher',
                     type: 'website',
                     locale: 'en_US'
