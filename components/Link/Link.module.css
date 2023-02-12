@@ -18,13 +18,13 @@
 }
 
 .Link_color_blue {
-    color: var(--blue-accent-color);
+    color: var(--accent-color);
 }
 
 .Link:hover {
-    background: rgba(var(--foreground-color-rgb), 0.07);
+    background: rgba(var(--primary-color-rgb), 0.08);
 }
 
 .Link_color_blue:hover {
-    background: rgba(var(--blue-accent-color-rgb), 0.07);
+    background: rgba(var(--accent-color-rgb), 0.08);
 }

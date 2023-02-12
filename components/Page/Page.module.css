@@ -1,11 +1,11 @@
 .Page_theme_dark {
-    --backround-color-rgb: 10, 10, 10;
-    --backround-color: rgb(var(--backround-color-rgb));
+    --background-color-rgb: 10, 10, 10;
+    --background-color: rgb(var(--background-color-rgb));
 
-    --foreground-color-rgb: 255, 255, 255;
-    --foreground-color: rgb(var(--foreground-color-rgb));
+    --primary-color-rgb: 255, 255, 255;
+    --primary-color: rgb(var(--primary-color-rgb));
 
-    --inactive-color: rgba(var(--foreground-color-rgb), 0.3);
+    --secondary-color: rgba(var(--primary-color-rgb), 0.3);
 }
 
 .Page {
@@ -17,14 +17,14 @@
     font-size: var(--text-font-size);
     line-height: var(--text-line-height);
 
-    background: var(--backround-color);
-    color: var(--foreground-color);
+    background: var(--background-color);
+    color: var(--primary-color);
 }
 
 .Page-Menu {
     display: flex;
 
-    color: var(--inactive-color);
+    color: var(--secondary-color);
 
     white-space: nowrap;
 }
@@ -44,7 +44,7 @@
 .Page-MenuLink_bold {
     font-weight: 700;
 
-    color: var(--foreground-color);
+    color: var(--primary-color);
 }
 
 .Page_direction_horizontal .Page-Container {

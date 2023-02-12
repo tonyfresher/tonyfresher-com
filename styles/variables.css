@@ -19,13 +19,13 @@
     --background-color-rgb: 255, 255, 255;
     --background-color: rgb(var(--background-color-rgb));
 
-    --foreground-color-rgb: 0, 0, 0;
-    --foreground-color: rgb(var(--foreground-color-rgb));
+    --primary-color-rgb: 11, 11, 11;
+    --primary-color: rgb(var(--primary-color-rgb));
 
-    --inactive-color: rgba(var(--foreground-color-rgb), 0.3);
+    --secondary-color: rgba(var(--primary-color-rgb), 0.5);
 
-    --blue-accent-color-rgb: 62, 136, 223;
-    --blue-accent-color: rgb(var(--blue-accent-color-rgb));
+    --accent-color-rgb: 62, 136, 223;
+    --accent-color: rgb(var(--accent-color-rgb));
 }
 
 @media (max-width: 1200px) {

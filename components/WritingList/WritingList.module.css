@@ -28,7 +28,7 @@
 }
 
 .WritingList-WritingDate {
-    color: var(--inactive-color);
+    color: var(--secondary-color);
 }
 
 .WritingList-WritingDate::before {
