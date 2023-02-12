@@ -20,9 +20,8 @@ export default function Link({
 
     if (isLinkRelative) {
         return (
-            <NextLink href={href}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className={mixedClassName}>{children}</a>
+            <NextLink href={href} className={mixedClassName}>
+                {children}
             </NextLink>
         );
     }
