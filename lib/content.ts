@@ -1,10 +1,13 @@
 import matter from 'gray-matter';
 
-import {Book, Writing} from 'types';
+import {Book, Experience, Writing} from 'types';
 
-async function getContent(collection: 'writing', id: string): Promise<Writing>;
 async function getContent(collection: 'writings', id: string): Promise<Writing>;
 async function getContent(collection: 'books', id: string): Promise<Book>;
+async function getContent(
+    collection: 'experiences',
+    id: string
+): Promise<Experience>;
 async function getContent<T extends Writing>(
     collection: string,
     id: string
@@ -27,6 +30,10 @@ export async function getWriting(id: string): Promise<Writing> {
 
 export async function getBook(id: string): Promise<Book> {
     return getContent('books', id);
+}
+
+export async function getExperience(id: string): Promise<Experience> {
+    return getContent('experiences', id);
 }
 
 const WORD_REGEXP = /[a-zа-яё]+/gi;

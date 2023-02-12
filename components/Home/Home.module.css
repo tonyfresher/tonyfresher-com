@@ -43,7 +43,7 @@
 }
 
 .Home .Links {
-    margin-top: 40px;
+    margin-top: 64px;
 }
 
 /* Links */
@@ -76,6 +76,12 @@
     display: inline;
 }
 
+@media (hover: none) {
+    .Links-LinkUsername {
+        display: inline;
+    }
+}
+
 @media (max-width: 1200px) {
     .Home-Photo_shape_circle {
         left: -44px;
@@ -101,10 +107,6 @@
 
     .Home .Links {
         margin-top: 40px;
-    }
-
-    .Links-LinkUsername {
-        display: inline;
     }
 }
 

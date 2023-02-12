@@ -1,7 +1,3 @@
-.BookShelf {
-    margin-top: 60px;
-}
-
 .BookShelf-Section + .BookShelf-Section {
     margin-top: 40px;
 }
@@ -79,10 +75,6 @@
 }
 
 @media (max-width: 540px) {
-    .BookShelf {
-        margin-top: 40px;
-    }
-
     .BookShelf-Section + .BookShelf-Section {
         margin-top: 32px;
     }

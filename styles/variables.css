@@ -19,15 +19,15 @@
     --background-color-rgb: 240, 240, 240;
     --background-color: rgb(var(--background-color-rgb));
 
-    --primary-color-rgb: 12, 12, 12;
+    --primary-color-rgb: 38, 38, 38;
     --primary-color: rgb(var(--primary-color-rgb));
 
     --secondary-color: rgba(var(--primary-color-rgb), 0.5);
 
-    --orange-color-rgb: 255, 143, 96;
+    --orange-color-rgb: 255, 151, 107, 1;
     --orange-color: rgb(var(--orange-color-rgb));
 
-    --blue-color-rgb: 130, 184, 242;
+    --blue-color-rgb: 153, 197, 244, 1;
     --blue-color: rgb(var(--blue-color-rgb));
 }
 

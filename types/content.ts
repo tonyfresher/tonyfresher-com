@@ -1,10 +1,13 @@
-export interface Writing {
+interface Page {
     id: string;
+    content?: string;
+}
+
+export interface Writing extends Page {
     title: string;
     description?: string;
     image?: string;
     date: string;
-    content?: string;
 }
 
 export interface Book extends Writing {
@@ -14,6 +17,11 @@ export interface Book extends Writing {
     year?: string;
     backgroundColor: string;
     foregroundColor: string;
+}
+
+export interface Experience extends Page {
+    company: string;
+    period: string;
 }
 
 export function isBook(writing: Writing): writing is Book {
