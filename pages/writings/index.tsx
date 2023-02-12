@@ -30,7 +30,9 @@ export default function WritingListPage({items}: WritingListPageProps) {
     );
 }
 
-export const getStaticProps: GetStaticProps<WritingListPageProps> = async () => {
+export const getStaticProps: GetStaticProps<
+    WritingListPageProps
+> = async () => {
     const writingIds = getWritingIds();
     const writing = await Promise.all(writingIds.map(id => getWriting(id)));
     const items = sortBy(writing, 'date').reverse();

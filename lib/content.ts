@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import {Book, Writing} from 'types';
 
 async function getContent(collection: 'writing', id: string): Promise<Writing>;
+async function getContent(collection: 'writings', id: string): Promise<Writing>;
 async function getContent(collection: 'books', id: string): Promise<Book>;
 async function getContent<T extends Writing>(
     collection: string,
@@ -22,6 +23,7 @@ async function getContent<T extends Writing>(
 
 export async function getWriting(id: string): Promise<Writing> {
     return getContent('writing', id);
+    return getContent('writings', id);
 }
 
 export async function getBook(id: string): Promise<Book> {
