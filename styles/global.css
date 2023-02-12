@@ -1,4 +1,4 @@
-@import "variables.css";
+@import 'variables.css';
 
 @font-face {
     font-family: 'PT Root UI VF';
@@ -17,4 +17,6 @@ body {
 
     font-family: var(--text-font-family);
     font-weight: var(--text-font-weight);
+
+    -webkit-font-smoothing: antialiased;
 }

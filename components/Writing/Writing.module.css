@@ -2,7 +2,7 @@
     position: relative;
 
     display: grid;
-    grid-template-columns: minmax(240px, 1fr) minmax(400px, 720px) 1fr;
+    grid-template-columns: minmax(240px, 1fr) minmax(400px, 700px) 1fr;
 }
 
 .Writing {
