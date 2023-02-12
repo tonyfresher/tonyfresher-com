@@ -13,7 +13,7 @@ export default function Links() {
         <div className={links()}>
             {i18n.links.map(({service, link, username}) => (
                 <div className={links('Link')} key={service}>
-                    <Link color="inherit" href={link}>
+                    <Link color="transparent" href={link}>
                         {service}
                     </Link>
                     <span className={links('LinkUsername')}>{username}</span>

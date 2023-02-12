@@ -29,7 +29,7 @@ function WritingPreview({
             <div className={writingList('WritingMeta')}>
                 <h3 className={writingList('WritingTitle')}>
                     <Link
-                        color="inherit"
+                        color="transparent"
                         display="inline-block"
                         href={getWritingLink(id)}
                     >

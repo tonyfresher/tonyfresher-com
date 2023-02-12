@@ -32,7 +32,7 @@ export default function Page({
                             key={link}
                         >
                             <Link
-                                color="inherit"
+                                color="transparent"
                                 display="inline-block"
                                 href={link}
                             >

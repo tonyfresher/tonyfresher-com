@@ -31,7 +31,11 @@ export default function Home() {
                     <Markdown
                         components={{
                             a: ({children, className, href}) => (
-                                <Link className={className} href={href}>
+                                <Link
+                                    className={className}
+                                    href={href}
+                                    color="orange"
+                                >
                                     {children}
                                 </Link>
                             )

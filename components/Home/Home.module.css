@@ -8,9 +8,7 @@
 .Home-About {
     position: relative;
 
-    margin-top: 40px;
-
-    max-width: 840px;
+    max-width: 940px;
 }
 
 .Home-About p {
@@ -88,7 +86,7 @@
     }
 
     .Home-About {
-        max-width: 630px;
+        max-width: 760px;
     }
 }
 

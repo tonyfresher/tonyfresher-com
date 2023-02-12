@@ -16,16 +16,19 @@
     --h3-font-size: 24px;
     --h3-line-height: 120%;
 
-    --background-color-rgb: 255, 255, 255;
+    --background-color-rgb: 240, 240, 240;
     --background-color: rgb(var(--background-color-rgb));
 
-    --primary-color-rgb: 11, 11, 11;
+    --primary-color-rgb: 12, 12, 12;
     --primary-color: rgb(var(--primary-color-rgb));
 
     --secondary-color: rgba(var(--primary-color-rgb), 0.5);
 
-    --accent-color-rgb: 62, 136, 223;
-    --accent-color: rgb(var(--accent-color-rgb));
+    --orange-color-rgb: 255, 143, 96;
+    --orange-color: rgb(var(--orange-color-rgb));
+
+    --blue-color-rgb: 130, 184, 242;
+    --blue-color: rgb(var(--blue-color-rgb));
 }
 
 @media (max-width: 1200px) {
