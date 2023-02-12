@@ -6,8 +6,5 @@ Now I'm building a core platform at [Practicum](https://practicum.com), a beginn
 
 Before Practicum, I was a software engineer at [Yandex](https://yandex.com). Earlier—got a BSc in math and computer science at the Ural Federal University.
     `,
-    menu: [
-        {label: 'Anton Fresher', link: '/'},
-        {label: 'Polka', link: '/books'}
-    ]
+    menu: [{label: 'Home', link: '/'}]
 };

@@ -1,7 +1,7 @@
 export default {
     menu: [
-        {label: 'Anton Fresher', link: '/'},
-        {label: 'Writing', link: '/writing'},
+        {label: 'Home', link: '/'},
+        {label: 'Writings', link: '/writings'},
         {label: 'Polka', link: '/books'}
     ]
 };
