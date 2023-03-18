@@ -1,0 +1,59 @@
+import {NextSeo} from 'next-seo';
+
+import {cn} from 'lib/classname';
+
+import Page from 'components/Page';
+
+import Links from './Links';
+import About from './About.mdx';
+
+import styles from './HomePage.module.css';
+
+const homePageCn = cn('HomePage', styles);
+
+const strings = {
+    menu: [{label: 'Home', link: '/'}],
+    description: "Hey, I'm Anton. I'm a product designer and developer."
+};
+
+export default function HomePage() {
+    return (
+        <>
+            <NextSeo
+                title="Anton Fresher"
+                description={strings.description}
+                openGraph={{
+                    description: strings.description,
+                    images: [
+                        {
+                            url: '/anton-fresher.jpeg',
+                            alt: 'Anton Fresher'
+                        }
+                    ],
+                    locale: 'en_US',
+                    site_name: 'Anton Fresher',
+                    title: 'Anton Fresher',
+                    type: 'website'
+                }}
+            />
+            <Page direction="vertical" menu={strings.menu}>
+                <div className={homePageCn()}>
+                    <img
+                        className={homePageCn('Photo', {shape: 'rect'})}
+                        src="/anton-fresher.jpeg"
+                        alt="Anton Fresher"
+                    />
+                    <div className={homePageCn('About')}>
+                        <img
+                            className={homePageCn('Photo', {shape: 'circle'})}
+                            src="/anton-fresher.jpeg"
+                            alt="Anton Fresher"
+                        />
+                        <About />
+                    </div>
+                    <Links />
+                </div>
+            </Page>
+        </>
+    );
+}

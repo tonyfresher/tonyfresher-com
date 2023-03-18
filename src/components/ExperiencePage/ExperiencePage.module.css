@@ -1,0 +1,83 @@
+.ExperiencePage {
+    display: flex;
+    flex-direction: column;
+}
+
+.ExperiencePage-Company {
+    margin: 0;
+
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+}
+
+.ExperiencePage-Period {
+    margin: 16px 0 0;
+
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+
+    color: var(--secondary-color);
+}
+
+.ExperiencePage-Content {
+    margin-top: 64px;
+
+    max-width: 700px;
+}
+
+.ExperiencePage-Content > :first-child {
+    margin-top: 0;
+}
+
+.ExperiencePage-Content {
+    hyphens: auto;
+}
+
+.ExperiencePage-Content video {
+    margin: 1em 0;
+}
+
+.ExperiencePage-Content hr {
+    margin: 2rem auto;
+
+    height: 2px;
+    width: 20%;
+
+    border: none;
+    background: var(--secondary-color);
+    opacity: 0.2;
+}
+
+.ExperiencePage-Content h2 {
+    margin: 3rem 0 1.2rem;
+
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+
+    hyphens: none;
+}
+
+.ExperiencePage-Content h3 {
+    margin: 2rem 0 1rem;
+
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+
+    hyphens: none;
+}
+
+.ExperiencePage-Content a img {
+    display: block;
+}
+
+.ExperiencePage-Content img {
+    width: 100%;
+}
+
+.ExperiencePage-Content ul {
+    padding-left: 20px;
+}
+
+.ExperiencePage-Content p + ul {
+    margin-top: -0.5em;
+}

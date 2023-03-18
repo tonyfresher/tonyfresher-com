@@ -1,0 +1,106 @@
+.BookShelfPage-Section + .BookShelfPage-Section {
+    margin-top: 40px;
+}
+
+.BookShelfPage-SectionName {
+    margin: 0 0 16px;
+
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+
+    color: var(--secondary-color);
+}
+
+.BookShelfPage-SectionBooks {
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 100%;
+}
+
+.BookShelfPage-BookSpine {
+    display: flex;
+    align-items: center;
+
+    min-width: 52px;
+    height: 400px;
+
+    margin: 8px 8px 0 0;
+    padding: 32px 16px;
+
+    writing-mode: vertical-rl;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition: transform 0.1s ease-out;
+}
+
+.BookShelfPage-BookSpine_disabled_yes {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.BookShelfPage-BookHeader {
+    flex: 2;
+
+    margin: 0;
+
+    font-size: inherit;
+}
+
+.BookShelfPage-BookAuthor {
+    flex: 1;
+
+    margin-top: 8px;
+
+    max-width: 240px;
+    text-align: end;
+
+    font-size: 18px;
+}
+
+@media (hover: hover) {
+    .BookShelfPage-BookSpine_disabled_no:hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+}
+
+@media (max-width: 540px) {
+    .BookShelfPage-Section + .BookShelfPage-Section {
+        margin-top: 32px;
+    }
+
+    .BookShelfPage-SectionBooks {
+        flex-direction: column;
+    }
+
+    .BookShelfPage-SectionName {
+        margin: 0 0 16px;
+    }
+
+    .BookShelfPage-BookSpine {
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin: 0 calc(var(--page-padding-x) * -1);
+        padding: 20px;
+
+        height: auto;
+
+        writing-mode: unset;
+    }
+
+    .BookShelfPage-BookSpine + .BookShelfPage-BookSpine {
+        margin-top: 4px;
+    }
+
+    .BookShelfPage-BookAuthor {
+        margin-top: 4px;
+
+        max-width: inherit;
+        text-align: left;
+
+        opacity: 0.5;
+    }
+}
