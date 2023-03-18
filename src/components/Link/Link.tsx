@@ -1,4 +1,4 @@
-import {PropsWithChildren} from 'react';
+import {CSSProperties, PropsWithChildren} from 'react';
 import NextLink from 'next/link';
 
 import {cn} from 'lib/classname';
@@ -32,9 +32,7 @@ export default function Link({
             <NextLink
                 href={href}
                 className={mixedClassName}
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                style={{'--color': color}}
+                style={{'--color': color} as CSSProperties}
             >
                 {children}
             </NextLink>
@@ -44,7 +42,7 @@ export default function Link({
     return (
         <a
             className={mixedClassName}
-            style={{'--color': color}}
+            style={{'--color': color} as CSSProperties}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
