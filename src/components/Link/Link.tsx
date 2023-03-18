@@ -32,6 +32,8 @@ export default function Link({
             <NextLink
                 href={href}
                 className={mixedClassName}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 style={{'--color': color}}
             >
                 {children}
