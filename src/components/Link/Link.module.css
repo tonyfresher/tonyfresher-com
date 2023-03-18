@@ -1,0 +1,34 @@
+.Link {
+    display: inline;
+
+    color: inherit;
+    text-decoration: none;
+
+    --unit: calc(var(--text-font-size) * 0.25);
+
+    border-radius: var(--unit);
+    padding-left: calc(var(--unit) * 0.5);
+    padding-right: calc(var(--unit) * 0.5);
+    margin-left: calc(var(--unit) * -0.5);
+    margin-right: calc(var(--unit) * -0.5);
+}
+
+.Link_display_inline-block {
+    display: inline-block;
+}
+
+.Link_view_clear {
+    color: var(--color, --primary-color);
+}
+
+.Link_view_clear:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.Link_view_filled {
+    background: var(--color, --secondary-color);
+}
+
+.Link_view_filled:hover {
+    color: transparent;
+}

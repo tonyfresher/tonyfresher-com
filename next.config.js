@@ -1,10 +1,12 @@
-module.exports = {
-    webpack: config => {
-        config.module.rules.push({
-            test: /\.md$/,
-            use: 'raw-loader'
-        });
+const withMDX = require('@next/mdx')({
+    extension: /\.mdx?$/,
+    options: {providerImportSource: '@mdx-js/react'}
+});
 
-        return config;
-    }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+    reactStrictMode: true
 };
+
+module.exports = withMDX(nextConfig);
