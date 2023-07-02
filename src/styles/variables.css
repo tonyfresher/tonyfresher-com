@@ -1,13 +1,13 @@
 :root {
-    --page-padding-x: 100px;
-    --page-padding-y: 100px;
+    --page-padding-x: 10vw;
+    --page-padding-y: 64px;
 
     --text-font-family: 'PT Root UI VF', 'Helvetica', sans-serif;
     --text-font-weight: 500;
-    --text-font-size: 20px;
+    --text-font-size: 24px;
     --text-line-height: 140%;
 
-    --h1-font-size: 40px;
+    --h1-font-size: 48px;
     --h1-line-height: 120%;
 
     --h2-font-size: 32px;
@@ -16,21 +16,27 @@
     --h3-font-size: 24px;
     --h3-line-height: 120%;
 
-    --background-color-rgb: 240, 240, 240;
+    --background-color-rgb: 242, 241, 238;
     --background-color: rgb(var(--background-color-rgb));
 
     --primary-color-rgb: 38, 38, 38;
     --primary-color: rgb(var(--primary-color-rgb));
 
     --secondary-color: rgba(var(--primary-color-rgb), 0.5);
+
+    --divider-color: rgba(var(--primary-color-rgb), 0.1);
 }
 
 @media (max-width: 1200px) {
     :root {
         --page-padding-x: 64px;
         --page-padding-y: 64px;
+    }
+}
 
-        --h1-font-size: 32px;
+@media (max-width: 960px) {
+    :root {
+        --h1-font-size: 36px;
         --h2-font-size: 28px;
     }
 }

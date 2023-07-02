@@ -12,7 +12,7 @@ import styles from './HomePage.module.css';
 const homePageCn = cn('HomePage', styles);
 
 const strings = {
-    menu: [{label: 'Home', link: '/'}],
+    menu: [{label: 'Anton Fresher', link: '/'}],
     description: "Hey, I'm Anton. I'm a product designer and developer."
 };
 

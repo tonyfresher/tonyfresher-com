@@ -1,0 +1,15 @@
+.BrowserContainer {
+    padding: 8px;
+
+    background-color: var(--divider-color);
+    border-radius: 8px;
+}
+
+.BrowserContainer > img,
+.BrowserContainer > video {
+    display: block;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 6px;
+}

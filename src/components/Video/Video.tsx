@@ -4,7 +4,7 @@ import styles from './Video.module.css';
 
 const videoCn = cn('Video', styles);
 
-interface VideoProps {
+export interface VideoProps {
     source: string;
     autoPlay?: boolean;
     controls?: boolean;

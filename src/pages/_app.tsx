@@ -25,7 +25,7 @@ export default function App({Component, pageProps}: AppProps) {
                     a: ({children, className, href}) => (
                         <Link
                             className={className}
-                            color="#8bbef3"
+                            color="#c3c3c3"
                             href={href ?? ''}
                         >
                             {children}

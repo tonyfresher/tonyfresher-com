@@ -11,7 +11,7 @@ import styles from './BookShelfPage.module.css';
 
 const strings = {
     menu: [
-        {label: 'Home', link: '/'},
+        {label: 'Anton Fresher', link: '/'},
         {label: 'Books', link: '/books'}
     ]
 };

@@ -1,14 +1,14 @@
 /* HomePage */
 
 .HomePage {
-    font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
 }
 
 .HomePage-About {
     position: relative;
 
-    max-width: 940px;
+    max-width: 728px;
 }
 
 .HomePage-About p {
