@@ -6,7 +6,7 @@
 
     --unit: calc(var(--text-font-size) * 0.2);
 
-    border-radius: calc(var(--unit) * 0.5);
+    border-radius: calc(var(--unit));
     padding-left: calc(var(--unit) * 0.5);
     padding-right: calc(var(--unit) * 0.5);
     margin-left: calc(var(--unit) * -0.5);
@@ -27,8 +27,13 @@
 
 .Link_view_filled {
     background: var(--color, --secondary-color);
+
+    border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+    transition: color 0.025s ease-out, border 0.025s ease-out;
 }
 
 .Link_view_filled:hover {
     color: transparent;
+
+    border-bottom-color: transparent;
 }
