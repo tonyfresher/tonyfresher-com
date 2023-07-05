@@ -11,12 +11,12 @@ export default ({children}) => (
 
 export const meta = {
     company: 'TripleTen: a family of beginner-friendly online coding bootcamps',
-    period: '2022 — ongoing'
+    period: '2022 — ongoing'
 };
 
 <BrowserContainerImage src="/tripleten/main.png" alt="TripleTen" />
 
-[TripleTen](https://tripleten.com/) helps people with diverse backgrounds learn a new profession and build a sustainable career in tech. It was launched in 2020 by employees of Yandex Practicum—the largest Russian online learning platform—and shortly after became an independent startup operating in the US, Latin America, and Southeast Asia.
+[TripleTen](https://tripleten.com/) helps people with diverse backgrounds learn a new profession and build a sustainable career in tech. It was launched in 2020 by employees of [Yandex Practicum](https://practicum.yandex.ru/) — the largest Russian online learning platform — and shortly after became an independent startup operating in the US, Latin America, and Southeast Asia.
 
 I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core study platform, maintained the design system, and crafted the overall design process within the company. Here are a few examples of my work.
 
@@ -48,19 +48,28 @@ In response to this, the Homepage 2.0 project was born. This was a radical re-im
     alt="Homepage 2.0 concept"
 />
 
-You can already guess that this project never made it to the production stage. It crashed into the asphalt of real life, as we used to say back then—as well as countless hours of work from the designers who contributed to this project. I personally designed a calendar widget, new content navigation, progress widget, and program showcase page.
+You can already guess that this project never made it to the production stage. It crashed into the asphalt of real life, as we used to say back then — as well as countless hours of work from the designers who contributed to this project. I personally designed a calendar widget, new content navigation, progress widget, and program showcase page.
 
-Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons. Firstly, it's usually best to introduce big changes to a product incrementally. This makes it easier for users to adapt and simpler for developers to implement. Secondly, it highlighted the value of a deep understanding of the product needed to make disruptive changes. If I were to look at this project now, I'd quickly realize that many of the designed features can't be implemented without investing a lot of time to eliminate legacy from the information architecture and unify the study process across different programs. We eventually began doing this a year later.
+Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons. Firstly, it's usually best to introduce big changes to a product incrementally. This makes it easier for users to adapt and simpler for developers to implement. Secondly, it highlighted the value of a deep understanding of the product needed to make disruptive changes. If I were to look at this project now, I'd quickly realize that many of the designed features can't be implemented without investing a lot of time to eliminate legacy from the information architecture and unify the study process across different programs. Later, we eventually did this.
 
 More than that, for me, as a newbie, redesigning a large part of the product was the perfect chance to learn about the product, its information architecture, and its limitations.
 
-## Crafting learning experience
+## Working on learning experience
 
-asd
+When we realized that the Homepage 2.0 project was not feasible, our team changed their approach to make such changes incrementally. For example, we quickly hid the black panel with all enrolled programs — a relatively minor change, yet it improved the overall hierarchy.
 
-<BrowserContainerImage src="/tripleten/homepage-1.1.png" alt="Homepage 1.1" />
+After that, we began to enhance our platform by introducing various learning productivity tools. We added a search, which had been the top-requested feature for years, as well as a study calendar and a skillset progress widget. The goal of these features was to improve the student experience and increase retention. However, due to the simple structure of the homepage — a plain feed of sequential blocks—it quickly became a total mess. Now, the overall navigation needed to be redesigned.
 
-## Research and Design of the New Homepage Prototype
+<BrowserContainerImage
+    src="/tripleten/homepage-with-learning-tools.png"
+    alt="Homepage with learning tools"
+/>
+
+## Coming up with a new homepage prototype
+
+The idea of a new redesign again came from designers. To me, it was clear that we had reached a critical point: if we added more features to the homepage, it would complicate navigation and do more harm than good. This is exactly what happened. In late 2022, we released the skillset progress widget, but a few months later, our researcher discovered that many of our students had never noticed it.
+
+In the new prototype, I proposed splitting all blocks of the current homepage into multiple sub-pages. The new main “Home” page would become a dashboard with main actions, important information about progress, and urgent notifications. The huge calendar block would become a separate page, as would the skillset.
 
 <BrowserContainerVideo
     source="/tripleten/new-homepage-prototype.webm"
@@ -68,6 +77,26 @@ asd
     autoPlay
 />
 
-## New visual language
+This change has made navigation clear again and has added some space for new updates: onboarding and progress-related features can be added to the main page, planning mechanics would appear on the calendar page, all about career can be combined with the skillset, and any other can be added to the sidebar.
 
-## Happy End
+---
+
+Meanwhile in Russia, the Yandex Practicum team also came up with a sidebar to make navigation easier, even though they didn't make many new tools.
+
+<BrowserContainerImage
+    src="/tripleten/yandex-practicum-homepage.png"
+    alt="Yandex Practicum homepage"
+/>
+
+## Updated design language
+
+![Old design language](/tripleten/old-design-language.png)
+
+![Communications](/tripleten/communications.png)
+
+<BrowserContainerImage
+    src="/tripleten/homepage-in-new-design-language.png"
+    alt="Homepage in new design language"
+/>
+
+## The happy End

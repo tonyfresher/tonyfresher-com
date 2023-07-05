@@ -19,22 +19,10 @@
     margin: 1em 0 0;
 }
 
-.HomePage-Photo {
-    display: flex;
-}
+.HomePage-About img {
+    margin: 0 0.1em;
 
-.HomePage-Photo_shape_rect {
-    display: none;
-
-    margin-top: 20px;
-
-    width: 80px;
-}
-
-.HomePage-Photo_shape_circle {
-    position: absolute;
-    left: -60px;
-    top: 2px;
+    vertical-align: bottom;
 
     width: 40px;
     height: 40px;
@@ -83,13 +71,6 @@
 }
 
 @media (max-width: 1200px) {
-    .HomePage-Photo_shape_circle {
-        left: -44px;
-
-        width: 32px;
-        height: 32px;
-    }
-
     .HomePage-About {
         max-width: 760px;
     }
@@ -104,6 +85,11 @@
         margin-top: 24px;
     }
 
+    .HomePage-About img {
+        width: 36px;
+        height: 36px;
+    }
+
     .HomePage .Links {
         margin-top: 40px;
     }
@@ -113,13 +99,5 @@
     .HomePage {
         font-size: var(--text-font-size);
         line-height: var(--text-line-height);
-    }
-
-    .HomePage-Photo_shape_circle {
-        display: none;
-    }
-
-    .HomePage-Photo_shape_rect {
-        display: flex;
     }
 }

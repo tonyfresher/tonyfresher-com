@@ -38,17 +38,7 @@ export default function HomePage() {
             />
             <Page direction="vertical" menu={strings.menu}>
                 <div className={homePageCn()}>
-                    <img
-                        className={homePageCn('Photo', {shape: 'rect'})}
-                        src="/anton-fresher.jpeg"
-                        alt="Anton Fresher"
-                    />
                     <div className={homePageCn('About')}>
-                        <img
-                            className={homePageCn('Photo', {shape: 'circle'})}
-                            src="/anton-fresher.jpeg"
-                            alt="Anton Fresher"
-                        />
                         <About />
                     </div>
                     <Links />
