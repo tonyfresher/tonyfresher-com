@@ -2,7 +2,7 @@
     margin: 0;
 
     font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
+    line-height: var(--header-line-height);
 
     color: var(--secondary-color);
 }

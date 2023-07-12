@@ -2,6 +2,7 @@ import ExperiencePage from 'components/ExperiencePage';
 import Video from 'components/Video';
 import {
     BrowserContainerImage,
+    BrowserContainerGallery,
     BrowserContainerVideo
 } from 'components/BrowserContainer';
 
@@ -11,20 +12,35 @@ export default ({children}) => (
 
 export const meta = {
     company: 'TripleTen: a family of beginner-friendly online coding bootcamps',
-    period: '2022 — ongoing'
+    period: '2022 — present'
 };
-
-<BrowserContainerImage src="/tripleten/main.png" alt="TripleTen" />
 
 [TripleTen](https://tripleten.com/) helps people with diverse backgrounds learn a new profession and build a sustainable career in tech. It was launched in 2020 by employees of [Yandex Practicum](https://practicum.yandex.ru/) — the largest Russian online learning platform — and shortly after became an independent startup operating in the US, Latin America, and Southeast Asia.
 
-I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core study platform, maintained the design system, and crafted the overall design process within the company. Here are a few examples of my work.
+<BrowserContainerGallery
+    website="tripleten.com"
+    title="Platform"
+    items={[
+        {src: '/tripleten/showcase-main.png', label: 'Main'},
+        {src: '/tripleten/showcase-calendar.png', label: 'Study calendar'},
+        {src: '/tripleten/showcase-skillset.png', label: 'Skillset'},
+        {
+            src: '/tripleten/showcase-program-contents.png',
+            label: 'Program contents'
+        },
+        {src: '/tripleten/showcase-theory.png', label: 'Theory'},
+        {src: '/tripleten/showcase-quiz.png', label: 'Quiz'}
+    ]}
+/>
+<span class="Caption">TripleTen’s learning platform</span>
+
+I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core learning platform, maintained the design system, crafted the overall design process within the company, and was responsible for most of the product interface. Here are a few examples of my work.
 
 # TripleTen’s new homepage
 
 TripleTen's homepage plays a major role in the student experience. It's where they start their learning, track their progress, revisit past material, check payment status, and more. In fact, 30% of all user sessions include the homepage.
 
-That's why TripleTen's homepage has become a place for regular experiments, new feature updates, and other types of changes that require a scalable design. When I joined the company, our homepage was neither user-friendly nor flexible. Throughout my time at Yandex Practicum and TripleTen, I tried to change this. It took almost two years and led to the complete rebuilding of the homepage. So, this is a story of how we reboot our homepage.
+That's why TripleTen's homepage has become a place for regular experiments, new feature updates, and other types of changes that require a scalable design. When I joined the company, our homepage was neither user-friendly nor flexible. It took almost two years to fix this, resulting in the complete rebuilding of the homepage.
 
 ## How it started
 
@@ -32,12 +48,13 @@ TripleTen inherited its homepage from Yandex Practicum, along with the rest of t
 
 <BrowserContainerImage
     src="/tripleten/homepage-1.0.png"
-    alt="Image of the first Yandex Practicum homepage"
+    alt="Yandex Practicum's first homepage"
 />
+<span class="Caption">Yandex Practicum's first homepage</span>
 
 There were many issues with this page. For example, a quarter of the space was occupied by a black column listing enrolled programs. This was completely unnecessary, as most of our students only enroll in one program at a time, so switching between them is rarely required.
 
-## Spin-off: The Homepage 2.0 project
+## Spin-off: the (not so) little redesign that couldn't
 
 At Yandex Practicum, we have always wanted to build advanced learning productivity tools, such as a study calendar, planner, streaks, favorites, etc. However, implementing these features was challenging due to a high amount of technical and design debt. In addition, our focus on growth at that time meant that these features were always deprioritized.
 
@@ -47,27 +64,33 @@ In response to this, the Homepage 2.0 project was born. This was a radical re-im
     src="/tripleten/homepage-2.0-concept.png"
     alt="Homepage 2.0 concept"
 />
+<span class="Caption">Homepage 2.0 concept</span>
 
 You can already guess that this project never made it to the production stage. It crashed into the asphalt of real life, as we used to say back then — as well as countless hours of work from the designers who contributed to this project. I personally designed a calendar widget, new content navigation, progress widget, and program showcase page.
 
-Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons. Firstly, it's usually best to introduce big changes to a product incrementally. This makes it easier for users to adapt and simpler for developers to implement. Secondly, it highlighted the value of a deep understanding of the product needed to make disruptive changes. If I were to look at this project now, I'd quickly realize that many of the designed features can't be implemented without investing a lot of time to eliminate legacy from the information architecture and unify the study process across different programs. Later, we eventually did this.
+Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons:
+
+1. It's usually best to introduce big changes to a product incrementally. This makes it easier for users to adapt and simpler for developers to implement.
+2. Having a deep understanding of the product is essential to make disruptive changes. If I were to look at this project now, I'd quickly realize that many of the designed features can't be implemented without investing a lot of time to eliminate legacy from the information architecture and unify the learning process across different programs.
 
 More than that, for me, as a newbie, redesigning a large part of the product was the perfect chance to learn about the product, its information architecture, and its limitations.
 
 ## Working on learning experience
 
-When we realized that the Homepage 2.0 project was not feasible, our team changed their approach to make such changes incrementally. For example, we quickly hid the black panel with all enrolled programs — a relatively minor change, yet it improved the overall hierarchy.
+When our team realized that the Homepage 2.0 project was not feasible, our team changed their approach to make such changes incrementally. For example, we quickly hid the black panel with all enrolled programs — a relatively minor change, yet it improved the overall hierarchy.
 
-After that, we began to enhance our platform by introducing various learning productivity tools. We added a search, which had been the top-requested feature for years, as well as a study calendar and a skillset progress widget. The goal of these features was to improve the student experience and increase retention. However, due to the simple structure of the homepage — a plain feed of sequential blocks—it quickly became a total mess. Now, the overall navigation needed to be redesigned.
+After that, we began to enhance our platform by introducing various learning productivity tools. We added a search, which had been the top-requested feature for years, as well as a study calendar and a skillset progress widget. The goal of these features was to improve the student experience and increase retention. However, due to the simple structure of the homepage — a plain feed of sequential blocks — it quickly became a total mess. Now, the overall navigation needed to be redesigned.
 
 <BrowserContainerImage
     src="/tripleten/homepage-with-learning-tools.png"
-    alt="Homepage with learning tools"
+    alt="A tiny fraction of the old homepage"
 />
+
+<span class="Caption">A tiny fraction of the old homepage</span>
 
 ## Coming up with a new homepage prototype
 
-The idea of a new redesign again came from designers. To me, it was clear that we had reached a critical point: if we added more features to the homepage, it would complicate navigation and do more harm than good. This is exactly what happened. In late 2022, we released the skillset progress widget, but a few months later, our researcher discovered that many of our students had never noticed it.
+The idea of a new redesign again came from designers. To me, it was clear that the product had reached a critical point: adding more features to the homepage would complicate navigation and do more harm than good. This is exactly what happened. In late 2022, we released the skillset progress widget, but a few months later, our researcher discovered that many of our students had never noticed it.
 
 In the new prototype, I proposed splitting all blocks of the current homepage into multiple sub-pages. The new main “Home” page would become a dashboard with main actions, important information about progress, and urgent notifications. The huge calendar block would become a separate page, as would the skillset.
 
@@ -79,6 +102,8 @@ In the new prototype, I proposed splitting all blocks of the current homepage in
 
 This change has made navigation clear again and has added some space for new updates: onboarding and progress-related features can be added to the main page, planning mechanics would appear on the calendar page, all about career can be combined with the skillset, and any other can be added to the sidebar.
 
+...
+
 ---
 
 Meanwhile in Russia, the Yandex Practicum team also came up with a sidebar to make navigation easier, even though they didn't make many new tools.
@@ -88,11 +113,19 @@ Meanwhile in Russia, the Yandex Practicum team also came up with a sidebar to ma
     alt="Yandex Practicum homepage"
 />
 
-## Updated design language
+## Holistic design language
+
+Creating this prototype was just the first step in taking the new homepage to production. This process took months, and during that time the design team started to work on a new holistic visual language.
+
+Different parts of our product were designed by different teams and designers over a long period, in a rapidly growing company without a systematic design approach. As a result, our homepage at the time was a perfect example of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law).
 
 ![Old design language](/tripleten/old-design-language.png)
 
+When TripleTen became an independent startup, we could finally afford to systematize the look of our product across different parts. We already had a strong communication style, so our team used it as a starting point to create a unified visual foundation for communication and product design.
+
 ![Communications](/tripleten/communications.png)
+
+---
 
 <BrowserContainerImage
     src="/tripleten/homepage-in-new-design-language.png"

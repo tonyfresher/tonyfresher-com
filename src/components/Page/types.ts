@@ -6,7 +6,6 @@ interface PageMenuItem {
 }
 export interface PageProps {
     children: ReactNode;
-    direction?: 'vertical' | 'horizontal';
     menu?: PageMenuItem[];
     theme?: 'light' | 'dark';
 }

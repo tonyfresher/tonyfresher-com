@@ -2,13 +2,11 @@
 
 .HomePage {
     font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
+    line-height: var(--text-line-height);
 }
 
 .HomePage-About {
     position: relative;
-
-    max-width: 728px;
 }
 
 .HomePage-About p {
@@ -70,21 +68,7 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .HomePage-About {
-        max-width: 760px;
-    }
-}
-
 @media (max-width: 960px) {
-    .HomePage {
-        max-width: 420px;
-    }
-
-    .HomePage-About {
-        margin-top: 24px;
-    }
-
     .HomePage-About img {
         width: 36px;
         height: 36px;

@@ -5,11 +5,131 @@
     border-radius: 8px;
 }
 
-.BrowserContainer > img,
+.BrowserContainer .BrowserContainer-Window,
 .BrowserContainer > video {
     display: block;
+
+    width: 100%;
 
     border: none;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 6px;
+}
+
+.BrowserContainer_type_gallery {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px;
+}
+
+.BrowserContainer-Sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.BrowserContainer-AddressStub {
+    padding: 8px 8px 8px 12px;
+    margin-bottom: 24px;
+
+    font-size: 14px;
+    line-height: 16px;
+
+    color: var(--secondary-color);
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
+.BrowserContainer-SectionTitle {
+    margin-bottom: 12px;
+
+    font-size: 12px;
+    line-height: 1;
+
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.BrowserContainer-Tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    overflow-y: scroll;
+}
+
+.BrowserContainer-Tab {
+    padding: 8px;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight);
+    font-size: 14px;
+    line-height: 16px;
+    text-align: start;
+
+    color: var(--primary-color);
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+
+    transition: transform 0.1s ease-out;
+}
+
+.BrowserContainer-Tab_selected_no {
+    cursor: pointer;
+}
+
+.BrowserContainer-Tab_selected_no:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.BrowserContainer-Tab_selected_no:active,
+.BrowserContainer-Tab_selected_yes {
+    background: #fff;
+
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 1px;
+}
+
+.BrowserContainer-Tab_selected_no:active {
+    transform: scale(0.98);
+}
+
+.BrowserContainer-TabFavicon {
+    width: 16px;
+    height: 16px;
+}
+
+.BrowserContainer-TabLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+    .BrowserContainer_type_gallery {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        gap: 8px;
+    }
+
+    .BrowserContainer-AddressStub,
+    .BrowserContainer-SectionTitle,
+    .BrowserContainer-TabFavicon {
+        display: none;
+    }
+
+    .BrowserContainer-Tabs {
+        flex-direction: row;
+        gap: 0 4px;
+
+        margin: -8px;
+        padding: 8px;
+    }
+
+    .BrowserContainer-Tab_selected_no {
+        background: rgba(0, 0, 0, 0.08);
+    }
 }

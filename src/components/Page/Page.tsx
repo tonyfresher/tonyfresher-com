@@ -14,20 +14,19 @@ const DEFAULT_MENU = [{label: 'Anton Fresher', link: '/'}];
 
 export default function Page({
     children,
-    direction = 'vertical',
     menu = DEFAULT_MENU,
     theme = 'light'
 }: PageProps) {
     const router = useRouter();
 
     return (
-        <div className={page({direction, theme})}>
+        <div className={page({theme})}>
             <div className={page('Container')}>
                 <div className={page('Menu')}>
                     {menu.map(({label, link}) => (
                         <div
                             className={page('MenuLink', {
-                                bold: link === router.pathname
+                                current: link === router.pathname
                             })}
                             key={link}
                         >

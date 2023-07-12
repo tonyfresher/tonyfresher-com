@@ -6,7 +6,7 @@
     margin: 0 0 16px;
 
     font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
+    line-height: var(--header-line-height);
 
     color: var(--secondary-color);
 }

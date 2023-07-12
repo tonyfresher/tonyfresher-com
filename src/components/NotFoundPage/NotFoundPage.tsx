@@ -14,7 +14,7 @@ const strings = {
 
 export default function NotFoundPage() {
     return (
-        <Page direction="horizontal">
+        <Page>
             <h1 className={notFoundPageCn()}>{strings.text}</h1>
         </Page>
     );

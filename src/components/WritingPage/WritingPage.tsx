@@ -50,7 +50,7 @@ export default function WritingPage<T extends WritingMeta>({
                     })
                 }}
             />
-            <Page direction="horizontal">
+            <Page>
                 <article className={writingPageCn()}>
                     <div className={writingPageCn('Info')}>
                         <time dateTime={meta.date}>

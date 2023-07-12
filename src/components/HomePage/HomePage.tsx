@@ -36,7 +36,7 @@ export default function HomePage() {
                     type: 'website'
                 }}
             />
-            <Page direction="vertical" menu={strings.menu}>
+            <Page menu={strings.menu}>
                 <div className={homePageCn()}>
                     <div className={homePageCn('About')}>
                         <About />

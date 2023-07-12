@@ -30,7 +30,7 @@ export default function ExperiencePage({
                     locale: 'en_US'
                 }}
             />
-            <Page direction="vertical">
+            <Page>
                 <article className={experiencePageCn()}>
                     <h1 className={experiencePageCn('Company')}>{company}</h1>
                     <span className={experiencePageCn('Period')}>{period}</span>

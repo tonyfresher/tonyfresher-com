@@ -1,15 +1,13 @@
 .ExperiencePage {
     display: flex;
     flex-direction: column;
-
-    max-width: 840px;
 }
 
 .ExperiencePage-Company {
     margin: 0;
 
     font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
+    line-height: var(--header-line-height);
 }
 
 .ExperiencePage-Period {
@@ -19,14 +17,20 @@
 }
 
 .ExperiencePage-Content {
-    margin-top: 64px;
+    margin-top: var(--page-padding-y);
 }
 
 .ExperiencePage-Content > :first-child {
     margin-top: 0;
 }
 
-.ExperiencePage-Content hr {
+.ExperiencePage-Content > p,
+.ExperiencePage-Content > ul,
+.ExperiencePage-Content > ol {
+    margin: 1em 0;
+}
+
+.ExperiencePage-Content > hr {
     margin: 2rem auto;
 
     height: 2px;
@@ -37,46 +41,58 @@
     opacity: 0.2;
 }
 
-.ExperiencePage-Content h1 {
-    margin: 6rem 0 1.2rem;
+.ExperiencePage-Content > h1 {
+    margin: 4rem 0 1.2rem;
 
     font-size: var(--h1-font-size);
-    line-height: var(--h1-line-height);
+    line-height: var(--header-line-height);
 }
 
-.ExperiencePage-Content h2 {
+.ExperiencePage-Content > h2 {
     margin: 3rem 0 1.2rem;
 
     font-size: var(--h2-font-size);
-    line-height: var(--h2-line-height);
+    line-height: var(--header-line-height);
 }
 
-.ExperiencePage-Content h3 {
+.ExperiencePage-Content > h3 {
     margin: 2rem 0 1rem;
 
     font-size: var(--h3-font-size);
-    line-height: var(--h3-line-height);
+    line-height: var(--header-line-height);
 }
 
-.ExperiencePage-Content a img {
+.ExperiencePage-Content > p > a img {
     display: block;
 }
 
-.ExperiencePage-Content img {
+.ExperiencePage-Content > p > img {
     width: 100%;
 }
 
-.ExperiencePage-Content img,
-.ExperiencePage-Content video {
+.ExperiencePage-Content > p > img,
+.ExperiencePage-Content > p > video {
     border: 1px solid var(--divider-color);
     border-bottom: 2px solid var(--divider-color);
     border-radius: 8px;
 }
 
-.ExperiencePage-Content ul {
-    padding-left: 20px;
+.ExperiencePage-Content :global(.Caption) {
+    display: block;
+
+    margin-top: 0.3em;
+
+    font-size: 0.9em;
+
+    color: var(--secondary-color);
 }
 
-.ExperiencePage-Content p + ul {
-    margin-top: -0.5em;
+.ExperiencePage-Content > ul,
+.ExperiencePage-Content > ol {
+    padding-left: 32px;
+}
+
+.ExperiencePage-Content > ul li,
+.ExperiencePage-Content > ol li {
+    margin: 0.5em 0;
 }

@@ -38,7 +38,7 @@ export default function BookShelfPage({items}: BookShelfPageProps) {
                     locale: 'en_US'
                 }}
             />
-            <Page direction="vertical" menu={strings.menu} theme="dark">
+            <Page menu={strings.menu} theme="dark">
                 <div className={bookShelfPageCn()}>
                     {Object.entries(groupedItems).map(([year, books]) => (
                         <section

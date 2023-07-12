@@ -1,1 +1,5 @@
-export {BrowserContainerImage, BrowserContainerVideo} from './BrowserContainer';
+export {
+    BrowserContainerImage,
+    BrowserContainerGallery,
+    BrowserContainerVideo
+} from './BrowserContainer';
