@@ -16,9 +16,18 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 6px;
 }
 
+.BrowserContainer_type_image .BrowserContainer-Window {
+    overflow-y: scroll;
+}
+
+.BrowserContainer_type_image img {
+    display: block;
+    width: 100%;
+}
+
 .BrowserContainer_type_gallery {
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 176px 1fr;
     gap: 8px;
 }
 
@@ -35,7 +44,7 @@
     line-height: 16px;
 
     color: var(--secondary-color);
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.06);
     border-radius: 10px;
 }
 

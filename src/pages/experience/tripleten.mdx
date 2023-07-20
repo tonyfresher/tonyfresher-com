@@ -21,22 +21,25 @@ export const meta = {
     website="tripleten.com"
     title="Platform"
     items={[
-        {src: '/tripleten/showcase-main.png', label: 'Main'},
-        {src: '/tripleten/showcase-calendar.png', label: 'Study calendar'},
-        {src: '/tripleten/showcase-skillset.png', label: 'Skillset'},
+        {src: '/tripleten/showcase/main.png', label: 'Main'},
+        {src: '/tripleten/showcase/calendar.png', label: 'Study calendar'},
+        {src: '/tripleten/showcase/skillset.png', label: 'Skillset'},
         {
-            src: '/tripleten/showcase-program-contents.png',
+            src: '/tripleten/showcase/program-contents.png',
             label: 'Program contents'
         },
-        {src: '/tripleten/showcase-theory.png', label: 'Theory'},
-        {src: '/tripleten/showcase-quiz.png', label: 'Quiz'}
+        {src: '/tripleten/showcase/theory.png', label: 'Theory'},
+        {src: '/tripleten/showcase/quiz.png', label: 'Quiz'}
     ]}
 />
-<span class="Caption">TripleTen’s learning platform</span>
+
+<span className="Caption">TripleTen’s learning platform</span>
 
 I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core learning platform, maintained the design system, crafted the overall design process within the company, and was responsible for most of the product interface. Here are a few examples of my work.
 
-# TripleTen’s new homepage
+---
+
+# TripleTen’s half-a-year-long homepage redesign
 
 TripleTen's homepage plays a major role in the student experience. It's where they start their learning, track their progress, revisit past material, check payment status, and more. In fact, 30% of all user sessions include the homepage.
 
@@ -50,7 +53,8 @@ TripleTen inherited its homepage from Yandex Practicum, along with the rest of t
     src="/tripleten/homepage-1.0.png"
     alt="Yandex Practicum's first homepage"
 />
-<span class="Caption">Yandex Practicum's first homepage</span>
+
+<span className="Caption">Yandex Practicum's first homepage</span>
 
 There were many issues with this page. For example, a quarter of the space was occupied by a black column listing enrolled programs. This was completely unnecessary, as most of our students only enroll in one program at a time, so switching between them is rarely required.
 
@@ -58,24 +62,23 @@ There were many issues with this page. For example, a quarter of the space was o
 
 At Yandex Practicum, we have always wanted to build advanced learning productivity tools, such as a study calendar, planner, streaks, favorites, etc. However, implementing these features was challenging due to a high amount of technical and design debt. In addition, our focus on growth at that time meant that these features were always deprioritized.
 
-In response to this, the Homepage 2.0 project was born. This was a radical re-imagining of the entire homepage, which mostly came from one designer's mind. It was quite conceptual and included many features that didn't exist at the time. Some of these mechanics were eventually implemented a long time after, while others remain concepts to this day.
+In response to this, the Homepage 2.0 project was born. This was a radical re-imagining of the entire homepage, which was mostly initiated by the design team. It was quite conceptual and included many features that didn't exist at the time. Some of these mechanics were eventually implemented a long time after, while others remain concepts to this day.
 
 <BrowserContainerImage
     src="/tripleten/homepage-2.0-concept.png"
     alt="Homepage 2.0 concept"
 />
-<span class="Caption">Homepage 2.0 concept</span>
 
-You can already guess that this project never made it to the production stage. It crashed into the asphalt of real life, as we used to say back then — as well as countless hours of work from the designers who contributed to this project. I personally designed a calendar widget, new content navigation, progress widget, and program showcase page.
+<span className="Caption">Homepage 2.0 concept</span>
 
-Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons:
+You can already guess that this project never made it to the production stage. Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons:
 
 1. It's usually best to introduce big changes to a product incrementally. This makes it easier for users to adapt and simpler for developers to implement.
 2. Having a deep understanding of the product is essential to make disruptive changes. If I were to look at this project now, I'd quickly realize that many of the designed features can't be implemented without investing a lot of time to eliminate legacy from the information architecture and unify the learning process across different programs.
 
 More than that, for me, as a newbie, redesigning a large part of the product was the perfect chance to learn about the product, its information architecture, and its limitations.
 
-## Working on learning experience
+## Increasing the number of tools and the complexity of navigation
 
 When our team realized that the Homepage 2.0 project was not feasible, our team changed their approach to make such changes incrementally. For example, we quickly hid the black panel with all enrolled programs — a relatively minor change, yet it improved the overall hierarchy.
 
@@ -83,10 +86,11 @@ After that, we began to enhance our platform by introducing various learning pro
 
 <BrowserContainerImage
     src="/tripleten/homepage-with-learning-tools.png"
-    alt="A tiny fraction of the old homepage"
+    alt="The longest homepage"
+    maxHeight={440}
 />
 
-<span class="Caption">A tiny fraction of the old homepage</span>
+<span className="Caption">The longest homepage (try to scroll!)</span>
 
 ## Coming up with a new homepage prototype
 
@@ -100,36 +104,73 @@ In the new prototype, I proposed splitting all blocks of the current homepage in
     autoPlay
 />
 
+<span className="Caption">New homepage prototype</span>
+
 This change has made navigation clear again and has added some space for new updates: onboarding and progress-related features can be added to the main page, planning mechanics would appear on the calendar page, all about career can be combined with the skillset, and any other can be added to the sidebar.
 
-...
-
----
-
-Meanwhile in Russia, the Yandex Practicum team also came up with a sidebar to make navigation easier, even though they didn't make many new tools.
+Working on the new homepage, I collaborated with our UX researcher to make it as user-informed as we could. At the start, we spoke to our students to gather data on how they use certain features and what is most important to them. When the prototype was ready, we conducted usability testing, which helped to identify small issues with the new “Return to learning” block, though most students had no trouble completing our tasks.
 
 <BrowserContainerImage
-    src="/tripleten/yandex-practicum-homepage.png"
-    alt="Yandex Practicum homepage"
+    src="/tripleten/research-miro.png"
+    alt="Board with one of the respondent's homepage expectations"
 />
+
+<span className="Caption">
+    Board with one of the respondent's homepage expectations
+</span>
 
 ## Holistic design language
 
 Creating this prototype was just the first step in taking the new homepage to production. This process took months, and during that time the design team started to work on a new holistic visual language.
 
-Different parts of our product were designed by different teams and designers over a long period, in a rapidly growing company without a systematic design approach. As a result, our homepage at the time was a perfect example of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law).
+Different parts of our product were designed by different teams and designers over a long period, in a rapidly growing company without a systematic design approach. As a result, our interface at the time was a perfect example of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law).
 
 ![Old design language](/tripleten/old-design-language.png)
+
+<span className="Caption">Different parts of the interface</span>
 
 When TripleTen became an independent startup, we could finally afford to systematize the look of our product across different parts. We already had a strong communication style, so our team used it as a starting point to create a unified visual foundation for communication and product design.
 
 ![Communications](/tripleten/communications.png)
 
----
+<span className="Caption">TripleTen's communications</span>
+
+We updated the product font and colors and applied them to the main blocks of the old homepage. It only took a short time to develop, but it greatly refreshed the look and feel of the homepage (and fixed some inconsistencies in progress representation, btw). This allowed users to transition to the new homepage with minimal disruption.
 
 <BrowserContainerImage
     src="/tripleten/homepage-in-new-design-language.png"
-    alt="Homepage in new design language"
+    alt="Old homepage in new design language"
 />
 
-## The happy End
+<span className="Caption">Old homepage in new design language</span>
+
+## The happy end
+
+Not long after, we started working on student activation and our onboarding mechanics. We needed to add some more helpful features while keeping the navigation straightforward. This necessity eventually led us to bring our new homepage prototype to life.
+
+<BrowserContainerImage src="/tripleten/showcase/main.png" alt="New homepage" />
+
+The new homepage enabled us to add many useful features, such as a start date widget, an onboarding checklist, Discord integration, and a settings page.
+
+<BrowserContainerGallery
+    website="tripleten.com"
+    title="New features"
+    items={[
+        {
+            src: '/tripleten/new-features/start-date-widget.png',
+            label: 'Start date widget'
+        },
+        {
+            src: '/tripleten/new-features/onboarding-checklist.png',
+            label: 'Onboarding checklist'
+        },
+        {
+            src: '/tripleten/new-features/discord-integration.png',
+            label: 'Discord integration'
+        },
+        {
+            src: '/tripleten/new-features/settings.png',
+            label: 'Settings page'
+        }
+    ]}
+/>

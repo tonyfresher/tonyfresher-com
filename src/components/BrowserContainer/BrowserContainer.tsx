@@ -8,12 +8,20 @@ import styles from './BrowserContainer.module.css';
 
 const browserContainer = cn('BrowserContainer', styles);
 
-export function BrowserContainerImage(
-    props: ImgHTMLAttributes<HTMLImageElement>
-) {
+interface BrowserContainerImageProps
+    extends ImgHTMLAttributes<HTMLImageElement> {
+    maxHeight?: number;
+}
+
+export function BrowserContainerImage(props: BrowserContainerImageProps) {
     return (
         <div className={browserContainer({type: 'image'})}>
-            <img className={browserContainer('Window')} {...props} />
+            <div
+                className={browserContainer('Window')}
+                style={{maxHeight: props.maxHeight}}
+            >
+                <img {...props} />
+            </div>
         </div>
     );
 }
@@ -48,7 +56,7 @@ export function BrowserContainerGallery({
             );
 
             setSelectedTab(items[(currentIndex + 1) % items.length]);
-        }, 3000);
+        }, 5000);
 
         return () => clearInterval(interval);
     });
