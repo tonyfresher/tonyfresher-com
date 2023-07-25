@@ -1,0 +1,116 @@
+.WorkDescriptionPage {
+    display: flex;
+    flex-direction: column;
+}
+
+.WorkDescriptionPage-Title {
+    margin: 0;
+
+    font-size: var(--h1-font-size);
+    line-height: var(--header-line-height);
+}
+
+.WorkDescriptionPage-Meta {
+    margin-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: var(--secondary-color);
+}
+
+.WorkDescriptionPage-Content {
+    margin-top: var(--page-padding-y);
+}
+
+.WorkDescriptionPage-Content > :first-child {
+    margin-top: 0;
+}
+
+.WorkDescriptionPage-Content > p,
+.WorkDescriptionPage-Content > ul,
+.WorkDescriptionPage-Content > ol {
+    margin: 1em 0;
+}
+
+.WorkDescriptionPage-Content > hr {
+    margin: 4rem auto;
+
+    height: 2px;
+    width: 100%;
+
+    border: none;
+    background: linear-gradient(
+        to right,
+        var(--secondary-color),
+        var(--secondary-color) 60%,
+        transparent 60%,
+        transparent 100%
+    );
+    background-size: 40px 2px;
+    opacity: 0.2;
+}
+
+.WorkDescriptionPage-Content > h1 {
+    margin: 4rem 0 1.2rem;
+
+    font-size: var(--h1-font-size);
+    line-height: var(--header-line-height);
+}
+
+.WorkDescriptionPage-Content > h2 {
+    margin: 3rem 0 1.2rem;
+
+    font-size: var(--h2-font-size);
+    line-height: var(--header-line-height);
+}
+
+.WorkDescriptionPage-Content > h3 {
+    margin: 2rem 0 1rem;
+
+    font-size: var(--h3-font-size);
+    line-height: var(--header-line-height);
+}
+
+.WorkDescriptionPage-Content > p > a img {
+    display: block;
+}
+
+.WorkDescriptionPage-Content > p > img {
+    width: 100%;
+}
+
+.WorkDescriptionPage-Content > p > img,
+.WorkDescriptionPage-Content > p > video {
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+}
+
+.WorkDescriptionPage-Content :global(.Caption) {
+    display: block;
+
+    margin-top: 0.3em;
+
+    font-size: 0.9em;
+
+    color: var(--secondary-color);
+}
+
+.WorkDescriptionPage-Content > p + :global(.Caption) {
+    margin-top: -1.3em;
+}
+
+.WorkDescriptionPage-Content :global(.Caption) p {
+    margin: 0;
+}
+
+.WorkDescriptionPage-Content > ul,
+.WorkDescriptionPage-Content > ol {
+    padding-left: 32px;
+}
+
+.WorkDescriptionPage-Content > ul li,
+.WorkDescriptionPage-Content > ol li {
+    margin: 0.5em 0;
+}

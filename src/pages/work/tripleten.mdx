@@ -1,27 +1,30 @@
-import ExperiencePage from 'components/ExperiencePage';
+import WorkDescriptionPage from 'components/WorkDescriptionPage';
 import Video from 'components/Video';
 import {
+    BrowserContainer,
     BrowserContainerImage,
     BrowserContainerGallery,
     BrowserContainerVideo
 } from 'components/BrowserContainer';
 
 export default ({children}) => (
-    <ExperiencePage meta={meta} children={children} />
+    <WorkDescriptionPage meta={meta} children={children} />
 );
 
 export const meta = {
-    company: 'TripleTen: a family of beginner-friendly online coding bootcamps',
+    product: 'TripleTen',
+    link: 'https://tripleten.com',
     period: '2022 — present'
 };
 
-[TripleTen](https://tripleten.com/) helps people with diverse backgrounds learn a new profession and build a sustainable career in tech. It was launched in 2020 by employees of [Yandex Practicum](https://practicum.yandex.ru/) — the largest Russian online learning platform — and shortly after became an independent startup operating in the US, Latin America, and Southeast Asia.
+TripleTen is a family of beginner-friendly online coding bootcamps. It helps people with diverse backgrounds learn a new profession and build a sustainable career in tech. TripleTen was launched in 2020 by employees of [Yandex Practicum](https://practicum.yandex.ru/) — the largest Russian online learning platform — and shortly after became an independent startup operating in the US, Latin America, and Southeast Asia.
+
+I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core learning platform, maintained the design system, crafted the overall design process within the company, and was responsible for most of the product interface.
 
 <BrowserContainerGallery
-    website="tripleten.com"
     title="Platform"
     items={[
-        {src: '/tripleten/showcase/main.png', label: 'Main'},
+        {src: '/tripleten/showcase/main.png', label: 'Home'},
         {src: '/tripleten/showcase/calendar.png', label: 'Study calendar'},
         {src: '/tripleten/showcase/skillset.png', label: 'Skillset'},
         {
@@ -34,8 +37,6 @@ export const meta = {
 />
 
 <span className="Caption">TripleTen’s learning platform</span>
-
-I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core learning platform, maintained the design system, crafted the overall design process within the company, and was responsible for most of the product interface. Here are a few examples of my work.
 
 ---
 
@@ -78,7 +79,7 @@ You can already guess that this project never made it to the production stage. D
 
 More than that, for me, as a newbie, redesigning a large part of the product was the perfect chance to learn about the product, its information architecture, and its limitations.
 
-## Increasing the number of tools and the complexity of navigation
+## Increasing complexity of navigation with the number of tools
 
 When our team realized that the Homepage 2.0 project was not feasible, our team changed their approach to make such changes incrementally. For example, we quickly hid the black panel with all enrolled programs — a relatively minor change, yet it improved the overall hierarchy.
 
@@ -87,14 +88,25 @@ After that, we began to enhance our platform by introducing various learning pro
 <BrowserContainerImage
     src="/tripleten/homepage-with-learning-tools.png"
     alt="The longest homepage"
-    maxHeight={440}
+    aspectRatio="16 / 9"
 />
 
 <span className="Caption">The longest homepage (try to scroll!)</span>
 
 ## Coming up with a new homepage prototype
 
-The idea of a new redesign again came from designers. To me, it was clear that the product had reached a critical point: adding more features to the homepage would complicate navigation and do more harm than good. This is exactly what happened. In late 2022, we released the skillset progress widget, but a few months later, our researcher discovered that many of our students had never noticed it.
+The idea of a new redesign again came from designers. To me, it was clear that the product had reached a critical point: adding more features to the homepage would complicate navigation and do more harm than good. This is exactly what happened. In late 2022, we released the skillset progress widget, but a few months later, our researcher discovered that many of our students had never really noticed it.
+
+Working on the new homepage, I collaborated with our UX researcher to make it as user-informed as we could. At the start, we spoke to our students to gather data on how they use certain features and what is most important to them.
+
+<BrowserContainerImage
+    src="/tripleten/research-miro.png"
+    alt="Board with one of the respondent's homepage expectations"
+/>
+
+<span className="Caption">
+    Board with one of the respondent's homepage expectations
+</span>
 
 In the new prototype, I proposed splitting all blocks of the current homepage into multiple sub-pages. The new main “Home” page would become a dashboard with main actions, important information about progress, and urgent notifications. The huge calendar block would become a separate page, as would the skillset.
 
@@ -108,20 +120,11 @@ In the new prototype, I proposed splitting all blocks of the current homepage in
 
 This change has made navigation clear again and has added some space for new updates: onboarding and progress-related features can be added to the main page, planning mechanics would appear on the calendar page, all about career can be combined with the skillset, and any other can be added to the sidebar.
 
-Working on the new homepage, I collaborated with our UX researcher to make it as user-informed as we could. At the start, we spoke to our students to gather data on how they use certain features and what is most important to them. When the prototype was ready, we conducted usability testing, which helped to identify small issues with the new “Return to learning” block, though most students had no trouble completing our tasks.
+When the prototype was ready, we conducted usability testing, which helped to identify small issues with the new “Return to learning” block, though most students had no trouble completing our tasks.
 
-<BrowserContainerImage
-    src="/tripleten/research-miro.png"
-    alt="Board with one of the respondent's homepage expectations"
-/>
+## Shaping TripleTen’s visual design language
 
-<span className="Caption">
-    Board with one of the respondent's homepage expectations
-</span>
-
-## Holistic design language
-
-Creating this prototype was just the first step in taking the new homepage to production. This process took months, and during that time the design team started to work on a new holistic visual language.
+However, creating the first prototype was just the first step in taking the new homepage to production. This process took months, and during that time the design team started to work on a new visual design language.
 
 Different parts of our product were designed by different teams and designers over a long period, in a rapidly growing company without a systematic design approach. As a result, our interface at the time was a perfect example of [Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law).
 
@@ -135,7 +138,7 @@ When TripleTen became an independent startup, we could finally afford to systema
 
 <span className="Caption">TripleTen's communications</span>
 
-We updated the product font and colors and applied them to the main blocks of the old homepage. It only took a short time to develop, but it greatly refreshed the look and feel of the homepage (and fixed some inconsistencies in progress representation, btw). This allowed users to transition to the new homepage with minimal disruption.
+We updated the product font and colors and applied them to the main blocks of the old homepage. It only took a short time to develop, but it greatly refreshed the look and feel of the homepage (and fixed some inconsistencies in progress representation, btw). This allowed users to transition to the new homepage with minimal disturbance.
 
 <BrowserContainerImage
     src="/tripleten/homepage-in-new-design-language.png"
@@ -144,16 +147,27 @@ We updated the product font and colors and applied them to the main blocks of th
 
 <span className="Caption">Old homepage in new design language</span>
 
-## The happy end
+## Happy end
 
-Not long after, we started working on student activation and our onboarding mechanics. We needed to add some more helpful features while keeping the navigation straightforward. This necessity eventually led us to bring our new homepage prototype to life.
+Not long after, we started to work with student activation and our onboarding mechanics. The new homepage redesign turned out to be essential for this. And, after a month of close collaboration with the development team, we shipped the new homepage.
 
-<BrowserContainerImage src="/tripleten/showcase/main.png" alt="New homepage" />
+<BrowserContainer aspectRatio="16 / 9">
+    <iframe
+        style={{
+            display: 'block',
+            height: '100%',
+            width: '100%',
+            border: 'none'
+        }}
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fk5MnpfrE3piDjhdijBIRyx%2FTripleTen's-Homepage%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3784%26viewport%3D2018%252C369%252C0.48%26t%3D1AurlfEQ1lFx2UFp-1%26scaling%3Dscale-down-width%26hide-ui%3D1"
+    ></iframe>
+</BrowserContainer>
 
-The new homepage enabled us to add many useful features, such as a start date widget, an onboarding checklist, Discord integration, and a settings page.
+<span className="Caption">New homepage prototype</span>
+
+The new homepage was designed with scalability in mind, allowing for new features and updates. After release, we added a start date widget, an onboarding checklist, Discord integration, and a settings page.
 
 <BrowserContainerGallery
-    website="tripleten.com"
     title="New features"
     items={[
         {
@@ -174,3 +188,5 @@ The new homepage enabled us to add many useful features, such as a start date wi
         }
     ]}
 />
+
+<span className="Caption">Features based on the new homepage</span>

@@ -12,7 +12,6 @@ import styles from './HomePage.module.css';
 const homePageCn = cn('HomePage', styles);
 
 const strings = {
-    menu: [{label: 'Anton Fresher', link: '/'}],
     description: "Hey, I'm Anton. I'm a product designer and developer."
 };
 
@@ -36,7 +35,7 @@ export default function HomePage() {
                     type: 'website'
                 }}
             />
-            <Page menu={strings.menu}>
+            <Page>
                 <div className={homePageCn()}>
                     <div className={homePageCn('About')}>
                         <About />

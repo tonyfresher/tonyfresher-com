@@ -11,6 +11,8 @@
     padding-right: calc(var(--unit) * 0.5);
     margin-left: calc(var(--unit) * -0.5);
     margin-right: calc(var(--unit) * -0.5);
+
+    transition: filter 0.15s ease-out, transform 0.15s ease-out;
 }
 
 .Link_display_inline-block {
@@ -29,11 +31,12 @@
     background: var(--color, --secondary-color);
 
     border-bottom: 3px solid rgba(0, 0, 0, 0.15);
-    transition: color 0.025s ease-out, border 0.025s ease-out;
 }
 
 .Link_view_filled:hover {
-    color: transparent;
+    filter: brightness(0.95);
+}
 
-    border-bottom-color: transparent;
+.Link_view_filled:active {
+    filter: brightness(0.9);
 }

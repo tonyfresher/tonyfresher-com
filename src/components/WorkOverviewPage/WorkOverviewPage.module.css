@@ -1,4 +1,4 @@
-.ExperiencePage {
+.WorkOverviewPage {
     display: flex;
     flex-direction: column;
 }
@@ -80,7 +80,6 @@
 .ExperiencePage-Content > p > img,
 .ExperiencePage-Content > p > video {
     border: 1px solid var(--divider-color);
-    border-bottom: 2px solid var(--divider-color);
     border-radius: 8px;
 }
 

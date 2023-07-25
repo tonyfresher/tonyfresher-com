@@ -1,4 +1,4 @@
-import {ImgHTMLAttributes, useEffect, useState} from 'react';
+import {ImgHTMLAttributes, PropsWithChildren, useEffect, useState} from 'react';
 
 import Video, {VideoProps} from 'components/Video';
 
@@ -8,21 +8,46 @@ import styles from './BrowserContainer.module.css';
 
 const browserContainer = cn('BrowserContainer', styles);
 
-interface BrowserContainerImageProps
-    extends ImgHTMLAttributes<HTMLImageElement> {
-    maxHeight?: number;
+interface BrowserContainerProps extends PropsWithChildren {
+    type: 'image' | 'video' | 'gallery';
+    aspectRatio?: string;
 }
 
-export function BrowserContainerImage(props: BrowserContainerImageProps) {
+export function BrowserContainer({
+    type,
+    aspectRatio,
+    children
+}: BrowserContainerProps) {
     return (
-        <div className={browserContainer({type: 'image'})}>
-            <div
-                className={browserContainer('Window')}
-                style={{maxHeight: props.maxHeight}}
-            >
-                <img {...props} />
+        <div className={browserContainer({type})}>
+            <div className={browserContainer('Window')} style={{aspectRatio}}>
+                {children}
             </div>
         </div>
+    );
+}
+
+interface BrowserContainerImageProps
+    extends ImgHTMLAttributes<HTMLImageElement> {
+    aspectRatio?: string;
+}
+
+export function BrowserContainerImage({
+    aspectRatio,
+    ...props
+}: BrowserContainerImageProps) {
+    return (
+        <BrowserContainer type="image" aspectRatio={aspectRatio}>
+            <img {...props} />
+        </BrowserContainer>
+    );
+}
+
+export function BrowserContainerVideo(props: VideoProps) {
+    return (
+        <BrowserContainer type="video">
+            <Video {...props} />
+        </BrowserContainer>
     );
 }
 
@@ -32,13 +57,11 @@ interface GalleryItem {
 }
 
 interface BrowserContainerGalleryProps {
-    website: string;
     title: string;
     items: GalleryItem[];
 }
 
 export function BrowserContainerGallery({
-    website,
     title,
     items
 }: BrowserContainerGalleryProps) {
@@ -67,7 +90,11 @@ export function BrowserContainerGallery({
             onClick={() => setAutoplay(false)}
         >
             <div className={browserContainer('Sidebar')}>
-                <div className={browserContainer('AddressStub')}>{website}</div>
+                <div className={browserContainer('Dots')}>
+                    <div className={browserContainer('Dot')} />
+                    <div className={browserContainer('Dot')} />
+                    <div className={browserContainer('Dot')} />
+                </div>
                 <span className={browserContainer('SectionTitle')}>
                     {title}
                 </span>
@@ -101,14 +128,6 @@ export function BrowserContainerGallery({
                 src={selectedTab.src}
                 alt={selectedTab.label}
             />
-        </div>
-    );
-}
-
-export function BrowserContainerVideo(props: VideoProps) {
-    return (
-        <div className={browserContainer({type: 'video'})}>
-            <Video {...props} />
         </div>
     );
 }

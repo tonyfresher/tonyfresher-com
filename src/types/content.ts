@@ -17,8 +17,9 @@ export interface BookMeta extends WritingMeta {
     foregroundColor: string;
 }
 
-export interface ExperienceMeta extends PageMeta {
-    company: string;
+export interface WorkDescriptionMeta extends PageMeta {
+    product: string;
+    link: string;
     period: string;
 }
 

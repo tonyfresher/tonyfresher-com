@@ -1,4 +1,5 @@
 export {
+    BrowserContainer,
     BrowserContainerImage,
     BrowserContainerGallery,
     BrowserContainerVideo
