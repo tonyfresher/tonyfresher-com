@@ -4,5 +4,5 @@
     font-size: var(--h1-font-size);
     line-height: var(--header-line-height);
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }

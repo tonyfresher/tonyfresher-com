@@ -7,28 +7,31 @@
     --unit: calc(var(--text-font-size) * 0.2);
 
     border-radius: calc(var(--unit));
-    padding-left: calc(var(--unit) * 0.5);
-    padding-right: calc(var(--unit) * 0.5);
-    margin-left: calc(var(--unit) * -0.5);
-    margin-right: calc(var(--unit) * -0.5);
+    padding-left: calc(var(--unit));
+    padding-right: calc(var(--unit));
 
     transition: filter 0.15s ease-out, transform 0.15s ease-out;
 }
 
 .Link_display_inline-block {
     display: inline-block;
+
+    margin-left: calc(var(--unit) * -1);
+    margin-right: calc(var(--unit) * -1);
 }
 
 .Link_view_clear {
-    color: var(--color, --primary-color);
+    color: var(--color, --color-content-primary);
 }
 
 .Link_view_clear:hover {
-    background: rgba(var(--primary-color-rgb), 0.1);
+    background: var(--color-background-glassy);
 }
 
 .Link_view_filled {
-    background: var(--color, --secondary-color);
+    background: var(--color, var(--color-background-default));
+
+    border: 1px solid var(--color, var(--color-background-glassy));
 
     border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }

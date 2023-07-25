@@ -18,7 +18,7 @@ export type LinkProps = PropsWithChildren<{
 export default function Link({
     children,
     className = '',
-    view = 'filled',
+    view = 'clear',
     color,
     display = 'inline',
     href

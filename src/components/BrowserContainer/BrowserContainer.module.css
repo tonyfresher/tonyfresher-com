@@ -1,7 +1,7 @@
 .BrowserContainer {
     padding: 8px;
 
-    background-color: var(--divider-color);
+    background-color: var(--color-background-glassy);
     border-radius: 8px;
 }
 
@@ -56,7 +56,7 @@
     font-size: 12px;
     line-height: 1;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
     font-weight: bold;
 }
 
@@ -81,7 +81,7 @@
     line-height: 16px;
     text-align: start;
 
-    color: var(--primary-color);
+    color: var(--color-content-primary);
     background: transparent;
     border: none;
     border-radius: 8px;

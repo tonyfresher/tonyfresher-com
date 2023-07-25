@@ -50,7 +50,7 @@
 .Links-LinkUsername {
     display: none;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .Links-LinkUsername::before {

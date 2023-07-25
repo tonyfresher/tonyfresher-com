@@ -10,7 +10,10 @@ import styles from './Page.module.css';
 
 const page = cn('Page', styles);
 
-const DEFAULT_MENU = [{label: 'Anton Fresher', link: '/'}];
+const DEFAULT_MENU = [
+    {label: 'Anton Fresher', link: '/'},
+    {label: 'Work', link: '/work'}
+];
 
 export default function Page({
     children,
@@ -30,11 +33,7 @@ export default function Page({
                             })}
                             key={link}
                         >
-                            <Link
-                                view="clear"
-                                display="inline-block"
-                                href={link}
-                            >
+                            <Link display="inline-block" href={link}>
                                 {label}
                             </Link>
                         </div>

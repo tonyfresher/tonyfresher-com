@@ -4,7 +4,7 @@
 }
 
 .WritingPage-Info {
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .WritingPage-Title {
@@ -17,7 +17,7 @@
 .WritingPage-Description {
     margin-top: 8px;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .WritingPage-Content > :first-child {
@@ -36,7 +36,7 @@
     width: 100%;
 
     border: none;
-    background: var(--secondary-color);
+    background: var(--color-content-secondary);
     opacity: 0.2;
 }
 
@@ -78,7 +78,7 @@
     display: flex;
     align-items: center;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .WritingPage-BookCover {
@@ -94,7 +94,7 @@
 }
 
 .WritingPage-BookName {
-    color: var(--primary-color);
+    color: var(--color-content-primary);
 }
 
 @media (max-width: 960px) {

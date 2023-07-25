@@ -13,15 +13,13 @@
     --h3-font-size: 24px;
     --header-line-height: 120%;
 
-    --background-color-rgb: 242, 241, 238;
-    --background-color: rgb(var(--background-color-rgb));
+    --color-content-primary-rgb: 38, 38, 38;
+    --color-content-primary: rgb(var(--color-content-primary-rgb));
+    --color-content-secondary: rgba(var(--color-content-primary-rgb), 0.5);
 
-    --primary-color-rgb: 38, 38, 38;
-    --primary-color: rgb(var(--primary-color-rgb));
-
-    --secondary-color: rgba(var(--primary-color-rgb), 0.5);
-
-    --divider-color: rgba(var(--primary-color-rgb), 0.1);
+    --color-background-default: rgb(255, 255, 255);
+    --color-background-surface: rgb(242, 241, 238);
+    --color-background-glassy: rgba(var(--color-content-primary-rgb), 0.1);
 }
 
 @media (max-width: 1200px) {

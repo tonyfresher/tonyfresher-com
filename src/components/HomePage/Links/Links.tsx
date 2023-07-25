@@ -41,9 +41,7 @@ export default function Links() {
         <div className={links()}>
             {strings.links.map(({service, link, username}) => (
                 <div className={links('Link')} key={service}>
-                    <Link view="clear" href={link}>
-                        {service}
-                    </Link>
+                    <Link href={link}>{service}</Link>
                     <span className={links('LinkUsername')}>{username}</span>
                 </div>
             ))}

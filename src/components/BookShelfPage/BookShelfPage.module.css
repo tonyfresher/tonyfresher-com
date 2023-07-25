@@ -8,7 +8,7 @@
     font-size: var(--h2-font-size);
     line-height: var(--header-line-height);
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .BookShelfPage-SectionBooks {

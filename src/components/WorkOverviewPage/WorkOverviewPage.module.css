@@ -13,7 +13,7 @@
 .ExperiencePage-Period {
     margin: 16px 0 0;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .ExperiencePage-Content {
@@ -39,8 +39,8 @@
     border: none;
     background: linear-gradient(
         to right,
-        var(--secondary-color),
-        var(--secondary-color) 60%,
+        var(--color-content-secondary),
+        var(--color-content-secondary) 60%,
         transparent 60%,
         transparent 100%
     );
@@ -79,7 +79,7 @@
 
 .ExperiencePage-Content > p > img,
 .ExperiencePage-Content > p > video {
-    border: 1px solid var(--divider-color);
+    border: 1px solid var(--color-background-glassy);
     border-radius: 8px;
 }
 
@@ -90,7 +90,7 @@
 
     font-size: 0.9em;
 
-    color: var(--secondary-color);
+    color: var(--color-content-secondary);
 }
 
 .ExperiencePage-Content > p + :global(.Caption) {

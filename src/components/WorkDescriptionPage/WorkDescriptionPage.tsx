@@ -43,11 +43,7 @@ export default function WorkDescriptionPage({
                             {period}
                         </div>
                         <div className={workDescriptionPageCn('MetaItem')}>
-                            <Link
-                                href={link}
-                                view="clear"
-                                display="inline-block"
-                            >
+                            <Link href={link} display="inline-block">
                                 {productUrl.hostname}
                             </Link>
                         </div>
