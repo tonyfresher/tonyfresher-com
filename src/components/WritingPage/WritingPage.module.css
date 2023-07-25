@@ -41,16 +41,16 @@
 }
 
 .WritingPage-Content h2 {
-    margin: 3rem 0 1.2rem;
+    margin: 3rem 0 1.5rem;
 
     font-size: var(--h2-font-size);
     line-height: var(--header-line-height);
 }
 
 .WritingPage-Content h3 {
-    margin: 2rem 0 1rem;
+    margin: 3rem 0 1rem;
 
-    font-size: var(--h3-font-size);
+    font-size: var(--text-font-size);
     line-height: var(--header-line-height);
 }
 
