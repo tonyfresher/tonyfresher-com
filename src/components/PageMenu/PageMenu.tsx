@@ -9,7 +9,8 @@ import styles from './PageMenu.module.css';
 const pageMenu = cn('PageMenu', styles);
 
 const DEFAULT_MENU = [
-    {label: 'Anton Fresher', link: '/'}
+    {label: 'Anton Fresher', link: '/'},
+    {label: 'Work', link: '/work'}
 ];
 
 interface PageMenuItem {

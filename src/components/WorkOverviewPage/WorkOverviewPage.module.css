@@ -1,4 +1,69 @@
 .WorkOverviewPage {
     display: flex;
     flex-direction: column;
+    gap: 48px;
+}
+
+.WorkOverviewPage-Item {
+    display: grid;
+    gap: 24px;
+}
+
+.WorkOverviewPage-ItemMeta {
+    grid-area: 1 / 1;
+}
+
+.WorkOverviewPage-ItemCover + .WorkOverviewPage-ItemMeta {
+    max-width: 296px;
+}
+
+.WorkOverviewPage-ItemTitle {
+    margin: 0;
+
+    font-size: var(--h1-font-size);
+    line-height: var(--header-line-height);
+}
+
+.WorkOverviewPage-ItemDescription {
+    margin-top: 16px;
+}
+
+.WorkOverviewPage-ItemPeriod {
+    margin-top: 8px;
+}
+
+.WorkOverviewPage-ItemDescription,
+.WorkOverviewPage-ItemPeriod {
+    display: block;
+
+    color: var(--color-content-secondary);
+}
+
+.WorkOverviewPage-ItemLink {
+    margin-top: 24px;
+}
+
+.WorkOverviewPage-ItemCover {
+    grid-area: 1 / 1;
+
+    width: 100%;
+}
+
+.WorkOverviewPage-ItemCover_device_mobile {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .WorkOverviewPage-Item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .WorkOverviewPage-ItemCover_device_desktop {
+        display: none;
+    }
+
+    .WorkOverviewPage-ItemCover_device_mobile {
+        display: block;
+    }
 }
