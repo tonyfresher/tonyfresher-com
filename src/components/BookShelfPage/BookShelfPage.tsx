@@ -9,13 +9,6 @@ import Page from 'components/Page';
 
 import styles from './BookShelfPage.module.css';
 
-const strings = {
-    menu: [
-        {label: 'Anton Fresher', link: '/'},
-        {label: 'Books', link: '/books'}
-    ]
-};
-
 const bookShelfPageCn = cn('BookShelfPage', styles);
 
 export interface BookShelfPageProps {
@@ -38,7 +31,7 @@ export default function BookShelfPage({items}: BookShelfPageProps) {
                     locale: 'en_US'
                 }}
             />
-            <Page menu={strings.menu} theme="dark">
+            <Page theme="dark">
                 <div className={bookShelfPageCn()}>
                     {Object.entries(groupedItems).map(([year, books]) => (
                         <section
