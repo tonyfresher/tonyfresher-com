@@ -1,6 +1,11 @@
 .WorkDescriptionPage {
-    display: flex;
-    flex-direction: column;
+    display: contents;
+}
+
+.WorkDescriptionPage > * {
+    margin: 1.5rem 0 0;
+
+    grid-column: 2 / -2;
 }
 
 .WorkDescriptionPage-Title {
@@ -11,7 +16,7 @@
 }
 
 .WorkDescriptionPage-Meta {
-    margin-top: 16px;
+    margin: 16px 0 var(--page-padding-y);
 
     display: flex;
     flex-direction: column;
@@ -20,21 +25,11 @@
     color: var(--color-content-secondary);
 }
 
-.WorkDescriptionPage-Content {
-    margin-top: var(--page-padding-y);
-}
-
-.WorkDescriptionPage-Content > :first-child {
+.WorkDescriptionPage > p:first-of-type {
     margin-top: 0;
 }
 
-.WorkDescriptionPage-Content > p,
-.WorkDescriptionPage-Content > ul,
-.WorkDescriptionPage-Content > ol {
-    margin: 1em 0;
-}
-
-.WorkDescriptionPage-Content > hr {
+.WorkDescriptionPage > hr {
     margin: 4rem auto;
 
     height: 2px;
@@ -52,62 +47,58 @@
     opacity: 0.2;
 }
 
-.WorkDescriptionPage-Content > h2 {
-    margin: 5rem 0 1rem;
+.WorkDescriptionPage > h2 {
+    margin: 5rem 0 0;
 
     font-size: var(--h2-font-size);
     line-height: var(--header-line-height);
 }
 
-.WorkDescriptionPage-Content > h3 {
-    margin: 3rem 0 1rem;
+.WorkDescriptionPage > h3 {
+    margin: 3rem 0 0;
 
     font-size: var(--text-font-size);
     line-height: var(--header-line-height);
 }
 
-.WorkDescriptionPage-Content > p > a img {
+.WorkDescriptionPage > p > a img {
     display: block;
 }
 
-.WorkDescriptionPage-Content > p > img {
+.WorkDescriptionPage > p > img {
     width: 100%;
 }
 
-.WorkDescriptionPage-Content > p > img,
-.WorkDescriptionPage-Content > p > video {
+.WorkDescriptionPage > p > img,
+.WorkDescriptionPage > p > video {
     border: 1px solid var(--color-background-glassy);
     border-radius: 8px;
 }
 
 .WorkDescriptionPage :global(.WideBlock) {
-    margin: 0 -200px;
+    grid-column: 1 / -1;
 }
 
-.WorkDescriptionPage-Content :global(.Caption) {
+.WorkDescriptionPage :global(.Caption) {
     display: block;
 
     margin-top: 0.5em;
 
-    font-size: 0.9em;
+    font-size: 0.8em;
 
     color: var(--color-content-secondary);
 }
 
-.WorkDescriptionPage-Content > p + :global(.Caption) {
-    margin-top: -1.5em;
-}
-
-.WorkDescriptionPage-Content :global(.Caption) p {
+.WorkDescriptionPage :global(.Caption) p {
     margin: 0;
 }
 
-.WorkDescriptionPage-Content > ul,
-.WorkDescriptionPage-Content > ol {
+.WorkDescriptionPage > ul,
+.WorkDescriptionPage > ol {
     padding-left: 32px;
 }
 
-.WorkDescriptionPage-Content > ul li,
-.WorkDescriptionPage-Content > ol li {
-    margin: 0.5em 0;
+.WorkDescriptionPage > ul li + li,
+.WorkDescriptionPage > ol li + li {
+    margin: 0.5em 0 0;
 }

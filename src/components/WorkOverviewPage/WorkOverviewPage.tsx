@@ -3,6 +3,7 @@ import {NextSeo} from 'next-seo';
 import {cn} from 'lib/classname';
 
 import Page from 'components/Page';
+import PageMenu from 'components/PageMenu';
 
 import styles from './WorkOverviewPage.module.css';
 
@@ -21,6 +22,7 @@ export default function WorkOverviewPage() {
                 }}
             />
             <Page>
+                <PageMenu />
                 <article className={workOverviewPageCn()}></article>
             </Page>
         </>

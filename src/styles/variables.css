@@ -1,7 +1,6 @@
 :root {
-    --page-padding-x: 10vw;
+    --page-padding-x: 64px;
     --page-padding-y: 64px;
-    --page-max-width: 800px;
 
     --text-font-family: 'PT Root UI VF', 'Helvetica', sans-serif;
     --text-font-weight: 450;
@@ -19,12 +18,6 @@
     --color-background-default: rgb(255, 255, 255);
     --color-background-surface: rgb(242, 241, 238);
     --color-background-glassy: rgba(var(--color-content-primary-rgb), 0.1);
-}
-
-@media (max-width: 1200px) {
-    :root {
-        --page-padding-x: 64px;
-    }
 }
 
 @media (max-width: 960px) {

@@ -6,6 +6,7 @@ import type {WorkDescriptionMeta} from 'types';
 import {cn} from 'lib/classname';
 
 import Page from 'components/Page';
+import PageMenu from 'components/PageMenu';
 import Link from 'components/Link';
 
 import styles from './WorkDescriptionPage.module.css';
@@ -34,6 +35,7 @@ export default function WorkDescriptionPage({
                 }}
             />
             <Page>
+                <PageMenu />
                 <article className={workDescriptionPageCn()}>
                     <h1 className={workDescriptionPageCn('Title')}>
                         {product}
@@ -48,9 +50,7 @@ export default function WorkDescriptionPage({
                             </Link>
                         </div>
                     </div>
-                    <div className={workDescriptionPageCn('Content')}>
-                        {content}
-                    </div>
+                    {content}
                 </article>
             </Page>
         </>

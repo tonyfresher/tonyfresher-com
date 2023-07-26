@@ -1,0 +1,17 @@
+.PageMenu {
+    margin-bottom: var(--page-padding-y);
+
+    display: flex;
+
+    color: var(--color-content-secondary);
+
+    white-space: nowrap;
+}
+
+.PageMenu-Link + .PageMenu-Link {
+    margin-left: 20px;
+}
+
+.PageMenu-Link_current {
+    color: var(--color-content-primary);
+}

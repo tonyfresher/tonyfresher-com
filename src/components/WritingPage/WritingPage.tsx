@@ -9,6 +9,7 @@ import {computeReadTime} from 'lib/content';
 import {formatDate} from 'lib/format';
 
 import Page from 'components/Page';
+import PageMenu from 'components/PageMenu';
 
 import styles from './WritingPage.module.css';
 
@@ -51,6 +52,7 @@ export default function WritingPage<T extends WritingMeta>({
                 }}
             />
             <Page>
+                <PageMenu />
                 <article className={writingPageCn()}>
                     <div className={writingPageCn('Info')}>
                         <time dateTime={meta.date}>

@@ -21,23 +21,23 @@ TripleTen is a family of beginner-friendly online coding bootcamps. It helps peo
 
 I joined TripleTen as one of the first designers when it had just started building its full-fledged product team. Over the three years, I worked on the core learning platform, maintained the design system, crafted the overall design process within the company, and was responsible for most of the product interface.
 
-<BrowserContainerGallery
-    title="Platform"
-    items={[
-        {src: '/tripleten/showcase/main.png', label: 'Home'},
-        {src: '/tripleten/showcase/calendar.png', label: 'Study calendar'},
-        {src: '/tripleten/showcase/skillset.png', label: 'Skillset'},
-        {
-            src: '/tripleten/showcase/program-contents.png',
-            label: 'Program contents'
-        },
-        {src: '/tripleten/showcase/theory.png', label: 'Theory'},
-        {src: '/tripleten/showcase/quiz.png', label: 'Quiz'}
-    ]}
-/>
-
-<span className="Caption">TripleTen’s learning platform</span>
-
+<div className="WideBlock">
+    <BrowserContainerGallery
+        title="Platform"
+        items={[
+            {src: '/tripleten/showcase/main.png', label: 'Home'},
+            {src: '/tripleten/showcase/calendar.png', label: 'Study calendar'},
+            {src: '/tripleten/showcase/skillset.png', label: 'Skillset'},
+            {
+                src: '/tripleten/showcase/program-contents.png',
+                label: 'Program contents'
+            },
+            {src: '/tripleten/showcase/theory.png', label: 'Theory'},
+            {src: '/tripleten/showcase/quiz.png', label: 'Quiz'}
+        ]}
+    />
+    <span className="Caption">TripleTen’s learning platform</span>
+</div>
 
 ## New homepage
 
@@ -49,12 +49,13 @@ That's why TripleTen's homepage has become a place for regular experiments, new 
 
 TripleTen inherited its homepage from Yandex Practicum, along with the rest of the platform. Initially, the homepage was dead simple: a large card displaying the current lesson, and a few more blocks to monitor overall progress and navigate between the program's modules.
 
-<BrowserContainerImage
-    src="/tripleten/homepage-1.0.png"
-    alt="Yandex Practicum's first homepage"
-/>
-
-<span className="Caption">Yandex Practicum's first homepage</span>
+<div className="WideBlock">
+    <BrowserContainerImage
+        src="/tripleten/homepage-1.0.png"
+        alt="Yandex Practicum's first homepage"
+    />
+    <span className="Caption">Yandex Practicum's first homepage</span>
+</div>
 
 There were many issues with this page. For example, a quarter of the space was occupied by a black column listing enrolled programs. This was completely unnecessary, as most of our students only enroll in one program at a time, so switching between them is rarely required.
 
@@ -64,12 +65,13 @@ At Yandex Practicum, we have always wanted to build advanced learning productivi
 
 In response to this, the Homepage 2.0 project was born. This was a radical re-imagining of the entire homepage, which was mostly initiated by the design team. It was quite conceptual and included many features that didn't exist at the time. Some of these mechanics were eventually implemented a long time after, while others remain concepts to this day.
 
-<BrowserContainerImage
-    src="/tripleten/homepage-2.0-concept.png"
-    alt="Homepage 2.0 concept"
-/>
-
-<span className="Caption">Homepage 2.0 concept</span>
+<div className="WideBlock">
+    <BrowserContainerImage
+        src="/tripleten/homepage-2.0-concept.png"
+        alt="Homepage 2.0 concept"
+    />
+    <span className="Caption">Homepage 2.0 concept</span>
+</div>
 
 You can already guess that this project never made it to the production stage. Despite this, I never regretted the amount of work I put in, as it taught me two invaluable lessons:
 
@@ -84,13 +86,14 @@ When our team realized that the Homepage 2.0 project was not feasible, our team 
 
 After that, we began to enhance our platform by introducing various learning productivity tools. We added a search, which had been the top-requested feature for years, as well as a study calendar and a skillset progress widget. The goal of these features was to improve the student experience and increase retention. However, due to the simple structure of the homepage — a plain feed of sequential blocks — it quickly became a total mess. Now, the overall navigation needed to be redesigned.
 
-<BrowserContainerImage
-    src="/tripleten/homepage-with-learning-tools.png"
-    alt="The longest homepage"
-    aspectRatio="16 / 9"
-/>
-
-<span className="Caption">The longest homepage (try to scroll!)</span>
+<div className="WideBlock">
+    <BrowserContainerImage
+        src="/tripleten/homepage-with-learning-tools.png"
+        alt="The longest homepage"
+        aspectRatio="16 / 9"
+    />
+    <span className="Caption">The longest homepage (try to scroll!)</span>
+</div>
 
 ### Coming up with a new homepage prototype
 
@@ -109,13 +112,14 @@ Working on the new homepage, I collaborated with our UX researcher to make it as
 
 In the new prototype, I proposed splitting all blocks of the current homepage into multiple sub-pages. The new main “Home” page would become a dashboard with main actions, important information about progress, and urgent notifications. The huge calendar block would become a separate page, as would the skillset.
 
-<BrowserContainerVideo
-    source="/tripleten/new-homepage-prototype.webm"
-    controls={false}
-    autoPlay
-/>
-
-<span className="Caption">New homepage prototype</span>
+<div className="WideBlock">
+    <BrowserContainerVideo
+        source="/tripleten/new-homepage-prototype.webm"
+        controls={false}
+        autoPlay
+    />
+    <span className="Caption">New homepage prototype</span>
+</div>
 
 This change has made navigation clear again and has added some space for new updates: onboarding and progress-related features can be added to the main page, planning mechanics would appear on the calendar page, all about career can be combined with the skillset, and any other can be added to the sidebar.
 
@@ -139,53 +143,56 @@ When TripleTen became an independent startup, we could finally afford to systema
 
 We updated the product font and colors and applied them to the main blocks of the old homepage. It only took a short time to develop, but it greatly refreshed the look and feel of the homepage (and fixed some inconsistencies in progress representation, btw). This allowed users to transition to the new homepage with minimal disturbance.
 
-<BrowserContainerImage
-    src="/tripleten/homepage-in-new-design-language.png"
-    alt="Old homepage in new design language"
-/>
-
-<span className="Caption">Old homepage in new design language</span>
+<div className="WideBlock">
+    <BrowserContainerImage
+        src="/tripleten/homepage-in-new-design-language.png"
+        alt="Old homepage in new design language"
+    />
+    <span className="Caption">Old homepage in new design language</span>
+</div>
 
 ### Happy end
 
 Not long after, we started to work with student activation and our onboarding mechanics. The new homepage redesign turned out to be essential for this. And, after a month of close collaboration with the development team, we shipped the new homepage.
 
-<BrowserContainer aspectRatio="16 / 9">
-    <iframe
-        style={{
-            display: 'block',
-            height: '100%',
-            width: '100%',
-            border: 'none'
-        }}
-        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fk5MnpfrE3piDjhdijBIRyx%2FTripleTen's-Homepage%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3784%26viewport%3D2018%252C369%252C0.48%26t%3D1AurlfEQ1lFx2UFp-1%26scaling%3Dscale-down-width%26hide-ui%3D1"
-    ></iframe>
-</BrowserContainer>
-
-<span className="Caption">New homepage prototype</span>
+<div className="WideBlock">
+    <BrowserContainer aspectRatio="16 / 9">
+        <iframe
+            style={{
+                display: 'block',
+                height: '100%',
+                width: '100%',
+                border: 'none'
+            }}
+            src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fk5MnpfrE3piDjhdijBIRyx%2FTripleTen's-Homepage%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-3784%26viewport%3D2018%252C369%252C0.48%26t%3D1AurlfEQ1lFx2UFp-1%26scaling%3Dscale-down-width%26hide-ui%3D1"
+        ></iframe>
+    </BrowserContainer>
+    <span className="Caption">New homepage prototype</span>
+</div>
 
 The new homepage was designed with scalability in mind, allowing for new features and updates. After release, we added a start date widget, an onboarding checklist, Discord integration, and a settings page.
 
-<BrowserContainerGallery
-    title="New features"
-    items={[
-        {
-            src: '/tripleten/new-features/start-date-widget.png',
-            label: 'Start date widget'
-        },
-        {
-            src: '/tripleten/new-features/onboarding-checklist.png',
-            label: 'Onboarding checklist'
-        },
-        {
-            src: '/tripleten/new-features/discord-integration.png',
-            label: 'Discord integration'
-        },
-        {
-            src: '/tripleten/new-features/settings.png',
-            label: 'Settings page'
-        }
-    ]}
-/>
-
-<span className="Caption">Features based on the new homepage</span>
+<div className="WideBlock">
+    <BrowserContainerGallery
+        title="New features"
+        items={[
+            {
+                src: '/tripleten/new-features/start-date-widget.png',
+                label: 'Start date widget'
+            },
+            {
+                src: '/tripleten/new-features/onboarding-checklist.png',
+                label: 'Onboarding checklist'
+            },
+            {
+                src: '/tripleten/new-features/discord-integration.png',
+                label: 'Discord integration'
+            },
+            {
+                src: '/tripleten/new-features/settings.png',
+                label: 'Settings page'
+            }
+        ]}
+    />
+    <span className="Caption">Features based on the new homepage</span>
+</div>

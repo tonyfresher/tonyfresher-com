@@ -10,6 +10,11 @@
 .Page {
     padding: var(--page-padding-y) var(--page-padding-x);
 
+    display: grid;
+    grid-template-columns: repeat(6, minmax(auto, 128px));
+    column-gap: 64px;
+    justify-content: center;
+
     min-height: 100vh;
     box-sizing: border-box;
 
@@ -20,30 +25,13 @@
     color: var(--color-content-primary);
 }
 
-.Page-Menu {
-    display: flex;
-
-    color: var(--color-content-secondary);
-
-    white-space: nowrap;
+.Page > * {
+    grid-column: 2 / -2;
 }
 
-.Page-MenuLink + .Page-MenuLink {
-    margin-left: 20px;
-}
-
-.Page-MenuLink_current {
-    color: var(--color-content-primary);
-}
-
-.Page-Content {
-    margin-top: var(--page-padding-y);
-}
-
-.Page-Menu,
-.Page-Content {
-    margin-left: auto;
-    margin-right: auto;
-
-    max-width: var(--page-max-width);
+@media (max-width: 960px) {
+    .Page {
+        display: flex;
+        flex-direction: column;
+    }
 }

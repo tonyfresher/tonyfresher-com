@@ -3,6 +3,7 @@ import {NextSeo} from 'next-seo';
 import {cn} from 'lib/classname';
 
 import Page from 'components/Page';
+import PageMenu from 'components/PageMenu';
 
 import Links from './Links';
 import About from './About.mdx';
@@ -36,6 +37,7 @@ export default function HomePage() {
                 }}
             />
             <Page>
+                <PageMenu />
                 <div className={homePageCn()}>
                     <div className={homePageCn('About')}>
                         <About />
