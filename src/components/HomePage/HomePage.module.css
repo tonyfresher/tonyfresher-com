@@ -28,7 +28,12 @@
     border-radius: 50%;
 }
 
-.HomePage .Links {
+.HomePage-Footer {
+    color: var(--color-content-secondary);
+}
+
+.HomePage .Links,
+.HomePage-Footer {
     margin-top: 64px;
 }
 
@@ -74,7 +79,8 @@
         height: 36px;
     }
 
-    .HomePage .Links {
+    .HomePage .Links,
+    .HomePage-Footer {
         margin-top: 40px;
     }
 }

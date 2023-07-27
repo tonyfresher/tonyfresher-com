@@ -1,7 +1,7 @@
 .WorkOverviewPage {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 64px;
 }
 
 .WorkOverviewPage-Item {
@@ -54,6 +54,10 @@
 }
 
 @media (max-width: 960px) {
+    .WorkOverviewPage {
+        gap: 48px;
+    }
+
     .WorkOverviewPage-Item {
         display: flex;
         flex-direction: column;

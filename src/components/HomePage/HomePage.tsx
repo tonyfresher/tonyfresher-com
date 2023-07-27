@@ -7,6 +7,7 @@ import PageMenu from 'components/PageMenu';
 
 import Links from './Links';
 import About from './About.mdx';
+import Footer from './Footer.mdx';
 
 import styles from './HomePage.module.css';
 
@@ -43,6 +44,9 @@ export default function HomePage() {
                         <About />
                     </div>
                     <Links />
+                    <div className={homePageCn('Footer')}>
+                        <Footer />
+                    </div>
                 </div>
             </Page>
         </>
