@@ -6,7 +6,7 @@
 
     --unit: calc(var(--text-font-size) * 0.2);
 
-    border-radius: calc(var(--unit));
+    border-radius: calc(var(--unit) * 2);
     padding-left: calc(var(--unit));
     padding-right: calc(var(--unit));
 

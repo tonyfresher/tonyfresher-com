@@ -22,8 +22,8 @@ const strings = {
                 mobile: '/tripleten/cover-mobile.svg'
             },
             link: {
-                label: 'Visit site',
-                url: 'https://tripleten.com'
+                label: 'Read more',
+                url: '/work/tripleten'
             }
         },
         {

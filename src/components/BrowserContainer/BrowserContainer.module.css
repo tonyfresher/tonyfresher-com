@@ -47,7 +47,7 @@
     height: 12px;
     border-radius: 50%;
 
-    background: rgba(0, 0, 0, 0.06);
+    background: var(--color-background-glassy);
 }
 
 .BrowserContainer-SectionTitle {
@@ -94,7 +94,7 @@
 }
 
 .BrowserContainer-Tab_selected_no:hover {
-    background: rgba(0, 0, 0, 0.08);
+    background: var(--color-background-glassy);
 }
 
 .BrowserContainer-Tab_selected_no:active,
@@ -141,6 +141,6 @@
     }
 
     .BrowserContainer-Tab_selected_no {
-        background: rgba(0, 0, 0, 0.08);
+        background: var(--color-background-glassy);
     }
 }
