@@ -22,7 +22,7 @@ const strings = {
                 mobile: '/tripleten/cover-mobile.svg'
             },
             link: {
-                label: 'Read more',
+                label: 'Read more →',
                 url: '/work/tripleten'
             }
         },
@@ -31,7 +31,7 @@ const strings = {
             description: 'Online learning platform',
             period: '2021 — 2022',
             link: {
-                label: 'Visit site',
+                label: 'Visit site →',
                 url: 'https://practicum.yandex.ru'
             }
         },
@@ -40,7 +40,7 @@ const strings = {
             description: 'Quick surveys and tests',
             period: '2018 — 2021',
             link: {
-                label: 'Visit site',
+                label: 'Visit site →',
                 url: 'https://surveys.yandex.com'
             }
         }

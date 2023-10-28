@@ -9,29 +9,24 @@ const links = cn('Links', styles);
 const strings = {
     links: [
         {
+            service: 'Linkedin',
+            link: 'https://www.linkedin.com/in/tonyfresher/'
+        },
+        {
             service: 'Twitter',
-            link: 'https://www.twitter.com/tonyfresher/',
-            username: '@tonyfresher'
+            link: 'https://www.twitter.com/tonyfresher/'
         },
         {
             service: 'Instagram',
-            link: 'https://instagram.com/tonyfresher',
-            username: '@tonyfresher'
-        },
-        {
-            service: 'Linkedin',
-            link: 'https://www.linkedin.com/in/tonyfresher/',
-            username: '@tonyfresher'
+            link: 'https://instagram.com/tonyfresher'
         },
         {
             service: 'Telegram',
-            link: 'https://t.me/tonyfresher',
-            username: '@tonyfresher'
+            link: 'https://t.me/tonyfresher'
         },
         {
             service: 'E-mail',
-            link: 'mailto:hey@tonyfresher.com',
-            username: 'hey@tonyfresher.com'
+            link: 'mailto:hey@tonyfresher.com'
         }
     ]
 };
@@ -39,11 +34,10 @@ const strings = {
 export default function Links() {
     return (
         <div className={links()}>
-            {strings.links.map(({service, link, username}) => (
-                <div className={links('Link')} key={service}>
-                    <Link href={link}>{service}</Link>
-                    <span className={links('LinkUsername')}>{username}</span>
-                </div>
+            {strings.links.map(({service, link}) => (
+                <Link className={links('Link')} key={service} href={link}>
+                    {service}
+                </Link>
             ))}
         </div>
     );
