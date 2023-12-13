@@ -15,33 +15,32 @@ const strings = {
         {
             product: 'TripleTen',
             description:
-                'A family of beginner-friendly online coding bootcamps',
+                'A family of beginner-friendly\nonline coding bootcamps',
             period: '2022 — present',
             cover: {
-                desktop: '/tripleten/cover-desktop.svg',
-                mobile: '/tripleten/cover-mobile.svg'
+                desktop: '/work/tripleten-desktop.svg',
+                mobile: '/work/tripleten-mobile.svg'
             },
-            link: {
-                label: 'Read more →',
-                url: '/work/tripleten'
-            }
+            link: '/work/tripleten'
         },
         {
             product: 'Yandex Practicum',
             description: 'Online learning platform',
             period: '2021 — 2022',
-            link: {
-                label: 'Visit site →',
-                url: 'https://practicum.yandex.ru'
+            link: 'https://practicum.yandex.ru',
+            cover: {
+                desktop: '/work/yandex-practicum-desktop.svg',
+                mobile: '/work/yandex-practicum-mobile.svg'
             }
         },
         {
             product: 'Yandex Surveys',
             description: 'Quick surveys and tests',
             period: '2018 — 2021',
-            link: {
-                label: 'Visit site →',
-                url: 'https://surveys.yandex.com'
+            link: 'https://surveys.yandex.com',
+            cover: {
+                desktop: '/work/yandex-surveys-desktop.svg',
+                mobile: '/work/yandex-surveys-mobile.svg'
             }
         }
     ]
@@ -64,9 +63,11 @@ export default function WorkOverviewPage() {
                 <div className={workOverviewPageCn()}>
                     {strings.items.map(
                         ({product, description, period, cover, link}) => (
-                            <div
-                                className={workOverviewPageCn('Item')}
+                            <Link
                                 key={product}
+                                href={link}
+                                className={workOverviewPageCn('Item')}
+                                display="inline-block"
                             >
                                 {cover && (
                                     <>
@@ -110,17 +111,8 @@ export default function WorkOverviewPage() {
                                     >
                                         {period}
                                     </span>
-                                    <Link
-                                        className={workOverviewPageCn(
-                                            'ItemLink'
-                                        )}
-                                        href={link.url}
-                                        display="inline-block"
-                                    >
-                                        {link.label}
-                                    </Link>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     )}
                 </div>

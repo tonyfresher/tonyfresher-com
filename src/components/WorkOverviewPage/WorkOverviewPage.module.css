@@ -1,12 +1,17 @@
 .WorkOverviewPage {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 80px;
 }
 
 .WorkOverviewPage-Item {
+    margin: calc(var(--unit) * -4);
+    padding: calc(var(--unit) * 4);
+
     display: grid;
     gap: 24px;
+
+    border-radius: 8px;
 }
 
 .WorkOverviewPage-ItemMeta {
@@ -14,7 +19,7 @@
 }
 
 .WorkOverviewPage-ItemCover + .WorkOverviewPage-ItemMeta {
-    max-width: 296px;
+    max-width: 328px;
 }
 
 .WorkOverviewPage-ItemTitle {
@@ -26,6 +31,8 @@
 
 .WorkOverviewPage-ItemDescription {
     margin-top: 16px;
+
+    white-space: pre-line;
 }
 
 .WorkOverviewPage-ItemPeriod {
@@ -39,10 +46,6 @@
     color: var(--color-content-secondary);
 }
 
-.WorkOverviewPage-ItemLink {
-    margin-top: 24px;
-}
-
 .WorkOverviewPage-ItemCover {
     grid-area: 1 / 1;
 
@@ -54,13 +57,13 @@
 }
 
 @media (max-width: 960px) {
-    .WorkOverviewPage {
-        gap: 48px;
-    }
-
     .WorkOverviewPage-Item {
         display: flex;
         flex-direction: column;
+    }
+
+    .WorkOverviewPage-ItemDescription {
+        white-space: normal;
     }
 
     .WorkOverviewPage-ItemCover_device_desktop {
