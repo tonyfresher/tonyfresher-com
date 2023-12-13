@@ -10,7 +10,8 @@ const pageMenu = cn('PageMenu', styles);
 
 const DEFAULT_MENU = [
     {label: 'Anton Fresher', link: '/'},
-    {label: 'Work', link: '/work'}
+    {label: 'Work', link: '/work'},
+    {label: 'Newsletter', link: 'https://tonyfresher.substack.com'}
 ];
 
 interface PageMenuItem {
