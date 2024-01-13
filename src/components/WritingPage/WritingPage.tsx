@@ -38,7 +38,7 @@ export default function WritingPage<T extends WritingMeta>({
                 openGraph={{
                     title: meta.title,
                     description: meta.description,
-                    site_name: 'Anton Fresher',
+                    site_name: 'Tony Fresher',
                     type: 'article',
                     locale: 'en_US',
                     ...(meta.image && {

@@ -26,10 +26,10 @@ export default function Seo() {
     return (
         <>
             <DefaultSeo
-                title="Anton Fresher"
+                title="Tony Fresher"
                 openGraph={{
                     locale: 'en_US',
-                    site_name: 'Anton Fresher',
+                    site_name: 'Tony Fresher',
                     type: 'website'
                 }}
             />

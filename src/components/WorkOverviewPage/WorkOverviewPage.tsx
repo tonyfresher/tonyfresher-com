@@ -50,10 +50,10 @@ export default function WorkOverviewPage() {
     return (
         <>
             <NextSeo
-                title={'Work — Anton Fresher'}
+                title={'Work — Tony Fresher'}
                 openGraph={{
-                    title: 'Work — Anton Fresher',
-                    site_name: 'Anton Fresher',
+                    title: 'Work — Tony Fresher',
+                    site_name: 'Tony Fresher',
                     type: 'website',
                     locale: 'en_US'
                 }}

@@ -14,26 +14,26 @@ import styles from './HomePage.module.css';
 const homePageCn = cn('HomePage', styles);
 
 const strings = {
-    description: "Hey, I'm Anton. I'm a product designer and developer."
+    description: "Hey, I'm Tony. I'm a product designer and developer."
 };
 
 export default function HomePage() {
     return (
         <>
             <NextSeo
-                title="Anton Fresher"
+                title="Tony Fresher"
                 description={strings.description}
                 openGraph={{
                     description: strings.description,
                     images: [
                         {
-                            url: '/anton-fresher.jpeg',
-                            alt: 'Anton Fresher'
+                            url: '/me.jpeg',
+                            alt: 'Tony Fresher'
                         }
                     ],
                     locale: 'en_US',
-                    site_name: 'Anton Fresher',
-                    title: 'Anton Fresher',
+                    site_name: 'Tony Fresher',
+                    title: 'Tony Fresher',
                     type: 'website'
                 }}
             />

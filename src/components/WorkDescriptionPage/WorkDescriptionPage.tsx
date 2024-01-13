@@ -29,7 +29,7 @@ export default function WorkDescriptionPage({
                 title={product}
                 openGraph={{
                     title: product,
-                    site_name: 'Anton Fresher',
+                    site_name: 'Tony Fresher',
                     type: 'article',
                     locale: 'en_US'
                 }}
