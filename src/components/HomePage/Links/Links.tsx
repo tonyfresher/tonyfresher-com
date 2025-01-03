@@ -9,6 +9,10 @@ const links = cn('Links', styles);
 const strings = {
     links: [
         {
+            service: 'E-mail',
+            link: 'mailto:hey@tonyfresher.com'
+        },
+        {
             service: 'Linkedin',
             link: 'https://www.linkedin.com/in/tonyfresher/'
         },
@@ -25,8 +29,8 @@ const strings = {
             link: 'https://t.me/tonyfresher'
         },
         {
-            service: 'E-mail',
-            link: 'mailto:hey@tonyfresher.com'
+            service: 'Letterboxd',
+            link: 'https://letterboxd.com/tonyfresher/'
         }
     ]
 };
