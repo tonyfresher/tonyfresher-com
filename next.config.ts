@@ -4,12 +4,14 @@ import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
 const nextConfig: NextConfig = {
-    /* config options here */
+    pageExtensions: ['md', 'mdx', 'ts', 'tsx']
 }
 
 const withMDX = createMDX({
-    extension: /\.mdx?$/,
-    options: { providerImportSource: '@mdx-js/react', remarkPlugins: [remarkGfm] }
+    extension: /\.(md|mdx)$/,
+    options: {
+        remarkPlugins: [remarkGfm as any]
+    }
 })
 
 export default withMDX(nextConfig)

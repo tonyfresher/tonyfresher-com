@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import type { BookMeta, WorkDescriptionMeta, WritingMeta } from '@/types'
+import type { WorkDescriptionMeta, WritingMeta } from '@/types'
 
 const baseOpenGraph = {
     siteName: 'Tony Fresher',
@@ -26,10 +26,6 @@ export function buildArticleMetadata(meta: WritingMeta): Metadata {
             })
         }
     }
-}
-
-export function buildBookMetadata(meta: BookMeta): Metadata {
-    return buildArticleMetadata(meta)
 }
 
 export function buildWorkMetadata(meta: WorkDescriptionMeta): Metadata {

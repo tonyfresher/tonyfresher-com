@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
-import Providers from './providers'
+import type { Metadata } from 'next'
 
-import '@/styles/global.css'
+import EmojiFavicon from '@/components/emoji-favicon'
 
-const description = "Hey, I'm Tony. I'm a product designer and developer."
+import './global.css'
+
+const description = "Hey, I'm Tony. I'm a product designer and engineer."
 
 export const metadata: Metadata = {
     title: {
@@ -24,9 +25,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body>
-                <Providers>{children}</Providers>
+                <EmojiFavicon />
+                {children}
             </body>
         </html>
     )
