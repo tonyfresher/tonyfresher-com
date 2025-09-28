@@ -1,10 +1,4 @@
-import {cn} from 'lib/classname';
-
 import Link from 'components/Link';
-
-import styles from '../HomePage.module.css';
-
-const links = cn('Links', styles);
 
 const strings = {
     links: [
@@ -37,9 +31,14 @@ const strings = {
 
 export default function Links() {
     return (
-        <div className={links()}>
+        <div className="mt-16 flex flex-col gap-3 max-[960px]:mt-10">
             {strings.links.map(({service, link}) => (
-                <Link className={links('Link')} key={service} href={link}>
+                <Link
+                    className="w-max"
+                    key={service}
+                    href={link}
+                    display="inline-block"
+                >
                     {service}
                 </Link>
             ))}

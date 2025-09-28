@@ -1,10 +1,15 @@
-@import 'variables.css';
+@import 'tailwindcss';
+@import './variables.css';
+
+@plugin '@tailwindcss/typography';
+
+@source '../**/*.{js,jsx,ts,tsx,md,mdx}';
 
 @font-face {
     font-family: 'PT Root UI VF';
     src: url('/fonts/pt-root-ui/PT Root UI VF.eot');
-    src: url('/fonts/pt-root-ui/PT Root UI VF.eot?#iefix')
-            format('embedded-opentype'),
+    src:
+        url('/fonts/pt-root-ui/PT Root UI VF.eot?#iefix') format('embedded-opentype'),
         url('/fonts/pt-root-ui/PT Root UI VF.woff2') format('woff2'),
         url('/fonts/pt-root-ui/PT Root UI VF.woff') format('woff'),
         url('/fonts/pt-root-ui/PT Root UI VF.ttf') format('truetype');
@@ -12,11 +17,144 @@
     font-style: normal;
 }
 
-body {
-    margin: 0;
+@theme inline {
+    --font-sans: 'PT Root UI VF', 'Helvetica', sans-serif;
+    --font-weight-sans: 450;
+    --font-display: 'PT Root UI VF', 'Helvetica', sans-serif;
 
-    font-family: var(--text-font-family);
-    font-weight: var(--text-font-weight);
+    --text-base: 20px;
+    --leading-base: 1.5;
+    --text-h1: 40px;
+    --text-h2: 28px;
+    --leading-tight: 1.2;
 
-    -webkit-font-smoothing: antialiased;
+    /* Legacy custom properties */
+    --text-font-family: var(--font-sans);
+    --text-font-weight: var(--font-weight-sans);
+    --text-font-size: var(--text-base);
+    --text-line-height: calc(var(--leading-base) * 100%);
+    --h1-font-size: var(--text-h1);
+    --h2-font-size: var(--text-h2);
+    --header-line-height: calc(var(--leading-tight) * 100%);
+
+    --color-background: #f2f1ee;
+    --color-surface: #ffffff;
+    --color-foreground: #262626;
+    --color-muted: rgba(38, 38, 38, 0.5);
+    --color-border: rgba(38, 38, 38, 0.08);
+    --color-glassy: rgba(38, 38, 38, 0.08);
+    --color-inverted: #f2f1ee;
+    --color-inverted-foreground: rgba(255, 255, 255, 0.85);
+
+    --color-content-primary-rgb: 38, 38, 38;
+    --color-content-primary: rgb(var(--color-content-primary-rgb));
+    --color-content-secondary: rgba(var(--color-content-primary-rgb), 0.5);
+    --color-background-default: var(--color-surface);
+    --color-background-surface: var(--color-background);
+    --color-background-glassy: var(--color-glassy);
+
+    --page-padding-x: 64px;
+    --page-padding-y: 64px;
+
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply box-border;
+    }
+
+    body {
+        @apply m-0 bg-background text-foreground font-sans font-[450] leading-[var(--leading-base)] antialiased;
+    }
+
+    img,
+    video {
+        @apply h-auto max-w-full;
+    }
+
+    a {
+        @apply text-current no-underline;
+    }
+}
+
+@layer base {
+    @media (max-width: 960px) {
+        :root {
+            --h1-font-size: 36px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        :root {
+            --page-padding-x: 24px;
+            --page-padding-y: 40px;
+        }
+    }
+}
+
+@layer components {
+    .Caption {
+        @apply mt-2 block text-sm text-muted;
+    }
+
+    .WideBlock {
+        @apply col-span-full flex flex-col gap-2;
+    }
+
+    .mdx-content {
+        @apply grid gap-y-12 text-foreground text-[20px] leading-[var(--leading-base)];
+    }
+
+    .mdx-content > * {
+        @apply m-0;
+    }
+
+    .mdx-content h2 {
+        @apply mt-20 text-[var(--text-h2)] leading-[var(--leading-tight)];
+    }
+
+    .mdx-content h3 {
+        @apply mt-12 text-[20px] leading-[var(--leading-tight)];
+    }
+
+    .mdx-content hr {
+        @apply mx-auto my-16 h-0.5 w-full border-0 opacity-20;
+        background: linear-gradient(
+            to right,
+            var(--color-muted),
+            var(--color-muted) 60%,
+            transparent 60%,
+            transparent 100%
+        );
+        background-size: 40px 2px;
+    }
+
+    .mdx-content p > img,
+    .mdx-content p > video {
+        @apply w-full rounded-lg border border-[color:var(--color-glassy)];
+    }
+
+    .mdx-content p > a img {
+        @apply block;
+    }
+
+    .mdx-content ul,
+    .mdx-content ol {
+        @apply pl-8;
+    }
+
+    .mdx-content ul li + li,
+    .mdx-content ol li + li {
+        @apply mt-2;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
 }

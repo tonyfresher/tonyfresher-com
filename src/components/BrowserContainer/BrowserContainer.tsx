@@ -1,17 +1,27 @@
-import {ImgHTMLAttributes, PropsWithChildren, useEffect, useState} from 'react';
+import {
+    ImgHTMLAttributes,
+    PropsWithChildren,
+    useEffect,
+    useState
+} from 'react';
 
 import Video, {VideoProps} from 'components/Video';
 
-import {cn} from 'lib/classname';
-
-import styles from './BrowserContainer.module.css';
-
-const browserContainer = cn('BrowserContainer', styles);
+import {cn} from 'lib/cn';
 
 interface BrowserContainerProps extends PropsWithChildren {
     type: 'image' | 'video' | 'gallery';
     aspectRatio?: string;
 }
+
+const baseContainerClass = cn(
+    'rounded-lg bg-[var(--color-background-glassy)] p-2'
+);
+
+const baseWindowClass = cn(
+    'w-full overflow-hidden rounded-[5px]',
+    'shadow-[0_0_6px_rgba(0,0,0,0.16)]'
+);
 
 export function BrowserContainer({
     type,
@@ -19,8 +29,20 @@ export function BrowserContainer({
     children
 }: BrowserContainerProps) {
     return (
-        <div className={browserContainer({type})}>
-            <div className={browserContainer('Window')} style={{aspectRatio}}>
+        <div
+            className={cn(
+                baseContainerClass,
+                type === 'gallery' &&
+                    'grid gap-2 [grid-template-columns:176px_1fr] max-[960px]:grid-cols-1'
+            )}
+        >
+            <div
+                className={cn(
+                    baseWindowClass,
+                    type === 'image' && 'overflow-y-auto'
+                )}
+                style={{aspectRatio}}
+            >
                 {children}
             </div>
         </div>
@@ -34,11 +56,12 @@ interface BrowserContainerImageProps
 
 export function BrowserContainerImage({
     aspectRatio,
+    className,
     ...props
 }: BrowserContainerImageProps) {
     return (
         <BrowserContainer type="image" aspectRatio={aspectRatio}>
-            <img {...props} />
+            <img className={cn('block w-full', className)} {...props} />
         </BrowserContainer>
     );
 }
@@ -61,6 +84,38 @@ interface BrowserContainerGalleryProps {
     items: GalleryItem[];
 }
 
+const sidebarClassName = cn('flex flex-col');
+const dotsClassName = cn('m-2 flex gap-[6px] max-[960px]:hidden');
+const dotClassName = cn(
+    'h-3 w-3 rounded-full bg-[var(--color-background-glassy)]'
+);
+const sectionTitleClassName = cn(
+    'mx-2 mt-4 mb-3 text-[12px] leading-none font-bold',
+    'text-[color:var(--color-content-secondary)]',
+    'max-[960px]:hidden'
+);
+const tabsClassName = cn(
+    'flex flex-col gap-1 overflow-y-auto pr-1',
+    'max-[960px]:flex-row max-[960px]:gap-y-0 max-[960px]:gap-x-1 max-[960px]:-m-2 max-[960px]:p-2',
+    'max-[960px]:overflow-x-auto max-[960px]:overflow-y-hidden'
+);
+const tabBaseClass = cn(
+    'flex items-center gap-2 rounded-lg border-0 bg-transparent p-2 text-left',
+    'text-[14px] leading-4 font-[var(--text-font-weight)] font-sans',
+    'text-[color:var(--color-content-primary)]',
+    'transition-transform duration-100 ease-out'
+);
+const tabSelectedClass = cn(
+    'bg-white shadow-[0_2px_1px_rgba(0,0,0,0.06)]'
+);
+const tabUnselectedClass = cn(
+    'cursor-pointer hover:bg-[var(--color-background-glassy)]',
+    'active:scale-95 active:bg-white active:shadow-[0_2px_1px_rgba(0,0,0,0.06)]',
+    'max-[960px]:bg-[var(--color-background-glassy)]'
+);
+const tabFaviconClass = cn('h-4 w-4 max-[960px]:hidden');
+const tabLabelClass = cn('truncate');
+
 export function BrowserContainerGallery({
     title,
     items
@@ -82,49 +137,52 @@ export function BrowserContainerGallery({
         }, 5000);
 
         return () => clearInterval(interval);
-    });
+    }, [autoplay, items, selectedTab.src]);
 
     return (
         <div
-            className={browserContainer({type: 'gallery'})}
+            className={cn(
+                baseContainerClass,
+                'grid gap-2 [grid-template-columns:176px_1fr] max-[960px]:grid-cols-1'
+            )}
             onClick={() => setAutoplay(false)}
         >
-            <div className={browserContainer('Sidebar')}>
-                <div className={browserContainer('Dots')}>
-                    <div className={browserContainer('Dot')} />
-                    <div className={browserContainer('Dot')} />
-                    <div className={browserContainer('Dot')} />
+            <div className={sidebarClassName}>
+                <div className={dotsClassName}>
+                    <div className={dotClassName} />
+                    <div className={dotClassName} />
+                    <div className={dotClassName} />
                 </div>
-                <span className={browserContainer('SectionTitle')}>
-                    {title}
-                </span>
-                <div className={browserContainer('Tabs')}>
-                    {items.map(tab => (
-                        <button
-                            className={browserContainer('Tab', {
-                                selected:
-                                    tab.src === selectedTab.src ? 'yes' : 'no'
-                            })}
-                            key={tab.label}
-                            onClick={() => setSelectedTab(tab)}
-                        >
-                            <img
-                                className={browserContainer('TabFavicon')}
-                                src="/tripleten/favicon.svg"
-                                alt="Favicon"
-                            />
-                            <span
-                                className={browserContainer('TabLabel')}
+                <span className={sectionTitleClassName}>{title}</span>
+                <div className={tabsClassName}>
+                    {items.map(tab => {
+                        const isSelected = tab.src === selectedTab.src;
+
+                        return (
+                            <button
+                                key={tab.label}
+                                className={cn(
+                                    tabBaseClass,
+                                    isSelected
+                                        ? tabSelectedClass
+                                        : tabUnselectedClass
+                                )}
+                                onClick={() => setSelectedTab(tab)}
                                 title={tab.label}
                             >
-                                {tab.label}
-                            </span>
-                        </button>
-                    ))}
+                                <img
+                                    className={tabFaviconClass}
+                                    src="/tripleten/favicon.svg"
+                                    alt="Favicon"
+                                />
+                                <span className={tabLabelClass}>{tab.label}</span>
+                            </button>
+                        );
+                    })}
                 </div>
             </div>
             <img
-                className={browserContainer('Window')}
+                className={cn(baseWindowClass, 'block max-h-full object-cover')}
                 src={selectedTab.src}
                 alt={selectedTab.label}
             />

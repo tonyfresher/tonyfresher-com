@@ -1,14 +1,8 @@
 import {NextSeo} from 'next-seo';
 
-import {cn} from 'lib/classname';
-
 import Page from 'components/Page';
 import PageMenu from 'components/PageMenu';
 import Link from 'components/Link';
-
-import styles from './WorkOverviewPage.module.css';
-
-const workOverviewPageCn = cn('WorkOverviewPage', styles);
 
 const strings = {
     items: [
@@ -60,55 +54,41 @@ export default function WorkOverviewPage() {
             />
             <Page>
                 <PageMenu />
-                <div className={workOverviewPageCn()}>
+                <div className="col-[2/-2] flex flex-col gap-20">
                     {strings.items.map(
                         ({product, description, period, cover, link}) => (
                             <Link
                                 key={product}
                                 href={link}
-                                className={workOverviewPageCn('Item')}
+                                className="block -m-8 grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
                                 display="inline-block"
                             >
                                 {cover && (
                                     <>
                                         <img
-                                            className={workOverviewPageCn(
-                                                'ItemCover',
-                                                {device: 'desktop'}
-                                            )}
+                                            className="col-start-1 row-start-1 w-full max-[960px]:hidden"
                                             src={cover.desktop}
                                             alt="Cover"
                                         />
                                         <img
-                                            className={workOverviewPageCn(
-                                                'ItemCover',
-                                                {device: 'mobile'}
-                                            )}
+                                            className="col-start-1 row-start-1 hidden w-full max-[960px]:block"
                                             src={cover.mobile}
                                             alt="Cover"
                                         />
                                     </>
                                 )}
-                                <div className={workOverviewPageCn('ItemMeta')}>
+                                <div className="col-start-1 row-start-1 z-10 flex max-w-[328px] flex-col max-[960px]:max-w-full">
                                     <h2
-                                        className={workOverviewPageCn(
-                                            'ItemTitle'
-                                        )}
+                                        className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]"
                                     >
                                         {product}
                                     </h2>
                                     <span
-                                        className={workOverviewPageCn(
-                                            'ItemDescription'
-                                        )}
+                                        className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal"
                                     >
                                         {description}
                                     </span>
-                                    <span
-                                        className={workOverviewPageCn(
-                                            'ItemPeriod'
-                                        )}
-                                    >
+                                    <span className="mt-2 text-[color:var(--color-content-secondary)]">
                                         {period}
                                     </span>
                                 </div>
