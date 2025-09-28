@@ -4,7 +4,7 @@ import type { MDXComponents } from 'mdx/types'
 
 import Link from '@/components/link'
 
-const components: MDXComponents = {
+const components = {
     a: ({
         children,
         className,
@@ -18,7 +18,7 @@ const components: MDXComponents = {
             {children}
         </Link>
     )
-}
+} satisfies MDXComponents
 
 export function useMDXComponents(): MDXComponents {
     return components
