@@ -3,4 +3,4 @@ export {
     BrowserContainerImage,
     BrowserContainerGallery,
     BrowserContainerVideo
-} from './BrowserContainer';
+} from './BrowserContainer'

@@ -1,9 +1,9 @@
-import Page from 'components/Page';
-import PageMenu from 'components/PageMenu';
+import Page from 'components/Page'
+import PageMenu from 'components/PageMenu'
 
 const strings = {
     text: '404 — Page not found'
-};
+}
 
 export default function NotFoundPage() {
     return (
@@ -13,5 +13,5 @@ export default function NotFoundPage() {
                 {strings.text}
             </h1>
         </Page>
-    );
+    )
 }

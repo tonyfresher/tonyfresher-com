@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
+    baseDirectory: __dirname
 })
 
 const eslintConfig = [
@@ -17,15 +17,15 @@ const eslintConfig = [
             'out/**',
             'build/**',
             'storybook-static/**',
-            'next-env.d.ts',
-        ],
+            'next-env.d.ts'
+        ]
     },
     ...compat.extends(
         'next/core-web-vitals',
         'next/typescript',
         'prettier',
         'plugin:storybook/recommended'
-    ),
+    )
 ]
 
 export default eslintConfig

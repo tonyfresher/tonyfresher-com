@@ -1,15 +1,10 @@
-import {VideoHTMLAttributes} from 'react';
+import { VideoHTMLAttributes } from 'react'
 
 export interface VideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
-    source: string;
+    source: string
 }
 
-export default function Video({
-    source,
-    autoPlay,
-    controls = true,
-    ...props
-}: VideoProps) {
+export default function Video({ source, autoPlay, controls = true, ...props }: VideoProps) {
     return (
         <video
             className="block w-full"
@@ -22,5 +17,5 @@ export default function Video({
             <source src={source} type="video/webm" />
             Download <a href={source}>the video</a>
         </video>
-    );
+    )
 }

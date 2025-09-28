@@ -1,1 +1,1 @@
-export {default} from './WorkOverviewPage';
+export { default } from './WorkOverviewPage'

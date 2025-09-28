@@ -1,1 +1,1 @@
-export {default} from './PageMenu';
+export { default } from './PageMenu'

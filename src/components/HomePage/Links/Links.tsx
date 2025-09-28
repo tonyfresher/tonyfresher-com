@@ -1,4 +1,4 @@
-import Link from 'components/Link';
+import Link from 'components/Link'
 
 const strings = {
     links: [
@@ -27,21 +27,16 @@ const strings = {
             link: 'https://letterboxd.com/tonyfresher/'
         }
     ]
-};
+}
 
 export default function Links() {
     return (
         <div className="mt-16 flex flex-col gap-3 max-[960px]:mt-10">
-            {strings.links.map(({service, link}) => (
-                <Link
-                    className="w-max"
-                    key={service}
-                    href={link}
-                    display="inline-block"
-                >
+            {strings.links.map(({ service, link }) => (
+                <Link className="w-max" key={service} href={link} display="inline-block">
                     {service}
                 </Link>
             ))}
         </div>
-    );
+    )
 }

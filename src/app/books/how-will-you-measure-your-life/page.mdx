@@ -1,0 +1,16 @@
+import WritingPage from '@/components/WritingPage'
+import { buildBookMetadata } from '@/lib/metadata'
+
+export default ({ children }) => <WritingPage meta={meta} children={children} />
+
+export const meta = {
+    id: 'how-will-you-measure-your-life',
+    title: 'How Will You Measure Your Life?',
+    name: 'How Will You Measure Your Life?',
+    author: 'Clayton Christensen',
+    foregroundColor: '#FFF',
+    backgroundColor: '#217844',
+    date: '2020-08-21T22:34:00+0300'
+}
+
+export const metadata = buildBookMetadata(meta)

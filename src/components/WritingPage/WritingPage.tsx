@@ -1,22 +1,18 @@
-import {PropsWithChildren} from 'react';
-import {NextSeo} from 'next-seo';
+import { PropsWithChildren } from 'react'
 
-import type {WritingMeta} from 'types';
-import {isBookMeta} from 'types';
-
-import {computeReadTime} from 'lib/content';
-import {formatDate} from 'lib/format';
-
-import Page from 'components/Page';
-import PageMenu from 'components/PageMenu';
+import Page from 'components/Page'
+import PageMenu from 'components/PageMenu'
+import { computeReadTime } from 'lib/content'
+import { formatDate } from 'lib/format'
+import type { WritingMeta } from 'types'
+import { isBookMeta } from 'types'
 
 const strings = {
     readTime: '%s min'
-};
+}
 
-export interface WritingPageProps<T extends WritingMeta>
-    extends PropsWithChildren {
-    meta: T;
+export interface WritingPageProps<T extends WritingMeta> extends PropsWithChildren {
+    meta: T
 }
 
 const contentClassName = [
@@ -31,72 +27,40 @@ const contentClassName = [
     '[&>img]:w-full',
     '[&>ul]:pl-5',
     '[&>p+ul]:mt-[-0.5em]'
-].join(' ');
+].join(' ')
 
 export default function WritingPage<T extends WritingMeta>({
     meta,
     children: content
 }: WritingPageProps<T>) {
-    const readTime = computeReadTime('');
+    const readTime = computeReadTime('')
 
     return (
-        <>
-            <NextSeo
-                title={meta.title}
-                description={meta.description}
-                openGraph={{
-                    title: meta.title,
-                    description: meta.description,
-                    site_name: 'Tony Fresher',
-                    type: 'article',
-                    locale: 'en_US',
-                    ...(meta.image && {
-                        images: [
-                            {
-                                url: `/${meta.id}/images/${meta.image}`,
-                                alt: meta.title
-                            }
-                        ]
-                    })
-                }}
-            />
-            <Page>
-                <PageMenu />
-                <article className="col-[2/-2] flex flex-col">
-                    <div className="text-[color:var(--color-content-secondary)] max-[960px]:absolute max-[960px]:right-0 max-[960px]:top-0 max-[960px]:whitespace-nowrap max-[960px]:text-right">
-                        <time dateTime={meta.date}>{formatDate(meta.date)}</time>
-                        {', '}
-                        <span>
-                            {strings.readTime.replace(
-                                '%s',
-                                readTime.toString()
-                            )}
-                        </span>
-                    </div>
-                    <h1 className="mt-16 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] max-[960px]:mt-0">
-                        {meta.title}
-                    </h1>
-                    {isBookMeta(meta) && (
-                        <div className="mt-10 flex items-center text-[color:var(--color-content-secondary)]">
-                            {meta.image && (
-                                <img
-                                    className="mr-3 h-20"
-                                    src={`/book-covers/${meta.image}`}
-                                    alt="Cover"
-                                />
-                            )}
-                            <div className="grid gap-1">
-                                <span className="text-[color:var(--color-content-primary)]">
-                                    {meta.name}
-                                </span>
-                                <span>{meta.author}</span>
-                                {meta.year && <span>{meta.year}</span>}
-                            </div>
+        <Page>
+            <PageMenu />
+            <article className="col-[2/-2] flex flex-col">
+                <div className="text-[color:var(--color-content-secondary)] max-[960px]:absolute max-[960px]:top-0 max-[960px]:right-0 max-[960px]:text-right max-[960px]:whitespace-nowrap">
+                    <time dateTime={meta.date}>{formatDate(meta.date)}</time>
+                    {', '}
+                    <span>{strings.readTime.replace('%s', readTime.toString())}</span>
+                </div>
+                <h1 className="mt-16 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] max-[960px]:mt-0">
+                    {meta.title}
+                </h1>
+                {isBookMeta(meta) && (
+                    <div className="mt-10 flex items-center text-[color:var(--color-content-secondary)]">
+                        {meta.image && (
+                            <img className="mr-3 h-20" src={`/book-covers/${meta.image}`} alt="Cover" />
+                        )}
+                        <div className="grid gap-1">
+                            <span className="text-[color:var(--color-content-primary)]">{meta.name}</span>
+                            <span>{meta.author}</span>
+                            {meta.year && <span>{meta.year}</span>}
                         </div>
-                    )}
-                    <div className={contentClassName}>{content}</div>
-                </article>
-            </Page>
-        </>
-    );
+                    </div>
+                )}
+                <div className={contentClassName}>{content}</div>
+            </article>
+        </Page>
+    )
 }

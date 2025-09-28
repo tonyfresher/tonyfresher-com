@@ -1,2 +1,2 @@
-export {default} from './Video';
-export type {VideoProps} from './Video';
+export { default } from './Video'
+export type { VideoProps } from './Video'

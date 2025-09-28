@@ -68,7 +68,7 @@
     }
 
     body {
-        @apply m-0 bg-background text-foreground font-sans font-[450] leading-[var(--leading-base)] antialiased;
+        @apply bg-background text-foreground m-0 font-sans leading-[var(--leading-base)] font-[450] antialiased;
     }
 
     img,
@@ -98,7 +98,7 @@
 
 @layer components {
     .Caption {
-        @apply mt-2 block text-sm text-muted;
+        @apply text-muted mt-2 block text-sm;
     }
 
     .WideBlock {
@@ -106,7 +106,7 @@
     }
 
     .mdx-content {
-        @apply grid gap-y-12 text-foreground text-[20px] leading-[var(--leading-base)];
+        @apply text-foreground grid gap-y-12 text-[20px] leading-[var(--leading-base)];
     }
 
     .mdx-content > * {
@@ -114,7 +114,7 @@
     }
 
     .mdx-content h2 {
-        @apply mt-20 text-[var(--text-h2)] leading-[var(--leading-tight)];
+        @apply mt-20 leading-[var(--leading-tight)] text-[var(--text-h2)];
     }
 
     .mdx-content h3 {

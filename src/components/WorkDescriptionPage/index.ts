@@ -1,1 +1,1 @@
-export {default} from './WorkDescriptionPage';
+export { default } from './WorkDescriptionPage'

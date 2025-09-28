@@ -1,14 +1,12 @@
-import {NextSeo} from 'next-seo';
-import {PropsWithChildren} from 'react';
+import { PropsWithChildren } from 'react'
 
-import type {WorkDescriptionMeta} from 'types';
-
-import Page from 'components/Page';
-import PageMenu from 'components/PageMenu';
-import Link from 'components/Link';
+import Link from 'components/Link'
+import Page from 'components/Page'
+import PageMenu from 'components/PageMenu'
+import type { WorkDescriptionMeta } from 'types'
 
 interface WorkDescriptionPageProps extends PropsWithChildren {
-    meta: WorkDescriptionMeta;
+    meta: WorkDescriptionMeta
 }
 
 const articleClassName = [
@@ -27,42 +25,31 @@ const articleClassName = [
     '[&>p>a>img]:block',
     '[&>ul]:pl-8 [&>ol]:pl-8',
     '[&>ul>li+li]:mt-2 [&>ol>li+li]:mt-2'
-].join(' ');
+].join(' ')
 
 export default function WorkDescriptionPage({
-    meta: {product, link, period},
+    meta: { product, link, period },
     children: content
 }: WorkDescriptionPageProps) {
-    const productUrl = new URL(link);
+    const productUrl = new URL(link)
 
     return (
-        <>
-            <NextSeo
-                title={product}
-                openGraph={{
-                    title: product,
-                    site_name: 'Tony Fresher',
-                    type: 'article',
-                    locale: 'en_US'
-                }}
-            />
-            <Page>
-                <PageMenu />
-                <article className={articleClassName}>
-                    <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
-                        {product}
-                    </h1>
-                    <div className="col-[2/-2] mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
-                        <div>{period}</div>
-                        <div>
-                            <Link href={link} display="inline-block">
-                                {productUrl.hostname}
-                            </Link>
-                        </div>
+        <Page>
+            <PageMenu />
+            <article className={articleClassName}>
+                <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
+                    {product}
+                </h1>
+                <div className="col-[2/-2] mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
+                    <div>{period}</div>
+                    <div>
+                        <Link href={link} display="inline-block">
+                            {productUrl.hostname}
+                        </Link>
                     </div>
-                    {content}
-                </article>
-            </Page>
-        </>
-    );
+                </div>
+                {content}
+            </article>
+        </Page>
+    )
 }

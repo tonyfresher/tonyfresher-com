@@ -1,15 +1,12 @@
-import {NextSeo} from 'next-seo';
-
-import Page from 'components/Page';
-import PageMenu from 'components/PageMenu';
-import Link from 'components/Link';
+import Link from 'components/Link'
+import Page from 'components/Page'
+import PageMenu from 'components/PageMenu'
 
 const strings = {
     items: [
         {
             product: 'TripleTen',
-            description:
-                'A family of beginner-friendly\nonline coding bootcamps',
+            description: 'A family of beginner-friendly\nonline coding bootcamps',
             period: '2022 — present',
             cover: {
                 desktop: '/work/tripleten-desktop.svg',
@@ -38,65 +35,48 @@ const strings = {
             }
         }
     ]
-};
+}
 
 export default function WorkOverviewPage() {
     return (
-        <>
-            <NextSeo
-                title={'Work — Tony Fresher'}
-                openGraph={{
-                    title: 'Work — Tony Fresher',
-                    site_name: 'Tony Fresher',
-                    type: 'website',
-                    locale: 'en_US'
-                }}
-            />
-            <Page>
-                <PageMenu />
-                <div className="col-[2/-2] flex flex-col gap-20">
-                    {strings.items.map(
-                        ({product, description, period, cover, link}) => (
-                            <Link
-                                key={product}
-                                href={link}
-                                className="block -m-8 grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
-                                display="inline-block"
-                            >
-                                {cover && (
-                                    <>
-                                        <img
-                                            className="col-start-1 row-start-1 w-full max-[960px]:hidden"
-                                            src={cover.desktop}
-                                            alt="Cover"
-                                        />
-                                        <img
-                                            className="col-start-1 row-start-1 hidden w-full max-[960px]:block"
-                                            src={cover.mobile}
-                                            alt="Cover"
-                                        />
-                                    </>
-                                )}
-                                <div className="col-start-1 row-start-1 z-10 flex max-w-[328px] flex-col max-[960px]:max-w-full">
-                                    <h2
-                                        className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]"
-                                    >
-                                        {product}
-                                    </h2>
-                                    <span
-                                        className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal"
-                                    >
-                                        {description}
-                                    </span>
-                                    <span className="mt-2 text-[color:var(--color-content-secondary)]">
-                                        {period}
-                                    </span>
-                                </div>
-                            </Link>
-                        )
-                    )}
-                </div>
-            </Page>
-        </>
-    );
+        <Page>
+            <PageMenu />
+            <div className="col-[2/-2] flex flex-col gap-20">
+                {strings.items.map(({ product, description, period, cover, link }) => (
+                    <Link
+                        key={product}
+                        href={link}
+                        className="-m-8 block grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
+                        display="inline-block"
+                    >
+                        {cover && (
+                            <>
+                                <img
+                                    className="col-start-1 row-start-1 w-full max-[960px]:hidden"
+                                    src={cover.desktop}
+                                    alt="Cover"
+                                />
+                                <img
+                                    className="col-start-1 row-start-1 hidden w-full max-[960px]:block"
+                                    src={cover.mobile}
+                                    alt="Cover"
+                                />
+                            </>
+                        )}
+                        <div className="z-10 col-start-1 row-start-1 flex max-w-[328px] flex-col max-[960px]:max-w-full">
+                            <h2 className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
+                                {product}
+                            </h2>
+                            <span className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal">
+                                {description}
+                            </span>
+                            <span className="mt-2 text-[color:var(--color-content-secondary)]">
+                                {period}
+                            </span>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </Page>
+    )
 }

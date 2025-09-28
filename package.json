@@ -27,12 +27,11 @@
     "dependencies": {
         "@mdx-js/react": "^2.3.0",
         "@next/mdx": "^13.4.12",
-        "lodash": "^4.17.21",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "lodash": "^4.17.21",
         "next": "^15.5.2",
         "next-themes": "^0.4.6",
-        "next-seo": "^5.15.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
         "react-yandex-metrika": "^2.6.0",
@@ -42,6 +41,7 @@
     "devDependencies": {
         "@tailwindcss/postcss": "^4",
         "@tailwindcss/typography": "^0.5.16",
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@types/lodash": "^4.14.167",
         "@types/node": "^24.3.0",
         "@types/react": "^19",
@@ -52,6 +52,7 @@
         "husky": "^9.1.7",
         "lint-staged": "^16.2.1",
         "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.6.11",
         "tailwindcss": "^4",
         "typescript": "^5"
     }
