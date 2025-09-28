@@ -8,13 +8,15 @@ import Video from '@/components/video'
 import WorkDescriptionPage from '@/components/work-description-page'
 import { buildWorkMetadata } from '@/lib/metadata'
 
-export default ({ children }) => <WorkDescriptionPage meta={meta} children={children} />
+export default function Page({ children }) {
+    return <WorkDescriptionPage meta={meta}>{children}</WorkDescriptionPage>
+}
 
 export const meta = {
     id: 'tripleten',
     product: 'TripleTen',
     link: 'https://tripleten.com',
-    period: '2022 — present'
+    period: '2022 — 2025'
 }
 
 export const metadata = buildWorkMetadata(meta)

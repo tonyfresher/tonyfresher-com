@@ -1,7 +1,9 @@
 import WritingPage from '@/components/writing-page'
 import { buildArticleMetadata } from '@/lib/metadata'
 
-export default ({ children }) => <WritingPage meta={meta} children={children} />
+export default function Page({ children }) {
+    return <WritingPage meta={meta}>{children}</WritingPage>
+}
 
 export const meta = {
     id: 'sputnik-v',
