@@ -1,9 +1,9 @@
 import Page from '@/components/page'
 import PageMenu from '@/components/page-menu'
 
-import About from './about.mdx'
-import Footer from './footer.mdx'
-import Links from './links'
+import About from './components/about.mdx'
+import Footer from './components/footer.mdx'
+import Links from './components/links'
 
 const aboutWrapperClassName = [
     'relative',

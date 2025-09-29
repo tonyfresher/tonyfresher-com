@@ -5,8 +5,9 @@ import {
     BrowserContainerVideo
 } from '@/components/browser-container'
 import Video from '@/components/video'
-import WorkDescriptionPage from '@/components/work-description-page'
 import { buildWorkMetadata } from '@/lib/metadata'
+
+import WorkDescriptionPage from '../components/work-description-page'
 
 export default function Page({ children }) {
     return <WorkDescriptionPage meta={meta}>{children}</WorkDescriptionPage>
