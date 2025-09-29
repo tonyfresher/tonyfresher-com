@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 
 import Link from '@/components/link'
-import Page from '@/components/page'
-import PageMenu from '@/components/page-menu'
 
 export const metadata: Metadata = {
     title: 'Work',
@@ -50,44 +48,41 @@ const strings = {
 
 export default function WorkOverviewPage() {
     return (
-        <Page>
-            <PageMenu />
-            <div className="col-[2/-2] flex flex-col gap-20">
-                {strings.items.map(({ product, description, period, cover, link }) => (
-                    <Link
-                        key={product}
-                        href={link}
-                        className="-m-8 grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
-                        display="inline-block"
-                    >
-                        {cover && (
-                            <>
-                                <img
-                                    className="col-start-1 row-start-1 w-full max-[960px]:hidden"
-                                    src={cover.desktop}
-                                    alt="Cover"
-                                />
-                                <img
-                                    className="col-start-1 row-start-1 hidden w-full max-[960px]:block"
-                                    src={cover.mobile}
-                                    alt="Cover"
-                                />
-                            </>
-                        )}
-                        <div className="z-10 col-start-1 row-start-1 flex max-w-[328px] flex-col max-[960px]:max-w-full">
-                            <h2 className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
-                                {product}
-                            </h2>
-                            <span className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal">
-                                {description}
-                            </span>
-                            <span className="mt-2 text-[color:var(--color-content-secondary)]">
-                                {period}
-                            </span>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </Page>
+        <div className="col-[2/-2] flex flex-col gap-20">
+            {strings.items.map(({ product, description, period, cover, link }) => (
+                <Link
+                    key={product}
+                    href={link}
+                    className="-m-8 grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
+                    display="inline-block"
+                >
+                    {cover && (
+                        <>
+                            <img
+                                className="col-start-1 row-start-1 w-full max-[960px]:hidden"
+                                src={cover.desktop}
+                                alt="Cover"
+                            />
+                            <img
+                                className="col-start-1 row-start-1 hidden w-full max-[960px]:block"
+                                src={cover.mobile}
+                                alt="Cover"
+                            />
+                        </>
+                    )}
+                    <div className="z-10 col-start-1 row-start-1 flex max-w-[328px] flex-col max-[960px]:max-w-full">
+                        <h2 className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
+                            {product}
+                        </h2>
+                        <span className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal">
+                            {description}
+                        </span>
+                        <span className="mt-2 text-[color:var(--color-content-secondary)]">
+                            {period}
+                        </span>
+                    </div>
+                </Link>
+            ))}
+        </div>
     )
 }

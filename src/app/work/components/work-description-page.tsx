@@ -1,8 +1,6 @@
 import { PropsWithChildren } from 'react'
 
 import Link from '@/components/link'
-import Page from '@/components/page'
-import PageMenu from '@/components/page-menu'
 import type { WorkDescriptionMeta } from '@/types'
 
 interface WorkDescriptionPageProps extends PropsWithChildren {
@@ -34,22 +32,19 @@ export default function WorkDescriptionPage({
     const productUrl = new URL(link)
 
     return (
-        <Page>
-            <PageMenu />
-            <article className={articleClassName}>
-                <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
-                    {product}
-                </h1>
-                <div className="col-[2/-2] mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
-                    <div>{period}</div>
-                    <div>
-                        <Link href={link} display="inline-block">
-                            {productUrl.hostname}
-                        </Link>
-                    </div>
+        <article className={articleClassName}>
+            <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
+                {product}
+            </h1>
+            <div className="col-[2/-2] mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
+                <div>{period}</div>
+                <div>
+                    <Link href={link} display="inline-block">
+                        {productUrl.hostname}
+                    </Link>
                 </div>
-                {content}
-            </article>
-        </Page>
+            </div>
+            {content}
+        </article>
     )
 }

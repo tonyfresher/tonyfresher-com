@@ -1,7 +1,5 @@
 import { PropsWithChildren } from 'react'
 
-import Page from '@/components/page'
-import PageMenu from '@/components/page-menu'
 import { computeReadTime } from '@/lib/content'
 import { formatDate } from '@/lib/format'
 import type { WritingMeta } from '@/types'
@@ -35,19 +33,16 @@ export default function WritingPage<T extends WritingMeta>({
     const readTime = computeReadTime('')
 
     return (
-        <Page>
-            <PageMenu />
-            <article className="col-[2/-2] flex flex-col">
-                <div className="text-[color:var(--color-content-secondary)] max-[960px]:absolute max-[960px]:top-0 max-[960px]:right-0 max-[960px]:text-right max-[960px]:whitespace-nowrap">
-                    <time dateTime={meta.date}>{formatDate(meta.date)}</time>
-                    {', '}
-                    <span>{strings.readTime.replace('%s', readTime.toString())}</span>
-                </div>
-                <h1 className="mt-16 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] max-[960px]:mt-0">
-                    {meta.title}
-                </h1>
-                <div className={contentClassName}>{content}</div>
-            </article>
-        </Page>
+        <article className="col-[2/-2] flex flex-col">
+            <div className="text-[color:var(--color-content-secondary)] max-[960px]:absolute max-[960px]:top-0 max-[960px]:right-0 max-[960px]:text-right max-[960px]:whitespace-nowrap">
+                <time dateTime={meta.date}>{formatDate(meta.date)}</time>
+                {', '}
+                <span>{strings.readTime.replace('%s', readTime.toString())}</span>
+            </div>
+            <h1 className="mt-16 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] max-[960px]:mt-0">
+                {meta.title}
+            </h1>
+            <div className={contentClassName}>{content}</div>
+        </article>
     )
 }

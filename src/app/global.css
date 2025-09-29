@@ -6,18 +6,6 @@
 
 @plugin '@tailwindcss/typography';
 
-@font-face {
-    font-family: 'PT Root UI VF';
-    src: url('/fonts/pt-root-ui/PT Root UI VF.eot');
-    src:
-        url('/fonts/pt-root-ui/PT Root UI VF.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/pt-root-ui/PT Root UI VF.woff2') format('woff2'),
-        url('/fonts/pt-root-ui/PT Root UI VF.woff') format('woff'),
-        url('/fonts/pt-root-ui/PT Root UI VF.ttf') format('truetype');
-    font-weight: 300 700;
-    font-style: normal;
-}
-
 @theme inline {
     --font-sans: 'PT Root UI VF', 'Helvetica', sans-serif;
     --font-weight-sans: 450;
