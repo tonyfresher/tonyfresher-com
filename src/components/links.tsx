@@ -25,11 +25,22 @@ const strings = {
     ]
 }
 
-export default function Links() {
+export interface LinksProps {
+    className?: string
+}
+
+export default function Links({ className }: LinksProps) {
     return (
-        <div className="flex flex-col gap-y-4 text-2xl leading-relaxed">
+        <div
+            className={`flex flex-row flex-wrap gap-4 text-2xl md:flex-col md:gap-y-4 ${className || ''}`}
+        >
             {strings.links.map(({ service, link }) => (
-                <Link className="w-max" key={service} href={link} display="inline-block">
+                <Link
+                    className="w-max whitespace-nowrap"
+                    key={service}
+                    href={link}
+                    display="inline-block"
+                >
                     {service}
                 </Link>
             ))}

@@ -50,14 +50,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <div
                         className={cn(
                             'min-h-screen',
-                            'grid grid-cols-[repeat(6,minmax(0,128px))] justify-center gap-x-16',
+                            'flex flex-col gap-10',
+                            'md:grid md:grid-cols-[repeat(6,minmax(0,128px))] md:justify-center md:gap-x-16',
                             'mobile:p-6 p-14',
                             'bg-secondary'
                         )}
                     >
+                        <Menu className="md:hidden" />
                         {children}
-                        <div className="sticky top-14 col-[-1/-1] flex flex-col gap-16 self-start">
-                            <Menu />
+                        <div className="flex flex-col gap-16 md:sticky md:top-14 md:col-[-1/-1] md:self-start">
+                            <Menu className="hidden md:flex" />
                             <Links />
                         </div>
                     </div>
