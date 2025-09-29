@@ -1,15 +1,13 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@import './variables.css';
 @import './fonts.css';
 
 @plugin '@tailwindcss/typography';
 
 @theme inline {
-    --font-sans: 'PT Root UI VF', 'Helvetica', sans-serif;
-    --font-weight-sans: 450;
-    --font-display: 'PT Root UI VF', 'Helvetica', sans-serif;
+    --font-sans: var(--font-instrument-sans);
+    --font-weight-medium: 530;
 
     --text-base: 20px;
     --leading-base: 1.5;
@@ -57,7 +55,7 @@
     }
 
     body {
-        @apply bg-background text-foreground m-0 font-sans leading-[var(--leading-base)] font-[450] antialiased;
+        @apply bg-background text-foreground m-0 font-sans leading-[var(--leading-base)] antialiased;
     }
 
     img,
