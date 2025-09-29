@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: 'Work',
     openGraph: {
         title: 'Work',
-        siteName: 'Tony Fresher',
+        siteName: 'Anton Fresher',
         type: 'website'
     }
 }

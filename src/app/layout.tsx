@@ -6,19 +6,19 @@ import EmojiFavicon from '@/components/emoji-favicon'
 
 import './global.css'
 
-const description = "Hey, I'm Tony. I'm a product designer and engineer."
+const description = "Hey, I'm Anton. I'm a product designer and engineer."
 
 export const metadata: Metadata = {
     title: {
-        default: 'Tony Fresher',
-        template: '%s — Tony Fresher'
+        default: 'Anton Fresher',
+        template: '%s — Anton Fresher'
     },
     description,
     openGraph: {
-        title: 'Tony Fresher',
+        title: 'Anton Fresher',
         description,
         locale: 'en_US',
-        siteName: 'Tony Fresher',
+        siteName: 'Anton Fresher',
         type: 'website'
     }
 }

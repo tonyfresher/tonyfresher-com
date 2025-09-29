@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { WorkDescriptionMeta, WritingMeta } from '@/types'
 
 const baseOpenGraph = {
-    siteName: 'Tony Fresher',
+    siteName: 'Anton Fresher',
     locale: 'en_US'
 } as const
 
