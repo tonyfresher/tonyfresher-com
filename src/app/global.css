@@ -9,42 +9,124 @@
     --font-sans: var(--font-instrument-sans);
     --font-weight-medium: 530;
 
-    --text-base: 20px;
-    --leading-base: 1.5;
-    --text-h1: 40px;
-    --text-h2: 28px;
-    --leading-tight: 1.2;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
 
-    /* Legacy custom properties */
-    --text-font-family: var(--font-sans);
-    --text-font-weight: var(--font-weight-sans);
-    --text-font-size: var(--text-base);
-    --text-line-height: calc(var(--leading-base) * 100%);
-    --h1-font-size: var(--text-h1);
-    --h2-font-size: var(--text-h2);
-    --header-line-height: calc(var(--leading-tight) * 100%);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
 
-    --color-background: #f2f1ee;
-    --color-surface: #ffffff;
-    --color-foreground: #262626;
-    --color-muted: rgba(38, 38, 38, 0.5);
-    --color-border: rgba(38, 38, 38, 0.08);
-    --color-glassy: rgba(38, 38, 38, 0.08);
-    --color-inverted: #f2f1ee;
-    --color-inverted-foreground: rgba(255, 255, 255, 0.85);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
 
-    --color-content-primary-rgb: 38, 38, 38;
-    --color-content-primary: rgb(var(--color-content-primary-rgb));
-    --color-content-secondary: rgba(var(--color-content-primary-rgb), 0.5);
-    --color-background-default: var(--color-surface);
-    --color-background-surface: var(--color-background);
-    --color-background-glassy: var(--color-glassy);
+    --color-ring: var(--ring);
 
-    --page-padding-x: 64px;
-    --page-padding-y: 64px;
+    --color-input: var(--input);
 
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
+    --color-border: var(--border);
+
+    --color-destructive: var(--destructive);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-glassy: var(--glassy);
+    --color-glassy-secondary: var(--glassy-secondary);
+
+    --radius-xs: calc(var(--radius) - 4px);
+    --radius-sm: calc(var(--radius) - 2px);
+    --radius-md: var(--radius);
+    --radius-lg: calc(var(--radius) + 2px);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 6px);
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: rgba(0, 0, 0, 0.83);
+
+    --card: #ffffff;
+    --card-foreground: rgba(0, 0, 0, 0.83);
+
+    --popover: #ffffff;
+    --popover-foreground: rgba(0, 0, 0, 0.83);
+
+    --primary: #2a2a2a;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f1f0ef;
+    --secondary-foreground: rgba(0, 0, 0, 0.83);
+
+    --muted: #f1f0ef;
+    --muted-foreground: rgba(0, 0, 0, 0.5);
+
+    --accent: #f1f0ef;
+    --accent-foreground: rgba(0, 0, 0, 0.83);
+
+    --destructive: #ed6f68;
+
+    --radius: 0.625rem;
+
+    --border: #e3e1de;
+    --input: #e3e1de;
+
+    --ring: #e96e3a;
+
+    --chart-1: #3f96f3;
+    --chart-2: #3aa65e;
+    --chart-3: #ffa800;
+    --chart-4: #e96e3a;
+    --chart-5: #a27aff;
+
+    --glassy: rgba(0, 0, 0, 0.08);
+    --glassy-secondary: rgba(0, 0, 0, 0.14);
+}
+
+.dark {
+    --background: #2a2a2a;
+    --foreground: rgba(255, 255, 255, 0.85);
+
+    --card: #2a2a2a;
+    --card-foreground: rgba(255, 255, 255, 0.85);
+
+    --popover: #2a2a2a;
+    --popover-foreground: rgba(255, 255, 255, 0.85);
+
+    --primary: #ffffff;
+    --primary-foreground: rgba(0, 0, 0, 0.83);
+
+    --secondary: #1a1a1a;
+    --secondary-foreground: rgba(255, 255, 255, 0.85);
+
+    --muted: #1a1a1a;
+    --muted-foreground: rgba(255, 255, 255, 0.55);
+
+    --accent: #1a1a1a;
+    --accent-foreground: rgba(255, 255, 255, 0.85);
+
+    --destructive: #ed6f68;
+
+    --border: #2e2e2e;
+    --input: #2e2e2e;
+
+    --ring: #e96e3a;
+
+    --chart-1: #3f96f3;
+    --chart-2: #3aa65e;
+    --chart-3: #ffa800;
+    --chart-4: #e96e3a;
+    --chart-5: #a27aff;
+
+    --glassy: rgba(255, 255, 255, 0.08);
+    --glassy-secondary: rgba(255, 255, 255, 0.14);
 }
 
 @layer base {
@@ -52,10 +134,6 @@
     *::before,
     *::after {
         @apply box-border;
-    }
-
-    body {
-        @apply bg-background text-foreground m-0 font-sans leading-[var(--leading-base)] antialiased;
     }
 
     img,

@@ -5,7 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import { Instrument_Sans } from 'next/font/google'
 
 import EmojiFavicon from '@/components/emoji-favicon'
-import PageMenu from '@/components/page-menu'
+import Links from '@/components/links'
+import Menu from '@/components/menu'
 import { cn } from '@/lib/cn'
 
 import './global.css'
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body>
+            <body className={`${instrumentSans.variable} font-regular font-sans antialiased`}>
                 <EmojiFavicon />
                 <ThemeProvider
                     attribute="class"
@@ -46,20 +47,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     enableSystem={false}
                     disableTransitionOnChange
                 >
-                    <main
+                    <div
                         className={cn(
-                            'box-border min-h-screen',
-                            'grid justify-center gap-x-16',
-                            'grid-cols-[repeat(6,minmax(0,128px))]',
-                            'px-[var(--page-padding-x)] py-[var(--page-padding-y)]',
-                            'text-[length:var(--text-font-size)] leading-[var(--text-line-height)]',
-                            'bg-[var(--color-background-surface)] text-[color:var(--color-content-primary)]',
-                            'max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-0'
+                            'min-h-screen',
+                            'grid grid-cols-[repeat(6,minmax(0,128px))] justify-center gap-x-16',
+                            'mobile:p-6 p-14',
+                            'bg-secondary'
                         )}
                     >
-                        <PageMenu />
                         {children}
-                    </main>
+                        <div className="sticky top-14 col-[-1/-1] flex flex-col gap-16 self-start">
+                            <Menu />
+                            <Links />
+                        </div>
+                    </div>
                 </ThemeProvider>
             </body>
         </html>

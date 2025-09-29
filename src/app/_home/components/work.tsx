@@ -1,17 +1,7 @@
-import type { Metadata } from 'next'
-
 import Link from '@/components/link'
 
-export const metadata: Metadata = {
-    title: 'Work',
-    openGraph: {
-        title: 'Work',
-        siteName: 'Anton Fresher',
-        type: 'website'
-    }
-}
-
 const strings = {
+    title: 'Work',
     items: [
         {
             product: 'TripleTen',
@@ -27,33 +17,26 @@ const strings = {
             product: 'Yandex Practicum',
             description: 'Online learning platform',
             period: '2021 — 2022',
-            link: 'https://practicum.yandex.ru',
-            cover: {
-                desktop: '/work/yandex-practicum-desktop.svg',
-                mobile: '/work/yandex-practicum-mobile.svg'
-            }
+            link: 'https://practicum.yandex.ru'
         },
         {
             product: 'Yandex Surveys',
             description: 'Quick surveys and tests',
             period: '2018 — 2021',
-            link: 'https://surveys.yandex.com',
-            cover: {
-                desktop: '/work/yandex-surveys-desktop.svg',
-                mobile: '/work/yandex-surveys-mobile.svg'
-            }
+            link: 'https://surveys.yandex.com'
         }
     ]
 }
 
-export default function WorkOverviewPage() {
+export default function Work() {
     return (
-        <div className="col-[2/-2] flex flex-col gap-20">
+        <div className="flex flex-col gap-10">
+            <h2>{strings.title}</h2>
             {strings.items.map(({ product, description, period, cover, link }) => (
                 <Link
                     key={product}
                     href={link}
-                    className="-m-8 grid gap-6 rounded-lg p-8 text-left max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
+                    className="-m-4 grid gap-6 rounded-lg p-4 max-[960px]:m-0 max-[960px]:flex max-[960px]:flex-col max-[960px]:gap-4 max-[960px]:p-0"
                     display="inline-block"
                 >
                     {cover && (
@@ -71,9 +54,7 @@ export default function WorkOverviewPage() {
                         </>
                     )}
                     <div className="z-10 col-start-1 row-start-1 flex max-w-[328px] flex-col max-[960px]:max-w-full">
-                        <h2 className="m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
-                            {product}
-                        </h2>
+                        <h2 className="m-0 font-semibold">{product}</h2>
                         <span className="mt-4 whitespace-pre-line text-[color:var(--color-content-secondary)] max-[960px]:whitespace-normal">
                             {description}
                         </span>

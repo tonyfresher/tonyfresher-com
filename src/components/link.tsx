@@ -12,33 +12,6 @@ export type LinkProps = PropsWithChildren<{
     display?: 'inline' | 'inline-block'
 }>
 
-const baseClassName = cn(
-    'text-inherit no-underline',
-    'px-1 transition duration-150 ease-out',
-    'rounded-[calc(var(--text-font-size)*0.3)]',
-    'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color,var(--color-content-primary))]'
-)
-
-function getDisplayClass(display: LinkProps['display']) {
-    return display === 'inline-block' ? 'inline-block -mx-1' : 'inline'
-}
-
-function getViewClass(view: LinkProps['view']) {
-    if (view === 'filled') {
-        return cn(
-            'bg-[var(--color,var(--color-background-default))]',
-            'border border-[color:var(--color,var(--color-background-glassy))]',
-            'border-b-[3px] border-b-[color:rgba(0,0,0,0.15)]',
-            'hover:brightness-95 active:brightness-90'
-        )
-    }
-
-    return cn(
-        'text-[color:var(--color,var(--color-content-primary))]',
-        'hover:bg-[var(--color-background-glassy)]'
-    )
-}
-
 export default function Link({
     children,
     className = '',
@@ -48,9 +21,22 @@ export default function Link({
     href
 }: LinkProps) {
     const mixedClassName = cn(
-        baseClassName,
-        getDisplayClass(display),
-        getViewClass(view),
+        // Base styles
+        'transition duration-150 ease-out',
+        'rounded-xs px-1',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color,currentColor)]',
+
+        // Display
+        display === 'inline-block' && '-mx-1 inline-block',
+
+        // View variants
+        view === 'filled' && [
+            'bg-[var(--color)]',
+            'border border-b-[3px] border-[color:var(--color,var(--color-background-glassy))] border-b-[color:rgba(0,0,0,0.15)]',
+            'hover:brightness-95 active:brightness-90'
+        ],
+        view === 'clear' && ['text-[color:var(--color,currentColor)]', 'hover:bg-glassy'],
+
         className
     )
 
