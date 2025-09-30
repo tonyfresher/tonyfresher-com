@@ -18,7 +18,7 @@ export interface PageMenuProps {
 
 export default function Menu({ items = DEFAULT_MENU, className }: PageMenuProps) {
     return (
-        <nav className={`flex flex-row gap-4 text-2xl md:flex-col md:gap-y-4 ${className || ''}`}>
+        <nav className={`flex flex-row gap-4 text-xl md:flex-col md:gap-y-4 ${className || ''}`}>
             {items.map(({ label, link }) => {
                 return (
                     <Link className="w-max" key={link} href={link} display="inline-block">

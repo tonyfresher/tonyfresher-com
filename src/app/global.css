@@ -178,11 +178,11 @@
     }
 
     .mdx-content > h2 {
-        @apply mt-20 text-3xl leading-tight font-semibold;
+        @apply mt-20 text-2xl leading-tight font-semibold;
     }
 
     .mdx-content > h3 {
-        @apply mt-12 text-2xl leading-tight font-semibold;
+        @apply mt-12 text-xl leading-tight font-semibold;
     }
 
     .mdx-content > p > img {

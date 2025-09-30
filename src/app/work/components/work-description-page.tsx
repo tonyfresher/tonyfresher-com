@@ -11,7 +11,7 @@ interface WorkDescriptionPageProps extends PropsWithChildren {
 const articleClassName = cn(
     'mdx-content',
     'contents',
-    'text-2xl',
+    'text-xl',
     '[&>*:not(.wide-block)]:col-span-4'
 )
 

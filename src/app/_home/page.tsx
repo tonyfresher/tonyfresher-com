@@ -11,7 +11,7 @@ export const strings = {
 
 export default function HomePage() {
     return (
-        <div className="col-span-4 flex flex-col gap-y-24 text-2xl">
+        <div className="col-span-4 flex flex-col gap-y-24 text-xl">
             <div
                 className={cn(
                     'relative leading-relaxed',
