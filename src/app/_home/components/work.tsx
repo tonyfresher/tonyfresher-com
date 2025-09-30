@@ -36,7 +36,7 @@ export default function Work() {
                 <Link
                     key={product}
                     href={link}
-                    className="-m-4 grid gap-6 rounded-md p-4 max-lg:m-0 max-lg:flex max-lg:flex-col max-lg:gap-8 max-lg:p-0"
+                    className="-m-4 grid gap-6 rounded-md p-4 max-lg:m-0 max-lg:flex max-lg:flex-col max-lg:gap-8 max-lg:p-0 max-lg:hover:bg-transparent"
                     display="inline-block"
                 >
                     {cover && (
