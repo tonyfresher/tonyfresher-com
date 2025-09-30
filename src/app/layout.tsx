@@ -49,16 +49,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 >
                     <div
                         className={cn(
+                            'bg-secondary',
                             'min-h-screen',
                             'flex flex-col gap-10',
                             'md:grid md:grid-cols-[repeat(6,minmax(0,128px))] md:justify-center md:gap-x-16',
-                            'mobile:p-6 p-14',
-                            'bg-secondary'
+                            'p-14 max-sm:p-6'
                         )}
                     >
                         <Menu className="md:hidden" />
-                        {children}
-                        <div className="flex flex-col gap-16 md:sticky md:top-14 md:-col-end-1 md:row-span-full md:row-start-1 md:self-start">
+                        <div
+                            className={cn(
+                                'block',
+                                'md:col-span-5 md:row-span-5',
+                                'md:grid md:grid-cols-5 md:gap-x-16'
+                            )}
+                        >
+                            {children}
+                        </div>
+                        <div className="flex flex-col gap-16 md:sticky md:top-14 md:col-start-6 md:row-span-5 md:row-start-1 md:self-start">
                             <Menu className="hidden md:flex" />
                             <Links />
                         </div>

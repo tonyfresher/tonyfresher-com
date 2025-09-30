@@ -14,7 +14,7 @@ const components = {
         className?: string
         href?: string
     }) => (
-        <Link className={className} view="filled" href={href ?? '#'}>
+        <Link className={className} view="underlined" href={href ?? '#'}>
             {children}
         </Link>
     )

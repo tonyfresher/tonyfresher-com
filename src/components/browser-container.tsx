@@ -10,7 +10,7 @@ interface BrowserContainerProps extends PropsWithChildren {
     aspectRatio?: string
 }
 
-const baseContainerClass = cn('rounded-lg bg-[var(--color-background-glassy)] p-2')
+const baseContainerClass = cn('bg-glassy rounded-lg p-2')
 
 const baseWindowClass = cn(
     'w-full overflow-hidden rounded-[5px]',
@@ -72,10 +72,10 @@ interface BrowserContainerGalleryProps {
 
 const sidebarClassName = cn('flex flex-col')
 const dotsClassName = cn('m-2 flex gap-[6px] max-[960px]:hidden')
-const dotClassName = cn('h-3 w-3 rounded-full bg-[var(--color-background-glassy)]')
+const dotClassName = cn('bg-glassy h-3 w-3 rounded-full')
 const sectionTitleClassName = cn(
     'mx-2 mt-4 mb-3 text-[12px] leading-none font-bold',
-    'text-[color:var(--color-content-secondary)]',
+    'text-muted-foreground',
     'max-[960px]:hidden'
 )
 const tabsClassName = cn(
@@ -86,14 +86,13 @@ const tabsClassName = cn(
 const tabBaseClass = cn(
     'flex items-center gap-2 rounded-lg border-0 bg-transparent p-2 text-left',
     'font-sans text-[14px] leading-4 font-[var(--text-font-weight)]',
-    'text-[color:var(--color-content-primary)]',
     'transition-transform duration-100 ease-out'
 )
 const tabSelectedClass = cn('bg-white shadow-[0_2px_1px_rgba(0,0,0,0.06)]')
 const tabUnselectedClass = cn(
-    'cursor-pointer hover:bg-[var(--color-background-glassy)]',
+    'hover:bg-glassy cursor-pointer',
     'active:scale-95 active:bg-white active:shadow-[0_2px_1px_rgba(0,0,0,0.06)]',
-    'max-[960px]:bg-[var(--color-background-glassy)]'
+    'max-[960px]:bg-glassy'
 )
 const tabFaviconClass = cn('h-4 w-4 max-[960px]:hidden')
 const tabLabelClass = cn('truncate')
