@@ -10,7 +10,7 @@ interface BrowserContainerProps extends PropsWithChildren {
     aspectRatio?: string
 }
 
-const baseContainerClass = cn('bg-glassy rounded-lg p-2')
+const baseContainerClass = cn('bg-glassy rounded-md p-2')
 
 const baseWindowClass = cn(
     'w-full overflow-hidden rounded-[5px]',
@@ -84,14 +84,14 @@ const tabsClassName = cn(
     'max-[960px]:overflow-x-auto max-[960px]:overflow-y-hidden'
 )
 const tabBaseClass = cn(
-    'flex items-center gap-2 rounded-lg border-0 bg-transparent p-2 text-left',
+    'flex items-center gap-2 rounded-sm border-0 bg-transparent p-2 text-left',
     'font-sans text-[14px] leading-4 font-[var(--text-font-weight)]',
     'transition-transform duration-100 ease-out'
 )
 const tabSelectedClass = cn('bg-white shadow-[0_2px_1px_rgba(0,0,0,0.06)]')
 const tabUnselectedClass = cn(
     'hover:bg-glassy cursor-pointer',
-    'active:scale-95 active:bg-white active:shadow-[0_2px_1px_rgba(0,0,0,0.06)]',
+    'active:scale-98 active:bg-white active:shadow-[0_2px_1px_rgba(0,0,0,0.06)]',
     'max-[960px]:bg-glassy'
 )
 const tabFaviconClass = cn('h-4 w-4 max-[960px]:hidden')

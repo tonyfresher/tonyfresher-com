@@ -10,6 +10,7 @@ export default function Video({ source, autoPlay, controls = true, ...props }: V
             className="block w-full"
             controls={controls}
             autoPlay={autoPlay}
+            playsInline
             loop
             muted
             {...props}
