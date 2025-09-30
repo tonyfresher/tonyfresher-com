@@ -28,8 +28,8 @@ export default function Link({
 
         // View variants
         view === 'underlined' &&
-            'decoration-glassy-secondary hover:decoration-ring underline decoration-2 underline-offset-4',
-        view === 'clear' && 'hover:bg-glassy -mx-1 rounded-xs px-1',
+            'decoration-accent-secondary hover:decoration-ring underline decoration-2 underline-offset-4',
+        view === 'clear' && 'hover:bg-accent -mx-1 rounded-xs px-1',
 
         className
     )

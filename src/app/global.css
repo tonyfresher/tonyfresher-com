@@ -29,6 +29,10 @@
 
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
+    --color-accent-secondary: var(--accent-secondary);
+
+    --color-bright: var(--bright);
+    --color-bright-foreground: var(--bright-foreground);
 
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
@@ -38,9 +42,6 @@
 
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
-
-    --color-glassy: var(--glassy);
-    --color-glassy-secondary: var(--glassy-secondary);
 
     --radius-xs: calc(var(--radius) - 4px);
     --radius-sm: calc(var(--radius) - 2px);
@@ -84,26 +85,27 @@
     --muted: #f1f0ef;
     --muted-foreground: rgba(0, 0, 0, 0.5);
 
-    --accent: #f1f0ef;
+    --accent: rgba(0, 0, 0, 0.08);
     --accent-foreground: rgba(0, 0, 0, 0.83);
+    --accent-secondary: rgba(0, 0, 0, 0.14);
+
+    --bright: #ff5900;
+    --bright-foreground: #ffffff;
 
     --destructive: #ed6f68;
 
     --radius: 0.625rem;
 
-    --border: #e3e1de;
-    --input: #e3e1de;
+    --border: var(--accent);
+    --input: var(--accent-secondary);
 
-    --ring: #ff5900;
+    --ring: var(--bright);
 
     --chart-1: #3f96f3;
     --chart-2: #3aa65e;
     --chart-3: #ffa800;
     --chart-4: #e96e3a;
     --chart-5: #a27aff;
-
-    --glassy: rgba(0, 0, 0, 0.08);
-    --glassy-secondary: rgba(0, 0, 0, 0.14);
 
     --sidebar: var(--background);
     --sidebar-foreground: var(--foreground);
@@ -134,24 +136,25 @@
     --muted: #1a1a1a;
     --muted-foreground: rgba(255, 255, 255, 0.55);
 
-    --accent: #1a1a1a;
+    --accent: rgba(255, 255, 255, 0.08);
     --accent-foreground: rgba(255, 255, 255, 0.85);
+    --accent-secondary: rgba(255, 255, 255, 0.14);
+
+    --bright: #ff5900;
+    --bright-foreground: #ffffff;
 
     --destructive: #ed6f68;
 
-    --border: #2e2e2e;
-    --input: #2e2e2e;
+    --border: var(--accent);
+    --input: var(--accent-secondary);
 
-    --ring: #ff5900;
+    --ring: var(--bright);
 
     --chart-1: #3f96f3;
     --chart-2: #3aa65e;
     --chart-3: #ffa800;
     --chart-4: #e96e3a;
     --chart-5: #a27aff;
-
-    --glassy: rgba(255, 255, 255, 0.08);
-    --glassy-secondary: rgba(255, 255, 255, 0.14);
 
     --sidebar: var(--background);
     --sidebar-foreground: var(--foreground);
@@ -233,7 +236,7 @@
 
     .mdx-content > p > img,
     .mdx-content > p > video {
-        @apply border-glassy w-full rounded-md border;
+        @apply border-accent w-full rounded-md border;
     }
 
     .mdx-content > p > a > img {

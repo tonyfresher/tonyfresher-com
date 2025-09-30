@@ -1,8 +1,16 @@
 'use client'
 
-import { type ElementType, Fragment, type MouseEvent, type ReactNode, useState } from 'react'
+import {
+    type ElementType,
+    Fragment,
+    type MouseEvent,
+    type ReactNode,
+    type PointerEvent as ReactPointerEvent,
+    useState
+} from 'react'
 
-import { X } from '@untitledui/icons'
+import { XClose } from '@untitledui/icons'
+import { curry } from 'lodash'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -28,72 +36,53 @@ import VibeOverlay from './vibe-overlay'
 import VibeSound from './vibe-sound'
 
 const strings = {
-    selectVibe: 'Select vibe',
+    selectVibe: 'Change vibe',
     clearVibe: 'Clear vibe'
 }
 
 type TriggerComponentProps = { asChild?: boolean; children: ReactNode }
 
-interface TriggerBaseProps {
+interface TriggerProps {
     TriggerComponent: ElementType<TriggerComponentProps>
-    label: string
-    showClearButton: boolean
-    onClear: (event: MouseEvent<HTMLButtonElement>) => void
-    className?: string
+    vibe: Vibe | null
+    onClear: () => void
 }
 
-const triggerStyles = {
-    desktop: {
-        wrapper: 'relative inline-flex',
-        button: 'h-14 w-full justify-start rounded-xl px-6 pr-14 text-lg shadow-lg',
-        clearButton:
-            'hover:bg-accent hover:text-accent-foreground absolute top-1/2 right-4 inline-flex size-8 -translate-y-1/2 items-center justify-center rounded-md transition-colors',
-        clearIcon: 'size-4'
-    },
-    mobile: {
-        wrapper: 'flex w-full items-center gap-2',
-        button: 'h-14 flex-1 justify-start rounded-xl px-6 text-lg shadow-lg',
-        clearButton:
-            'hover:bg-accent hover:text-accent-foreground inline-flex size-9 items-center justify-center rounded-md transition-colors',
-        clearIcon: 'size-5'
+function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
+    const label = vibe?.name ?? strings.selectVibe
+
+    const handleCrossClick = (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation()
+        onClear()
     }
-} as const
 
-type TriggerVariant = keyof typeof triggerStyles
-
-interface TriggerProps extends TriggerBaseProps {
-    variant: TriggerVariant
-}
-
-function Trigger({
-    TriggerComponent,
-    label,
-    showClearButton,
-    onClear,
-    className,
-    variant
-}: TriggerProps) {
-    const styles = triggerStyles[variant]
+    const handleCrossPointerDown = (event: ReactPointerEvent<HTMLButtonElement>) => {
+        event.stopPropagation()
+    }
 
     return (
-        <div className={cn(styles.wrapper, className)}>
-            <TriggerComponent asChild>
-                <Button variant="outline" size="lg" className={styles.button}>
-                    <span className="truncate">{label}</span>
-                </Button>
-            </TriggerComponent>
-
-            {showClearButton && (
-                <button
-                    type="button"
-                    className={styles.clearButton}
-                    aria-label={strings.clearVibe}
-                    onClick={onClear}
-                >
-                    <X className={styles.clearIcon} />
-                </button>
-            )}
-        </div>
+        <TriggerComponent asChild>
+            <button
+                className={cn(
+                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-6 text-xl font-medium shadow-lg transition-transform max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
+                    'hover:scale-102 active:scale-98',
+                    vibe && 'pr-3 max-md:pr-1'
+                )}
+            >
+                <span className="truncate">{label}</span>
+                {vibe && (
+                    <button
+                        type="button"
+                        className="hover:bg-accent flex size-9 items-center justify-center rounded-md transition-colors"
+                        aria-label={strings.clearVibe}
+                        onClick={handleCrossClick}
+                        onPointerDown={handleCrossPointerDown}
+                    >
+                        <XClose className="size-6" />
+                    </button>
+                )}
+            </button>
+        </TriggerComponent>
     )
 }
 
@@ -122,12 +111,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
         setCurrentVibe(vibe)
     }
 
-    const currentLabel = currentVibe ? currentVibe.name : strings.selectVibe
-    const hasSelection = Boolean(currentVibe)
-
-    const handleClear = (event: MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault()
-        event.stopPropagation()
+    const handleClear = () => {
         handleVibeSelect(null)
     }
 
@@ -141,13 +125,14 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                     <DropdownMenu>
                         <Trigger
                             TriggerComponent={DropdownMenuTrigger}
-                            variant="desktop"
-                            className="min-w-[12rem]"
-                            label={currentLabel}
-                            showClearButton={hasSelection}
+                            vibe={currentVibe}
                             onClear={handleClear}
                         />
-                        <DropdownMenuContent align="end" className="w-56">
+                        <DropdownMenuContent
+                            className="min-w-80 rounded-2xl p-4"
+                            align="end"
+                            sideOffset={16}
+                        >
                             <VibeOptions
                                 currentType={currentVibe?.type}
                                 onSelect={handleVibeSelect}
@@ -155,7 +140,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                                     <DropdownMenuItem
                                         onSelect={select}
                                         className={cn(
-                                            'text-base font-medium',
+                                            'h-14 justify-center text-xl font-medium',
                                             isActive && 'bg-accent text-accent-foreground'
                                         )}
                                     >
@@ -171,10 +156,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                     <Drawer>
                         <Trigger
                             TriggerComponent={DrawerTrigger}
-                            variant="mobile"
-                            className="w-full"
-                            label={currentLabel}
-                            showClearButton={hasSelection}
+                            vibe={currentVibe}
                             onClear={handleClear}
                         />
                         <DrawerContent>
@@ -189,8 +171,8 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                                         renderOption={(vibe, isActive, select) => (
                                             <DrawerClose asChild>
                                                 <Button
-                                                    variant={isActive ? 'secondary' : 'ghost'}
-                                                    className="justify-start text-base font-medium"
+                                                    variant={isActive ? 'secondary' : 'clear'}
+                                                    className="text-base font-medium"
                                                     onClick={select}
                                                 >
                                                     {vibe.name}

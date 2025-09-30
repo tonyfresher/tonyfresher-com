@@ -53,13 +53,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             >
                 <EmojiFavicon />
                 <ScrollToTop />
-                <VibeSelector
-                    className={cn(
-                        'fixed z-50',
-                        'top-6 right-6',
-                        'md:top-auto md:right-6 md:bottom-6'
-                    )}
-                />
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
@@ -92,6 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             </div>
                         </div>
                         <div className="from-ring via-ring/10 to-ring/0 pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-radial-[60%_100%_at_50%_100%] from-0% via-80%" />
+                        <VibeSelector className="fixed right-10 bottom-10 max-md:top-4 max-md:right-4 max-md:bottom-auto" />
                     </div>
                 </ThemeProvider>
             </body>

@@ -10,7 +10,7 @@ interface BrowserContainerProps extends PropsWithChildren {
     aspectRatio?: string
 }
 
-const baseContainerClass = cn('bg-glassy rounded-md p-2')
+const baseContainerClass = cn('bg-accent rounded-md p-2')
 
 const baseWindowClass = cn(
     'w-full overflow-hidden rounded-[5px]',
@@ -72,7 +72,7 @@ interface BrowserContainerGalleryProps {
 
 const sidebarClassName = cn('flex flex-col')
 const dotsClassName = cn('m-2 flex gap-[6px] max-[960px]:hidden')
-const dotClassName = cn('bg-glassy h-3 w-3 rounded-full')
+const dotClassName = cn('bg-accent h-3 w-3 rounded-full')
 const sectionTitleClassName = cn(
     'mx-2 mt-4 mb-3 text-[12px] leading-none font-bold',
     'text-muted-foreground',
@@ -90,9 +90,9 @@ const tabBaseClass = cn(
 )
 const tabSelectedClass = cn('bg-white shadow-[0_2px_1px_rgba(0,0,0,0.06)]')
 const tabUnselectedClass = cn(
-    'hover:bg-glassy cursor-pointer',
+    'hover:bg-accent cursor-pointer',
     'active:scale-98 active:bg-white active:shadow-[0_2px_1px_rgba(0,0,0,0.06)]',
-    'max-[960px]:bg-glassy'
+    'max-[960px]:bg-accent'
 )
 const tabFaviconClass = cn('h-4 w-4 max-[960px]:hidden')
 const tabLabelClass = cn('truncate')
