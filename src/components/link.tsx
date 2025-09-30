@@ -20,8 +20,7 @@ export default function Link({
 }: LinkProps) {
     const mixedClassName = cn(
         // Base styles
-        'transition duration-150 ease-out',
-        'rounded-xs px-1',
+        'transition duration-50 ease-out',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[currentColor]',
 
         // Display
