@@ -7,6 +7,7 @@ import { Instrument_Sans, Slackey } from 'next/font/google'
 import EmojiFavicon from '@/components/emoji-favicon'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
+import ScrollToTop from '@/components/scroll-to-top'
 import { cn } from '@/lib/cn'
 
 import './global.css'
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 className={`${instrumentSans.variable} ${slackey.variable} font-regular font-sans antialiased`}
             >
                 <EmojiFavicon />
+                <ScrollToTop />
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
