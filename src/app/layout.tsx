@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                                 'min-h-screen',
                                 'flex flex-col gap-10',
                                 'md:grid md:grid-cols-[repeat(6,minmax(0,128px))] md:justify-center md:gap-x-16',
-                                'p-14 pb-20 max-sm:p-6 max-sm:pb-10'
+                                'p-14 max-sm:p-6'
                             )}
                         >
                             <Menu className="md:hidden" />
@@ -84,7 +84,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                                 <Links />
                             </div>
                         </div>
-                        <div className="from-ring via-ring/10 to-ring/0 pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-radial-[60%_100%_at_50%_100%] from-0% via-80%" />
                         <VibeSelector className="fixed right-10 bottom-10 max-md:top-4 max-md:right-4 max-md:bottom-auto" />
                     </div>
                 </ThemeProvider>

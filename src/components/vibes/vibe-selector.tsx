@@ -10,7 +10,6 @@ import {
 } from 'react'
 
 import { XClose } from '@untitledui/icons'
-import { curry } from 'lodash'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -29,7 +28,7 @@ import {
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/cn'
-import type { Vibe } from '@/types/vibe'
+import type { Vibe, VibeType } from '@/types/vibe'
 
 import { VIBES } from './config'
 import VibeOverlay from './vibe-overlay'
@@ -64,16 +63,18 @@ function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
         <TriggerComponent asChild>
             <button
                 className={cn(
-                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-6 text-xl font-medium shadow-lg transition-transform max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
+                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-5 text-xl font-medium shadow-lg transition-transform max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
                     'hover:scale-102 active:scale-98',
                     vibe && 'pr-3 max-md:pr-1'
                 )}
             >
-                <span className="truncate">{label}</span>
+                {vibe && <vibe.icon className="size-6" />}
+                <span className="truncate px-1">{label}</span>
+
                 {vibe && (
                     <button
                         type="button"
-                        className="hover:bg-accent flex size-9 items-center justify-center rounded-md transition-colors"
+                        className="hover:bg-accent text-bright-foreground/60 flex size-9 items-center justify-center rounded-md transition-colors"
                         aria-label={strings.clearVibe}
                         onClick={handleCrossClick}
                         onPointerDown={handleCrossPointerDown}
@@ -129,7 +130,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                             onClear={handleClear}
                         />
                         <DropdownMenuContent
-                            className="min-w-80 rounded-2xl p-4"
+                            className="min-w-80 gap-1 rounded-2xl p-4"
                             align="end"
                             sideOffset={16}
                         >
@@ -140,10 +141,11 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                                     <DropdownMenuItem
                                         onSelect={select}
                                         className={cn(
-                                            'h-14 justify-center text-xl font-medium',
-                                            isActive && 'bg-accent text-accent-foreground'
+                                            'h-14 gap-3 px-4 text-xl',
+                                            isActive && 'bg-accent'
                                         )}
                                     >
+                                        <vibe.icon className="size-6" />
                                         {vibe.name}
                                     </DropdownMenuItem>
                                 )}
