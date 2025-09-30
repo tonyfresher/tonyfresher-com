@@ -23,7 +23,7 @@ export default function WorkDescriptionPage({
 
     return (
         <article className={articleClassName}>
-            <h1 className="font-display col-span-5 m-0 text-4xl font-semibold">{product}</h1>
+            <h1 className="font-display col-span-5 m-0 text-5xl font-semibold">{product}</h1>
             <div className="text-muted-foreground col-span-5 mt-8 mb-14 flex flex-col gap-2">
                 <div>{period}</div>
                 <div>
