@@ -1,4 +1,4 @@
-import { CSSProperties, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 
 import NextLink from 'next/link'
 
