@@ -160,12 +160,12 @@
 }
 
 @layer components {
-    .Caption {
+    .caption {
         @apply text-muted mt-2 block text-sm;
     }
 
     .WideBlock {
-        @apply col-span-full flex flex-col gap-2;
+        @apply col-span-5 flex flex-col gap-2;
     }
 
     .mdx-content {

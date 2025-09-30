@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     >
                         <Menu className="md:hidden" />
                         {children}
-                        <div className="flex flex-col gap-16 md:sticky md:top-14 md:col-[-1/-1] md:self-start">
+                        <div className="flex flex-col gap-16 md:sticky md:top-14 md:-col-end-1 md:row-span-full md:row-start-1 md:self-start">
                             <Menu className="hidden md:flex" />
                             <Links />
                         </div>

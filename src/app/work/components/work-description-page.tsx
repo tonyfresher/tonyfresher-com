@@ -9,7 +9,7 @@ interface WorkDescriptionPageProps extends PropsWithChildren {
 
 const articleClassName = [
     'contents',
-    '[&>*:not(.WideBlock)]:col-[2/-2]',
+    '[&>*:not(.WideBlock)]:col-span-5',
     '[&>*]:mt-6',
     '[&>p:first-of-type]:mt-0',
     '[&>hr]:mx-auto [&>hr]:my-16 [&>hr]:h-0.5 [&>hr]:w-full [&>hr]:border-0',
@@ -33,10 +33,8 @@ export default function WorkDescriptionPage({
 
     return (
         <article className={articleClassName}>
-            <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)]">
-                {product}
-            </h1>
-            <div className="col-[2/-2] mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
+            <h1 className="col-span-5 m-0">{product}</h1>
+            <div className="col-span-5 mt-4 flex flex-col gap-1 text-[color:var(--color-content-secondary)]">
                 <div>{period}</div>
                 <div>
                     <Link href={link} display="inline-block">
