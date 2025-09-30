@@ -61,10 +61,10 @@ function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
 
     return (
         <TriggerComponent asChild>
-            <button
+            <div
                 className={cn(
                     'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-5 text-xl font-medium shadow-lg transition-transform max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
-                    'hover:scale-102 active:scale-98',
+                    'active:scale-98',
                     vibe && 'pr-3 max-md:pr-1'
                 )}
             >
@@ -82,7 +82,7 @@ function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
                         <XClose className="size-6" />
                     </button>
                 )}
-            </button>
+            </div>
         </TriggerComponent>
     )
 }
