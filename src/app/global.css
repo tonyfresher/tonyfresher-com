@@ -161,57 +161,65 @@
 
 @layer components {
     .caption {
-        @apply text-muted mt-2 block text-sm;
+        @apply text-muted-foreground mt-2 block text-sm;
     }
 
     .wide-block {
         @apply col-span-5 flex flex-col gap-2;
     }
 
-    .mdx-content {
-        @apply text-foreground grid gap-y-12 text-[20px] leading-[var(--leading-base)];
-    }
-
     .mdx-content > * {
         @apply m-0;
     }
 
-    .mdx-content h2 {
-        @apply mt-20 leading-[var(--leading-tight)] text-[var(--text-h2)];
+    .mdx-content > *:not(:first-child) {
+        @apply mt-6;
     }
 
-    .mdx-content h3 {
-        @apply mt-12 text-[20px] leading-[var(--leading-tight)];
+    .mdx-content > p:first-of-type {
+        @apply mt-0;
     }
 
-    .mdx-content hr {
+    .mdx-content > hr {
         @apply mx-auto my-16 h-0.5 w-full border-0 opacity-20;
         background: linear-gradient(
             to right,
-            var(--color-muted),
-            var(--color-muted) 60%,
+            var(--color-muted-foreground),
+            var(--color-muted-foreground) 60%,
             transparent 60%,
             transparent 100%
         );
         background-size: 40px 2px;
     }
 
-    .mdx-content p > img,
-    .mdx-content p > video {
-        @apply w-full rounded-lg border border-[color:var(--color-glassy)];
+    .mdx-content > h2 {
+        @apply mt-20 text-[32px] leading-tight;
     }
 
-    .mdx-content p > a img {
+    .mdx-content > h3 {
+        @apply mt-12 text-[20px] leading-tight;
+    }
+
+    .mdx-content > p > img {
+        @apply w-full;
+    }
+
+    .mdx-content > p > img,
+    .mdx-content > p > video {
+        @apply rounded-lg border border-[color:var(--color-glassy)];
+    }
+
+    .mdx-content > p > a > img {
         @apply block;
     }
 
-    .mdx-content ul,
-    .mdx-content ol {
+    .mdx-content > ul,
+    .mdx-content > ol {
         @apply pl-8;
     }
 
-    .mdx-content ul li + li,
-    .mdx-content ol li + li {
+    .mdx-content > ul > li + li,
+    .mdx-content > ol > li + li {
         @apply mt-2;
     }
 }
