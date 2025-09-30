@@ -38,3 +38,7 @@ yarn-error.log*
 
 # ESLint cache
 .eslintcache
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

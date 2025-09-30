@@ -1,0 +1,216 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@plugin '@tailwindcss/typography';
+
+@theme inline {
+    --font-sans: var(--font-instrument-sans);
+    --font-weight-medium: 530;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-ring: var(--ring);
+
+    --color-input: var(--input);
+
+    --color-border: var(--border);
+
+    --color-destructive: var(--destructive);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-glassy: var(--glassy);
+    --color-glassy-secondary: var(--glassy-secondary);
+
+    --radius-xs: calc(var(--radius) - 4px);
+    --radius-sm: calc(var(--radius) - 2px);
+    --radius-md: var(--radius);
+    --radius-lg: calc(var(--radius) + 2px);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 6px);
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: rgba(0, 0, 0, 0.83);
+
+    --card: #ffffff;
+    --card-foreground: rgba(0, 0, 0, 0.83);
+
+    --popover: #ffffff;
+    --popover-foreground: rgba(0, 0, 0, 0.83);
+
+    --primary: #2a2a2a;
+    --primary-foreground: #ffffff;
+
+    --secondary: #f1f0ef;
+    --secondary-foreground: rgba(0, 0, 0, 0.83);
+
+    --muted: #f1f0ef;
+    --muted-foreground: rgba(0, 0, 0, 0.5);
+
+    --accent: #f1f0ef;
+    --accent-foreground: rgba(0, 0, 0, 0.83);
+
+    --destructive: #ed6f68;
+
+    --radius: 0.625rem;
+
+    --border: #e3e1de;
+    --input: #e3e1de;
+
+    --ring: #e96e3a;
+
+    --chart-1: #3f96f3;
+    --chart-2: #3aa65e;
+    --chart-3: #ffa800;
+    --chart-4: #e96e3a;
+    --chart-5: #a27aff;
+
+    --glassy: rgba(0, 0, 0, 0.08);
+    --glassy-secondary: rgba(0, 0, 0, 0.14);
+}
+
+.dark {
+    --background: #2a2a2a;
+    --foreground: rgba(255, 255, 255, 0.85);
+
+    --card: #2a2a2a;
+    --card-foreground: rgba(255, 255, 255, 0.85);
+
+    --popover: #2a2a2a;
+    --popover-foreground: rgba(255, 255, 255, 0.85);
+
+    --primary: #ffffff;
+    --primary-foreground: rgba(0, 0, 0, 0.83);
+
+    --secondary: #1a1a1a;
+    --secondary-foreground: rgba(255, 255, 255, 0.85);
+
+    --muted: #1a1a1a;
+    --muted-foreground: rgba(255, 255, 255, 0.55);
+
+    --accent: #1a1a1a;
+    --accent-foreground: rgba(255, 255, 255, 0.85);
+
+    --destructive: #ed6f68;
+
+    --border: #2e2e2e;
+    --input: #2e2e2e;
+
+    --ring: #e96e3a;
+
+    --chart-1: #3f96f3;
+    --chart-2: #3aa65e;
+    --chart-3: #ffa800;
+    --chart-4: #e96e3a;
+    --chart-5: #a27aff;
+
+    --glassy: rgba(255, 255, 255, 0.08);
+    --glassy-secondary: rgba(255, 255, 255, 0.14);
+}
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply box-border;
+    }
+
+    img,
+    video {
+        @apply h-auto max-w-full;
+    }
+
+    a {
+        @apply text-current no-underline;
+    }
+}
+
+@layer components {
+    .caption {
+        @apply text-muted-foreground mt-2 block text-base;
+    }
+
+    .wide-block {
+        @apply col-span-5;
+    }
+
+    .mdx-content > * {
+        @apply m-0;
+    }
+
+    .mdx-content > *:not(:first-child, h2, h3) {
+        @apply mt-6;
+    }
+
+    .mdx-content > p:first-of-type {
+        @apply mt-0;
+    }
+
+    .mdx-content > hr {
+        @apply mx-auto my-16 h-0.5 w-full border-0 opacity-20;
+        background: linear-gradient(
+            to right,
+            var(--color-muted-foreground),
+            var(--color-muted-foreground) 60%,
+            transparent 60%,
+            transparent 100%
+        );
+        background-size: 40px 2px;
+    }
+
+    .mdx-content > h2 {
+        @apply mt-20 text-3xl leading-tight font-semibold;
+    }
+
+    .mdx-content > h3 {
+        @apply mt-12 text-2xl leading-tight font-semibold;
+    }
+
+    .mdx-content > p > img {
+        @apply w-full;
+    }
+
+    .mdx-content > p > img,
+    .mdx-content > p > video {
+        @apply rounded-lg border border-[color:var(--color-glassy)];
+    }
+
+    .mdx-content > p > a > img {
+        @apply block;
+    }
+
+    .mdx-content > ul,
+    .mdx-content > ol {
+        @apply pl-8;
+    }
+
+    .mdx-content > ul > li + li,
+    .mdx-content > ol > li + li {
+        @apply mt-2;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

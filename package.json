@@ -6,36 +6,56 @@
         "node": ">=20"
     },
     "scripts": {
-        "dev": "next dev",
+        "prepare": "husky",
+        "dev": "next dev --turbopack",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "format": "prettier --write .",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
         "deps": "npm install && husky install"
     },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,md,mdx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,yml,yaml}": [
+            "prettier --write"
+        ]
+    },
     "dependencies": {
-        "@bem-react/classname": "^1.5.12",
-        "@mdx-js/react": "^2.3.0",
-        "@next/mdx": "^13.4.12",
+        "@mdx-js/react": "^3.1.1",
+        "@next/mdx": "^15.5.4",
+        "@types/mdx": "^2.0.13",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
         "lodash": "^4.17.21",
-        "next": "13.2.4",
-        "next-seo": "^5.15.0",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-yandex-metrika": "^2.6.0",
-        "remark-gfm": "^3.0.1"
+        "next": "^15.5.2",
+        "next-themes": "^0.4.6",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "remark-gfm": "^3.0.1",
+        "tailwind-merge": "^3.3.1"
     },
     "devDependencies": {
+        "@tailwindcss/postcss": "^4",
+        "@tailwindcss/typography": "^0.5.16",
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "@types/lodash": "^4.14.167",
-        "@types/node": "^18.13.0",
-        "@types/react": "18.0.28",
-        "@types/react-dom": "18.0.11",
-        "@typescript-eslint/eslint-plugin": "^5.55.0",
-        "eslint": "^8.36.0",
-        "eslint-config-next": "13.2.4",
-        "eslint-config-prettier": "^8.7.0",
-        "husky": "^8.0.0",
-        "lint-staged": "^13.2.0",
-        "prettier": "^2.8.4",
-        "typescript": "^5.0"
+        "@types/node": "^24.3.0",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "15.5.4",
+        "eslint-config-prettier": "^10.0.1",
+        "eslint-plugin-mdx": "^3.6.2",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.1",
+        "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "tailwindcss": "^4",
+        "tw-animate-css": "^1.3.7",
+        "typescript": "^5"
     }
 }
