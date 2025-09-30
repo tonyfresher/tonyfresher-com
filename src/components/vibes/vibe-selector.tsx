@@ -1,6 +1,6 @@
 'use client'
 
-import { type ElementType, type MouseEvent, type ReactNode, useState } from 'react'
+import { type ElementType, Fragment, type MouseEvent, type ReactNode, useState } from 'react'
 
 import { X } from '@untitledui/icons'
 
@@ -42,21 +42,43 @@ interface TriggerBaseProps {
     className?: string
 }
 
-function DesktopTrigger({
+const triggerStyles = {
+    desktop: {
+        wrapper: 'relative inline-flex',
+        button: 'h-14 w-full justify-start rounded-xl px-6 pr-14 text-lg shadow-lg',
+        clearButton:
+            'hover:bg-accent hover:text-accent-foreground absolute top-1/2 right-4 inline-flex size-8 -translate-y-1/2 items-center justify-center rounded-md transition-colors',
+        clearIcon: 'size-4'
+    },
+    mobile: {
+        wrapper: 'flex w-full items-center gap-2',
+        button: 'h-14 flex-1 justify-start rounded-xl px-6 text-lg shadow-lg',
+        clearButton:
+            'hover:bg-accent hover:text-accent-foreground inline-flex size-9 items-center justify-center rounded-md transition-colors',
+        clearIcon: 'size-5'
+    }
+} as const
+
+type TriggerVariant = keyof typeof triggerStyles
+
+interface TriggerProps extends TriggerBaseProps {
+    variant: TriggerVariant
+}
+
+function Trigger({
     TriggerComponent,
     label,
     showClearButton,
     onClear,
-    className
-}: TriggerBaseProps) {
+    className,
+    variant
+}: TriggerProps) {
+    const styles = triggerStyles[variant]
+
     return (
-        <div className={cn('relative inline-flex', className)}>
+        <div className={cn(styles.wrapper, className)}>
             <TriggerComponent asChild>
-                <Button
-                    variant="outline"
-                    size="lg"
-                    className="h-14 w-full justify-start rounded-xl px-6 pr-14 text-lg shadow-lg"
-                >
+                <Button variant="outline" size="lg" className={styles.button}>
                     <span className="truncate">{label}</span>
                 </Button>
             </TriggerComponent>
@@ -64,48 +86,29 @@ function DesktopTrigger({
             {showClearButton && (
                 <button
                     type="button"
-                    className="hover:bg-accent hover:text-accent-foreground absolute top-1/2 right-4 inline-flex size-8 -translate-y-1/2 items-center justify-center rounded-md transition-colors"
+                    className={styles.clearButton}
                     aria-label={strings.clearVibe}
                     onClick={onClear}
                 >
-                    <X className="size-4" />
+                    <X className={styles.clearIcon} />
                 </button>
             )}
         </div>
     )
 }
 
-function MobileTrigger({
-    TriggerComponent,
-    label,
-    showClearButton,
-    onClear,
-    className
-}: TriggerBaseProps) {
-    return (
-        <div className={cn('flex w-full items-center gap-2', className)}>
-            <TriggerComponent asChild>
-                <Button
-                    variant="outline"
-                    size="lg"
-                    className="h-14 flex-1 justify-start rounded-xl px-6 text-lg shadow-lg"
-                >
-                    <span className="truncate">{label}</span>
-                </Button>
-            </TriggerComponent>
+interface VibeOptionsProps {
+    currentType?: Vibe['type']
+    onSelect: (vibe: Vibe) => void
+    renderOption: (vibe: Vibe, isActive: boolean, select: () => void) => ReactNode
+}
 
-            {showClearButton && (
-                <button
-                    type="button"
-                    className="hover:bg-accent hover:text-accent-foreground inline-flex size-9 items-center justify-center rounded-md transition-colors"
-                    aria-label={strings.clearVibe}
-                    onClick={onClear}
-                >
-                    <X className="size-5" />
-                </button>
-            )}
-        </div>
-    )
+function VibeOptions({ currentType, onSelect, renderOption }: VibeOptionsProps) {
+    return VIBES.map(vibe => (
+        <Fragment key={vibe.type}>
+            {renderOption(vibe, currentType === vibe.type, () => onSelect(vibe))}
+        </Fragment>
+    ))
 }
 
 interface VibeSelectorProps {
@@ -128,39 +131,6 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
         handleVibeSelect(null)
     }
 
-    const renderMenuItems = (onSelect: (vibe: Vibe) => void) => (
-        <>
-            {VIBES.map(vibe => (
-                <DropdownMenuItem
-                    key={vibe.type}
-                    onSelect={() => onSelect(vibe)}
-                    className={cn(
-                        'text-base font-medium',
-                        currentVibe?.type === vibe.type && 'bg-accent text-accent-foreground'
-                    )}
-                >
-                    {vibe.name}
-                </DropdownMenuItem>
-            ))}
-        </>
-    )
-
-    const renderDrawerItems = () => (
-        <div className="flex flex-col gap-2">
-            {VIBES.map(vibe => (
-                <DrawerClose asChild key={vibe.type}>
-                    <Button
-                        variant={currentVibe?.type === vibe.type ? 'secondary' : 'ghost'}
-                        className="justify-start text-base font-medium"
-                        onClick={() => handleVibeSelect(vibe)}
-                    >
-                        {vibe.name}
-                    </Button>
-                </DrawerClose>
-            ))}
-        </div>
-    )
-
     return (
         <>
             <VibeSound vibe={currentVibe} />
@@ -169,23 +139,39 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
             <div className={cn('relative flex items-center gap-2', className)}>
                 <div className="hidden w-full md:flex md:w-auto">
                     <DropdownMenu>
-                        <DesktopTrigger
+                        <Trigger
                             TriggerComponent={DropdownMenuTrigger}
+                            variant="desktop"
                             className="min-w-[12rem]"
                             label={currentLabel}
                             showClearButton={hasSelection}
                             onClear={handleClear}
                         />
                         <DropdownMenuContent align="end" className="w-56">
-                            {renderMenuItems(handleVibeSelect)}
+                            <VibeOptions
+                                currentType={currentVibe?.type}
+                                onSelect={handleVibeSelect}
+                                renderOption={(vibe, isActive, select) => (
+                                    <DropdownMenuItem
+                                        onSelect={select}
+                                        className={cn(
+                                            'text-base font-medium',
+                                            isActive && 'bg-accent text-accent-foreground'
+                                        )}
+                                    >
+                                        {vibe.name}
+                                    </DropdownMenuItem>
+                                )}
+                            />
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
 
                 <div className="flex w-full md:hidden">
                     <Drawer>
-                        <MobileTrigger
+                        <Trigger
                             TriggerComponent={DrawerTrigger}
+                            variant="mobile"
                             className="w-full"
                             label={currentLabel}
                             showClearButton={hasSelection}
@@ -196,7 +182,23 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                                 <DrawerTitle>{strings.selectVibe}</DrawerTitle>
                             </DrawerHeader>
                             <DrawerFooter className="mt-0 gap-0">
-                                {renderDrawerItems()}
+                                <div className="flex flex-col gap-2">
+                                    <VibeOptions
+                                        currentType={currentVibe?.type}
+                                        onSelect={handleVibeSelect}
+                                        renderOption={(vibe, isActive, select) => (
+                                            <DrawerClose asChild>
+                                                <Button
+                                                    variant={isActive ? 'secondary' : 'ghost'}
+                                                    className="justify-start text-base font-medium"
+                                                    onClick={select}
+                                                >
+                                                    {vibe.name}
+                                                </Button>
+                                            </DrawerClose>
+                                        )}
+                                    />
+                                </div>
                             </DrawerFooter>
                         </DrawerContent>
                     </Drawer>
