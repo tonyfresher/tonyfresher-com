@@ -17,7 +17,7 @@ export default function HomePage() {
                     'relative leading-relaxed',
                     '[&>p]:m-0',
                     '[&>p+p]:mt-4',
-                    '[&_img]:mx-1 [&_img]:inline-block [&_img]:size-8 [&_img]:rounded-md [&_img]:align-text-top'
+                    '[&_img]:mx-1 [&_img]:inline-block [&_img]:size-8 [&_img]:rounded-md [&_img]:align-top'
                 )}
             >
                 <h1 className="col-span-5 m-0 mb-10 text-4xl font-semibold">{strings.name}</h1>
