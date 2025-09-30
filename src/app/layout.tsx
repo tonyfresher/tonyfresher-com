@@ -8,6 +8,7 @@ import EmojiFavicon from '@/components/emoji-favicon'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
 import ScrollToTop from '@/components/scroll-to-top'
+import VibeSelector from '@/components/vibes/vibe-selector'
 import { cn } from '@/lib/cn'
 
 import './global.css'
@@ -52,6 +53,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             >
                 <EmojiFavicon />
                 <ScrollToTop />
+                <VibeSelector
+                    className={cn(
+                        'fixed z-50',
+                        'top-6 right-6',
+                        'md:top-auto md:right-6 md:bottom-6'
+                    )}
+                />
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
