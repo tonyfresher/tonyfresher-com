@@ -20,7 +20,9 @@ export default function HomePage() {
                     '[&_img]:mx-1 [&_img]:inline-block [&_img]:size-8 [&_img]:rounded-md [&_img]:align-top'
                 )}
             >
-                <h1 className="col-span-5 m-0 mb-10 text-4xl font-semibold">{strings.name}</h1>
+                <h1 className="font-display col-span-5 m-0 mb-10 text-4xl font-semibold">
+                    {strings.name}
+                </h1>
                 <About />
             </div>
             <Work />

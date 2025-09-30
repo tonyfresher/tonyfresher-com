@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-import { Instrument_Sans } from 'next/font/google'
+import { Instrument_Sans, Slackey } from 'next/font/google'
 
 import EmojiFavicon from '@/components/emoji-favicon'
 import Links from '@/components/links'
@@ -15,6 +15,13 @@ const instrumentSans = Instrument_Sans({
     subsets: ['latin-ext'],
     variable: '--font-instrument-sans',
     axes: ['wdth'],
+    display: 'swap'
+})
+
+const slackey = Slackey({
+    subsets: ['latin'],
+    variable: '--font-slackey',
+    weight: '400',
     display: 'swap'
 })
 
@@ -39,7 +46,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${instrumentSans.variable} font-regular font-sans antialiased`}>
+            <body
+                className={`${instrumentSans.variable} ${slackey.variable} font-regular font-sans antialiased`}
+            >
                 <EmojiFavicon />
                 <ThemeProvider
                     attribute="class"
