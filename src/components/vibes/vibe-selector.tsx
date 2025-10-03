@@ -130,7 +130,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                             onClear={handleClear}
                         />
                         <DropdownMenuContent
-                            className="min-w-80 gap-1 rounded-2xl p-4"
+                            className="min-w-60 gap-1 rounded-2xl p-4"
                             align="end"
                             sideOffset={16}
                         >
