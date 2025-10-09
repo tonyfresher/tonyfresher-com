@@ -7,6 +7,7 @@
 
 @theme inline {
     --font-sans: var(--font-instrument-sans);
+    --font-weight-regular: 430;
     --font-weight-medium: 530;
     --font-display: var(--font-slackey);
 
@@ -68,25 +69,25 @@
 
 :root {
     --background: #ffffff;
-    --foreground: rgba(0, 0, 0, 0.83);
+    --foreground: rgba(0, 0, 0, 0.8);
 
     --card: #ffffff;
-    --card-foreground: rgba(0, 0, 0, 0.83);
+    --card-foreground: rgba(0, 0, 0, 0.8);
 
     --popover: #ffffff;
-    --popover-foreground: rgba(0, 0, 0, 0.83);
+    --popover-foreground: rgba(0, 0, 0, 0.8);
 
     --primary: #2a2a2a;
     --primary-foreground: #ffffff;
 
     --secondary: #f1f0ef;
-    --secondary-foreground: rgba(0, 0, 0, 0.83);
+    --secondary-foreground: rgba(0, 0, 0, 0.8);
 
     --muted: #f1f0ef;
     --muted-foreground: rgba(0, 0, 0, 0.5);
 
     --accent: rgba(0, 0, 0, 0.08);
-    --accent-foreground: rgba(0, 0, 0, 0.83);
+    --accent-foreground: rgba(0, 0, 0, 0.8);
     --accent-secondary: rgba(0, 0, 0, 0.14);
 
     --bright: #ff5900;
@@ -128,7 +129,7 @@
     --popover-foreground: rgba(255, 255, 255, 0.85);
 
     --primary: #ffffff;
-    --primary-foreground: rgba(0, 0, 0, 0.83);
+    --primary-foreground: rgba(0, 0, 0, 0.8);
 
     --secondary: #1a1a1a;
     --secondary-foreground: rgba(255, 255, 255, 0.85);

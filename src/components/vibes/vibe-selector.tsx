@@ -63,8 +63,10 @@ function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
         <TriggerComponent asChild>
             <div
                 className={cn(
-                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-5 text-xl font-medium shadow-lg transition-transform max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
+                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-5 text-xl font-medium shadow-lg transition-transform',
+                    'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
                     'active:scale-98',
+                    'cursor-pointer',
                     vibe && 'pr-3 max-md:pr-1'
                 )}
             >
@@ -130,7 +132,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                             onClear={handleClear}
                         />
                         <DropdownMenuContent
-                            className="min-w-60 gap-1 rounded-2xl p-4"
+                            className="min-w-60 gap-1 rounded-2xl p-3"
                             align="end"
                             sideOffset={16}
                         >
@@ -145,7 +147,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                                             isActive && 'bg-accent'
                                         )}
                                     >
-                                        <vibe.icon className="size-6" />
+                                        <vibe.icon className="size-6" strokeWidth={1.75} />
                                         {vibe.name}
                                     </DropdownMenuItem>
                                 )}
