@@ -1,22 +1,24 @@
-import { PropsWithChildren } from 'react'
+import { AnchorHTMLAttributes, PropsWithChildren } from 'react'
 
 import NextLink from 'next/link'
 
 import { cn } from '@/lib/cn'
 
-export type LinkProps = PropsWithChildren<{
-    className?: string
+export interface LinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
     href: string
     view?: 'clear' | 'underlined'
     display?: 'inline' | 'inline-block'
-}>
+}
 
 export default function Link({
     children,
     className = '',
     view = 'clear',
     display = 'inline',
-    href
+    href,
+    rel,
+    target,
+    ...rest
 }: LinkProps) {
     const mixedClassName = cn(
         // Base styles
@@ -38,14 +40,20 @@ export default function Link({
 
     if (isLinkRelative) {
         return (
-            <NextLink href={href} className={mixedClassName}>
+            <NextLink href={href} className={mixedClassName} target={target} rel={rel} {...rest}>
                 {children}
             </NextLink>
         )
     }
 
     return (
-        <a className={mixedClassName} href={href} target="_blank" rel="noopener noreferrer">
+        <a
+            className={mixedClassName}
+            href={href}
+            target={target ?? '_blank'}
+            rel={rel ?? 'noopener noreferrer'}
+            {...rest}
+        >
             {children}
         </a>
     )
