@@ -255,8 +255,17 @@
     }
 }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+@theme {
+    --animate-focus: focus 200ms ease-in-out 200ms both;
+
+    @keyframes focus {
+        from {
+            filter: blur(4px);
+            opacity: 0;
+        }
+        to {
+            filter: blur(0);
+            opacity: 1;
+        }
     }
 }

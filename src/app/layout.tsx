@@ -72,7 +72,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             <Menu className="md:hidden" />
                             <div
                                 className={cn(
-                                    'block',
+                                    '[&>*,&>*>*]:animate-focus block',
                                     'md:col-span-5 md:row-span-5',
                                     'md:grid md:grid-cols-5 md:gap-x-16'
                                 )}
