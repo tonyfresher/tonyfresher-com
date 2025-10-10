@@ -6,14 +6,14 @@ import { usePathname } from 'next/navigation'
 
 function getEmoji(pathname: string): string {
     if (pathname.includes('/work')) {
-        return '🤔'
+        return '🚧'
     }
 
     if (pathname.includes('/writing')) {
-        return '✏️'
+        return '✍️'
     }
 
-    return '✋'
+    return '👀'
 }
 
 function updateFavicon(emoji: string) {
