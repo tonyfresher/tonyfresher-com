@@ -12,10 +12,7 @@ interface BrowserContainerProps extends PropsWithChildren {
 
 const baseContainerClass = cn('bg-accent rounded-md p-2')
 
-const baseWindowClass = cn(
-    'w-full overflow-hidden rounded-[5px]',
-    'shadow-[0_0_6px_rgba(0,0,0,0.16)]'
-)
+const baseWindowClass = cn('w-full overflow-hidden rounded-[5px]', 'shadow-md')
 
 export function BrowserContainer({ type, aspectRatio, children }: BrowserContainerProps) {
     return (
