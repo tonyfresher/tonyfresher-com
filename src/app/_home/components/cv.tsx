@@ -315,7 +315,7 @@ export default function CV({ className }: CVProps) {
             >
                 <PDFIcon />
 
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
                     <h3 className="m-0 font-semibold">{cvFileName}</h3>
                     <span className="text-muted-foreground">
                         {strings.sizeLabel.replace('%s', cvFileSizeMb.toFixed(1))}

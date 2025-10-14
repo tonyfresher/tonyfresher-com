@@ -57,10 +57,10 @@ export default function Work() {
                         className={`col-start-1 row-start-1 flex flex-col ${cover ? 'max-w-80 max-lg:max-w-full' : ''}`}
                     >
                         <h3 className="m-0 font-semibold">{product}</h3>
-                        <span className="mt-2 whitespace-pre-line max-sm:whitespace-normal">
+                        <span className="mt-1 whitespace-pre-line max-sm:whitespace-normal">
                             {description}
                         </span>
-                        <span className="text-muted-foreground mt-4">{period}</span>
+                        <span className="text-muted-foreground mt-2">{period}</span>
                     </div>
                 </Link>
             ))}

@@ -19,8 +19,8 @@ export default function Education() {
                 <span key={institution}>
                     <div className="col-start-1 row-start-1 flex flex-col">
                         <h3 className="m-0 font-semibold">{institution}</h3>
-                        <span className="mt-2">{program}</span>
-                        <span className="text-muted-foreground mt-4">{period}</span>
+                        <span className="mt-1">{program}</span>
+                        <span className="text-muted-foreground mt-2">{period}</span>
                     </div>
                 </span>
             ))}

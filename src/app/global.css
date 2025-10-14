@@ -195,40 +195,36 @@
 }
 
 @layer components {
-    .caption {
+    .mdx-content > .caption {
         @apply text-muted-foreground mt-2 block text-base;
     }
 
-    .wide-block {
+    .mdx-content > .wide-block {
         @apply col-span-5 max-sm:-mx-4;
     }
 
-    .mdx-content > *:not(:first-child, h2, h3, .caption) {
+    .mdx-content > *:not(:first-child, h2, h3, hr, .caption) {
         @apply mt-6;
     }
 
-    .mdx-content > p:first-of-type {
+    .mdx-content > *:first-child {
         @apply mt-0;
     }
 
     .mdx-content > hr {
-        @apply mx-auto my-16 h-0.5 w-full border-0 opacity-20;
-        background: linear-gradient(
-            to right,
-            var(--color-muted-foreground),
-            var(--color-muted-foreground) 60%,
-            transparent 60%,
-            transparent 100%
-        );
-        background-size: 40px 2px;
+        @apply text-accent-secondary mt-10 mb-6 h-auto border-0 text-center text-3xl;
+    }
+
+    .mdx-content > hr::before {
+        @apply block content-['∗∗∗'];
     }
 
     .mdx-content > h2 {
-        @apply mt-20 text-2xl leading-tight font-semibold;
+        @apply mt-20 text-3xl leading-tight font-semibold;
     }
 
     .mdx-content > h3 {
-        @apply mt-12 text-xl leading-tight font-semibold;
+        @apply mt-12 text-2xl leading-tight font-semibold;
     }
 
     .mdx-content > p > img {
@@ -237,7 +233,7 @@
 
     .mdx-content > p > img,
     .mdx-content > p > video {
-        @apply border-accent w-full rounded-md border;
+        @apply w-full rounded-sm;
     }
 
     .mdx-content > p > a > img {

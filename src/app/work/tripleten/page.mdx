@@ -9,6 +9,8 @@ import { buildWorkMetadata } from '@/lib/metadata'
 
 import WorkDescriptionPage from '../components/work-description-page'
 
+import HiDot from './hi-dot'
+
 export default function Page({ children }) {
     return <WorkDescriptionPage meta={meta}>{children}</WorkDescriptionPage>
 }
@@ -22,33 +24,69 @@ export const meta = {
 
 export const metadata = buildWorkMetadata(meta)
 
-TripleTen is an AI-powered personalized learning service that takes you from gaining skills to employment. Named by [Fortune](https://fortune.com/education/articles/best-software-engineering-bootcamps/) as the best overall tech bootcamp in the US, it serves students in both the US and LatAm markets and has 20k monthly active users. It's a part of Nebius, a NASDAQ-listed $20B AI cloud company. This is also the funniest place I’ve ever worked.
+TripleTen is an AI-powered personalized learning service that takes you from gaining skills to employment. Named by [Fortune](https://fortune.com/education/articles/best-software-engineering-bootcamps/) as the best overall tech bootcamp in the US, it has over 20k monthly active learners across the US and Latin America. TripleTen is a part of Nebius, a $20B NASDAQ-listed AI cloud company. This is also the funniest place I’ve ever worked.
 
-I was part of the founding team, driving the product design direction and taking on whatever else was needed to build a successful edtech product with strong design foundation.
+---
 
-The content below is being updated. If you’re curious to see something more relevant, please write to [hey@tonyfresher.com](mailto:hey@tonyfresher.com).
+The product was born in the early 2020s—a time of economic uncertainty and low upward mobility, especially in the US. For many, moving into tech became a path to stability and better life. And for most, the first step toward that goal was joining a bootcamp.
 
-🚧🚧🚧
+That’s a big leap, particularly for people with full-time jobs, families, and busy lives. Learning new skills is hard, and only a few bootcamps truly deliver on their promise to take you from learning to actually landing a job.
+
+TripleTen goes further than most. Its mix of deep technical expertise, strong learning design, and full control over the student experience made it possible to build a truly high-quality, scalable, and personalized learning service.
 
 <div className="wide-block">
     <BrowserContainerGallery
         title="Platform"
         items={[
-            { src: '/tripleten/showcase/main.png', label: 'Home' },
-            { src: '/tripleten/showcase/calendar.png', label: 'Study calendar' },
-            { src: '/tripleten/showcase/skillset.png', label: 'Skillset' },
-            {
-                src: '/tripleten/showcase/program-contents.png',
-                label: 'Program contents'
-            },
-            { src: '/tripleten/showcase/theory.png', label: 'Theory' },
-            { src: '/tripleten/showcase/quiz.png', label: 'Quiz' }
+            { src: '/tripleten/showcase/home.png', label: 'Home' },
+            { src: '/tripleten/showcase/navigation.png', label: 'Learning path' },
+            { src: '/tripleten/showcase/lesson.png', label: 'Lesson' },
+            { src: '/tripleten/showcase/quiz.png', label: 'Quiz' },
+            { src: '/tripleten/showcase/project.png', label: 'Project' }
         ]}
     />
 </div>
 <span className="caption">TripleTen’s learning platform</span>
 
-## Homepage redesign
+I joined TripleTen as part of the founding team and spent four years shaping the product design and adapting it to the needs of demanding US students. Over time, I took on broader design leadership across the organization—supporting other designers while keeping my sleeves firmly rolled up.
+
+## Dot <img src="/tripleten/dot/icon.svg" alt="Dot" className="inline w-10" />, your AI buddy
+
+One of the biggest challenges in online learning is the lack of real-time support. In a classroom or even on Zoom, it’s easy to ask a question and get help right away. But when you’re studying online, that instant feedback is missing. That’s why TripleTen made human support—tutors, learning coaches, and community—one of its main priorities.
+
+The problem is that support is often either fast but shallow (like a quick reply from a support agent) or deep but slow (like a tutor’s detailed explanation). And keeping depth and quality consistent is especially hard at scale.
+
+AI changed that. In 2025, with the rise of reasoning models and agent frameworks, smart and responsive AI tutors suddenly became possible. That’s when Dot was born.
+
+<HiDot />
+
+Dot started as a quick experiment on our Discord server and stayed there for almost a year. That time showed us how much value students got from it, so we decided to turn it into a core part of the learning platform.
+
+We began where students struggled the most—coding projects. It was also where we expected the most feedback. That’s why the first chat we built lived inside the VS Code extension.
+
+![VS Code](/tripleten/dot/vs-code.png)
+
+From the start, we took a “ship to learn” approach—built the simplest possible chat, added many events and feedback loops, and started watching what students asked, when, and how. A huge part of this was powered by PostHog’s toolkit for surveys, analytics, session replays, and feature flags, which we used heavily.
+
+After the launch, we saw heavy usage of the extension, confirming our hypothesis: this kind of help was genuinely valuable, and the entry point worked. Our next step was to identify other key moments where students needed support most and make Dot easy to access there.
+
+Over the next six months, together with a small team of engineers and researchers, we integrated Dot into the platform and iterated on its conversational experience, tools, memory, voice mode, and various entry points across the learning journey.
+
+![Dot on the platform](/tripleten/dot/platform.png)
+
+We managed to make Dot more than just another AI bot—it became a real buddy on the platform that helps right when you need it. Our A/B test clearly showed the impact: Dot’s support increased project submissions by 34%. It quickly became the platform’s most-used feature, with 47% MAU and over 200k messages sent each month. Equally important, Dot’s lively personality and tone of voice brought widespread student love, tons of positive feedback, and a 91% satisfaction rate.
+
+![Feedback](/tripleten/dot/feedback.png)
+
+---
+
+🚧🚧🚧
+
+The content below is being updated. If you’re curious to see something more relevant, please write to [hey@tonyfresher.com](mailto:hey@tonyfresher.com).
+
+🚧🚧🚧
+
+## Homepage redesign (2023)
 
 TripleTen's homepage plays a major role in the student experience. It's where they start their learning, track their progress, revisit past material, check payment status, and more. In fact, 30% of all user sessions include the homepage.
 
