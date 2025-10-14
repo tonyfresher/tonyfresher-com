@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                                 'bg-secondary',
                                 'min-h-screen',
                                 'flex flex-col gap-10',
-                                'md:grid md:grid-cols-[repeat(6,minmax(0,128px))] md:justify-center md:gap-x-16',
+                                'md:grid md:grid-cols-[repeat(6,minmax(0,148px))] md:justify-center md:gap-x-16',
                                 'p-14 max-sm:p-6'
                             )}
                         >
