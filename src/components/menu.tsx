@@ -19,7 +19,7 @@ export interface PageMenuProps {
 export default function Menu({ items = DEFAULT_MENU, className }: PageMenuProps) {
     return (
         <nav
-            className={`flex flex-row items-end gap-4 text-xl md:flex-col md:gap-y-4 ${className || ''}`}
+            className={`flex flex-row items-end gap-x-4 text-xl md:flex-col md:gap-y-3 ${className || ''}`}
         >
             {items.map(({ label, link }) => {
                 return (
