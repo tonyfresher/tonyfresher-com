@@ -227,12 +227,12 @@
         @apply mt-12 text-2xl leading-tight font-semibold;
     }
 
-    .mdx-content > p > img {
+    .mdx-content > :is(p, div) > img {
         @apply w-full;
     }
 
-    .mdx-content > p > img,
-    .mdx-content > p > video {
+    .mdx-content > :is(p, div) > img,
+    .mdx-content > :is(p, div) > video {
         @apply w-full rounded-sm;
     }
 
