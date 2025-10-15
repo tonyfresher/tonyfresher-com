@@ -76,9 +76,43 @@ We managed to make Dot more than just another AI bot—it became a real buddy on
 
 ![Feedback](/tripleten/dot/feedback.png)
 
----
+## Projects on the platform
 
-🚧🚧🚧
+TripleTen’s learning approach is built around project-based learning — and projects are the biggest, most complex part of it. Most of a student’s time is spent working on projects, and that’s also where they need the most help.
+
+In the past, these projects relied on a mix of external tools, while the platform itself was mostly a textbook with instructions. Once you started a project, you were on your own, setting up a complex coding environment locally.
+
+That created a painful UX barrier for students—and a blind spot for the product team, since we had no visibility into the part where students spent most of their time.
+
+So we decided to bring projects onto the platform itself. Today, most professional tools students use (VS Code, JupyterLab, Google Sheets, Figma, and more) are web-based, which made it finally possible.
+
+<div className="wide-block">
+    <BrowserContainerImage
+        src="/tripleten/pop/default.png"
+        alt="Project on the platform"
+        aspectRatio="16 / 9"
+    />
+</div>
+
+It was a major UX challenge. I had to rethink the entire platform layout so students could easily work in a complex environment while still having quick access to all the usual platform tools. The goal was to make it feel like the same familiar place—but with the power of a full professional workspace.
+
+It was also a big technical challenge. The first version for VS Code took three months to build, but the gradual rollout and support for more tools took another year.
+
+<div className="wide-block">
+    <BrowserContainerGallery
+        title="Projects"
+        items={[
+            { src: '/tripleten/pop/vscode.png', label: 'VS Code' },
+            { src: '/tripleten/pop/spreadsheets.png', label: 'Spreadsheet' },
+            { src: '/tripleten/pop/jupyter.png', label: 'Jupyter Notebook' }
+        ]}
+    />
+</div>
+<span className="caption">Different project environments</span>
+
+As a result, project work became a native part of the platform. Students can now work on projects while having access to all familiar tools, including chat with Dot. The team has full visibility into what happens during projects, making things like the A/B experiment with Dot support mentioned above possible. The entire learning process now happens within the platform, and students spend 31% of their time in the project workspace.
+
+---
 
 The content below is being updated. If you’re curious to see something more relevant, please write to [hey@tonyfresher.com](mailto:hey@tonyfresher.com).
 
