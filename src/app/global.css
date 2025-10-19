@@ -5,10 +5,10 @@
 
 @plugin '@tailwindcss/typography';
 
+@import './fonts.css';
+
 @theme inline {
-    --font-sans: var(--font-instrument-sans);
-    --font-weight-regular: 430;
-    --font-weight-medium: 530;
+    --font-sans: 'TASA Orbiter', sans-serif;
     --font-display: var(--font-slackey);
 
     --color-background: var(--background);
