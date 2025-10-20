@@ -23,7 +23,7 @@ export default function WorkDescriptionPage({
                 '[&>*:not(.wide-block)]:col-span-4'
             )}
         >
-            <h1 className="font-display col-span-5 m-0 text-5xl font-semibold">{product}</h1>
+            <h1 className="font-display font-regular col-span-5 m-0 text-5xl">{product}</h1>
             <div className="text-muted-foreground col-span-5 mt-10 mb-8 flex flex-col gap-1">
                 <div>{period}</div>
                 <div>
