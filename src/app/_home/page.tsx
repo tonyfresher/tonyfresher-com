@@ -14,7 +14,9 @@ export default function HomePage() {
     return (
         <div className="col-span-3 flex flex-col gap-y-24 text-xl">
             <div className="col-span-5 flex flex-col gap-y-10">
-                <h1 className="font-display font-regular m-0 text-5xl">{strings.name}</h1>
+                <h1 className="font-display font-regular m-0 text-[56px] leading-none">
+                    {strings.name}
+                </h1>
                 <div
                     className={cn(
                         'relative leading-relaxed',
