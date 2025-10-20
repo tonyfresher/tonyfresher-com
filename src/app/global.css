@@ -80,13 +80,13 @@
     --primary: #2a2a2a;
     --primary-foreground: #ffffff;
 
-    --secondary: #f1f0ef;
+    --secondary: #f0f0ef;
     --secondary-foreground: rgba(0, 0, 0, 0.8);
 
     --muted: #f1f0ef;
     --muted-foreground: rgba(0, 0, 0, 0.5);
 
-    --accent: rgba(0, 0, 0, 0.08);
+    --accent: rgba(0, 0, 0, 0.07);
     --accent-foreground: rgba(0, 0, 0, 0.8);
     --accent-secondary: rgba(0, 0, 0, 0.14);
 
