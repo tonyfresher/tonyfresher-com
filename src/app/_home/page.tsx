@@ -14,8 +14,9 @@ export default function HomePage() {
     return (
         <div className="col-span-3 flex flex-col gap-y-24 text-xl">
             <div className="col-span-5 flex flex-col gap-y-10">
-                <h1 className="font-display font-regular m-0 overflow-visible text-[52px] leading-none">
+                <h1 className="group font-display font-regular m-0 overflow-visible text-[52px] leading-none">
                     {strings.name}
+                    <span className="ml-4 hidden group-hover:inline">;)</span>
                 </h1>
                 <div
                     className={cn(
