@@ -111,7 +111,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
-                    'transition-[width,height,background,color,box-shadow,filter,transform,translate,top,right] duration-200 ease-out',
+                    'transition-all duration-200 ease-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
                 )}
