@@ -91,16 +91,17 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     }
 
     const buttonStyles = cn(
-        'h-12 w-30',
+        'h-14 w-32',
         'max-md:h-10 max-md:w-28',
-        'hover:bg-bright hover:text-bright-foreground hover:shadow-lg hover:brightness-95',
+        'hover:bg-bright hover:text-bright-foreground hover:border-6 hover:border-white/15 hover:shadow-lg hover:brightness-95',
         'active:scale-98',
-        variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
+        variant === 'default' &&
+            'bg-bright text-bright-foreground border-6 border-white/15 shadow-lg max-md:border-3'
     )
 
     const videoStyles = cn(
-        'bg-bright text-bright-foreground border-bright border-6 shadow-lg',
-        'aspect-square size-50 max-md:size-40'
+        'aspect-square size-50 max-md:size-40',
+        'bg-bright text-bright-foreground border-bright border-6 shadow-lg'
     )
 
     return (
