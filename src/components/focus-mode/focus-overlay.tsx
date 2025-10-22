@@ -1,11 +1,11 @@
 'use client'
 
 interface FocusOverlayProps {
-    isActive: boolean
+    isEnabled: boolean
 }
 
-export default function FocusOverlay({ isActive }: FocusOverlayProps) {
-    if (!isActive) {
+export default function FocusOverlay({ isEnabled }: FocusOverlayProps) {
+    if (!isEnabled) {
         return null
     }
 

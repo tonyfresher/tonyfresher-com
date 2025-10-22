@@ -9,75 +9,93 @@ import { cn } from '@/lib/cn'
 import FocusOverlay from './focus-overlay'
 import FocusSound from './focus-sound'
 
+const strings = {
+    focus: 'Focus',
+    close: 'Close'
+}
+
 interface FocusModeProps {
     className?: string
     variant?: 'default' | 'clear'
 }
 
 export default function FocusMode({ className, variant = 'default' }: FocusModeProps) {
-    const [isActive, setIsActive] = useState(false)
+    const [isEnabled, setIsEnabled] = useState(false)
 
-    const handleToggle = () => {
-        setIsActive(!isActive)
+    const handleEnable = () => {
+        setIsEnabled(true)
     }
 
-    const handleClose = () => {
-        setIsActive(false)
+    const handleDisable = () => {
+        setIsEnabled(false)
     }
+
+    const buttonStyles = cn(
+        'h-14 w-32',
+        'max-md:h-10 max-md:w-25',
+        'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
+        'active:scale-98',
+        variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
+    )
+
+    const videoStyles = cn(
+        'bg-bright text-bright-foreground border-bright size-50 border-6 shadow-lg'
+    )
 
     return (
         <>
-            <FocusSound isActive={isActive} />
-            <FocusOverlay isActive={isActive} />
+            {/* <FocusSound isEnabled={isEnabled} />
+            <FocusOverlay isEnabled={isEnabled} /> */}
 
-            <div className={cn('relative flex items-center gap-2', className)}>
-                {!isActive ? (
+            <div
+                className={cn(
+                    'relative flex items-center justify-center overflow-hidden rounded-lg',
+                    'transition-[width,height,background,color,box-shadow] duration-200 ease-in-out',
+                    isEnabled ? videoStyles : buttonStyles,
+                    className
+                )}
+            >
+                {isEnabled ? (
+                    <>
+                        <video
+                            className="aspect-square size-full object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        >
+                            <source src="/focus-mode/minecraft.webm" type="video/webm" />
+                        </video>
+
+                        <button
+                            type="button"
+                            onClick={handleDisable}
+                            className={cn(
+                                'absolute -top-1.5 -right-1.5',
+                                'flex items-center gap-1 p-1.5 pl-[10px]',
+                                'bg-bright rounded-bl-md',
+                                'text-base leading-none font-medium',
+                                'cursor-pointer'
+                            )}
+                            aria-label={strings.close}
+                        >
+                            {strings.close}
+                            <XClose className="size-5" strokeWidth={2.1} />
+                        </button>
+                    </>
+                ) : (
                     <button
                         type="button"
-                        onClick={handleToggle}
+                        onClick={handleEnable}
                         className={cn(
-                            'flex h-14 items-center gap-1 rounded-lg px-5 text-xl transition-all',
-                            'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
-                            'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-3',
-                            'active:scale-98',
-                            'cursor-pointer',
-                            variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
+                            'flex h-full items-center gap-1 px-5 text-xl',
+                            'max-md:gap-1 max-md:px-3',
+                            'cursor-pointer'
                         )}
                     >
                         <Maximize02 className="size-5" strokeWidth={2.1} />
-                        <span className="truncate px-1">Focus</span>
+                        <span className="truncate px-1">{strings.focus}</span>
                     </button>
-                ) : (
-                    <div
-                        className={cn(
-                            'bg-bright relative overflow-hidden rounded-lg shadow-lg',
-                            'h-32 w-48',
-                            'max-md:h-28 max-md:w-40'
-                        )}
-                    >
-                        {/* Video placeholder - will be added later */}
-                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-blue-500/20">
-                            <span className="text-muted-foreground text-sm">
-                                Video will be here
-                            </span>
-                        </div>
-
-                        {/* Close button */}
-                        <button
-                            type="button"
-                            onClick={handleClose}
-                            className={cn(
-                                'absolute top-2 right-2 z-10',
-                                'flex size-8 items-center justify-center',
-                                'bg-background/80 rounded-md backdrop-blur-sm',
-                                'hover:bg-background transition-colors',
-                                'max-md:size-7'
-                            )}
-                            aria-label="Close focus mode"
-                        >
-                            <XClose className="size-5 max-md:size-4" />
-                        </button>
-                    </div>
                 )}
             </div>
         </>

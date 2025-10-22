@@ -2,13 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 
-const SOUND_PATH = '/sounds/meditation.mp3'
+const SOUND_PATH = '/focus-mode/meditation.mp3'
 
 interface FocusSoundProps {
-    isActive: boolean
+    isEnabled: boolean
 }
 
-export default function FocusSound({ isActive }: FocusSoundProps) {
+export default function FocusSound({ isEnabled }: FocusSoundProps) {
     const audioRef = useRef<HTMLAudioElement | null>(null)
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function FocusSound({ isActive }: FocusSoundProps) {
         }
 
         // Start audio if focus mode is active
-        if (isActive) {
+        if (isEnabled) {
             const audio = new Audio(SOUND_PATH)
             audio.volume = 0.5
             audio.loop = true
@@ -37,7 +37,7 @@ export default function FocusSound({ isActive }: FocusSoundProps) {
                 audioRef.current = null
             }
         }
-    }, [isActive])
+    }, [isEnabled])
 
     return null
 }
