@@ -1,6 +1,7 @@
 'use client'
 
 import Link from '@/components/link'
+import { cn } from '@/lib/cn'
 
 const DEFAULT_MENU = [
     { label: 'About', link: '/' },
@@ -18,9 +19,7 @@ export interface PageMenuProps {
 
 export default function Menu({ items = DEFAULT_MENU, className }: PageMenuProps) {
     return (
-        <nav
-            className={`flex flex-row items-end gap-x-4 text-xl md:flex-col md:gap-y-3 ${className || ''}`}
-        >
+        <nav className={cn('flex flex-row items-end gap-4 text-xl md:flex-col', className)}>
             {items.map(({ label, link }) => {
                 return (
                     <Link className="w-max" key={link} href={link} display="inline-block">
