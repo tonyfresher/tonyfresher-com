@@ -65,6 +65,9 @@
     --color-chart-3: var(--chart-3);
     --color-chart-2: var(--chart-2);
     --color-chart-1: var(--chart-1);
+
+    --inset-shadow-button-bright: inset 0 0 10px 4px
+        color-mix(in oklab, var(--color-white) 30%, transparent);
 }
 
 :root {

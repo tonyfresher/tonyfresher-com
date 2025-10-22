@@ -93,15 +93,15 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     const buttonStyles = cn(
         'h-14 w-32',
         'max-md:h-10 max-md:w-28',
-        'hover:bg-bright hover:text-bright-foreground hover:border-6 hover:border-white/15 hover:shadow-lg hover:brightness-95',
-        'active:scale-98',
+        'hover:bg-bright hover:text-bright-foreground hover:inset-shadow-button-bright hover:shadow-lg hover:brightness-95',
+        'cursor-pointer active:scale-98',
         variant === 'default' &&
-            'bg-bright text-bright-foreground border-6 border-white/15 shadow-lg max-md:border-3'
+            'bg-bright text-bright-foreground inset-shadow-button-bright shadow-lg'
     )
 
     const videoStyles = cn(
         'aspect-square size-50 max-md:size-40',
-        'bg-bright text-bright-foreground border-bright border-6 shadow-lg'
+        'bg-bright text-bright-foreground shadow-xl'
     )
 
     return (
@@ -124,7 +124,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                         )}
 
                         <video
-                            className="aspect-square size-full object-cover"
+                            className="aspect-square size-full object-cover brightness-80"
                             onCanPlay={handleVideoLoaded}
                             autoPlay
                             loop
@@ -138,9 +138,9 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                             type="button"
                             onClick={handleDisable}
                             className={cn(
-                                'absolute -top-1.5 -right-1.5',
-                                'flex items-center gap-1 p-1.5 pl-[10px]',
-                                'bg-bright rounded-bl-md',
+                                'absolute top-1.5 right-1.5',
+                                'flex items-center gap-1 p-1.5 pl-3',
+                                'bg-bright inset-shadow-button-bright rounded-sm shadow-lg',
                                 'text-base leading-none font-medium',
                                 'cursor-pointer'
                             )}
@@ -155,9 +155,8 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                         type="button"
                         onClick={handleEnable}
                         className={cn(
-                            'flex h-full items-center gap-1 px-4 text-xl',
-                            'max-md:gap-1 max-md:px-3',
-                            'cursor-pointer'
+                            'flex h-full items-center gap-1 px-5 text-xl',
+                            'cursor-[inherit] max-md:gap-1 max-md:px-3'
                         )}
                     >
                         <Maximize02 className="size-5" strokeWidth={2.2} />

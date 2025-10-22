@@ -19,7 +19,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                     'bg-secondary',
                     'min-h-screen',
                     'flex flex-col gap-10',
-                    'md:grid md:grid-cols-6 md:justify-center md:gap-x-16',
+                    'md:grid md:grid-cols-6 md:justify-center md:gap-x-8 lg:gap-x-16',
                     'p-14 max-sm:p-6'
                 )}
             >
@@ -28,7 +28,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                     className={cn(
                         '[&>*,&>*>*]:animate-focus flex flex-col',
                         'md:col-span-5 md:row-span-5',
-                        'md:grid md:grid-cols-5 md:gap-x-16'
+                        'md:grid md:grid-cols-5 md:gap-x-8 lg:gap-x-16'
                     )}
                 >
                     {children}
