@@ -1,204 +1,84 @@
 'use client'
 
-import {
-    type ElementType,
-    Fragment,
-    type MouseEvent,
-    type ReactNode,
-    type PointerEvent as ReactPointerEvent,
-    useState
-} from 'react'
+import { useState } from 'react'
 
-import { Maximize01, Maximize02, Star03, Wind01, XClose } from '@untitledui/icons'
+import { Maximize02, XClose } from '@untitledui/icons'
 
-import { Button } from '@/components/ui/button'
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger
-} from '@/components/ui/drawer'
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/cn'
-import type { Vibe, VibeType } from '@/types/vibe'
 
-import { VIBES } from './config'
-import VibeOverlay from './vibe-overlay'
-import VibeSound from './vibe-sound'
+import FocusOverlay from './focus-overlay'
+import FocusSound from './focus-sound'
 
-const strings = {
-    selectVibe: 'Focus',
-    clearVibe: 'Clear vibe'
-}
-
-type TriggerComponentProps = { asChild?: boolean; children: ReactNode }
-
-interface TriggerProps {
-    TriggerComponent: ElementType<TriggerComponentProps>
-    vibe: Vibe | null
-    onClear: () => void
-    variant: 'default' | 'clear'
-}
-
-function Trigger({ TriggerComponent, vibe, onClear, variant }: TriggerProps) {
-    const label = vibe?.name ?? strings.selectVibe
-
-    const handleCrossClick = (event: MouseEvent<HTMLButtonElement>) => {
-        event.stopPropagation()
-        onClear()
-    }
-
-    const handleCrossPointerDown = (event: ReactPointerEvent<HTMLButtonElement>) => {
-        event.stopPropagation()
-    }
-
-    return (
-        <TriggerComponent asChild>
-            <div
-                className={cn(
-                    'flex h-14 items-center gap-1 rounded-lg px-5 text-xl transition-all',
-                    'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
-                    'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-3',
-                    'active:scale-98',
-                    'cursor-pointer',
-                    variant === 'default' && 'bg-bright text-bright-foreground shadow-lg',
-                    vibe && 'pr-3 max-md:pr-1'
-                )}
-            >
-                {vibe ? (
-                    <vibe.icon className="size-5" strokeWidth={2.5} />
-                ) : (
-                    <Maximize02 className="size-5" strokeWidth={2.1} />
-                )}
-                <span className="truncate px-1">{label}</span>
-
-                {vibe && (
-                    <button
-                        type="button"
-                        className="hover:bg-accent text-bright-foreground/60 flex size-9 items-center justify-center rounded-md transition-colors"
-                        aria-label={strings.clearVibe}
-                        onClick={handleCrossClick}
-                        onPointerDown={handleCrossPointerDown}
-                    >
-                        <XClose className="size-6" />
-                    </button>
-                )}
-            </div>
-        </TriggerComponent>
-    )
-}
-
-interface VibeOptionsProps {
-    currentType?: Vibe['type']
-    onSelect: (vibe: Vibe) => void
-    renderOption: (vibe: Vibe, isActive: boolean, select: () => void) => ReactNode
-}
-
-function VibeOptions({ currentType, onSelect, renderOption }: VibeOptionsProps) {
-    return VIBES.map(vibe => (
-        <Fragment key={vibe.type}>
-            {renderOption(vibe, currentType === vibe.type, () => onSelect(vibe))}
-        </Fragment>
-    ))
-}
-
-interface VibeSelectorProps {
+interface FocusModeProps {
     className?: string
     variant?: 'default' | 'clear'
 }
 
-export default function FocusMode({ className, variant = 'default' }: VibeSelectorProps) {
-    const [currentVibe, setCurrentVibe] = useState<Vibe | null>(null)
+export default function FocusMode({ className, variant = 'default' }: FocusModeProps) {
+    const [isActive, setIsActive] = useState(false)
 
-    const handleVibeSelect = (vibe: Vibe | null) => {
-        setCurrentVibe(vibe)
+    const handleToggle = () => {
+        setIsActive(!isActive)
     }
 
-    const handleClear = () => {
-        handleVibeSelect(null)
+    const handleClose = () => {
+        setIsActive(false)
     }
 
     return (
         <>
-            <VibeSound vibe={currentVibe} />
-            <VibeOverlay vibe={currentVibe} />
+            <FocusSound isActive={isActive} />
+            <FocusOverlay isActive={isActive} />
 
             <div className={cn('relative flex items-center gap-2', className)}>
-                <div className="hidden w-full md:flex md:w-auto">
-                    <DropdownMenu>
-                        <Trigger
-                            TriggerComponent={DropdownMenuTrigger}
-                            vibe={currentVibe}
-                            onClear={handleClear}
-                            variant={variant}
-                        />
-                        <DropdownMenuContent
-                            className="min-w-60 gap-1 rounded-2xl p-3"
-                            align="end"
-                            sideOffset={16}
-                        >
-                            <VibeOptions
-                                currentType={currentVibe?.type}
-                                onSelect={handleVibeSelect}
-                                renderOption={(vibe, isActive, select) => (
-                                    <DropdownMenuItem
-                                        onSelect={select}
-                                        className={cn(
-                                            'h-14 gap-3 px-4 text-xl',
-                                            isActive && 'bg-accent'
-                                        )}
-                                    >
-                                        <vibe.icon className="size-6" strokeWidth={1.75} />
-                                        {vibe.name}
-                                    </DropdownMenuItem>
-                                )}
-                            />
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
+                {!isActive ? (
+                    <button
+                        type="button"
+                        onClick={handleToggle}
+                        className={cn(
+                            'flex h-14 items-center gap-1 rounded-lg px-5 text-xl transition-all',
+                            'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
+                            'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-3',
+                            'active:scale-98',
+                            'cursor-pointer',
+                            variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
+                        )}
+                    >
+                        <Maximize02 className="size-5" strokeWidth={2.1} />
+                        <span className="truncate px-1">Focus</span>
+                    </button>
+                ) : (
+                    <div
+                        className={cn(
+                            'bg-bright relative overflow-hidden rounded-lg shadow-lg',
+                            'h-32 w-48',
+                            'max-md:h-28 max-md:w-40'
+                        )}
+                    >
+                        {/* Video placeholder - will be added later */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-blue-500/20">
+                            <span className="text-muted-foreground text-sm">
+                                Video will be here
+                            </span>
+                        </div>
 
-                <div className="flex w-full md:hidden">
-                    <Drawer>
-                        <Trigger
-                            TriggerComponent={DrawerTrigger}
-                            vibe={currentVibe}
-                            onClear={handleClear}
-                            variant={variant}
-                        />
-                        <DrawerContent>
-                            <DrawerHeader>
-                                <DrawerTitle>{strings.selectVibe}</DrawerTitle>
-                            </DrawerHeader>
-                            <DrawerFooter className="mt-0 gap-0">
-                                <div className="flex flex-col gap-2">
-                                    <VibeOptions
-                                        currentType={currentVibe?.type}
-                                        onSelect={handleVibeSelect}
-                                        renderOption={(vibe, isActive, select) => (
-                                            <DrawerClose asChild>
-                                                <Button
-                                                    variant={isActive ? 'secondary' : 'clear'}
-                                                    className="text-base font-medium"
-                                                    onClick={select}
-                                                >
-                                                    {vibe.name}
-                                                </Button>
-                                            </DrawerClose>
-                                        )}
-                                    />
-                                </div>
-                            </DrawerFooter>
-                        </DrawerContent>
-                    </Drawer>
-                </div>
+                        {/* Close button */}
+                        <button
+                            type="button"
+                            onClick={handleClose}
+                            className={cn(
+                                'absolute top-2 right-2 z-10',
+                                'flex size-8 items-center justify-center',
+                                'bg-background/80 rounded-md backdrop-blur-sm',
+                                'hover:bg-background transition-colors',
+                                'max-md:size-7'
+                            )}
+                            aria-label="Close focus mode"
+                        >
+                            <XClose className="size-5 max-md:size-4" />
+                        </button>
+                    </div>
+                )}
             </div>
         </>
     )
