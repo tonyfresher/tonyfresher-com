@@ -35,7 +35,7 @@ export default function HiDot() {
                 }
             `}</style>
             <svg
-                className="mx-auto w-full max-w-100"
+                className="mx-auto w-full max-w-90"
                 width="400"
                 height="200"
                 viewBox="0 0 400 200"

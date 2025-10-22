@@ -44,8 +44,8 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
     return (
         <>
-            {/* <FocusSound isEnabled={isEnabled} />
-            <FocusOverlay isEnabled={isEnabled} /> */}
+            <FocusSound isEnabled={isEnabled} />
+            {/* <FocusOverlay isEnabled={isEnabled} /> */}
 
             <div
                 className={cn(

@@ -9,13 +9,13 @@ interface FocusSoundProps {
 }
 
 export default function FocusSound({ isEnabled }: FocusSoundProps) {
-    const audioRef = useRef<HTMLAudioElement | null>(null)
+    const ref = useRef<HTMLAudioElement | null>(null)
 
     useEffect(() => {
         // Stop current audio if playing
-        if (audioRef.current) {
-            audioRef.current.pause()
-            audioRef.current.currentTime = 0
+        if (ref.current) {
+            ref.current.pause()
+            ref.current.currentTime = 0
         }
 
         // Start audio if focus mode is active
@@ -24,17 +24,15 @@ export default function FocusSound({ isEnabled }: FocusSoundProps) {
             audio.volume = 0.5
             audio.loop = true
 
-            audio.play().catch(error => {
-                console.warn('Audio playback failed:', error)
-            })
+            audio.play()
 
-            audioRef.current = audio
+            ref.current = audio
         }
 
         return () => {
-            if (audioRef.current) {
-                audioRef.current.pause()
-                audioRef.current = null
+            if (ref.current) {
+                ref.current.pause()
+                ref.current = null
             }
         }
     }, [isEnabled])
