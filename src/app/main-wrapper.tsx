@@ -2,7 +2,7 @@
 
 import { ReactNode, useRef } from 'react'
 
-import FocusMode from '@/components/focus-mode/focus-mode'
+import FocusMode from '@/components/focus-mode'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
 import { cn } from '@/lib/cn'

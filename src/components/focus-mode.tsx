@@ -1,17 +1,70 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Maximize02, XClose } from '@untitledui/icons'
 
 import { cn } from '@/lib/cn'
 
-import FocusOverlay from './focus-overlay'
-import FocusSound from './focus-sound'
-
 const strings = {
     focus: 'Focus',
     close: 'Close'
+}
+
+interface FocusOverlayProps {
+    isEnabled: boolean
+}
+
+function FocusOverlay({ isEnabled }: FocusOverlayProps) {
+    return (
+        <div
+            className={cn(
+                'pointer-events-none fixed inset-0',
+                'transition-[box-shadow] duration-200 ease-in-out',
+                isEnabled
+                    ? 'shadow-[inset_0_0_32px_24px_var(--bright)] max-md:shadow-[inset_0_0_20px_14px_var(--bright)]'
+                    : 'shadow-[inset_0_0_0px_0px_transparent]'
+            )}
+        />
+    )
+}
+
+const SOUND_PATH = '/focus-mode/meditation.mp3'
+
+interface FocusSoundProps {
+    isEnabled: boolean
+}
+
+function FocusSound({ isEnabled }: FocusSoundProps) {
+    const ref = useRef<HTMLAudioElement | null>(null)
+
+    useEffect(() => {
+        // Stop current audio if playing
+        if (ref.current) {
+            ref.current.pause()
+            ref.current.currentTime = 0
+        }
+
+        // Start audio if focus mode is active
+        if (isEnabled) {
+            const audio = new Audio(SOUND_PATH)
+            audio.loop = true
+
+            audio.play()
+            audio.volume = 0.25
+
+            ref.current = audio
+        }
+
+        return () => {
+            if (ref.current) {
+                ref.current.pause()
+                ref.current = null
+            }
+        }
+    }, [isEnabled])
+
+    return null
 }
 
 interface FocusModeProps {
@@ -44,13 +97,13 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     )
 
     return (
-        <>
+        <div className="z-10">
+            <FocusOverlay isEnabled={isEnabled} />
             <FocusSound isEnabled={isEnabled} />
-            {/* <FocusOverlay isEnabled={isEnabled} /> */}
 
             <div
                 className={cn(
-                    'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
+                    'relative flex items-center justify-center overflow-hidden rounded-xl max-md:rounded-md',
                     'transition-[width_200ms,height_200ms,background_200ms,color_200ms,box-shadow_200ms,transform_200ms,left_500ms,right_500ms] ease-in-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
@@ -81,7 +134,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                             aria-label={strings.close}
                         >
                             {strings.close}
-                            <XClose className="size-5" strokeWidth={2.1} />
+                            <XClose className="size-5" strokeWidth={2} />
                         </button>
                     </>
                 ) : (
@@ -94,11 +147,11 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                             'cursor-pointer'
                         )}
                     >
-                        <Maximize02 className="size-5" strokeWidth={2.1} />
+                        <Maximize02 className="size-5" strokeWidth={2.2} />
                         <span className="truncate px-1">{strings.focus}</span>
                     </button>
                 )}
             </div>
-        </>
+        </div>
     )
 }
