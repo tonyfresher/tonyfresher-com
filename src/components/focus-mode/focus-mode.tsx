@@ -32,14 +32,15 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
     const buttonStyles = cn(
         'h-14 w-32',
-        'max-md:h-10 max-md:w-25',
+        'max-md:h-10 max-md:w-28',
         'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
         'active:scale-98',
         variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
     )
 
     const videoStyles = cn(
-        'bg-bright text-bright-foreground border-bright size-50 border-6 shadow-lg'
+        'bg-bright text-bright-foreground border-bright border-6 shadow-lg',
+        'aspect-square size-50'
     )
 
     return (
@@ -49,8 +50,8 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
             <div
                 className={cn(
-                    'relative flex items-center justify-center overflow-hidden rounded-lg',
-                    'transition-[width,height,background,color,box-shadow] duration-200 ease-in-out',
+                    'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
+                    'transition-[width_200ms,height_200ms,background_200ms,color_200ms,box-shadow_200ms,transform_200ms,left_500ms,right_500ms] ease-in-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
                 )}

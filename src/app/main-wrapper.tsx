@@ -40,7 +40,12 @@ export default function MainLayout({ children }: { children: ReactNode }) {
             </div>
             <FocusMode
                 variant={scrolled ? 'default' : 'clear'}
-                className="fixed right-8 bottom-8 max-md:top-[18px] max-md:right-[18px] max-md:bottom-auto"
+                className={cn(
+                    'fixed',
+                    'md:right-8 md:bottom-8',
+                    'max-md:top-[18px]',
+                    scrolled ? 'max-md:right-1/2 max-md:translate-x-1/2' : 'max-md:right-[18px]'
+                )}
             />
         </main>
     )
