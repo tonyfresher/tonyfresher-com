@@ -23,8 +23,14 @@ export default function WorkDescriptionPage({
                 '[&>*:not(.wide-block)]:col-span-4'
             )}
         >
-            <h1 className="font-display font-regular col-span-5 m-0 text-[52px] leading-none">
-                {product}
+            <h1 className="group font-display font-regular col-span-5 -my-5 w-fit py-5 text-[52px] leading-none">
+                <Link
+                    href="/"
+                    className="mr-2 hidden group-hover:inline-block hover:bg-transparent"
+                >
+                    ←
+                </Link>
+                <span className="inline-block">{product}</span>
             </h1>
             <div className="text-muted-foreground col-span-5 mt-12 mb-8 flex flex-col gap-1">
                 <div>{period}</div>
