@@ -91,7 +91,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     }
 
     const buttonStyles = cn(
-        'h-14 w-32',
+        'h-12 w-30',
         'max-md:h-10 max-md:w-28',
         'hover:bg-bright hover:text-bright-foreground hover:inset-shadow-button-bright hover:shadow-lg hover:brightness-95',
         'cursor-pointer active:scale-98',
@@ -155,7 +155,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                         type="button"
                         onClick={handleEnable}
                         className={cn(
-                            'flex h-full items-center gap-1 px-5 text-xl',
+                            'flex h-full items-center gap-1 px-4 text-xl',
                             'cursor-[inherit] max-md:gap-1 max-md:px-3'
                         )}
                     >

@@ -42,7 +42,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                 variant={scrolled ? 'default' : 'clear'}
                 className={cn(
                     'fixed',
-                    'md:right-8 md:bottom-8',
+                    'md:right-9 md:bottom-9',
                     'max-md:top-[50px] max-md:right-[50px] max-sm:top-[18px] max-sm:right-[18px]'
                 )}
             />
