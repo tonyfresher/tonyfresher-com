@@ -20,7 +20,7 @@ function FocusOverlay({ isEnabled }: FocusOverlayProps) {
         <div
             className={cn(
                 'pointer-events-none fixed inset-0',
-                'transition-[box-shadow] duration-200 ease-in-out',
+                'transition-[box-shadow] delay-200 duration-200 ease-in-out',
                 isEnabled
                     ? 'shadow-[inset_0_0_32px_24px_var(--bright)] max-md:shadow-[inset_0_0_16px_16px_var(--bright)]'
                     : 'shadow-[inset_0_0_0px_0px_transparent]'
@@ -111,7 +111,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-xl max-md:rounded-md',
-                    '[transition:width_200ms_ease-out,height_200ms_ease-out,background_200ms_ease-out,color_200ms_ease-out,box-shadow_200ms_ease-out,transform_200ms_ease-out,translate_300ms_ease-out,left_300ms_ease-out,right_300ms_ease-out]',
+                    'transition-[width,height,background,color,box-shadow,transform,translate,right] duration-200 ease-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
                 )}
