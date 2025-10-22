@@ -8,7 +8,7 @@ import { cn } from '@/lib/cn'
 
 const strings = {
     focus: 'Focus',
-    close: 'Close'
+    stop: 'Stop'
 }
 
 interface FocusOverlayProps {
@@ -144,9 +144,9 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                                 'text-base leading-none font-medium',
                                 'cursor-pointer'
                             )}
-                            aria-label={strings.close}
+                            aria-label={strings.stop}
                         >
-                            {strings.close}
+                            {strings.stop}
                             <XClose className="size-5" strokeWidth={2} />
                         </button>
                     </>
