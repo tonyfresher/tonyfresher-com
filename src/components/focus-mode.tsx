@@ -74,13 +74,20 @@ interface FocusModeProps {
 
 export default function FocusMode({ className, variant = 'default' }: FocusModeProps) {
     const [isEnabled, setIsEnabled] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleEnable = () => {
         setIsEnabled(true)
+        setIsLoading(true)
     }
 
     const handleDisable = () => {
         setIsEnabled(false)
+        setIsLoading(false)
+    }
+
+    const handleVideoLoaded = () => {
+        setIsLoading(false)
     }
 
     const buttonStyles = cn(
@@ -111,8 +118,13 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             >
                 {isEnabled ? (
                     <>
+                        {isLoading && (
+                            <div className="border-bright-foreground absolute size-6 animate-spin rounded-full border-2 border-t-transparent" />
+                        )}
+
                         <video
                             className="aspect-square size-full object-cover"
+                            onCanPlay={handleVideoLoaded}
                             autoPlay
                             loop
                             muted
