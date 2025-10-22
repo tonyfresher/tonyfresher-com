@@ -63,10 +63,10 @@ export default function Work() {
                             {link.startsWith('/') ? (
                                 <ArrowSquareUpRight
                                     className="ml-1.5 inline size-5"
-                                    strokeWidth={2.6}
+                                    strokeWidth={2.5}
                                 />
                             ) : (
-                                <Link01 className="ml-1.5 inline size-5" strokeWidth={2.6} />
+                                <Link01 className="ml-1.5 inline size-5" strokeWidth={2.5} />
                             )}
                         </h3>
                         <span className="mt-1 whitespace-pre-line max-sm:whitespace-normal">

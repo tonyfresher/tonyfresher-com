@@ -9,7 +9,7 @@ import {
     useState
 } from 'react'
 
-import { XClose } from '@untitledui/icons'
+import { Maximize01, Maximize02, Star03, Wind01, XClose } from '@untitledui/icons'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -35,7 +35,7 @@ import VibeOverlay from './vibe-overlay'
 import VibeSound from './vibe-sound'
 
 const strings = {
-    selectVibe: 'Change vibe',
+    selectVibe: 'Focus',
     clearVibe: 'Clear vibe'
 }
 
@@ -45,9 +45,10 @@ interface TriggerProps {
     TriggerComponent: ElementType<TriggerComponentProps>
     vibe: Vibe | null
     onClear: () => void
+    variant: 'default' | 'clear'
 }
 
-function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
+function Trigger({ TriggerComponent, vibe, onClear, variant }: TriggerProps) {
     const label = vibe?.name ?? strings.selectVibe
 
     const handleCrossClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -63,14 +64,20 @@ function Trigger({ TriggerComponent, vibe, onClear }: TriggerProps) {
         <TriggerComponent asChild>
             <div
                 className={cn(
-                    'bg-bright text-bright-foreground flex h-14 items-center gap-2 rounded-lg px-5 text-xl font-medium shadow-lg transition-transform',
-                    'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-4',
+                    'flex h-14 items-center gap-1 rounded-lg px-5 text-xl transition-all',
+                    'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
+                    'max-md:h-10 max-md:gap-1 max-md:rounded-md max-md:px-3',
                     'active:scale-98',
                     'cursor-pointer',
+                    variant === 'default' && 'bg-bright text-bright-foreground shadow-lg',
                     vibe && 'pr-3 max-md:pr-1'
                 )}
             >
-                {vibe && <vibe.icon className="size-6" />}
+                {vibe ? (
+                    <vibe.icon className="size-5" strokeWidth={2.5} />
+                ) : (
+                    <Maximize02 className="size-5" strokeWidth={2.1} />
+                )}
                 <span className="truncate px-1">{label}</span>
 
                 {vibe && (
@@ -105,9 +112,10 @@ function VibeOptions({ currentType, onSelect, renderOption }: VibeOptionsProps) 
 
 interface VibeSelectorProps {
     className?: string
+    variant?: 'default' | 'clear'
 }
 
-export default function VibeSelector({ className }: VibeSelectorProps) {
+export default function FocusMode({ className, variant = 'default' }: VibeSelectorProps) {
     const [currentVibe, setCurrentVibe] = useState<Vibe | null>(null)
 
     const handleVibeSelect = (vibe: Vibe | null) => {
@@ -130,6 +138,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                             TriggerComponent={DropdownMenuTrigger}
                             vibe={currentVibe}
                             onClear={handleClear}
+                            variant={variant}
                         />
                         <DropdownMenuContent
                             className="min-w-60 gap-1 rounded-2xl p-3"
@@ -162,6 +171,7 @@ export default function VibeSelector({ className }: VibeSelectorProps) {
                             TriggerComponent={DrawerTrigger}
                             vibe={currentVibe}
                             onClear={handleClear}
+                            variant={variant}
                         />
                         <DrawerContent>
                             <DrawerHeader>
