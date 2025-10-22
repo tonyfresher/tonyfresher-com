@@ -43,10 +43,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                 className={cn(
                     'fixed',
                     'md:right-9 md:bottom-9',
-                    'max-md:top-[50px] max-sm:top-[18px]',
-                    scrolled
-                        ? 'max-md:right-1/2 max-md:translate-x-1/2'
-                        : 'max-md:right-[50px] max-sm:right-[18px]'
+                    'max-md:top-[50px] max-md:right-[50px] max-sm:top-[18px] max-sm:right-[18px]'
                 )}
             />
         </main>

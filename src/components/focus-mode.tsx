@@ -100,7 +100,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
     const videoStyles = cn(
         'bg-bright text-bright-foreground border-bright border-6 shadow-lg',
-        'aspect-square size-50'
+        'aspect-square size-50 max-md:size-40'
     )
 
     return (
@@ -111,7 +111,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
-                    'transition-[width,height,background,color,box-shadow,filter,transform,translate,right] duration-200 ease-out',
+                    'transition-[width,height,background,color,box-shadow,filter,transform,translate,top,right] duration-200 ease-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
                 )}
