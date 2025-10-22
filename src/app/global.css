@@ -9,7 +9,7 @@
 
 @theme inline {
     --font-sans: 'TASA Orbiter', sans-serif;
-    --font-display: 'ABC Stefan', sans-serif;
+    --font-display: 'ABC Stefan', serif;
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);
