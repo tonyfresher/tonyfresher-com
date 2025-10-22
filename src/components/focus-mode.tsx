@@ -91,9 +91,9 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     }
 
     const buttonStyles = cn(
-        'h-14 w-32',
+        'h-12 w-30',
         'max-md:h-10 max-md:w-28',
-        'hover:bg-bright hover:text-bright-foreground hover:shadow-lg',
+        'hover:bg-bright hover:text-bright-foreground hover:shadow-lg hover:brightness-95',
         'active:scale-98',
         variant === 'default' && 'bg-bright text-bright-foreground shadow-lg'
     )
@@ -110,8 +110,8 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
             <div
                 className={cn(
-                    'relative flex items-center justify-center overflow-hidden rounded-xl max-md:rounded-md',
-                    'transition-[width,height,background,color,box-shadow,transform,translate,right] duration-200 ease-out',
+                    'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
+                    'transition-[width,height,background,color,box-shadow,filter,transform,translate,right] duration-200 ease-out',
                     isEnabled ? videoStyles : buttonStyles,
                     className
                 )}
@@ -154,7 +154,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                         type="button"
                         onClick={handleEnable}
                         className={cn(
-                            'flex h-full items-center gap-1 px-5 text-xl',
+                            'flex h-full items-center gap-1 px-4 text-xl',
                             'max-md:gap-1 max-md:px-3',
                             'cursor-pointer'
                         )}
