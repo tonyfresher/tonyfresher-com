@@ -46,7 +46,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                     'max-md:top-[50px] max-sm:top-[18px]',
                     scrolled
                         ? 'max-md:right-1/2 max-md:translate-x-1/2'
-                        : 'max-md:max-md:right-[50px] max-sm:right-[18px]'
+                        : 'max-md:right-[50px] max-sm:right-[18px]'
                 )}
             />
         </main>
