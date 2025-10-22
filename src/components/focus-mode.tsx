@@ -22,7 +22,7 @@ function FocusOverlay({ isEnabled }: FocusOverlayProps) {
                 'pointer-events-none fixed inset-0',
                 'transition-[box-shadow] delay-200 duration-200 ease-in-out',
                 isEnabled
-                    ? 'shadow-[inset_0_0_32px_24px_var(--bright)] max-md:shadow-[inset_0_0_16px_16px_var(--bright)]'
+                    ? 'animate-glow shadow-[inset_0_0_32px_24px_var(--bright)] max-md:shadow-[inset_0_0_16px_16px_var(--bright)]'
                     : 'shadow-[inset_0_0_0px_0px_transparent]'
             )}
         />

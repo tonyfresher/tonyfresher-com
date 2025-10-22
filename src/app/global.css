@@ -253,6 +253,7 @@
 
 @theme {
     --animate-focus: focus 200ms ease-in-out 200ms both;
+    --animate-glow: glow 5s ease-in-out infinite;
 
     @keyframes focus {
         from {
@@ -262,6 +263,16 @@
         to {
             filter: blur(0);
             opacity: 1;
+        }
+    }
+
+    @keyframes glow {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.85;
         }
     }
 }
