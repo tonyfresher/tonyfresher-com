@@ -70,15 +70,10 @@ function FocusSound({ isEnabled }: FocusSoundProps) {
 
 const FOCUS_MODE_STORAGE_KEY = 'focus-mode-used'
 
-function useShowOnboarding(
-    onboardingEnabled: boolean,
-    focusModeEnabled: boolean,
-    buttonVariant: 'default' | 'clear'
-) {
+function useShowOnboarding(focusModeEnabled: boolean, buttonVariant: 'default' | 'clear') {
     const [hasBeenUsed, setHasBeenUsed] = useState(false)
 
-    const shouldShowOnboarding =
-        onboardingEnabled && buttonVariant === 'default' && !focusModeEnabled && !hasBeenUsed
+    const shouldShowOnboarding = buttonVariant === 'default' && !focusModeEnabled && !hasBeenUsed
 
     useEffect(() => {
         if (localStorage.getItem(FOCUS_MODE_STORAGE_KEY) === 'true') {
@@ -100,22 +95,13 @@ function useShowOnboarding(
 interface FocusModeProps {
     className?: string
     variant?: 'default' | 'clear'
-    withOnboarding?: boolean
 }
 
-export default function FocusMode({
-    className,
-    variant = 'default',
-    withOnboarding = false
-}: FocusModeProps) {
+export default function FocusMode({ className, variant = 'default' }: FocusModeProps) {
     const [isEnabled, setIsEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
-    const { shouldShowOnboarding, hideOnboarding } = useShowOnboarding(
-        withOnboarding,
-        isEnabled,
-        variant
-    )
+    const { shouldShowOnboarding, hideOnboarding } = useShowOnboarding(isEnabled, variant)
 
     const handleEnable = () => {
         hideOnboarding()
@@ -147,12 +133,12 @@ export default function FocusMode({
     )
 
     return (
-        <div className={cn('z-10 flex items-center gap-4', className)}>
+        <div className={cn('relative z-10', className)}>
             <FocusOverlay isEnabled={isEnabled} />
             <FocusSound isEnabled={isEnabled} />
 
             {shouldShowOnboarding && (
-                <span className="text-muted-foreground w-24 text-right leading-tight max-md:hidden">
+                <span className="font-handwritten text-muted-foreground absolute -top-13 -right-3 w-26 rotate-4 text-right text-[28px] leading-5 max-md:hidden">
                     {strings.onboarding}
                 </span>
             )}

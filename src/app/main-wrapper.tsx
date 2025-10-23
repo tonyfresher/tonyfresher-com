@@ -2,8 +2,6 @@
 
 import { ReactNode, useRef } from 'react'
 
-import { usePathname } from 'next/navigation'
-
 import FocusMode from '@/components/focus-mode'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
@@ -13,9 +11,6 @@ import { useScrollDetection } from '@/lib/use-scroll-detection'
 export default function MainLayout({ children }: { children: ReactNode }) {
     const ref = useRef<HTMLElement>(null)
     const scrolled = useScrollDetection(120, ref as React.RefObject<HTMLElement>)
-
-    const pathname = usePathname()
-    const withFocusOnboarding = pathname === '/'
 
     return (
         <main className="relative">
@@ -47,13 +42,12 @@ export default function MainLayout({ children }: { children: ReactNode }) {
             </div>
 
             <FocusMode
+                variant={scrolled ? 'default' : 'clear'}
                 className={cn(
                     'fixed',
                     'md:right-9 md:bottom-9',
                     'max-md:top-[50px] max-md:right-[50px] max-sm:top-[18px] max-sm:right-[18px]'
                 )}
-                variant={scrolled ? 'default' : 'clear'}
-                withOnboarding={withFocusOnboarding}
             />
         </main>
     )

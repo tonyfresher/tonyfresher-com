@@ -10,6 +10,7 @@
 @theme inline {
     --font-sans: 'TASA Orbiter', sans-serif;
     --font-display: 'ABC Stefan', serif;
+    --font-handwritten: var(--font-reenie-beanie), sans-serif;
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);
