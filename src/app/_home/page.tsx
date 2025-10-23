@@ -7,7 +7,8 @@ import Footer from './components/footer.mdx'
 import Work from './components/work'
 
 export const strings = {
-    name: 'Anton Fresher'
+    name: 'Anton Fresher',
+    emoji: ';-)'
 }
 
 export default function HomePage() {
@@ -16,7 +17,7 @@ export default function HomePage() {
             <div className="col-span-5 flex flex-col gap-y-10">
                 <h1 className="group font-display font-regular m-0 overflow-visible text-[52px] leading-none">
                     {strings.name}
-                    <span className="ml-4 hidden group-hover:inline">;)</span>
+                    <span className="ml-4 hidden group-hover:inline">{strings.emoji}</span>
                 </h1>
                 <div
                     className={cn(
