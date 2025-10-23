@@ -37,7 +37,7 @@ export default function WorkDescriptionPage({
                 </Link>
                 <span className="inline-block">{product}</span>
             </h1>
-            <div className="text-muted-foreground col-span-5 mt-11 mb-4 flex flex-col gap-0.5 max-md:mt-8">
+            <div className="text-muted-foreground col-span-5 mt-11 mb-2 flex flex-col gap-0.5 max-md:mt-8">
                 <div>{period}</div>
                 <div>
                     <Link href={link} display="inline-block">
