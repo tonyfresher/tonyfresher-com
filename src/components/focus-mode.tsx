@@ -138,7 +138,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             <FocusSound isEnabled={isEnabled} />
 
             {shouldShowOnboarding && (
-                <span className="font-handwritten text-muted-foreground absolute -top-13 -right-3 w-26 rotate-4 text-right text-[28px] leading-5 max-md:hidden">
+                <span className="font-handwritten text-muted-foreground absolute -top-13 -right-3 w-26 rotate-3 text-right text-[28px] leading-5 max-md:hidden">
                     {strings.onboarding}
                 </span>
             )}
