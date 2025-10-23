@@ -7,7 +7,6 @@ import { Maximize02, XClose } from '@untitledui/icons'
 import { cn } from '@/lib/cn'
 
 const strings = {
-    onboarding: 'Use your time wisely',
     focus: 'Focus',
     stop: 'Stop'
 }
@@ -68,30 +67,6 @@ function FocusSound({ isEnabled }: FocusSoundProps) {
     return null
 }
 
-const FOCUS_MODE_STORAGE_KEY = 'focus-mode-used'
-
-function useShowOnboarding(focusModeEnabled: boolean, buttonVariant: 'default' | 'clear') {
-    const [hasBeenUsed, setHasBeenUsed] = useState(false)
-
-    const shouldShowOnboarding = buttonVariant === 'default' && !focusModeEnabled && !hasBeenUsed
-
-    useEffect(() => {
-        if (localStorage.getItem(FOCUS_MODE_STORAGE_KEY) === 'true') {
-            setHasBeenUsed(true)
-        }
-    }, [])
-
-    const hideOnboarding = () => {
-        localStorage.setItem(FOCUS_MODE_STORAGE_KEY, 'true')
-        setHasBeenUsed(true)
-    }
-
-    return {
-        shouldShowOnboarding,
-        hideOnboarding
-    }
-}
-
 interface FocusModeProps {
     className?: string
     variant?: 'default' | 'clear'
@@ -101,10 +76,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     const [isEnabled, setIsEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
-    const { shouldShowOnboarding, hideOnboarding } = useShowOnboarding(isEnabled, variant)
-
     const handleEnable = () => {
-        hideOnboarding()
         setIsEnabled(true)
         setIsLoading(true)
     }
@@ -133,15 +105,9 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     )
 
     return (
-        <div className={cn('relative z-10', className)}>
+        <div className={cn('z-10', className)}>
             <FocusOverlay isEnabled={isEnabled} />
             <FocusSound isEnabled={isEnabled} />
-
-            {shouldShowOnboarding && (
-                <span className="font-handwritten text-muted-foreground absolute -top-13 -right-3 w-26 rotate-3 text-right text-[28px] leading-5 max-md:hidden">
-                    {strings.onboarding}
-                </span>
-            )}
 
             <div
                 className={cn(
