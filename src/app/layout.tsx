@@ -12,6 +12,7 @@ import './global.css'
 import MainWrapper from './main-wrapper'
 
 const reenieBeanieFont = Reenie_Beanie({
+    subsets: ['latin'],
     variable: '--font-reenie-beanie',
     weight: '400',
     display: 'swap'
