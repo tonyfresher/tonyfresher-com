@@ -38,7 +38,7 @@ TripleTen is a personalized learning service that takes you from gaining skills 
         ]}
     />
 </div>
-<span className="caption">TripleTen’s learning platform</span>
+<span className="caption">TripleTen learning platform</span>
 
 The product was born in the early 2020s—a time of economic uncertainty, especially in the US. For many, moving into tech became a path to stability and a better life. TripleTen became the best way to learn a tech job for people with busy lives, thanks to its mix of full control over the student experience, strong learning design, and deep expertise in tech and AI.
 
@@ -107,6 +107,30 @@ It was also a big technical challenge. The first version for VS Code took three 
 <span className="caption">Different project environments</span>
 
 As a result, project work became a native part of the platform. Students can now work on projects while having access to all familiar tools, including chat with Dot. The team has full visibility into what happens during projects, making things like the A/B experiment with Dot support mentioned above possible. The entire learning process now happens within the platform, and students spend 31% of their time in the project workspace.
+
+## Product observability
+
+In my last year at TripleTen, one of the big things I focused on was helping us understand how students actually use the platform.
+
+Before that, our product analytics setup was pretty limited, and we had almost no way to observe real student behavior. We often didn’t know if our changes actually worked. UI decisions lacked context, and we mostly relied on personal opinions.
+
+When I started researching analytics tools, one clearly stood out—PostHog. Beyond its hog-themed charm, it turned out to be a powerful and flexible data infrastructure toolkit.
+
+<BrowserContainerImage src="/tripleten/posthog.png" alt="PostHog UI" aspectRatio="16 / 9" />
+<span className="caption">PostHog interface</span>
+
+I set up and maintained the PostHog integration from early experiments to a
+full rollout across all platform surfaces. It was an interesting challenge because it combined
+setting up structure inside PostHog, maintaining integration code, resolving issues, and driving awareness and
+adoption across the company.
+
+Over time, PostHog became the core analytics and experimentation platform for the product team and was broadly adopted across the org. Here’s what we achieved with it:
+
+- Iterated on freshly released features based on usage data, session replays, and survey feedback.
+- Ran experiments to measure impact—from getting 72% more feedback responses by tweaking a button label to discovering that 34% more students submit their projects with our AI buddy.
+- Rolled out and refined new features gradually using feature flags.
+- Unshipped several low-usage features based on insights from automatically captured data.
+- Moved student activity tracking used by our learning support team from a clunky in-house system to reliable PostHog events within our main infrastructure.
 
 ---
 

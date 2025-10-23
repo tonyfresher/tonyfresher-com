@@ -259,6 +259,14 @@
     .mdx-content > ol > li + li {
         @apply mt-2;
     }
+
+    .mdx-content > ul {
+        @apply list-disc;
+    }
+
+    .mdx-content > ol {
+        @apply list-decimal;
+    }
 }
 
 @theme {
