@@ -99,10 +99,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
             'bg-bright text-bright-foreground inset-shadow-button-bright shadow-lg'
     )
 
-    const videoStyles = cn(
-        'aspect-square size-50 max-md:size-40',
-        'bg-bright text-bright-foreground shadow-xl'
-    )
+    const videoStyles = cn('bg-bright text-bright-foreground aspect-square size-40 shadow-xl')
 
     return (
         <div className={cn('z-10', className)}>
