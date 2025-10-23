@@ -2,6 +2,8 @@
 
 import { ReactNode, useRef } from 'react'
 
+import useSound from 'use-sound'
+
 import FocusMode from '@/components/focus-mode'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
@@ -12,8 +14,11 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     const ref = useRef<HTMLElement>(null)
     const scrolled = useScrollDetection(120, ref as React.RefObject<HTMLElement>)
 
+    const [playClick] = useSound('/sounds/click.mp3')
+    const handleClick = () => playClick()
+
     return (
-        <main className="relative">
+        <main className="relative" onClick={handleClick}>
             <div
                 className={cn(
                     'bg-secondary',

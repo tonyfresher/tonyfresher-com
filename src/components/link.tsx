@@ -1,10 +1,6 @@
-'use client'
-
 import { AnchorHTMLAttributes, MouseEvent } from 'react'
 
 import NextLink from 'next/link'
-
-import useSound from 'use-sound'
 
 import { cn } from '@/lib/cn'
 
@@ -22,11 +18,8 @@ export default function Link({
     href,
     rel,
     target,
-    onClick,
     ...rest
 }: LinkProps) {
-    const [playClick] = useSound('/sounds/click.mp3')
-
     const mixedClassName = cn(
         // Base styles
         'transition duration-50 ease-out',
@@ -43,23 +36,11 @@ export default function Link({
         className
     )
 
-    const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-        playClick()
-        onClick?.(e)
-    }
-
     const isLinkRelative = href.startsWith('/')
 
     if (isLinkRelative) {
         return (
-            <NextLink
-                href={href}
-                className={mixedClassName}
-                target={target}
-                rel={rel}
-                onClick={handleClick}
-                {...rest}
-            >
+            <NextLink href={href} className={mixedClassName} target={target} rel={rel} {...rest}>
                 {children}
             </NextLink>
         )
@@ -71,7 +52,6 @@ export default function Link({
             href={href}
             target={target ?? '_blank'}
             rel={rel ?? 'noopener noreferrer'}
-            onClick={handleClick}
             {...rest}
         >
             {children}
