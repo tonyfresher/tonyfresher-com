@@ -26,7 +26,7 @@ export default function WorkDescriptionPage({
             <h1
                 className={cn(
                     'group col-span-5 -my-5 w-fit py-5',
-                    'font-display text-7xl leading-none max-md:text-5xl'
+                    'font-display text-8xl leading-none max-lg:text-6xl max-md:text-5xl'
                 )}
             >
                 <Link
@@ -37,7 +37,7 @@ export default function WorkDescriptionPage({
                 </Link>
                 <span className="inline-block">{product}</span>
             </h1>
-            <div className="text-muted-foreground col-span-5 mt-12 mb-8 flex flex-col gap-0.5 max-md:mt-8">
+            <div className="text-muted-foreground col-span-5 mt-11 mb-4 flex flex-col gap-0.5 max-md:mt-8">
                 <div>{period}</div>
                 <div>
                     <Link href={link} display="inline-block">
