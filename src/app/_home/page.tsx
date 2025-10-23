@@ -14,14 +14,14 @@ export const strings = {
 export default function HomePage() {
     return (
         <div className="col-span-3 flex flex-col gap-y-24 text-xl">
-            <div className="col-span-5 flex flex-col gap-y-10">
-                <h1 className="group font-display font-regular m-0 overflow-visible text-[52px] leading-none">
+            <div className="col-span-5 flex flex-col">
+                <h1 className="group font-display m-0 mb-8 overflow-visible text-[52px] leading-none">
                     {strings.name}
                     <span className="ml-4 hidden group-hover:inline">{strings.emoji}</span>
                 </h1>
                 <div
                     className={cn(
-                        'relative leading-relaxed',
+                        'relative mb-10 leading-relaxed',
                         '[&>p]:m-0',
                         '[&>p+p]:mt-4',
                         '[&_img]:mx-1 [&_img]:inline-block [&_img]:size-8 [&_img]:rounded-md [&_img]:align-top'
