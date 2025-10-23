@@ -7,6 +7,7 @@ import { Maximize02, XClose } from '@untitledui/icons'
 import { cn } from '@/lib/cn'
 
 const strings = {
+    onboarding: 'Use your time wisely',
     focus: 'Focus',
     stop: 'Stop'
 }
@@ -67,16 +68,57 @@ function FocusSound({ isEnabled }: FocusSoundProps) {
     return null
 }
 
+const FOCUS_MODE_STORAGE_KEY = 'focus-mode-used'
+
+function useShowOnboarding(
+    onboardingEnabled: boolean,
+    focusModeEnabled: boolean,
+    buttonVariant: 'default' | 'clear'
+) {
+    const [hasBeenUsed, setHasBeenUsed] = useState(false)
+
+    const shouldShowOnboarding =
+        onboardingEnabled && buttonVariant === 'default' && !focusModeEnabled && !hasBeenUsed
+
+    useEffect(() => {
+        if (localStorage.getItem(FOCUS_MODE_STORAGE_KEY) === 'true') {
+            setHasBeenUsed(true)
+        }
+    }, [])
+
+    const hideOnboarding = () => {
+        localStorage.setItem(FOCUS_MODE_STORAGE_KEY, 'true')
+        setHasBeenUsed(true)
+    }
+
+    return {
+        shouldShowOnboarding,
+        hideOnboarding
+    }
+}
+
 interface FocusModeProps {
     className?: string
     variant?: 'default' | 'clear'
+    withOnboarding?: boolean
 }
 
-export default function FocusMode({ className, variant = 'default' }: FocusModeProps) {
+export default function FocusMode({
+    className,
+    variant = 'default',
+    withOnboarding = false
+}: FocusModeProps) {
     const [isEnabled, setIsEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
+    const { shouldShowOnboarding, hideOnboarding } = useShowOnboarding(
+        withOnboarding,
+        isEnabled,
+        variant
+    )
+
     const handleEnable = () => {
+        hideOnboarding()
         setIsEnabled(true)
         setIsLoading(true)
     }
@@ -105,16 +147,21 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     )
 
     return (
-        <div className="z-10">
+        <div className={cn('z-10 flex items-center gap-4', className)}>
             <FocusOverlay isEnabled={isEnabled} />
             <FocusSound isEnabled={isEnabled} />
+
+            {shouldShowOnboarding && (
+                <span className="text-muted-foreground w-24 text-right leading-tight max-md:hidden">
+                    {strings.onboarding}
+                </span>
+            )}
 
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
                     'transition-all duration-200 ease-out',
-                    isEnabled ? videoStyles : buttonStyles,
-                    className
+                    isEnabled ? videoStyles : buttonStyles
                 )}
             >
                 {isEnabled ? (

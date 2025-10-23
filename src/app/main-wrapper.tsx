@@ -2,6 +2,8 @@
 
 import { ReactNode, useRef } from 'react'
 
+import { usePathname } from 'next/navigation'
+
 import FocusMode from '@/components/focus-mode'
 import Links from '@/components/links'
 import Menu from '@/components/menu'
@@ -11,6 +13,9 @@ import { useScrollDetection } from '@/lib/use-scroll-detection'
 export default function MainLayout({ children }: { children: ReactNode }) {
     const ref = useRef<HTMLElement>(null)
     const scrolled = useScrollDetection(120, ref as React.RefObject<HTMLElement>)
+
+    const pathname = usePathname()
+    const withFocusOnboarding = pathname === '/'
 
     return (
         <main className="relative">
@@ -24,6 +29,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                 )}
             >
                 <Menu className="md:hidden" />
+
                 <div
                     className={cn(
                         '[&>*,&>*>*]:animate-focus flex flex-col',
@@ -33,18 +39,21 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                 >
                     {children}
                 </div>
+
                 <div className="flex flex-col gap-16 md:sticky md:top-14 md:col-start-6 md:row-span-5 md:row-start-1 md:self-start">
                     <Menu className="hidden md:flex" />
                     <Links />
                 </div>
             </div>
+
             <FocusMode
-                variant={scrolled ? 'default' : 'clear'}
                 className={cn(
                     'fixed',
                     'md:right-9 md:bottom-9',
                     'max-md:top-[50px] max-md:right-[50px] max-sm:top-[18px] max-sm:right-[18px]'
                 )}
+                variant={scrolled ? 'default' : 'clear'}
+                withOnboarding={withFocusOnboarding}
             />
         </main>
     )
