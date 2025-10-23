@@ -222,11 +222,15 @@
     }
 
     .mdx-content > hr {
-        @apply text-accent-secondary mt-10 mb-6 h-auto border-0 text-center text-3xl;
+        @apply mt-10 mb-6 h-auto border-0 text-center;
     }
 
-    .mdx-content > hr::before {
-        @apply block content-['∗∗∗'];
+    .mdx-content > hr:not([data-emoji])::before {
+        @apply text-accent-secondary block text-3xl content-['∗∗∗'];
+    }
+
+    .mdx-content > hr[data-emoji]::before {
+        @apply block text-2xl content-[attr(data-emoji)_'_'_attr(data-emoji)_'_'_attr(data-emoji)];
     }
 
     .mdx-content > h2 {
