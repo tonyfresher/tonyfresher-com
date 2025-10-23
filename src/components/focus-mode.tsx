@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-import { Maximize02, XClose } from '@untitledui/icons'
+import { XClose } from '@untitledui/icons'
 
 import { cn } from '@/lib/cn'
 
@@ -91,8 +91,8 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     }
 
     const buttonStyles = cn(
-        'h-12 w-30',
-        'max-md:h-10 max-md:w-28',
+        'h-12 w-24',
+        'max-md:h-10 max-md:w-22',
         'hover:bg-bright hover:text-bright-foreground hover:inset-shadow-button-bright hover:shadow-lg hover:brightness-95',
         'cursor-pointer active:scale-98',
         variant === 'default' &&
@@ -158,7 +158,6 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                             'cursor-[inherit] max-md:gap-1 max-md:px-3'
                         )}
                     >
-                        <Maximize02 className="size-5" strokeWidth={2.2} />
                         <span className="truncate px-1">{strings.focus}</span>
                     </button>
                 )}
