@@ -13,8 +13,8 @@ export const strings = {
 
 export default function HomePage() {
     return (
-        <div className="col-span-3 flex flex-col gap-y-24 text-xl">
-            <div className="col-span-5 flex flex-col">
+        <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-24 text-xl lg:col-span-3">
+            <div className="flex flex-col">
                 <h1 className="group font-display m-0 mb-8 overflow-visible text-[52px] leading-none">
                     {strings.name}
                     <span className="ml-4 hidden group-hover:inline">{strings.emoji}</span>

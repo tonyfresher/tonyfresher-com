@@ -69,6 +69,8 @@
 
     --inset-shadow-button-bright: inset 0 0 10px 4px
         color-mix(in oklab, var(--color-white) 30%, transparent);
+
+    --breakpoint-3xl: 110rem;
 }
 
 :root {
@@ -204,7 +206,11 @@
     }
 
     .mdx-content > .wide-block {
-        @apply col-span-5 max-sm:-mx-4;
+        @apply col-span-5 max-md:-mx-4;
+    }
+
+    .mdx-content > *:not(.wide-block) {
+        @apply col-span-4 2xl:col-span-3;
     }
 
     .mdx-content > *:not(:first-child, h2, h3, hr, .caption) {

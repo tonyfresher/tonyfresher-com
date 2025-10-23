@@ -15,14 +15,7 @@ export default function WorkDescriptionPage({
     const productUrl = new URL(link)
 
     return (
-        <article
-            className={cn(
-                'mdx-content',
-                'contents',
-                'text-xl',
-                '[&>*:not(.wide-block)]:col-span-4'
-            )}
-        >
+        <article className="mdx-content contents text-xl">
             <h1
                 className={cn(
                     'group col-span-5 -my-5 w-fit py-5',
