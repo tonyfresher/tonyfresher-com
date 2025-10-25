@@ -90,7 +90,7 @@ export default function TableOfContents() {
         if (!item) return
 
         const itemPosition = item.getBoundingClientRect().top
-        const offsetPosition = itemPosition + window.pageYOffset - 56
+        const offsetPosition = itemPosition + window.pageYOffset - 64
 
         window.scrollTo({
             top: offsetPosition,
