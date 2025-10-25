@@ -101,7 +101,7 @@ export default function TableOfContents() {
     if (headers.length < 2) return null
 
     return (
-        <div className="fixed bottom-11 left-3 max-sm:hidden">
+        <div className="fixed top-1/2 left-3 -translate-y-1/2 max-sm:hidden">
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <div
@@ -126,8 +126,7 @@ export default function TableOfContents() {
                 <DropdownMenuContent
                     side="right"
                     sideOffset={-16}
-                    align="end"
-                    alignOffset={-20}
+                    align="center"
                     className="min-w-48"
                     onMouseEnter={() => setOpen(true)}
                     onMouseLeave={() => setOpen(false)}
