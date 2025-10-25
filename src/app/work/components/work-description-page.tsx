@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 
 import Link from '@/components/link'
+import TableOfContents from '@/components/table-of-contents'
 import { cn } from '@/lib/cn'
 import type { WorkDescriptionMeta } from '@/types'
 
@@ -15,30 +16,34 @@ export default function WorkDescriptionPage({
     const productUrl = new URL(link)
 
     return (
-        <article className="mdx-content contents text-xl">
-            <h1
-                className={cn(
-                    'group col-span-5 -my-8 w-fit py-8',
-                    'font-display text-8xl leading-none max-lg:text-6xl max-md:text-5xl'
-                )}
-            >
-                <Link
-                    href="/"
-                    className="mr-2 hidden group-hover:inline-block hover:bg-transparent"
+        <>
+            <article className="mdx-content contents text-xl">
+                <h1
+                    className={cn(
+                        'group col-span-5 -my-8 w-fit py-8',
+                        'font-display text-8xl leading-none max-lg:text-6xl max-md:text-5xl'
+                    )}
                 >
-                    ←
-                </Link>
-                <span className="inline-block">{product}</span>
-            </h1>
-            <div className="text-muted-foreground col-span-5 mt-11 mb-2 flex flex-col gap-0.5 max-md:mt-8">
-                <div>{period}</div>
-                <div>
-                    <Link href={link} display="inline-block">
-                        {productUrl.hostname}
+                    <Link
+                        href="/"
+                        className="mr-2 hidden group-hover:inline-block hover:bg-transparent"
+                    >
+                        ←
                     </Link>
+                    <span className="inline-block">{product}</span>
+                </h1>
+                <div className="text-muted-foreground col-span-5 mt-11 mb-2 flex flex-col gap-0.5 max-md:mt-8">
+                    <div>{period}</div>
+                    <div>
+                        <Link href={link} display="inline-block">
+                            {productUrl.hostname}
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            {content}
-        </article>
+                {content}
+            </article>
+
+            <TableOfContents />
+        </>
     )
 }

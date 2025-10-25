@@ -23,7 +23,8 @@ const withMDX = createMDX({
     extension: /\.(md|mdx)$/,
     options: {
         providerImportSource: '@/app/mdx-components',
-        remarkPlugins: ['remark-gfm']
+        remarkPlugins: ['remark-gfm'],
+        rehypePlugins: ['rehype-slug']
     }
 })
 

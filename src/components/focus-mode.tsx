@@ -103,9 +103,6 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
 
     return (
         <div className={cn('z-10', className)}>
-            <FocusOverlay isEnabled={isEnabled} />
-            <FocusSound isEnabled={isEnabled} />
-
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',
@@ -159,6 +156,9 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                     </button>
                 )}
             </div>
+
+            <FocusSound isEnabled={isEnabled} />
+            <FocusOverlay isEnabled={isEnabled} />
         </div>
     )
 }
