@@ -41,7 +41,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                     {children}
                 </div>
 
-                <div className="flex flex-col gap-16 md:sticky md:top-14 md:col-start-6 md:row-span-5 md:row-start-1 md:self-start">
+                <div className="flex flex-col gap-16 md:sticky md:top-16 md:col-start-6 md:row-span-5 md:row-start-1 md:self-start">
                     <Menu className="hidden md:flex" />
                     <Links />
                 </div>
