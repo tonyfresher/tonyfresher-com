@@ -32,7 +32,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
 
                 <div
                     className={cn(
-                        'flex flex-col',
+                        'flex flex-1 flex-col',
                         '[&>*,&>*>*]:blur-in-xs [&>*,&>*>*]:fade-in [&>*,&>*>*]:animate-in [&>*,&>*>*]:fill-mode-both [&>*,&>*>*]:delay-200 [&>*,&>*>*]:duration-200 [&>*,&>*>*]:ease-in-out',
                         'md:col-span-5 md:row-span-5',
                         'md:grid md:grid-cols-5 md:gap-x-8 lg:gap-x-16'

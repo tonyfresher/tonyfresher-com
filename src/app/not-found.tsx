@@ -1,11 +1,23 @@
+import Link from '@/components/link'
+import { cn } from '@/lib/cn'
+
 const strings = {
-    text: '404 — Page not found'
+    header: '404?',
+    text: '← Go back'
 }
 
 export default function NotFoundPage() {
     return (
-        <h1 className="col-[2/-2] m-0 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] text-[color:var(--color-content-secondary)]">
-            {strings.text}
-        </h1>
+        <div
+            className={cn(
+                'col-span-2 flex min-h-full flex-1 flex-col justify-between gap-4',
+                'font-display text-8xl leading-none max-lg:text-6xl max-md:text-5xl'
+            )}
+        >
+            <h1>{strings.header}</h1>
+            <Link href="/" className="w-min hover:bg-transparent">
+                {strings.text}
+            </Link>
+        </div>
     )
 }
