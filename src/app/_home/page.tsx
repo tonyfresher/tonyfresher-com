@@ -15,7 +15,7 @@ export default function HomePage() {
     return (
         <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-24 text-xl lg:col-span-3">
             <div className="flex flex-col">
-                <h1 className="group font-display m-0 mb-8 overflow-visible text-[52px] leading-none">
+                <h1 className="group font-display m-0 mb-6 overflow-visible text-[52px] leading-none">
                     {strings.name}
                     <span className="ml-4 hidden group-hover:inline">{strings.emoji}</span>
                 </h1>
@@ -24,7 +24,7 @@ export default function HomePage() {
                         'relative mb-10 leading-relaxed',
                         '[&>p]:m-0',
                         '[&>p+p]:mt-4',
-                        '[&_img]:mx-1 [&_img]:inline-block [&_img]:size-8 [&_img]:rounded-md [&_img]:align-top'
+                        '[&_img]:mx-0.5 [&_img]:inline-block [&_img]:size-7 [&_img]:rounded-sm [&_img]:align-top'
                     )}
                 >
                     <About />
