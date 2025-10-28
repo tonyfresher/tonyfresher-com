@@ -17,7 +17,7 @@ const strings = {
 }
 
 const styles = {
-    container: cn('flex items-start gap-x-3 max-sm:flex-col-reverse'),
+    container: cn('flex items-end gap-x-3 max-sm:flex-col-reverse max-sm:items-start'),
     messageList: cn('flex flex-1 flex-col items-start gap-1')
 }
 
@@ -43,7 +43,7 @@ function Bubble({ children, animated }: BubbleProps) {
     return (
         <motion.div
             className={cn(
-                'bg-accent/80 w-fit origin-top-left overflow-hidden max-sm:origin-bottom-left',
+                'bg-accent/80 w-fit origin-bottom-left overflow-hidden',
                 'rounded-xs rounded-r-xl first:rounded-tl-xl last:rounded-bl-xl'
             )}
             initial={animated ? { opacity: 0, scale: 0 } : undefined}
