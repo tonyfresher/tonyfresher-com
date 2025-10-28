@@ -23,7 +23,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
                 className={cn(
                     'bg-secondary',
                     'min-h-screen',
-                    'flex flex-col gap-10',
+                    'flex flex-col gap-12',
                     'md:grid md:grid-cols-6 md:justify-center md:gap-x-8 lg:gap-x-16',
                     'p-16 max-sm:p-6'
                 )}
