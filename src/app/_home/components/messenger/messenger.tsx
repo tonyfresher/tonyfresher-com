@@ -19,7 +19,7 @@ const strings = {
 }
 
 const styles = {
-    container: cn('flex items-end gap-x-3 max-sm:flex-col-reverse max-sm:items-start'),
+    container: cn('flex flex-row-reverse items-end gap-x-3 max-sm:flex-col max-sm:items-start'),
     messageList: cn('flex flex-1 flex-col items-start gap-1')
 }
 
@@ -78,7 +78,6 @@ function AnimatedMessenger({ messages }: MessengerProps) {
     return (
         <motion.div animate={{ height }} transition={{ ease: 'easeInOut' }}>
             <div ref={ref} className={styles.container}>
-                <Avatar />
                 <div className={styles.messageList}>
                     {messages.slice(0, visibleMessagesCount + 1).map((message, index) => (
                         <Bubble key={message.id} animated>
@@ -86,6 +85,7 @@ function AnimatedMessenger({ messages }: MessengerProps) {
                         </Bubble>
                     ))}
                 </div>
+                <Avatar />
             </div>
         </motion.div>
     )
@@ -94,12 +94,12 @@ function AnimatedMessenger({ messages }: MessengerProps) {
 function StaticMessenger({ messages }: MessengerProps) {
     return (
         <div className={styles.container}>
-            <Avatar />
             <div className={styles.messageList}>
                 {messages.map(message => (
                     <Bubble key={message.id}>{message.content}</Bubble>
                 ))}
             </div>
+            <Avatar />
         </div>
     )
 }
