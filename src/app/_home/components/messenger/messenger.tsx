@@ -2,6 +2,8 @@
 
 import { PropsWithChildren, type ReactNode, useEffect, useState } from 'react'
 
+import Image from 'next/image'
+
 import { motion } from 'motion/react'
 import useMeasure from 'react-use-measure'
 
@@ -23,15 +25,15 @@ const styles = {
 
 function Avatar() {
     return (
-        <motion.img
-            alt={strings.photoAlt}
+        <motion.div
             className={cn(
-                'box-content size-8 rounded-full',
+                'box-content overflow-hidden rounded-full',
                 'max-sm:border-secondary max-sm:-mt-4 max-sm:-ml-4 max-sm:border-4'
             )}
-            src="/me.jpeg"
             layout
-        />
+        >
+            <Image alt={strings.photoAlt} src="/me.jpeg" width={32} height={32} />
+        </motion.div>
     )
 }
 
