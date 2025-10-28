@@ -44,7 +44,7 @@ function Bubble({ children, animated }: BubbleProps) {
         <motion.div
             className={cn(
                 'bg-accent/80 w-fit origin-bottom-left overflow-hidden',
-                'rounded-xs rounded-r-xl first:rounded-tl-xl last:rounded-bl-xl'
+                'rounded-[3px] rounded-r-xl first:rounded-tl-xl last:rounded-bl-xl'
             )}
             initial={animated ? { opacity: 0, scale: 0 } : undefined}
             animate={animated ? { opacity: 1, scale: 1 } : undefined}
