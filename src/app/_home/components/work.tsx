@@ -1,5 +1,3 @@
-import { ArrowSquareUpRight, Link01 } from '@untitledui/icons'
-
 import Link from '@/components/link'
 
 const strings = {
@@ -58,17 +56,7 @@ export default function Work() {
                     <div
                         className={`col-start-1 row-start-1 flex flex-col ${cover ? 'max-w-80 max-lg:max-w-full' : ''}`}
                     >
-                        <h3 className="m-0 font-semibold">
-                            {product}
-                            {link.startsWith('/') ? (
-                                <ArrowSquareUpRight
-                                    className="ml-1.5 inline size-4"
-                                    strokeWidth={3}
-                                />
-                            ) : (
-                                <Link01 className="ml-1.5 inline size-4" strokeWidth={3} />
-                            )}
-                        </h3>
+                        <h3 className="m-0 font-semibold">{product}</h3>
                         <span className="mt-1 whitespace-pre-line max-sm:whitespace-normal">
                             {description}
                         </span>
