@@ -1,22 +1,48 @@
-import About from './components/about'
 import Education from './components/education'
 import Footer from './components/footer.mdx'
+import CVMessage from './components/messenger/cv-message'
+import Messenger from './components/messenger/messenger'
+import TextMessage from './components/messenger/text-message'
 import Work from './components/work'
 
 export const strings = {
     name: 'Anton Fresher',
-    emoji: ';-)'
+    messages: [
+        {
+            id: '1',
+            content: <TextMessage text="Hey! I'm Anton, a product designer and engineer" />,
+            delay: 1200
+        },
+        {
+            id: '2',
+            content: (
+                <TextMessage text="Over the past 8 years in tech, I've learned I fit right in with fast-paced early-stage teams, helping navigate uncertainty and build products people love" />
+            ),
+            delay: 1800
+        },
+        {
+            id: '3',
+            content: (
+                <TextMessage text="In many parts of my life, I'm a generalist. I love moving across roles and functions to ship high-quality products, find creative solutions, and—most importantly—have fun along the way" />
+            ),
+            delay: 2000
+        },
+        {
+            id: '4',
+            content: <CVMessage />,
+            delay: 2800
+        }
+    ]
 }
 
 export default function HomePage() {
     return (
         <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-24 text-xl lg:col-span-3">
             <div className="flex flex-col gap-8">
-                <h1 className="group font-display m-0 overflow-visible text-[52px] leading-none">
+                <h1 className="font-display m-0 overflow-visible text-[52px] leading-none">
                     {strings.name}
-                    <span className="ml-4 hidden group-hover:inline">{strings.emoji}</span>
                 </h1>
-                <About />
+                <Messenger messages={strings.messages} />
             </div>
             <Work />
             <Education />
