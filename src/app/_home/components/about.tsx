@@ -26,7 +26,7 @@ export default function About() {
                 alt={strings.photoAlt}
                 className={cn(
                     'box-content size-8 rounded-full',
-                    'max-sm:border-secondary max-sm:mt-8 max-sm:-ml-4 max-sm:border-4'
+                    'max-sm:border-secondary max-sm:-mt-8 max-sm:-ml-4 max-sm:border-4'
                 )}
                 src="/me.jpeg"
             />
