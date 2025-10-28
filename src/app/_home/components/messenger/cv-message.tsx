@@ -305,8 +305,8 @@ export default function CVMessage() {
         >
             <PDFIcon />
 
-            <div className="flex flex-col">
-                <h3 className="m-0 font-semibold">{cvFileName}</h3>
+            <div className="flex flex-col gap-1 leading-none">
+                <span className="font-semibold">{cvFileName}</span>
                 <span className="text-muted-foreground">
                     {strings.sizeLabel.replace('%s', cvFileSizeMb.toFixed(1))}
                 </span>
