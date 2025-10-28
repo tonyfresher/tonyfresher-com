@@ -30,7 +30,7 @@ export const strings = {
         {
             id: '4',
             content: <CVMessage />,
-            delay: 2800
+            delay: 1400
         }
     ]
 }
