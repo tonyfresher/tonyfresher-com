@@ -21,12 +21,12 @@ const strings = {
 
 export default function About() {
     return (
-        <div className={cn('flex items-end gap-3', 'max-sm:flex-col-reverse max-sm:items-start')}>
+        <div className={cn('flex items-start gap-3', 'max-sm:flex-col-reverse max-sm:items-start')}>
             <img
                 alt={strings.photoAlt}
                 className={cn(
                     'box-content size-8 rounded-full',
-                    'max-sm:border-secondary -mt-8 max-sm:-ml-4 max-sm:border-4'
+                    'max-sm:border-secondary max-sm:mt-8 max-sm:-ml-4 max-sm:border-4'
                 )}
                 src="/me.jpeg"
             />
