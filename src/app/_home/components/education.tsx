@@ -1,5 +1,3 @@
-import Link from '@/components/link'
-
 const strings = {
     title: 'Education',
     items: [

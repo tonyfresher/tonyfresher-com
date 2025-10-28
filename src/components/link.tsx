@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, MouseEvent } from 'react'
+import { AnchorHTMLAttributes } from 'react'
 
 import NextLink from 'next/link'
 

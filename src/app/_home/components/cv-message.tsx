@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 
 import Link from '@/components/link'
-import { cn } from '@/lib/cn'
 
 const strings = {
     sizeLabel: '%s MB'
@@ -12,15 +11,11 @@ const cvFileName = 'anton-fresher-cv.pdf'
 const cvFilePath = path.join(process.cwd(), 'public', cvFileName)
 const cvFileSizeMb = fs.statSync(cvFilePath).size / (1024 * 1024)
 
-interface CVProps {
-    className?: string
-}
-
 function PDFIcon() {
     return (
         <svg
-            width="64"
-            height="64"
+            width="48"
+            height="48"
             viewBox="0 0 64 64"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -300,28 +295,22 @@ function PDFIcon() {
     )
 }
 
-export default function CV({ className }: CVProps) {
+export default function CVMessage() {
     return (
-        <div className={className}>
-            <Link
-                className={cn(
-                    'group -m-4 flex items-center gap-3 rounded-md p-4',
-                    'max-lg:m-0 max-lg:p-0 max-lg:hover:bg-transparent',
-                    'hover:[&>img]:scale-105'
-                )}
-                display="inline-block"
-                href={`/${cvFileName}`}
-                target="_blank"
-            >
-                <PDFIcon />
+        <Link
+            className="group flex items-center gap-2.5 py-3 pr-8 pl-4 hover:bg-transparent"
+            display="inline-block"
+            href={`/${cvFileName}`}
+            target="_blank"
+        >
+            <PDFIcon />
 
-                <div className="flex flex-col gap-0.5">
-                    <h3 className="m-0 font-semibold">{cvFileName}</h3>
-                    <span className="text-muted-foreground">
-                        {strings.sizeLabel.replace('%s', cvFileSizeMb.toFixed(1))}
-                    </span>
-                </div>
-            </Link>
-        </div>
+            <div className="flex flex-col">
+                <h3 className="m-0 font-semibold">{cvFileName}</h3>
+                <span className="text-muted-foreground">
+                    {strings.sizeLabel.replace('%s', cvFileSizeMb.toFixed(1))}
+                </span>
+            </div>
+        </Link>
     )
 }
