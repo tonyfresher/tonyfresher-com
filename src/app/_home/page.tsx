@@ -10,7 +10,7 @@ const strings = {
     messages: [
         {
             id: '1',
-            content: <TextMessage text="Hey! I'm a product designer and engineer" />,
+            content: <TextMessage text="Hey! I'm Anton, a product designer and engineer" />,
             delay: 1200
         },
         {
