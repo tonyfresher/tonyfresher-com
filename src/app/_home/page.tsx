@@ -5,7 +5,7 @@ import Messenger from './components/messenger/messenger'
 import TextMessage from './components/messenger/text-message'
 import Work from './components/work'
 
-export const strings = {
+const strings = {
     name: 'Anton Fresher',
     messages: [
         {
@@ -23,7 +23,7 @@ export const strings = {
         {
             id: '3',
             content: (
-                <TextMessage text="In many parts of my life, I'm a generalist. I love moving across roles and functions to ship high-quality products, find creative solutions, and—most importantly—have fun along the way" />
+                <TextMessage text="In many parts of my life, I'm a generalist. I love moving across roles and functions to ship great products, find creative solutions, and—most importantly—have fun along the way" />
             ),
             delay: 2000
         },
