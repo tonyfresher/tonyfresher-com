@@ -4,7 +4,7 @@ import Link from '@/components/link'
 import { cn } from '@/lib/cn'
 
 const DEFAULT_MENU = [
-    { label: 'About', link: '/' },
+    { label: 'Index', link: '/' },
     { label: 'Notes', link: 'https://tonyfresher.substack.com' }
 ]
 

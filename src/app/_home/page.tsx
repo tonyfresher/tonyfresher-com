@@ -1,5 +1,5 @@
+import About from './components/about.mdx'
 import Education from './components/education'
-import Footer from './components/footer.mdx'
 import CVMessage from './components/messenger/cv-message'
 import Messenger from './components/messenger/messenger'
 import TextMessage from './components/messenger/text-message'
@@ -16,16 +16,9 @@ const strings = {
         {
             id: '2',
             content: (
-                <TextMessage text="Over the past 8 years in tech, I've learned I fit right in with fast-paced early-stage teams, helping navigate uncertainty and build products people love" />
+                <TextMessage text="Always curious about the world and excited to build something real with like-minded folks" />
             ),
-            delay: 1800
-        },
-        {
-            id: '3',
-            content: (
-                <TextMessage text="In many parts of my life, I'm a generalist. I love moving across roles and functions to ship great products, find creative solutions, and—most importantly—have fun along the way" />
-            ),
-            delay: 2000
+            delay: 1600
         },
         {
             id: '4',
@@ -46,9 +39,7 @@ export default function HomePage() {
             </div>
             <Work />
             <Education />
-            <div className="text-muted-foreground mt-8">
-                <Footer />
-            </div>
+            <About />
         </div>
     )
 }
