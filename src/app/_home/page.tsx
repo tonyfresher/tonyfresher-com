@@ -30,7 +30,7 @@ const strings = {
 
 export default function HomePage() {
     return (
-        <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-20 text-xl lg:col-span-3">
+        <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-20 lg:col-span-3">
             <div className="flex flex-col gap-8">
                 <h1 className="font-display -mx-4 my-0 overflow-visible px-4 text-[52px] leading-none">
                     {strings.name}

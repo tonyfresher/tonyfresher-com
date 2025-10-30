@@ -18,7 +18,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     const handleClick = () => playClick()
 
     return (
-        <main className="relative" onClick={handleClick}>
+        <main className="relative text-xl" onClick={handleClick}>
             <div
                 className={cn(
                     'bg-secondary',

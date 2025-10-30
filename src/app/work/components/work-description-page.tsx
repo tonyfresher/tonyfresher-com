@@ -17,7 +17,7 @@ export default function WorkDescriptionPage({
 
     return (
         <>
-            <article className="mdx-content contents text-xl">
+            <article className="mdx-content contents">
                 <h1
                     className={cn(
                         'group col-span-5 -mx-4 -my-8 w-fit px-4 py-8',

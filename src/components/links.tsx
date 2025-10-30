@@ -32,7 +32,7 @@ export interface LinksProps {
 export default function Links({ className }: LinksProps) {
     return (
         <div
-            className={`flex flex-row flex-wrap items-end gap-x-4 text-xl md:flex-col md:gap-y-3 ${className || ''}`}
+            className={`flex flex-row flex-wrap items-end gap-x-4 md:flex-col md:gap-y-3 ${className || ''}`}
         >
             {strings.links.map(({ service, link }) => (
                 <Link
