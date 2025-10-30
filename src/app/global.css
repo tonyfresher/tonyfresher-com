@@ -201,75 +201,77 @@
 }
 
 @layer components {
-    .mdx-content > .caption {
-        @apply text-muted-foreground mt-2 block text-base;
-    }
+    .mdx-content {
+        & > .caption {
+            @apply text-muted-foreground mt-2 block text-base;
+        }
 
-    .mdx-content > .wide-block {
-        @apply col-span-5 max-md:-mx-4;
-    }
+        & > .wide-block {
+            @apply col-span-5 max-md:-mx-4;
+        }
 
-    .mdx-content > *:not(.wide-block) {
-        @apply col-span-4 2xl:col-span-3;
-    }
+        & > *:not(.wide-block) {
+            @apply col-span-4 2xl:col-span-3;
+        }
 
-    .mdx-content > *:not(:first-child, h2, h3, hr, .caption) {
-        @apply mt-6;
-    }
+        & > *:not(:first-child, h2, h3, hr, .caption) {
+            @apply mt-6;
+        }
 
-    .mdx-content > *:first-child {
-        @apply mt-0;
-    }
+        & > *:first-child {
+            @apply mt-0;
+        }
 
-    .mdx-content > hr {
-        @apply mt-10 mb-6 h-auto border-0 text-center;
-    }
+        & > hr {
+            @apply mt-10 mb-6 h-auto border-0 text-center;
+        }
 
-    .mdx-content > hr:not([data-emoji])::before {
-        @apply text-accent-secondary block text-3xl content-['∗∗∗'];
-    }
+        & > hr:not([data-emoji])::before {
+            @apply text-accent-secondary block text-3xl content-['∗∗∗'];
+        }
 
-    .mdx-content > hr[data-emoji]::before {
-        @apply block text-2xl content-[attr(data-emoji)_'_'_attr(data-emoji)_'_'_attr(data-emoji)];
-    }
+        & > hr[data-emoji]::before {
+            @apply block text-2xl content-[attr(data-emoji)_'_'_attr(data-emoji)_'_'_attr(data-emoji)];
+        }
 
-    .mdx-content > h2 {
-        @apply mt-20 text-3xl leading-tight font-semibold;
-    }
+        & > h2 {
+            @apply mt-20 text-3xl leading-tight font-semibold;
+        }
 
-    .mdx-content > h3 {
-        @apply mt-12 text-2xl leading-tight font-semibold;
-    }
+        & > h3 {
+            @apply mt-12 text-2xl leading-tight font-semibold;
+        }
 
-    .mdx-content > :is(p, div) > img {
-        @apply w-full;
-    }
+        & > :is(p, div) > img {
+            @apply w-full;
+        }
 
-    .mdx-content > :is(p, div) > img,
-    .mdx-content > :is(p, div) > video {
-        @apply w-full rounded-sm;
-    }
+        & > :is(p, div) > img,
+        & > :is(p, div) > video {
+            @apply w-full rounded-sm;
+        }
 
-    .mdx-content > p > a > img {
-        @apply block;
-    }
+        & > p > a > img {
+            @apply block;
+        }
 
-    .mdx-content > ul,
-    .mdx-content > ol {
-        @apply pl-8;
-    }
+        & > ul,
+        & > ol {
+            @apply pl-8;
+        }
 
-    .mdx-content > ul > li + li,
-    .mdx-content > ol > li + li {
-        @apply mt-2;
-    }
+        & > ul > li + li,
+        & > ol > li + li {
+            @apply mt-2;
+        }
 
-    .mdx-content > ul {
-        @apply list-disc;
-    }
+        & > ul {
+            @apply list-disc;
+        }
 
-    .mdx-content > ol {
-        @apply list-decimal;
+        & > ol {
+            @apply list-decimal;
+        }
     }
 }
 
