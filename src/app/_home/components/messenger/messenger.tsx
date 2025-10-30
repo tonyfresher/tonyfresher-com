@@ -19,7 +19,9 @@ const strings = {
 }
 
 const styles = {
-    container: cn('flex flex-row-reverse items-end gap-x-3 max-sm:flex-col max-sm:items-start'),
+    container: cn(
+        'flex flex-row-reverse items-end gap-x-3 pr-4 max-sm:flex-col max-sm:items-start'
+    ),
     messageList: cn('flex flex-1 flex-col items-start gap-1')
 }
 
