@@ -75,25 +75,25 @@
 
 :root {
     --background: #ffffff;
-    --foreground: rgba(0, 0, 0, 0.8);
+    --foreground: rgba(0, 0, 0, 0.85);
 
     --card: #ffffff;
-    --card-foreground: rgba(0, 0, 0, 0.8);
+    --card-foreground: rgba(0, 0, 0, 0.85);
 
     --popover: #ffffff;
-    --popover-foreground: rgba(0, 0, 0, 0.8);
+    --popover-foreground: rgba(0, 0, 0, 0.85);
 
     --primary: #2a2a2a;
     --primary-foreground: #ffffff;
 
     --secondary: #f0f0ef;
-    --secondary-foreground: rgba(0, 0, 0, 0.8);
+    --secondary-foreground: rgba(0, 0, 0, 0.85);
 
     --muted: #f1f0ef;
     --muted-foreground: rgba(0, 0, 0, 0.5);
 
     --accent: rgba(0, 0, 0, 0.06);
-    --accent-foreground: rgba(0, 0, 0, 0.8);
+    --accent-foreground: rgba(0, 0, 0, 0.85);
     --accent-secondary: rgba(0, 0, 0, 0.14);
 
     --bright: #ff5900;
