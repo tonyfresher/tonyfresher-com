@@ -298,7 +298,7 @@ function PDFIcon() {
 export default function CVMessage() {
     return (
         <Link
-            className="group flex items-center gap-2.5 py-3 pr-8 pl-4 hover:bg-transparent"
+            className="group flex items-center gap-2.5 py-3 pr-6 pl-4 hover:bg-transparent"
             display="inline-block"
             href={`/${cvFileName}`}
             target="_blank"
