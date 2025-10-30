@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 import { XClose } from '@untitledui/icons'
 
@@ -27,44 +27,6 @@ function FocusOverlay({ isEnabled }: FocusOverlayProps) {
             )}
         />
     )
-}
-
-const SOUND_PATH = '/focus-mode/meditation.mp3'
-
-interface FocusSoundProps {
-    isEnabled: boolean
-}
-
-function FocusSound({ isEnabled }: FocusSoundProps) {
-    const ref = useRef<HTMLAudioElement | null>(null)
-
-    useEffect(() => {
-        // Stop current audio if playing
-        if (ref.current) {
-            ref.current.pause()
-            ref.current.currentTime = 0
-        }
-
-        // Start audio if focus mode is active
-        if (isEnabled) {
-            const audio = new Audio(SOUND_PATH)
-            audio.loop = true
-
-            audio.play()
-            audio.volume = 0.25
-
-            ref.current = audio
-        }
-
-        return () => {
-            if (ref.current) {
-                ref.current.pause()
-                ref.current = null
-            }
-        }
-    }, [isEnabled])
-
-    return null
 }
 
 interface FocusModeProps {
@@ -157,7 +119,6 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                 )}
             </div>
 
-            <FocusSound isEnabled={isEnabled} />
             <FocusOverlay isEnabled={isEnabled} />
         </div>
     )
