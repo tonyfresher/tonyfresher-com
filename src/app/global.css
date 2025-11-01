@@ -97,6 +97,7 @@
     --accent-secondary: color-mix(in oklab, #000000 14%, transparent);
 
     --bright: #ff5900;
+    --bright: color(display-p3 1 0.32 0);
     --bright-foreground: #ffffff;
 
     --destructive: #ed6f68;
@@ -148,6 +149,7 @@
     --accent-secondary: color-mix(in oklab, #ffffff 14%, transparent);
 
     --bright: #ff5900;
+    --bright: color(display-p3 1 0.32 0);
     --bright-foreground: #ffffff;
 
     --destructive: #ed6f68;
