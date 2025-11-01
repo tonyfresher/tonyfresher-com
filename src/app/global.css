@@ -75,26 +75,26 @@
 
 :root {
     --background: #ffffff;
-    --foreground: rgba(0, 0, 0, 0.85);
+    --foreground: color-mix(in oklab, #000000 85%, transparent);
 
     --card: #ffffff;
-    --card-foreground: rgba(0, 0, 0, 0.85);
+    --card-foreground: color-mix(in oklab, #000000 85%, transparent);
 
     --popover: #ffffff;
-    --popover-foreground: rgba(0, 0, 0, 0.85);
+    --popover-foreground: color-mix(in oklab, #000000 85%, transparent);
 
     --primary: #2a2a2a;
     --primary-foreground: #ffffff;
 
-    --secondary: #f0f0ef;
-    --secondary-foreground: rgba(0, 0, 0, 0.85);
+    --secondary: #f2f1ed;
+    --secondary-foreground: color-mix(in oklab, #000000 85%, transparent);
 
-    --muted: #f1f0ef;
-    --muted-foreground: rgba(0, 0, 0, 0.5);
+    --muted: #f2f1ed;
+    --muted-foreground: color-mix(in oklab, #000000 50%, transparent);
 
-    --accent: rgba(0, 0, 0, 0.06);
-    --accent-foreground: rgba(0, 0, 0, 0.85);
-    --accent-secondary: rgba(0, 0, 0, 0.14);
+    --accent: color-mix(in oklab, #000000 6%, transparent);
+    --accent-foreground: color-mix(in oklab, #000000 85%, transparent);
+    --accent-secondary: color-mix(in oklab, #000000 14%, transparent);
 
     --bright: #ff5900;
     --bright-foreground: #ffffff;
@@ -126,26 +126,26 @@
 
 .dark {
     --background: #2a2a2a;
-    --foreground: rgba(255, 255, 255, 0.85);
+    --foreground: color-mix(in oklab, #ffffff 85%, transparent);
 
     --card: #2a2a2a;
-    --card-foreground: rgba(255, 255, 255, 0.85);
+    --card-foreground: color-mix(in oklab, #ffffff 85%, transparent);
 
     --popover: #2a2a2a;
-    --popover-foreground: rgba(255, 255, 255, 0.85);
+    --popover-foreground: color-mix(in oklab, #ffffff 85%, transparent);
 
     --primary: #ffffff;
-    --primary-foreground: rgba(0, 0, 0, 0.8);
+    --primary-foreground: color-mix(in oklab, #000000 80%, transparent);
 
     --secondary: #1a1a1a;
-    --secondary-foreground: rgba(255, 255, 255, 0.85);
+    --secondary-foreground: color-mix(in oklab, #ffffff 85%, transparent);
 
     --muted: #1a1a1a;
-    --muted-foreground: rgba(255, 255, 255, 0.55);
+    --muted-foreground: color-mix(in oklab, #ffffff 55%, transparent);
 
-    --accent: rgba(255, 255, 255, 0.08);
-    --accent-foreground: rgba(255, 255, 255, 0.85);
-    --accent-secondary: rgba(255, 255, 255, 0.14);
+    --accent: color-mix(in oklab, #ffffff 8%, transparent);
+    --accent-foreground: color-mix(in oklab, #ffffff 85%, transparent);
+    --accent-secondary: color-mix(in oklab, #ffffff 14%, transparent);
 
     --bright: #ff5900;
     --bright-foreground: #ffffff;
