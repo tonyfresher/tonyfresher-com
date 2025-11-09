@@ -11,7 +11,7 @@ import './global.css'
 import MainWrapper from './main-wrapper'
 
 const title = 'Anton Fresher'
-const description = "Hey! I'm Anton, a product designer and engineer."
+const description = "Hey! I'm Anton, a product designer and engineer"
 
 export const metadata: Metadata = {
     title: {

@@ -4,7 +4,7 @@ import {
     BrowserContainerImage,
     BrowserContainerVideo
 } from '@/components/browser-container'
-import { buildWorkMetadata } from '@/lib/metadata'
+import { buildArticleMetadata } from '@/lib/metadata'
 
 import WorkDescriptionPage from '../components/work-description-page'
 
@@ -16,12 +16,14 @@ export default function Page({ children }) {
 
 export const meta = {
     id: 'tripleten',
-    product: 'TripleTen',
+    title: 'TripleTen',
+    description: 'A few bits from my work at TripleTen',
+    image: 'ui.png',
     link: 'https://tripleten.com',
     period: '2022-2025'
 }
 
-export const metadata = buildWorkMetadata(meta)
+export const metadata = buildArticleMetadata(meta)
 
 TripleTen is a personalized learning service that takes you from gaining skills to employment. Named by [Fortune](https://fortune.com/education/articles/best-software-engineering-bootcamps/) as the best overall tech bootcamp in the US, it has over 20k monthly active learners across the US and Latin America. TripleTen is a part of Nebius, a $20B NASDAQ-listed AI cloud company. This is also the funniest place I’ve ever worked.
 

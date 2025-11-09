@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
-import type { WorkDescriptionMeta, WritingMeta } from '@/types'
+import type { ArticleMeta } from '@/types'
 
 const baseOpenGraph = {
     siteName: 'Anton Fresher',
     locale: 'en_US'
 } as const
 
-export function buildArticleMetadata(meta: WritingMeta): Metadata {
+export function buildArticleMetadata(meta: ArticleMeta): Metadata {
     return {
         title: meta.title,
         description: meta.description,
@@ -19,22 +19,11 @@ export function buildArticleMetadata(meta: WritingMeta): Metadata {
             ...(meta.image && {
                 images: [
                     {
-                        url: `/${meta.id}/images/${meta.image}`,
+                        url: `/${meta.id}/${meta.image}`,
                         alt: meta.title
                     }
                 ]
             })
-        }
-    }
-}
-
-export function buildWorkMetadata(meta: WorkDescriptionMeta): Metadata {
-    return {
-        title: meta.product,
-        openGraph: {
-            ...baseOpenGraph,
-            type: 'article',
-            title: meta.product
         }
     }
 }

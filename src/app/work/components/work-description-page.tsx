@@ -10,7 +10,7 @@ interface WorkDescriptionPageProps extends PropsWithChildren {
 }
 
 export default function WorkDescriptionPage({
-    meta: { product, link, period },
+    meta: { title, link, period },
     children: content
 }: WorkDescriptionPageProps) {
     const productUrl = new URL(link)
@@ -30,7 +30,7 @@ export default function WorkDescriptionPage({
                     >
                         ←
                     </Link>
-                    <span className="inline-block">{product}</span>
+                    <span className="inline-block">{title}</span>
                 </h1>
                 <div className="text-muted-foreground col-span-5 mt-11 mb-2 flex flex-col gap-0.5 max-md:mt-8">
                     <div>{period}</div>

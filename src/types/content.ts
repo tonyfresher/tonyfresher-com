@@ -2,15 +2,14 @@ interface PageMeta {
     id: string
 }
 
-export interface WritingMeta extends PageMeta {
+export interface ArticleMeta extends PageMeta {
     title: string
     description?: string
     image?: string
-    date: string
+    date?: string
 }
 
-export interface WorkDescriptionMeta extends PageMeta {
-    product: string
+export interface WorkDescriptionMeta extends ArticleMeta {
     link: string
     period: string
 }
