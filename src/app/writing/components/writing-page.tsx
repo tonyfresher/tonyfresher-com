@@ -2,13 +2,13 @@ import { PropsWithChildren } from 'react'
 
 import { computeReadTime } from '@/lib/content'
 import { formatDate } from '@/lib/format'
-import type { WritingMeta } from '@/types'
+import type { ArticleMeta } from '@/types'
 
 const strings = {
     readTime: '%s min'
 }
 
-export interface WritingPageProps<T extends WritingMeta> extends PropsWithChildren {
+export interface WritingPageProps<T extends ArticleMeta> extends PropsWithChildren {
     meta: T
 }
 
@@ -26,7 +26,7 @@ const contentClassName = [
     '[&>p+ul]:mt-[-0.5em]'
 ].join(' ')
 
-export default function WritingPage<T extends WritingMeta>({
+export default function WritingPage<T extends ArticleMeta>({
     meta,
     children: content
 }: WritingPageProps<T>) {
@@ -35,8 +35,12 @@ export default function WritingPage<T extends WritingMeta>({
     return (
         <article className="col-[2/-2] flex flex-col">
             <div className="text-[color:var(--color-content-secondary)] max-[960px]:absolute max-[960px]:top-0 max-[960px]:right-0 max-[960px]:text-right max-[960px]:whitespace-nowrap">
-                <time dateTime={meta.date}>{formatDate(meta.date)}</time>
-                {', '}
+                {meta.date && (
+                    <>
+                        <time dateTime={meta.date}>{formatDate(meta.date)}</time>
+                        {', '}
+                    </>
+                )}
                 <span>{strings.readTime.replace('%s', readTime.toString())}</span>
             </div>
             <h1 className="mt-16 text-[length:var(--h1-font-size)] leading-[var(--header-line-height)] max-[960px]:mt-0">
