@@ -73,13 +73,11 @@ We managed to make Dot feel like a real buddy who shows up right when you need h
 
 ## Projects on the platform
 
-TripleTen’s approach is built around project-based learning—and projects are the biggest, most complex part of it. Students spend most of their time working on them, and that’s also where they need extra support.
+TripleTen’s approach is built around project-based learning, and study projects are the biggest, most complex part of it.
 
-In the past, these projects relied on a mix of external tools, while the platform itself was mostly a textbook with instructions. Once you started a project, you were on your own, setting up a complex coding environment locally.
+In the past, these projects required installing a bunch of external tools, while the platform itself was mostly a textbook with instructions. Once you started a project, you were on your own, setting up a complex coding environment locally. That created a painful UX barrier for students and a blind spot for the product team, since we had no visibility into the part where students spent most of their time.
 
-That created a painful UX barrier for students and a blind spot for the product team, since we had no visibility into the part where students spent most of their time.
-
-So we decided to bring projects onto the platform itself. Today, most professional tools students use (VS Code, JupyterLab, Google Sheets, Figma, and more) are web-based, which made it technically possible.
+So we decided to bring these tools into the platform. Today, most of the professional tools students use (VS Code, JupyterLab, Google Sheets, Figma, and more) are web-based, which made it technically possible.
 
 <div className="wide-block">
     <BrowserContainerImage
@@ -89,9 +87,9 @@ So we decided to bring projects onto the platform itself. Today, most profession
     />
 </div>
 
-It was a big UX challenge that required rethinking the whole platform layout so students could work comfortably in a complex environment while still having easy access to all the platform tools. The goal was to make it feel like the same familiar place—just with the features of a full professional workspace.
+This challenge meant rethinking the whole lesson layout so students could work comfortably in a complex environment while still having easy access to all platform tools. The goal was to make a workspace feel like the same familiar place.
 
-Another major challenge was simplifying project statuses. Project workflows could get really complex, so I had to break them down into the clearest possible model. Now each project requires completing only a few steps that make immediate sense to students. At the same time, the layout and look of each step can vary significantly depending on the project type and status.
+Another major challenge was simplifying the stages model. Project workflows used to get pretty complex, so I had to make them much clearer. In the end, each project now has just a few straightforward steps. At the same time, the layout and view of each step adapt depending on the project type and stage.
 
 <div className="wide-block">![Different states](/tripleten/pop/states.png)</div>
 
@@ -109,15 +107,13 @@ It was a fun design project but also a big technical one—especially when it ca
 </div>
 <span className="caption">Different project environments</span>
 
-As a result, project work became a native part of the platform. Students can now work on projects without the hassle of setting anything up locally, and they have access to all familiar platform tools. The team has full visibility into what happens during projects, making things like the A/B experiment with Dot support mentioned above possible. The entire learning process now happens within the platform, and students spend 31% of their time in the new project workspace.
+As a result, projects became a native part of the platform. Students can now work on them without the hassle of setting anything up locally, and they have easy access to all support tools. Besides that, the team now has full visibility into what happens during projects because the entire learning process lives inside the platform. Students now spend 31% of their time in the new project workspace, which also makes running support experiments much easier.
 
 ## Observability
 
-In my last year at TripleTen, one of the big things I focused on was helping us understand how students actually study on the platform.
+In my last year at TripleTen, one of the big things I focused on was helping us understand how students actually study on the platform. Our product analytics setup was quite limited, and we had almost no way to observe real student behavior. We often didn’t know whether what we shipped actually worked. UI decisions lacked context, and we mostly relied on personal opinions.
 
-Before that, our product analytics setup was quite limited, and we had almost no way to observe real student behavior. We often didn’t know whether what we shipped actually worked. UI decisions lacked context, and we mostly relied on personal opinions.
-
-When I started researching analytics tools, one clearly stood out—PostHog. Beyond its hog-themed aesthetic, it proved to be a powerful and flexible observability toolkit.
+When I started researching analytics tools, one clearly stood out—PostHog. Beyond all the hog fun, it turned out to be a powerful and flexible observability toolkit.
 
 <BrowserContainerImage src="/tripleten/posthog.png" alt="PostHog UI" aspectRatio="16 / 9" />
 <span className="caption">PostHog toolset</span>
