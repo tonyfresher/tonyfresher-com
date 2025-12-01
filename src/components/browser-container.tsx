@@ -20,7 +20,7 @@ export function BrowserContainer({ type, aspectRatio, children }: BrowserContain
             className={cn(
                 baseContainerClass,
                 type === 'gallery' &&
-                    'grid [grid-template-columns:160px_1fr] gap-2 max-[960px]:grid-cols-1'
+                    'grid [grid-template-columns:144px_1fr] gap-2 max-[960px]:grid-cols-1'
             )}
         >
             <div
@@ -116,7 +116,7 @@ export function BrowserContainerGallery({ title, items }: BrowserContainerGaller
         <div
             className={cn(
                 baseContainerClass,
-                'grid [grid-template-columns:160px_1fr] gap-2 max-[960px]:grid-cols-1'
+                'grid [grid-template-columns:144px_1fr] gap-2 max-[960px]:grid-cols-1'
             )}
             onClick={() => setAutoplay(false)}
         >
