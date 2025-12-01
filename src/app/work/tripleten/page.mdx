@@ -109,25 +109,6 @@ It was a fun design project but also a big technical one—especially when it ca
 
 As a result, projects became a native part of the platform. Students can now work on them without the hassle of setting anything up locally, and they have easy access to all support tools. Besides that, the team now has full visibility into what happens during projects because the entire learning process lives inside the platform. Students now spend 31% of their time in the new project workspace, which also makes running support experiments much easier.
 
-## Observability
-
-In my last year at TripleTen, one of the big things I focused on was helping us understand how students actually study on the platform. Our product analytics setup was quite limited, and we had almost no way to observe real student behavior. We often didn’t know whether what we shipped actually worked. UI decisions lacked context, and we mostly relied on personal opinions.
-
-When I started researching analytics tools, one clearly stood out—PostHog. Beyond all the hog fun, it turned out to be a powerful and flexible observability toolkit.
-
-<BrowserContainerImage src="/tripleten/posthog.png" alt="PostHog UI" aspectRatio="16 / 9" />
-<span className="caption">PostHog toolset</span>
-
-I set up and maintained the PostHog integration from early experiments to a full rollout across all platform surfaces. It was an interesting challenge because it combined setting up structure inside PostHog, maintaining integration code, resolving issues, and driving awareness and adoption across the company.
-
-Over time, PostHog became the core analytics and experimentation platform for the product team and was broadly adopted across the org. Here’s what we achieved with it:
-
-- Iterated on freshly released features based on usage data, session replays, and survey feedback.
-- Ran experiments to measure impact—from getting 72% more feedback responses by tweaking a button label to proving that 34% more students submit their projects with Dot support.
-- Started rolling out new features gradually using feature flags.
-- Unshipped several low-usage features based on insights from automatically captured data.
-- Moved student activity tracking for the learning support team from a clunky in-house system to reliable PostHog events within the main infrastructure.
-
 ## Visual language
 
 One of the things I truly loved at TripleTen was shaping its visual language and bringing the brand’s voice into the interface. During my time there, I was the key maintainer of our shared design system.
@@ -143,6 +124,25 @@ The collaboration between different design functions was crucial in shaping Trip
 <div className="wide-block">![UI](/tripleten/ui.png)</div>
 
 In my last year, I took this further by stepping into design engineering, shaping not just visuals but also interactions and polish. My code contributions added up to 47 PRs across new features, polish, papercuts, and analytics.
+
+## Observability
+
+In my last year at TripleTen, one of the big things I focused on was helping us understand how students actually study on the platform. Our product analytics setup was quite limited, and we had almost no way to observe real student behavior. We often didn’t know whether what we shipped actually worked. UI decisions lacked context, and we mostly relied on personal opinions.
+
+When I started researching analytics tools, one clearly stood out—PostHog. Beyond all the hog fun, it turned out to be a powerful and flexible observability toolkit.
+
+<BrowserContainerImage src="/tripleten/posthog.png" alt="PostHog UI" aspectRatio="16 / 9" />
+<span className="caption">PostHog toolset</span>
+
+I set up and maintained the PostHog integration from early experiments to a full rollout across all platform surfaces. It was an interesting challenge because it combined setting up structure inside PostHog, maintaining integration code, resolving issues, and driving awareness and adoption across the company.
+
+Over time, PostHog became the core analytics and experimentation platform for the product team and was broadly adopted across the org. Here’s what we did with it:
+
+- Iterated on freshly released features based on usage data, session replays, and survey feedback.
+- Ran experiments to measure impact—from getting 72% more feedback responses by tweaking a button label to proving that 34% more students submit their projects with Dot support.
+- Started rolling out new features gradually using feature flags.
+- Unshipped several low-usage features based on insights from automatically captured data.
+- Moved student activity tracking for the learning support team from a clunky in-house system to reliable PostHog events within the main infrastructure.
 
 ## Team
 
