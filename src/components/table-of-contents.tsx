@@ -113,7 +113,7 @@ export default function TableOfContents() {
                             <div
                                 key={header.id}
                                 className={cn(
-                                    'h-0.5 w-3 transition-colors duration-200 ease-out',
+                                    'h-0.5 w-2 transition-colors duration-200 ease-out',
                                     currentHeader?.id === header.id
                                         ? 'bg-foreground'
                                         : 'bg-accent-secondary'
