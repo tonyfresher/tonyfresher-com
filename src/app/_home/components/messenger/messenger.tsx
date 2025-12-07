@@ -52,7 +52,7 @@ function Bubble({ children, animated }: BubbleProps) {
             )}
             initial={animated ? { opacity: 0, scale: 0 } : undefined}
             animate={animated ? { opacity: 1, scale: 1 } : undefined}
-            transition={{ delay: 0.3, duration: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.1 }}
         >
             {children}
         </motion.div>
@@ -78,7 +78,7 @@ function AnimatedMessenger({ messages }: MessengerProps) {
     const [ref, { height }] = useMeasure()
 
     return (
-        <motion.div animate={{ height }} transition={{ ease: 'easeInOut' }}>
+        <motion.div animate={{ height }} transition={{ ease: 'easeInOut', duration: 0.2 }}>
             <div ref={ref} className={styles.container}>
                 <div className={styles.messageList}>
                     {messages.slice(0, visibleMessagesCount + 1).map((message, index) => (
