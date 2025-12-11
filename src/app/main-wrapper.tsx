@@ -21,7 +21,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         <main
             className={cn(
                 'relative text-xl',
-                "after:pointer-events-none after:fixed after:inset-0 after:z-2 after:h-dvh after:min-h-full after:w-screen after:bg-[url('/noise.gif')] after:bg-[length:400px_400px] after:bg-repeat after:opacity-3 after:mix-blend-hard-light after:content-['']"
+                "after:pointer-events-none after:fixed after:inset-0 after:z-2 after:h-dvh after:min-h-full after:w-screen after:bg-[url('/noise.gif')] after:bg-[length:300px_300px] after:bg-repeat after:opacity-5 after:mix-blend-hard-light after:content-['']"
             )}
             onClick={handleClick}
         >
