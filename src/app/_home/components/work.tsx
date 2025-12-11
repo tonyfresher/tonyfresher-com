@@ -63,7 +63,7 @@ export default function Work() {
                     {logo && (
                         <img
                             className={cn(
-                                'size-14 shrink-0 opacity-95',
+                                'size-14 shrink-0',
                                 'lg:ml-8 lg:size-24 lg:p-2 lg:group-odd:rotate-5 lg:group-even:-rotate-5'
                             )}
                             src={logo}

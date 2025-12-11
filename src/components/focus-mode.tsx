@@ -64,7 +64,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
     const videoStyles = cn('bg-bright text-bright-foreground aspect-square size-40 shadow-xl')
 
     return (
-        <div className={cn('z-10', className)}>
+        <div className={cn('z-1', className)}>
             <div
                 className={cn(
                     'relative flex items-center justify-center overflow-hidden rounded-lg max-md:rounded-md',

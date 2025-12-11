@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={cn('font-regular font-sans antialiased')}>
+            <body className="font-regular font-sans antialiased">
                 <EmojiFavicon />
                 <ScrollToTop />
                 <ThemeProvider
