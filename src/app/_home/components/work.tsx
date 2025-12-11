@@ -1,3 +1,5 @@
+import { ArrowUpRight } from '@untitledui/icons'
+
 import Link from '@/components/link'
 import { cn } from '@/lib/cn'
 
@@ -61,14 +63,25 @@ export default function Work() {
                         </>
                     )}
                     {logo && (
-                        <img
-                            className={cn(
-                                'size-14 shrink-0',
-                                'lg:ml-8 lg:size-24 lg:p-2 lg:group-odd:rotate-5 lg:group-even:-rotate-5'
-                            )}
-                            src={logo}
-                            alt="Logo"
-                        />
+                        <div className="relative w-max">
+                            <img
+                                className={cn(
+                                    'size-14 shrink-0',
+                                    'lg:size-24 lg:p-2 lg:group-odd:rotate-5 lg:group-even:-rotate-5'
+                                )}
+                                src={logo}
+                                alt="Logo"
+                            />
+                            <ArrowUpRight
+                                className={cn(
+                                    'bg-background size-8 rounded-sm p-1 shadow-sm',
+                                    'absolute -top-2 -right-2',
+                                    'lg:top-0 lg:right-0',
+                                    'lg:transition-transform lg:duration-200 lg:group-hover:scale-103 lg:group-hover:group-odd:-rotate-5 lg:group-hover:group-even:rotate-5'
+                                )}
+                                strokeWidth={1.75}
+                            />
+                        </div>
                     )}
                     <div
                         className={cn(
