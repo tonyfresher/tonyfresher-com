@@ -17,7 +17,7 @@ function MacintoshContainer({ aspectRatio, children, onClick }: MacintoshContain
         <div
             className={cn(
                 'relative w-full',
-                'rounded-2xl p-8',
+                'rounded-2xl p-6',
                 'max-sm:rounded-lg max-sm:p-2',
                 'bg-gradient-to-b from-[#E6E4DB] to-[#D3D1CD]',
                 'shadow-[0_1px_2px_-1px_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.12),0_8px_24px_rgba(0,0,0,0.16),0_48px_112px_rgba(0,0,0,0.2),inset_0_2px_0_rgba(255,255,255,0.5),inset_0_-2px_4px_rgba(0,0,0,0.07)]'
@@ -33,22 +33,27 @@ function MacintoshContainer({ aspectRatio, children, onClick }: MacintoshContain
                     )}
                 >
                     <div
-                        className="overflow-hidden rounded-sm"
+                        className="overflow-hidden rounded-xs border-1 border-black max-sm:rounded-[4px]"
                         style={aspectRatio ? { aspectRatio } : undefined}
                     >
                         {children}
                     </div>
                 </div>
             </div>
-            <div className={cn('relative my-12 flex items-center justify-end', 'max-sm:my-8')}>
+            <div className={cn('relative my-8 flex items-center justify-end', 'max-sm:my-4')}>
                 <div
                     className={cn(
                         '-mr-62 h-8 w-24 rounded-[3px] border-12',
-                        'h-6 max-sm:-mr-60',
+                        'h-6 max-sm:-mr-28 max-sm:w-12',
                         slotBorderStyles
                     )}
                 />
-                <div className={cn('bg-primary mx-3 h-2 w-56 rounded-[2px]', 'max-sm:mx-2')} />
+                <div
+                    className={cn(
+                        'bg-primary mx-3 h-2 w-56 rounded-[2px]',
+                        'max-sm:mx-2 max-sm:w-24'
+                    )}
+                />
             </div>
         </div>
     )
@@ -108,14 +113,15 @@ export function MacintoshContainerGallery({ title, items }: MacintoshContainerGa
 
     return (
         <MacintoshContainer onClick={() => setAutoplay(false)}>
-            <div className="flex h-full flex-col bg-[#1A1A1A]">
+            <div className="bg-background flex h-full flex-col">
                 {/* Browser Tabs */}
                 <div
                     className={cn(
-                        'flex w-full items-center gap-1 overflow-x-auto bg-[#1A1A1A] p-1.5',
-                        'border-b border-white/5'
+                        'flex w-full items-center gap-1 overflow-x-auto p-0.5',
+                        'border-primary border-b-1'
                     )}
                 >
+                    <span className="px-3 text-[11px] font-semibold">{title}</span>
                     {items.map(tab => {
                         const isSelected = tab.src === selectedTab.src
 
@@ -123,22 +129,20 @@ export function MacintoshContainerGallery({ title, items }: MacintoshContainerGa
                             <button
                                 key={tab.label}
                                 className={cn(
-                                    'flex max-w-[140px] min-w-0 shrink-0 items-center gap-2 rounded-[4px] px-3 py-1.5',
-                                    'text-[10px] leading-tight font-medium transition-all duration-200',
+                                    'flex max-w-[140px] min-w-0 shrink-0 items-center gap-1 px-2 py-1',
+                                    'text-[11px] font-semibold',
                                     'cursor-pointer select-none',
-                                    'border border-transparent',
                                     isSelected
-                                        ? 'border-white/10 bg-[#2A2A2A] text-white shadow-[0_1px_2px_rgba(0,0,0,0.2)]'
-                                        : 'bg-transparent text-[#8A8680] hover:bg-white/5 hover:text-white/70'
+                                        ? 'bg-primary text-primary-foreground'
+                                        : 'text-primary'
                                 )}
                                 onClick={() => setSelectedTab(tab)}
                                 title={tab.label}
                             >
-                                <div
-                                    className={cn(
-                                        'h-1.5 w-1.5 rounded-full',
-                                        isSelected ? 'bg-[#FF5F57]' : 'bg-[#4C4C4C]'
-                                    )}
+                                <img
+                                    className="h-3 w-3 max-sm:hidden"
+                                    src="/tripleten/favicon.svg"
+                                    alt="Favicon"
                                 />
                                 <span className="truncate">{tab.label}</span>
                             </button>
