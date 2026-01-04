@@ -3,7 +3,7 @@ import {
     MacintoshContainerGallery,
     MacintoshContainerImage,
     MacintoshContainerVideo
-} from '@/components/browser-container'
+} from '@/components/macintosh-container'
 import { buildArticleMetadata } from '@/lib/metadata'
 
 import WorkDescriptionPage from '../components/work-description-page'
@@ -57,7 +57,13 @@ Dot started as a quick experiment on our Discord server. Over the year, we saw h
 
 We decided to add support where students struggled the most—in coding projects. So we built the chat as a VS Code extension first.
 
-<div className="wide-block">![VS Code](/tripleten/dot/vs-code.png)</div>
+<div className="wide-block">
+    <MacintoshContainerImage
+        src="/tripleten/dot/vs-code.png"
+        alt="VS Code"
+        aspectRatio="16 / 9.75"
+    />
+</div>
 
 From the start, we shipped to learn. We built a simple chat, added events and feedback loops, and watched what, when, and how students asked. (A good moment to shout out PostHog’s surveys, analytics, session replays, and feature flags.)
 
@@ -131,7 +137,7 @@ In my last year at TripleTen, one of the big things I focused on was helping us 
 
 When I started researching analytics tools, one clearly stood out—PostHog. Beyond all the hog fun, it turned out to be a powerful and flexible observability toolkit.
 
-<MacintoshContainerImage src="/tripleten/posthog.png" alt="PostHog UI" aspectRatio="16 / 9" />
+<img src="/tripleten/posthog.png" alt="PostHog UI" className="border-1 rounded-xs" />
 <span className="caption">PostHog toolset</span>
 
 I set up and maintained the PostHog integration from early experiments to a full rollout across all platform surfaces. It was an interesting challenge because it combined setting up structure inside PostHog, maintaining integration code, resolving issues, and driving awareness and adoption across the company.
