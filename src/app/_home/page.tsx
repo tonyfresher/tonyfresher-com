@@ -16,7 +16,7 @@ const strings = {
         {
             id: '2',
             content: (
-                <TextMessage text="Always curious about the world, cool people, exciting products, and my orange cat" />
+                <TextMessage text="Always curious to explore, build, play, and connect with thoughtful people" />
             ),
             delay: 1600
         },
