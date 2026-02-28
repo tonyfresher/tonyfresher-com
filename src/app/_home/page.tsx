@@ -10,13 +10,13 @@ const strings = {
     messages: [
         {
             id: '1',
-            content: <TextMessage text="Hey! I'm Anton, a product designer and engineer" />,
+            content: <TextMessage text="Hey! I'm Anton, a  product designer and engineer" />,
             delay: 1200
         },
         {
             id: '2',
             content: (
-                <TextMessage text="Always curious to explore, build, play, and connect with thoughtful people" />
+                <TextMessage text="Always curious to explore, build, play, and connect. Based in Berlin 🐻" />
             ),
             delay: 1600
         },
