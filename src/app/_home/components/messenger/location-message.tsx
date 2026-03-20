@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn'
 function MapPreview() {
     return (
         <div className="relative h-20 w-80 overflow-hidden max-sm:w-48">
-            <Image className="object-cover" src="/about/map.png" alt="Map" fill />
+            <Image className="object-cover" src="/about/map.png" alt="Map" fill preload />
             {/* Vignette */}
             <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-radial-[ellipse_at_center] from-transparent from-30% to-black/10" />
             {/* Blue dot */}
