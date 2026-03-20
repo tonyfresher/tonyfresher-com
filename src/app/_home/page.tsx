@@ -16,12 +16,12 @@ const strings = {
         },
         {
             id: '2',
-            content: <TextMessage text="Always curious to explore, build, and connect" />,
-            delay: 1600
+            content: <TextMessage text="Curious to explore, build, jam, and connect" />,
+            delay: 800
         },
         {
             id: '3',
-            content: <LocationMessage />,
+            content: <LocationMessage text="Now in Berlin" />,
             delay: 1200
         },
         {
@@ -36,7 +36,7 @@ export default function HomePage() {
     return (
         <div className="3xl:col-span-2 col-span-4 flex flex-col gap-y-20 lg:col-span-3">
             <div className="flex flex-col gap-8">
-                <h1 className="font-display -mx-4 my-0 overflow-visible px-4 text-[52px] leading-none">
+                <h1 className="font-display -mx-4 my-0 overflow-visible px-4 text-5xl leading-none">
                     {strings.name}
                 </h1>
                 <Messenger messages={strings.messages} />

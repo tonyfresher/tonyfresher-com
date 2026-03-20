@@ -55,13 +55,17 @@ function MapPreview() {
     )
 }
 
-export default function LocationMessage() {
+interface LocationMessageProps {
+    text: string
+}
+
+export default function LocationMessage({ text }: LocationMessageProps) {
     return (
         <div>
             <MapPreview />
 
             <div className="px-4 py-2">
-                <div className="">Based in Berlin</div>
+                <div className="">{text}</div>
             </div>
         </div>
     )
