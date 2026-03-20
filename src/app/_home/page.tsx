@@ -27,7 +27,7 @@ const strings = {
         {
             id: '4',
             content: <CVMessage />,
-            delay: 800
+            delay: 1200
         }
     ]
 }
