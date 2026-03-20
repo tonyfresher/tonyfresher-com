@@ -1,6 +1,7 @@
 import About from './components/about.mdx'
 import Education from './components/education'
 import CVMessage from './components/messenger/cv-message'
+import LocationMessage from './components/messenger/location-message'
 import Messenger from './components/messenger/messenger'
 import TextMessage from './components/messenger/text-message'
 import Work from './components/work'
@@ -15,15 +16,18 @@ const strings = {
         },
         {
             id: '2',
-            content: (
-                <TextMessage text="Always curious to explore, build, play, and connect. Based in Berlin 🐻" />
-            ),
+            content: <TextMessage text="Always curious to explore, build, and connect" />,
             delay: 1600
+        },
+        {
+            id: '3',
+            content: <LocationMessage />,
+            delay: 1200
         },
         {
             id: '4',
             content: <CVMessage />,
-            delay: 1400
+            delay: 800
         }
     ]
 }
