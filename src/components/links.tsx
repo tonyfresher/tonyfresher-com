@@ -11,12 +11,12 @@ const strings = {
             link: 'https://www.linkedin.com/in/tonyfresher/'
         },
         {
-            service: 'Instagram',
-            link: 'https://instagram.com/tonyfresher'
-        },
-        {
             service: 'Twitter',
             link: 'https://www.twitter.com/tonyfresher/'
+        },
+        {
+            service: 'Instagram',
+            link: 'https://instagram.com/tonyfresher'
         },
         {
             service: 'Telegram',
