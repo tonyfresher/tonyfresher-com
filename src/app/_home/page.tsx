@@ -4,6 +4,7 @@ import CVMessage from './components/messenger/cv-message'
 import LocationMessage from './components/messenger/location-message'
 import Messenger from './components/messenger/messenger'
 import TextMessage from './components/messenger/text-message'
+import Projects from './components/projects'
 import Work from './components/work'
 
 const strings = {
@@ -41,6 +42,7 @@ export default function HomePage() {
                 </h1>
                 <Messenger messages={strings.messages} />
             </div>
+            <Projects />
             <Work />
             <Education />
             <About />
