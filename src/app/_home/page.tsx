@@ -17,7 +17,7 @@ const strings = {
         },
         {
             id: '2',
-            content: <TextMessage text="Always curious to explore, create, and connect" />,
+            content: <TextMessage text="Down to explore, build, and connect" />,
             delay: 800
         },
         {
