@@ -4,7 +4,7 @@ const strings = {
     title: 'Projects',
     items: [
         {
-            product: 'moi',
+            product: 'Moi',
             description: 'UI for your AI',
             period: '2026',
             logo: '/work/moi.png',
