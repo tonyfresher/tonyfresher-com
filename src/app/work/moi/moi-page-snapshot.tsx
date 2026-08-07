@@ -1,6 +1,6 @@
 'use client'
 
-import { type CSSProperties, useEffect, useRef, useState } from 'react'
+import { type CSSProperties, type RefObject, useEffect, useRef, useState } from 'react'
 
 import {
     IconArrowUp,
@@ -107,29 +107,180 @@ const chatItems: ChatItem[] = [
 
 type SnapshotTheme = CSSProperties & Record<`--${string}`, string>
 
+const THEME_ROTATION_INTERVAL = 3000
+const THEME_TRANSITION_DURATION = 200
+const THEME_FONT_LINK_ID = 'moi-snapshot-theme-fonts'
+const THEME_FONT_URL =
+    'https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@400;500;600&family=Azeret+Mono:wght@400;500&family=Geist+Mono:wght@400;500;600&family=Literata:wght@400;600;700&family=Manrope:wght@400;500;600&family=SN+Pro:wght@400;500;600&family=Sour+Gummy:wght@400;500;600&display=swap'
+
+const FONT_THEMES = {
+    sans: { sans: 'system-ui', mono: 'Geist Mono' },
+    serif: { sans: 'Literata', mono: 'Geist Mono' },
+    mono: { sans: 'Geist Mono', mono: 'Geist Mono' },
+    geometric: { sans: 'Manrope', mono: 'Geist Mono' },
+    rounded: { sans: 'SN Pro', mono: 'Geist Mono' },
+    blobby: { sans: 'Sour Gummy', mono: 'Azeret Mono' },
+    awkward: { sans: 'Averia Sans Libre', mono: 'Azeret Mono' },
+    comic: { sans: 'Comic Sans MS, Comic Sans, cursive', mono: 'Geist Mono' }
+} as const
+
+const COLOR_THEMES = {
+    default: {},
+    paper: { primary: 'oklch(0.4328 0.0351 66.67)' },
+    rose: { primary: 'oklch(0.6322 0.2171 26.02)' },
+    tangerine: { primary: 'oklch(0.6886 0.22 37.15)' },
+    sand: { primary: 'oklch(0.8334 0.1271 67.80)', darkForeground: true },
+    mint: { primary: 'oklch(0.5774 0.1399 156.06)' },
+    sky: { primary: 'oklch(0.5824 0.1830 253.59)' },
+    lavender: { primary: 'oklch(0.6025 0.2426 294.58)' }
+} as const
+
+const RADIUS_THEMES = {
+    squishy: '0.875rem',
+    soft: '0.625rem',
+    subtle: '0.375rem',
+    square: '0'
+} as const
+
+type FontTheme = keyof typeof FONT_THEMES
+type ColorTheme = keyof typeof COLOR_THEMES
+type RadiusTheme = keyof typeof RADIUS_THEMES
+
+interface WorkspaceTheme {
+    font: FontTheme
+    color: ColorTheme
+    radius: RadiusTheme
+}
+
+const INITIAL_WORKSPACE_THEME: WorkspaceTheme = {
+    font: 'sans',
+    color: 'tangerine',
+    radius: 'soft'
+}
+
+const FONT_THEME_KEYS = Object.keys(FONT_THEMES) as FontTheme[]
+const COLOR_THEME_KEYS = Object.keys(COLOR_THEMES) as ColorTheme[]
+const RADIUS_THEME_KEYS = Object.keys(RADIUS_THEMES) as RadiusTheme[]
+
+const THEME_TRANSITION_CLASS_NAME =
+    'transition-[color,background-color,border-color,border-radius,fill,stroke] duration-200 ease-out [&_*]:transition-[color,background-color,border-color,border-radius,fill,stroke]! [&_*]:duration-200! [&_*]:ease-out!'
+
+function getWorkspaceThemeStyle(theme: WorkspaceTheme): SnapshotTheme {
+    const font = FONT_THEMES[theme.font]
+    const color = COLOR_THEMES[theme.color]
+    const primary = 'primary' in color ? color.primary : undefined
+
+    if (!primary) {
+        return {
+            '--sans': font.sans,
+            '--mono': font.mono,
+            '--background': 'oklch(1 0 0)',
+            '--foreground': 'oklch(0.145 0 0)',
+            '--primary': 'oklch(0.205 0 0)',
+            '--primary-foreground': 'oklch(0.985 0 0)',
+            '--muted': 'oklch(0.97 0 0)',
+            '--muted-foreground': 'oklch(0.64 0 0)',
+            '--accent': 'oklch(0 0 0 / 0.07)',
+            '--accent-foreground': 'var(--foreground)',
+            '--border': 'oklch(0 0 0 / 0.07)',
+            '--radius': RADIUS_THEMES[theme.radius]
+        }
+    }
+
+    return {
+        '--sans': font.sans,
+        '--mono': font.mono,
+        '--background': 'color-mix(var(--primary) 3%, oklch(1 0 0) 97%)',
+        '--foreground': 'color-mix(var(--primary) 20%, oklch(0 0 0) 80%)',
+        '--primary': primary,
+        '--primary-foreground':
+            'darkForeground' in color && color.darkForeground ? 'oklch(0 0 0)' : 'oklch(1 0 0)',
+        '--muted': 'color-mix(var(--background) 96%, var(--foreground) 4%)',
+        '--muted-foreground': 'color-mix(var(--background) 50%, var(--foreground) 50%)',
+        '--accent': 'color-mix(var(--primary) 4%, var(--foreground) 4%)',
+        '--accent-foreground': 'var(--foreground)',
+        '--border': 'color-mix(var(--foreground) 7%, transparent)',
+        '--radius': RADIUS_THEMES[theme.radius]
+    }
+}
+
+function pickDifferentOption<T>(options: readonly T[], current: T): T {
+    const available = options.filter(option => option !== current)
+    return available[Math.floor(Math.random() * available.length)] ?? current
+}
+
+function pickRandomTheme(current: WorkspaceTheme): WorkspaceTheme {
+    return {
+        font: pickDifferentOption(FONT_THEME_KEYS, current.font),
+        color: pickDifferentOption(COLOR_THEME_KEYS, current.color),
+        radius: pickDifferentOption(RADIUS_THEME_KEYS, current.radius)
+    }
+}
+
+function useRotatingWorkspaceTheme(snapshotRef: RefObject<HTMLDivElement | null>) {
+    const [theme, setTheme] = useState<WorkspaceTheme>(INITIAL_WORKSPACE_THEME)
+    const [transitioning, setTransitioning] = useState(false)
+    const transitionTimeoutRef = useRef<number | null>(null)
+
+    useEffect(() => {
+        if (document.getElementById(THEME_FONT_LINK_ID)) return
+
+        const link = document.createElement('link')
+        link.id = THEME_FONT_LINK_ID
+        link.rel = 'stylesheet'
+        link.href = THEME_FONT_URL
+        document.head.appendChild(link)
+
+        return () => link.remove()
+    }, [])
+
+    useEffect(() => {
+        const element = snapshotRef.current
+        if (!element) return
+
+        const style = getWorkspaceThemeStyle(theme)
+        for (const [property, value] of Object.entries(style)) {
+            if (property.startsWith('--')) element.style.setProperty(property, value)
+        }
+    }, [snapshotRef, theme])
+
+    useEffect(() => {
+        const interval = window.setInterval(() => {
+            setTransitioning(true)
+            setTheme(current => pickRandomTheme(current))
+
+            if (transitionTimeoutRef.current !== null) {
+                window.clearTimeout(transitionTimeoutRef.current)
+            }
+            transitionTimeoutRef.current = window.setTimeout(() => {
+                setTransitioning(false)
+                transitionTimeoutRef.current = null
+            }, THEME_TRANSITION_DURATION)
+        }, THEME_ROTATION_INTERVAL)
+
+        return () => {
+            window.clearInterval(interval)
+            if (transitionTimeoutRef.current !== null) {
+                window.clearTimeout(transitionTimeoutRef.current)
+            }
+        }
+    }, [])
+
+    return { theme, transitioning }
+}
+
 const snapshotTheme: SnapshotTheme = {
-    '--background': 'color-mix(var(--primary) 3%, oklch(1 0 0) 97%)',
-    '--foreground': 'color-mix(var(--primary) 20%, oklch(0 0 0) 80%)',
+    ...getWorkspaceThemeStyle(INITIAL_WORKSPACE_THEME),
     '--card': 'oklch(1 0 0)',
     '--card-foreground': 'var(--foreground)',
-    '--primary': 'oklch(0.6886 0.22 37.15)',
-    '--primary-foreground': 'oklch(1 0 0)',
-    '--muted': 'color-mix(var(--background) 96%, var(--foreground) 4%)',
-    '--muted-foreground': 'color-mix(var(--background) 50%, var(--foreground) 50%)',
-    '--accent': 'color-mix(var(--primary) 4%, var(--foreground) 4%)',
-    '--accent-foreground': 'var(--foreground)',
-    '--border': 'color-mix(var(--foreground) 7%, transparent)',
-    '--input': 'color-mix(var(--foreground) 12%, transparent)',
-    '--ring': 'oklch(0.6886 0.22 37.15)',
-    '--radius': '0.625rem',
+    '--input': 'oklch(0.922 0 0)',
+    '--ring': 'oklch(0.708 0 0)',
     '--shadow-xs':
         '0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04)',
     '--shadow-sm':
         '0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(0, 0, 0, 0.06)',
     '--shadow-md':
         '0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 2px 4px -1px rgba(0, 0, 0, 0.08), 0px 6px 12px -2px rgba(0, 0, 0, 0.06)',
-    '--sans': 'system-ui',
-    '--default-sans': 'ui-sans-serif, system-ui, sans-serif',
     '--chat-max-container': '640px'
 }
 
@@ -147,7 +298,7 @@ const effortThumbPositions = [
 
 function WorkspaceRail() {
     return (
-        <aside className="flex h-full w-[72px] shrink-0 flex-col items-center gap-4 px-2 py-5 [font-family:var(--default-sans)]">
+        <aside className="flex h-full w-[72px] shrink-0 flex-col items-center gap-4 px-2 py-5">
             <button
                 type="button"
                 aria-label={strings.home}
@@ -624,13 +775,19 @@ function MysteryGraphic() {
 
 export default function MoiPageSnapshot() {
     const [frameRef, { width }] = useMeasure()
+    const snapshotRef = useRef<HTMLDivElement>(null)
+    const { theme, transitioning } = useRotatingWorkspaceTheme(snapshotRef)
     const scale = width > 0 ? width / SNAPSHOT_WIDTH : 1
 
     return (
         <div ref={frameRef} className="not-prose relative aspect-video w-full overflow-hidden">
             <div
+                ref={snapshotRef}
                 data-moi-snapshot
-                className="bg-muted text-foreground absolute top-0 left-0 flex h-[720px] w-[1280px] origin-top-left overflow-hidden [font-family:ui-sans-serif,system-ui,sans-serif] text-base leading-6 will-change-transform"
+                data-theme-color={theme.color}
+                data-theme-font={theme.font}
+                data-theme-radius={theme.radius}
+                className={`bg-muted text-foreground absolute top-0 left-0 flex h-[720px] w-[1280px] origin-top-left overflow-hidden [font-family:var(--sans)] text-base leading-6 will-change-transform ${transitioning ? THEME_TRANSITION_CLASS_NAME : ''}`}
                 style={{ ...snapshotTheme, transform: `scale(${scale})` }}
             >
                 <WorkspaceRail />

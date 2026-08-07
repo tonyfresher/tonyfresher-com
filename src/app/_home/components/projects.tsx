@@ -5,7 +5,7 @@ const strings = {
     items: [
         {
             product: 'Moi Computer',
-            description: 'Interface you build together\nwith your agent',
+            description: 'An interface you build together\nwith your agent',
             period: '2026',
             logo: '/work/moi.png',
             link: '/work/moi'
