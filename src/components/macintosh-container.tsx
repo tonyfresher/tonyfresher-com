@@ -12,7 +12,7 @@ interface MacintoshContainerProps extends PropsWithChildren {
 
 const slotBorderStyles = cn('border-[#B7B4AE] border-t-[#8C887D] border-b-[#CAC8C3] bg-[#B7B4AE]')
 
-function MacintoshContainer({ aspectRatio, children, onClick }: MacintoshContainerProps) {
+export function MacintoshContainer({ aspectRatio, children, onClick }: MacintoshContainerProps) {
     return (
         <div
             className={cn(

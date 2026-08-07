@@ -1,0 +1,34 @@
+import { MacintoshContainer } from '@/components/macintosh-container'
+import { buildArticleMetadata } from '@/lib/metadata'
+
+import WorkDescriptionPage from '../components/work-description-page'
+
+import MoiPageSnapshot from './moi-page-snapshot'
+
+export default function Page({ children }) {
+    return <WorkDescriptionPage meta={meta}>{children}</WorkDescriptionPage>
+}
+
+export const meta = {
+    id: 'moi',
+    title: 'Moi Computer',
+    description: 'Interface you build together with your agent',
+    link: 'https://moi.computer',
+    period: '2026'
+}
+
+export const metadata = buildArticleMetadata(meta)
+
+Moi is an interface you can build together with your agent. Or, more formally, a generative UI layer for the agent harness. It lets you go beyond chat and build new tools directly in a shared workspace. Works with the agent you already use, free and open source.
+
+What does all that mean? How does it work? How much should the agent do? How much should you? Only if I knew! Currently figuring it out.
+
+<div className="wide-block">
+    <MacintoshContainer>
+        <MoiPageSnapshot />
+    </MacintoshContainer>
+</div>
+
+<div className="mt-24 text-4xl font-medium max-xl:text-3xl max-sm:mt-16 max-sm:text-2xl">
+    Moi is live. Give it a try at [moi.computer](https://moi.computer)
+</div>

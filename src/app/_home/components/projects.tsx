@@ -4,11 +4,11 @@ const strings = {
     title: 'Projects',
     items: [
         {
-            product: 'Moi',
-            description: 'UI for your AI',
+            product: 'Moi Computer',
+            description: 'Interface you build together\nwith your agent',
             period: '2026',
             logo: '/work/moi.png',
-            link: 'https://moi.computer'
+            link: '/work/moi'
         }
     ]
 }

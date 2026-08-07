@@ -64,15 +64,17 @@ export default function PortfolioSection({ title, items }: PortfolioSectionProps
                                 src={logo}
                                 alt={strings.logoAlt}
                             />
-                            <ArrowUpRight
-                                className={cn(
-                                    'bg-background size-8 rounded-sm p-1 shadow-sm',
-                                    'absolute -top-2 -right-2',
-                                    'lg:top-0 lg:right-0',
-                                    'lg:transition-transform lg:duration-200 lg:group-hover:scale-103 lg:group-hover:group-odd:-rotate-5 lg:group-hover:group-even:rotate-5'
-                                )}
-                                strokeWidth={1.75}
-                            />
+                            {!link.startsWith('/') && (
+                                <ArrowUpRight
+                                    className={cn(
+                                        'bg-background size-8 rounded-sm p-1 shadow-sm',
+                                        'absolute -top-2 -right-2',
+                                        'lg:top-0 lg:right-0',
+                                        'lg:transition-transform lg:duration-200 lg:group-hover:scale-103 lg:group-hover:group-odd:-rotate-5 lg:group-hover:group-even:rotate-5'
+                                    )}
+                                    strokeWidth={1.75}
+                                />
+                            )}
                         </div>
                     )}
                     <div
