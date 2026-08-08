@@ -1,4 +1,4 @@
-import { ArrowUpRight } from '@untitledui/icons'
+import { IconArrowUpRight } from '@tabler/icons-react'
 
 import Link from '@/components/link'
 import { cn } from '@/lib/cn'
@@ -65,14 +65,14 @@ export default function PortfolioSection({ title, items }: PortfolioSectionProps
                                 alt={strings.logoAlt}
                             />
                             {!link.startsWith('/') && (
-                                <ArrowUpRight
+                                <IconArrowUpRight
                                     className={cn(
                                         'bg-background size-8 rounded-sm p-1 shadow-sm',
                                         'absolute -top-2 -right-2',
                                         'lg:top-0 lg:right-0',
                                         'lg:transition-transform lg:duration-200 lg:group-hover:scale-103 lg:group-hover:group-odd:-rotate-5 lg:group-hover:group-even:rotate-5'
                                     )}
-                                    strokeWidth={1.75}
+                                    stroke={1.75}
                                 />
                             )}
                         </div>

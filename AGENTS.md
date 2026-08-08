@@ -2,7 +2,9 @@
 
 ## Icons
 
-- Use only Untitled UI icons
+- Use only icons from `@tabler/icons-react`
+- Import icons from the package root and use `Icon`-prefixed names
+- Always set the `stroke` prop explicitly
 
 ## Styling
 

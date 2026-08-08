@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { XClose } from '@untitledui/icons'
+import { IconX } from '@tabler/icons-react'
 
 import { cn } from '@/lib/cn'
 
@@ -102,7 +102,7 @@ export default function FocusMode({ className, variant = 'default' }: FocusModeP
                             aria-label={strings.stop}
                         >
                             {strings.stop}
-                            <XClose className="size-5" strokeWidth={2} />
+                            <IconX className="size-5" stroke={2} />
                         </button>
                     </>
                 ) : (
